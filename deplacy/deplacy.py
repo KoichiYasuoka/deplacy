@@ -4,7 +4,6 @@ import os,tempfile
 from pkg_resources import get_distribution
 from http.server import BaseHTTPRequestHandler
 from http import HTTPStatus
-from urllib.parse import unquote
 
 PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
