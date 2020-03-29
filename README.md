@@ -16,9 +16,13 @@ I     PRON <┐   nsubj
 saw   VERB ─┴─┐ ROOT
 three NUM  <┐ │ nummod
 ships NOUN ─┘<┘ dobj
+>>> deplacy.serve(doc)
+http://127.0.0.1:5000   HTTP deplacy
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well.
+
+`deplacy.serve(doc,port=5000)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser.
 
 ## Usage with UniDic2UD
 
@@ -29,6 +33,7 @@ ships NOUN ─┘<┘ dobj
 >>> d=str(doc)
 >>> import deplacy
 >>> deplacy.render(d)
+>>> deplacy.serve(d)
 ```
 
 ## Usage with Stanza
@@ -41,6 +46,7 @@ ships NOUN ─┘<┘ dobj
 >>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
 >>> deplacy.render(d)
+>>> deplacy.serve(d)
 ```
 
 ## Usage with NLP-Cube
@@ -53,6 +59,7 @@ ships NOUN ─┘<┘ dobj
 >>> d="".join("".join(str(t)+"\n" for t in s) for s in doc)
 >>> import deplacy
 >>> deplacy.render(d)
+>>> deplacy.serve(d)
 ```
 
 ## Installation
