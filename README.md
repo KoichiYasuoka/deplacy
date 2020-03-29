@@ -25,7 +25,8 @@ ships NOUN ─┘<┘ dobj
 ```py
 >>> import unidic2ud
 >>> nlp=unidic2ud.load(None,"english-ewt")
->>> d=nlp("I saw three ships",raw=True)
+>>> doc=nlp("I saw three ships")
+>>> d=str(doc)
 >>> import deplacy
 >>> deplacy.render(d)
 ```
