@@ -141,7 +141,7 @@ def serve(doc,port=5000):
   if type(doc)==str:
     c=doc
   else:
-    c="".join("\t".join([str(t.i+1),t.orth_,t.lemma,t.pos_,t.tag_,"_",str(0 if t.head==t else t.head.i+1),t.dep_,"_","_" if t.whitespace_ else "SpaceAfter=No"])+"\n" for t in doc)
+    c="".join("\t".join([str(t.i+1),t.orth_,t.lemma_,t.pos_,t.tag_,"_",str(0 if t.head==t else t.head.i+1),t.dep_,"_","_" if t.whitespace_ else "SpaceAfter=No"])+"\n" for t in doc)
   f=TEMPFILE
   f.seek(0)
   f.truncate(0)
