@@ -56,7 +56,7 @@ http://127.0.0.1:5000   HTTP deplacy
 >>> nlp=Cube()
 >>> nlp.load("en")
 >>> doc=nlp("I saw three ships")
->>> d="".join("".join(str(t)+"\n" for t in s) for s in doc)
+>>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
 >>> deplacy.render(d)
 >>> deplacy.serve(d)
