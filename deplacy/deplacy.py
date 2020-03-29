@@ -144,6 +144,7 @@ def serve(doc,port=5000):
     c="".join("\t".join([str(t.i+1),t.orth_,t.lemma,t.pos_,t.tag_,"_",str(0 if t.head==t else t.head.i+1),t.dep_,"_","_" if t.whitespace_ else "SpaceAfter=No"])+"\n" for t in doc)
   f=TEMPFILE
   f.seek(0)
+  f.truncate(0)
   f.write(c.encode("utf-8"))
   httpd=HTTPServer(("",port),DeplacyRequestHandler)
   print("http://127.0.0.1:"+str(port)+"   "+VERSION,file=sys.stderr)
