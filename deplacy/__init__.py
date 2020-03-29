@@ -1,4 +1,4 @@
-def render(doc,BoxDrawingWidth=1,file=None):
+def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
   if type(doc)==str:
     y=[]
     for t in doc.split("\n"):
@@ -74,18 +74,21 @@ def render(doc,BoxDrawingWidth=1,file=None):
         j-=1
       p[i][j+1]=16
   u=[" ","\u2574","\u2576","\u2500","\u2575","\u2518","\u2514","\u2534","\u2577","\u2510","\u250C","\u252C","\u2502","\u2524","\u251C","\u253C","<"]
+  x=[]
   i=[]
-  j=[]
   for t in y:
-    i.append(len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]))
-    j.append(len(t.pos_))
-  m=max(i)+1
-  n=max(j)+1
+    x.append(len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]))
+    i.append(len(t.pos_))
+  m=max(x)+1
+  n=max(i)+1
   s=""
   for i in range(len(y)):
     t="".join(u[j] for j in p[i])
     if BoxDrawingWidth>1:
       t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<")
-    s+=" "*m+y[i].pos_+" "*(n-len(y[i].pos_))+t+" "+y[i].dep_+"\r"+y[i].orth_+"\n"
+    if EnableCR:
+      s+=" "*m+y[i].pos_+" "*(n-len(y[i].pos_))+t+" "+y[i].dep_+"\r"+y[i].orth_+"\n"
+    else:
+      s+=y[i].orth_+" "*(m-x[i])+y[i].pos_+" "*(n-len(y[i].pos_))+t+" "+y[i].dep_+"\n"
   print(s,end="",file=file)
 
