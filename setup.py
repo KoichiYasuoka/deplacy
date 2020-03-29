@@ -6,7 +6,7 @@ URL="https://github.com/KoichiYasuoka/deplacy"
 
 setuptools.setup(
   name="deplacy",
-  version="0.5.0",
+  version="0.6.0",
   description="Simple dependency visualizer",
   long_description=long_description,
   long_description_content_type="text/markdown",
@@ -16,6 +16,9 @@ setuptools.setup(
   license="MIT",
   keywords="spacy stanza nlp",
   packages=setuptools.find_packages(),
+  package_data={
+    "deplacy":["./*.html","./*.js"],
+  },
   python_requires=">=3.6",
   classifiers=[
     "License :: OSI Approved :: MIT License",
