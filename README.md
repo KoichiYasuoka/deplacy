@@ -66,3 +66,4 @@ pip install deplacy
 ```
 
 You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately.
+
