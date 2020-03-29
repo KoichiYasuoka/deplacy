@@ -39,12 +39,12 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
   h=[]
   for i in range(len(y)):
     if y[i].dep_.lower()=="root":
-      h.append(0)
+      h.append(-1)
       continue
     j=i+y[i].head.i-y[i].i
-    h.append(j+1)
+    h.append(j)
     f[j].append(i)
-  d=[1 if f[i]==[] and abs(h[i]-i-1)==1 else -1 if h[i]==0 else 0 for i in range(len(y))]
+  d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(y))]
   while 0 in d:
     for i,e in enumerate(d):
       if e!=0:
@@ -52,7 +52,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
       g=[d[j] for j in f[i]]
       if 0 in g:
         continue
-      k=h[i]-1
+      k=h[i]
       if 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
         continue
       for j in range(min(i,k)+1,max(i,k)):
@@ -65,9 +65,8 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
   p=[[0]*(m*2) for i in range(len(y))]
   for i in range(len(y)):
     k=h[i]
-    if k==0:
+    if k==-1:
       continue
-    k-=1
     j=d[i]*2-1
     p[min(i,k)][j]|=9
     p[max(i,k)][j]|=5
@@ -76,7 +75,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
     for l in range(min(i,k)+1,max(i,k)):
       p[l][j]|=12
   for i in range(len(y)):
-    if h[i]>0:
+    if h[i]>=0:
       j=d[i]*2-2
       while j>=0:
         if p[i][j]>0:
