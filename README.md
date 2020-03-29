@@ -25,3 +25,10 @@ ships NOUN ─┘ <┘ dobj
 
 `deplacy.render(doc,BoxDrawingWidth=1,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works.
 
+# Install
+
+```sh
+pip install deplacy
+```
+
+You need to install spaCy separately.
