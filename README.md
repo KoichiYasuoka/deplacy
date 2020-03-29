@@ -4,7 +4,7 @@
 
 Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https://pypi.org/project/unidic2ud), [Stanza](https://stanfordnlp.github.io/stanza), and [NLP-Cube](https://github.com/Adobe/NLP-Cube).
 
-# Usage with spaCy
+## Usage with spaCy
 
 ```py
 >>> import spacy
@@ -25,7 +25,7 @@ ships NOUN ─┘ <┘ dobj
 
 `deplacy.render(doc,BoxDrawingWidth=1,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works.
 
-# Usage with UniDic2UD
+## Usage with UniDic2UD
 
 ```py
 >>> import unidic2ud
@@ -35,7 +35,7 @@ ships NOUN ─┘ <┘ dobj
 >>> deplacy.render(doc)
 ```
 
-# Usage with Stanza
+## Usage with Stanza
 
 ```py
 >>> import stanza
@@ -47,7 +47,7 @@ ships NOUN ─┘ <┘ dobj
 >>> deplacy.render(d)
 ```
 
-# Usage with NLP-Cube
+## Usage with NLP-Cube
 
 ```py
 >>> from cube.api import Cube
@@ -59,7 +59,7 @@ ships NOUN ─┘ <┘ dobj
 >>> deplacy.render(d)
 ```
 
-# Install
+## Installation
 
 ```sh
 pip install deplacy
