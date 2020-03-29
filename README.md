@@ -16,11 +16,6 @@ I     PRON <┐   nsubj
 saw   VERB ─┴─┐ ROOT
 three NUM  <┐ │ nummod
 ships NOUN ─┘<┘ dobj
->>> deplacy.render(doc,2)
-I     PRON  <┐     nsubj
-saw   VERB ─┴─┐ ROOT
-three NUM   <┐  │ nummod
-ships NOUN ─┘ <┘ dobj
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well.
