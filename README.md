@@ -12,12 +12,12 @@ Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https:/
 >>> doc=nlp("I saw three ships")
 >>> import deplacy
 >>> deplacy.render(doc)
-I     PRON <┐   nsubj
-saw   VERB ─┴─┐ ROOT
-three NUM  <┐ │ nummod
-ships NOUN ─┘<┘ dobj
+I     PRON <╗   nsubj
+saw   VERB ═╩═╗ ROOT
+three NUM  <╗ ║ nummod
+ships NOUN ═╝<╝ dobj
 >>> deplacy.serve(doc)
-http://127.0.0.1:5000   HTTP deplacy/0.6.5
+http://127.0.0.1:5000   HTTP deplacy/0.7.0
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well.
