@@ -9,7 +9,7 @@ PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
 TEMPFILE=tempfile.TemporaryFile()
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
+def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
   if type(doc)==str:
     DOC=[]
     for t in doc.split("\n"):
@@ -46,11 +46,11 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
     f[j].append(i)
   if CatenaAnalysis:
     import functools
-    def COM(a,b):
+    def CATENA(a,b):
       if a==b:
         return 0
       if a-b>0:
-        return -COM(b,a)
+        return -CATENA(b,a)
       if b<NOW:
         return LL(a,b)
       if a>NOW:
@@ -78,7 +78,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
     for NOW,e in enumerate(f):
       if len(e)<2:
         continue
-      e.sort(key=functools.cmp_to_key(COM))
+      e.sort(key=functools.cmp_to_key(CATENA))
   d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(DOC))]
   if CatenaAnalysis:
     for e in f:
