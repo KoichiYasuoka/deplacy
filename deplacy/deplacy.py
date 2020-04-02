@@ -11,7 +11,7 @@ TEMPFILE=tempfile.TemporaryFile()
 
 def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
   if type(doc)==str:
-    y=[]
+    DOC=[]
     for t in doc.split("\n"):
       x=t.split("\t")
       if len(x)!=10:
@@ -25,42 +25,25 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
       s.pos_=x[3]
       s.head=j
       s.dep_=x[7]
-      y.append(s)
-    for i,t in enumerate(y):
+      DOC.append(s)
+    for i,t in enumerate(DOC):
       if t.head==0:
         t.head=t
       else:
-        t.head=y[i+t.head-t.i]
+        t.head=DOC[i+t.head-t.i]
   else:
-    y=doc
-  if len(y)==0:
+    DOC=doc
+  if len(DOC)==0:
     return
-  f=[[] for i in range(len(y))]
+  f=[[] for i in range(len(DOC))]
   h=[]
-  for i in range(len(y)):
-    if y[i].dep_.lower()=="root":
+  for i in range(len(DOC)):
+    if DOC[i].dep_.lower()=="root":
       h.append(-1)
       continue
-    j=i+y[i].head.i-y[i].i
+    j=i+DOC[i].head.i-DOC[i].i
     h.append(j)
     f[j].append(i)
-  d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(y))]
-  while 0 in d:
-    for i,e in enumerate(d):
-      if e!=0:
-        continue
-      g=[d[j] for j in f[i]]
-      if 0 in g:
-        continue
-      k=h[i]
-      if 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
-        continue
-      for j in range(min(i,k)+1,max(i,k)):
-        if j in f[i]:
-          continue
-        g.append(d[j]-1 if j in f[k] else d[j])
-      g.append(0)
-      d[i]=max(g)+1
   if CatenaAnalysis:
     import functools
     def COM(a,b):
@@ -76,49 +59,64 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
     def LL(a,b):
       return 1
     def RR(a,b):
-      if y[b].dep_.find("compound")==0:
-        if y[a].dep_.find("compound")<0:
+      if DOC[b].dep_.find("compound")==0:
+        if DOC[a].dep_.find("compound")<0:
           return 1
       return -1
     def LR(a,b):
-      if y[b].dep_.find("punct")==0:
+      if DOC[b].dep_.find("punct")==0:
         return -1
-      if y[b].dep_.find("discourse")==0:
+      if DOC[b].dep_.find("discourse")==0:
         return -1
-      if y[b].dep_.find("parataxis")==0:
+      if DOC[b].dep_.find("parataxis")==0:
         return -1
-      if y[b].dep_.find("mark")==0:
+      if DOC[b].dep_.find("mark")==0:
         return -1
-      if y[a].dep_.find("compound")==0:
+      if DOC[a].dep_.find("compound")==0:
         return -1
       return 1
     for NOW,e in enumerate(f):
       if len(e)<2:
         continue
       e.sort(key=functools.cmp_to_key(COM))
-      m=d[e[0]]
-      k=0
-      for i in e[1:]:
-        if m<d[i]:
-          m=d[i]
+  d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(DOC))]
+  if CatenaAnalysis:
+    for e in f:
+      if len(e)>1:
+        for i in e[1:]:
+           d[i]=0
+    w=[i for i in range(len(DOC)) if h[i]==-1]
+    g=w
+    while len(w)<len(DOC):
+      k=[]
+      for i in g:
+        k.extend(f[i])
+      w=k+w
+      g=k
+  else:
+    w=[i for i in range(len(DOC))]
+  while 0 in d:
+    for i in w:
+      if d[i]!=0:
+        continue
+      g=[d[j] for j in f[i]]
+      if 0 in g:
+        continue
+      k=h[i]
+      if 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
+        continue
+      if CatenaAnalysis:
+        for j in f[h[i]]:
+          g.append(d[j])
+      for j in range(min(i,k)+1,max(i,k)):
+        if j in f[i]:
           continue
-        m+=1
-        k=m-d[i]
-        for j in range(len(d)):
-          if j in e:
-            continue
-          if h[j]==-1:
-            continue
-          if d[j]<d[i]:
-            continue
-          if min(j,h[j])<min(i,h[i]) and max(i,h[i])<max(j,h[j]):
-            d[j]+=k
-        d[i]=m
-      for j in f[h[NOW]]:
-        d[j]+=k
+        g.append(d[j]-1 if j in f[k] else d[j])
+      g.append(0)
+      d[i]=max(g)+1
   m=max(d)
-  p=[[0]*(m*2) for i in range(len(y))]
-  for i in range(len(y)):
+  p=[[0]*(m*2) for i in range(len(DOC))]
+  for i in range(len(DOC)):
     k=h[i]
     if k==-1:
       continue
@@ -129,7 +127,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
       p[k][l]|=3
     for l in range(min(i,k)+1,max(i,k)):
       p[l][j]|=12
-  for i in range(len(y)):
+  for i in range(len(DOC)):
     if h[i]>=0:
       j=d[i]*2-2
       while j>=0:
@@ -145,20 +143,20 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
     u[15]=u[13]
   x=[]
   i=[]
-  for t in y:
+  for t in DOC:
     x.append(len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]))
     i.append(len(t.pos_))
   m=max(x)+1
   n=max(i)+1
   s=""
-  for i in range(len(y)):
+  for i in range(len(DOC)):
     t="".join(u[j] for j in p[i])
     if BoxDrawingWidth>1:
       t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<")
     if EnableCR:
-      s+=" "*m+y[i].pos_+" "*(n-len(y[i].pos_))+t+" "+y[i].dep_+"\r"+y[i].orth_+"\n"
+      s+=" "*m+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+DOC[i].dep_+"\r"+DOC[i].orth_+"\n"
     else:
-      s+=y[i].orth_+" "*(m-x[i])+y[i].pos_+" "*(n-len(y[i].pos_))+t+" "+y[i].dep_+"\n"
+      s+=DOC[i].orth_+" "*(m-x[i])+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+DOC[i].dep_+"\n"
   print(s,end="",file=file)
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
