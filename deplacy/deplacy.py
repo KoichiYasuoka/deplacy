@@ -9,7 +9,7 @@ PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
 TEMPFILE=tempfile.TemporaryFile()
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
+def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=False,file=None):
   if type(doc)==str:
     y=[]
     for t in doc.split("\n"):
@@ -61,6 +61,61 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
         g.append(d[j]-1 if j in f[k] else d[j])
       g.append(0)
       d[i]=max(g)+1
+  if CatenaAnalysis:
+    import functools
+    def COM(a,b):
+      if a==b:
+        return 0
+      if a-b>0:
+        return -COM(b,a)
+      if b<NOW:
+        return LL(a,b)
+      if a>NOW:
+        return RR(a,b)
+      return LR(a,b)
+    def LL(a,b):
+      return 1
+    def RR(a,b):
+      if y[b].dep_.find("compound")==0:
+        if y[a].dep_.find("compound")<0:
+          return 1
+      return -1
+    def LR(a,b):
+      if y[b].dep_.find("punct")==0:
+        return -1
+      if y[b].dep_.find("discourse")==0:
+        return -1
+      if y[b].dep_.find("parataxis")==0:
+        return -1
+      if y[b].dep_.find("mark")==0:
+        return -1
+      if y[a].dep_.find("compound")==0:
+        return -1
+      return 1
+    for NOW,e in enumerate(f):
+      if len(e)<2:
+        continue
+      e.sort(key=functools.cmp_to_key(COM))
+      m=d[e[0]]
+      k=0
+      for i in e[1:]:
+        if m<d[i]:
+          m=d[i]
+          continue
+        m+=1
+        k=m-d[i]
+        for j in range(len(d)):
+          if j in e:
+            continue
+          if h[j]==-1:
+            continue
+          if d[j]<d[i]:
+            continue
+          if min(j,h[j])<min(i,h[i]) and max(i,h[i])<max(j,h[j]):
+            d[j]+=k
+        d[i]=m
+      for j in f[h[NOW]]:
+        d[j]+=k
   m=max(d)
   p=[[0]*(m*2) for i in range(len(y))]
   for i in range(len(y)):
@@ -84,6 +139,10 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,file=None):
         j-=1
       p[i][j+1]=16
   u=[" ","\u2578","\u257A","\u2550","\u2579","\u255D","\u255A","\u2569","\u257B","\u2557","\u2554","\u2566","\u2551","\u2563","\u2560","\u256C","<"]
+  if CatenaAnalysis:
+    u[7]=u[5]
+    u[11]=u[9]
+    u[15]=u[13]
   x=[]
   i=[]
   for t in y:
@@ -150,3 +209,4 @@ def serve(doc,port=5000):
     httpd.serve_forever()
   except:
     return
+
