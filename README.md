@@ -24,7 +24,7 @@ parse      NOUN  <╗ ║ ║ ║       ║ compound
 tree       NOUN  ═╝═╝═╝<╝       ║ pobj
 .          PUNCT <══════════════╝ punct
 >>> deplacy.serve(doc)
-http://127.0.0.1:5000   HTTP deplacy/0.7.0
+http://127.0.0.1:5000   HTTP deplacy/0.9.1
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
