@@ -24,7 +24,7 @@ parse      NOUN  <╗ ║ ║ ║       ║ compound
 tree       NOUN  ═╝═╝═╝<╝       ║ pobj
 .          PUNCT <══════════════╝ punct
 >>> deplacy.serve(doc)
-http://127.0.0.1:5000   HTTP deplacy/0.9.1
+http://127.0.0.1:5000   HTTP deplacy/0.9.2
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
@@ -83,5 +83,5 @@ Koichi Yasuoka (安岡孝一)
 
 ## Reference
 
-* 安岡孝一: Universal Dependenciesの拡張にもとづく古典中国語(漢文)の直接構成鎖解析の試み, 情報処理学会研究報告, Vol.2019-CH-120『人文科学とコンピュータ』, No.1 (2019年5月11日), pp.1-8.
+* 安岡孝一: [Universal Dependenciesの拡張にもとづく古典中国語(漢文)の直接構成鎖解析の試み](http://hdl.handle.net/2433/241358), 情報処理学会研究報告, Vol.2019-CH-120『人文科学とコンピュータ』, No.1 (2019年5月11日), pp.1-8.
 
