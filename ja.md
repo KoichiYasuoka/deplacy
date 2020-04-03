@@ -61,7 +61,7 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-# [Stanza](https://stanfordnlp.github.io/stanza)で解析
+## [Stanza](https://stanfordnlp.github.io/stanza)で解析
 
 ```py
 >>> import stanza
@@ -92,7 +92,7 @@
 。       PUNCT <════════════╝ punct
 ```
 
-# [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
 
 ```py
 >>> from cube.api import Cube
@@ -122,7 +122,7 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-# [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
+## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
 
 ```py
 >>> import spacy_udpipe
