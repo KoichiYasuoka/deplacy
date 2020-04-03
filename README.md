@@ -58,6 +58,7 @@ tree       NOUN  ═╝═╝═╝═╝<╝     ║ obl
 * [English](https://github.com/KoichiYasuoka/deplacy/blob/master/en.md)
 * [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/lzh.md)
 * [日本語](https://github.com/KoichiYasuoka/deplacy/blob/master/ja.md)
+* [Português](https://github.com/KoichiYasuoka/deplacy/blob/master/pt.md)
 
 ## Installation
 
