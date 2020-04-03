@@ -87,7 +87,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
       if len(e)>1:
         for i in e[1:]:
            d[i]=0
-    w=[i for i in range(len(DOC)) if h[i]==-1]
+    w=[i for i in reversed(range(len(DOC))) if h[i]==-1]
     g=w
     while len(w)<len(DOC):
       k=[]
