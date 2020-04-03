@@ -2,7 +2,7 @@
 
 # deplacy
 
-Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https://pypi.org/project/unidic2ud), [Stanza](https://stanfordnlp.github.io/stanza), and [NLP-Cube](https://github.com/Adobe/NLP-Cube).
+Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https://pypi.org/project/unidic2ud), [Stanza](https://stanfordnlp.github.io/stanza), [NLP-Cube](https://github.com/Adobe/NLP-Cube), etc.
 
 ## Usage with spaCy
 
@@ -24,7 +24,6 @@ parse      NOUN  <╗ ║ ║ ║       ║ compound
 tree       NOUN  ═╝═╝═╝<╝       ║ pobj
 .          PUNCT <══════════════╝ punct
 >>> deplacy.serve(doc)
-http://127.0.0.1:5000   HTTP deplacy/0.9.2
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
@@ -40,34 +39,24 @@ http://127.0.0.1:5000   HTTP deplacy/0.9.2
 >>> d=str(doc)
 >>> import deplacy
 >>> deplacy.render(d)
+The        DET   <╗               det
+programmer NOUN  ═╝<══════════╗   nsubj
+was        AUX   <══════════╗ ║   cop
+pleased    ADJ   ═════════╗═╝═╝═╗ root
+by         ADP   <══════╗ ║     ║ case
+the        DET   <════╗ ║ ║     ║ det
+nicely     ADV   <╗   ║ ║ ║     ║ advmod
+formatted  VERB  ═╝<╗ ║ ║ ║     ║ amod
+parse      NOUN  <╗ ║ ║ ║ ║     ║ compound
+tree       NOUN  ═╝═╝═╝═╝<╝     ║ obl
+.          PUNCT <══════════════╝ punct
 >>> deplacy.serve(d)
 ```
 
-## Usage with Stanza
+## Other Usages
 
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("en")
->>> doc=nlp("The programmer was pleased by the nicely formatted parse tree.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
->>> import deplacy
->>> deplacy.render(d)
->>> deplacy.serve(d)
-```
-
-## Usage with NLP-Cube
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("en")
->>> doc=nlp("The programmer was pleased by the nicely formatted parse tree.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
->>> import deplacy
->>> deplacy.render(d)
->>> deplacy.serve(d)
-```
+* [English](https://github.com/KoichiYasuoka/deplacy/blob/master/en.md)
+* [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/lzh.md)
 
 ## Installation
 
