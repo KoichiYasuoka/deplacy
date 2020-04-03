@@ -87,16 +87,14 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
       if len(e)>1:
         for i in e[1:]:
            d[i]=0
-    w=[i for i in reversed(range(len(DOC))) if h[i]==-1]
-    g=w
-    while len(w)<len(DOC):
-      k=[]
-      for i in g:
-        k.extend(f[i])
-      w=k+w
-      g=k
-  else:
-    w=[i for i in range(len(DOC))]
+  w=[i for i in reversed(range(len(DOC))) if h[i]==-1]
+  g=w
+  while len(w)<len(DOC):
+    k=[]
+    for i in g:
+      k.extend(f[i])
+    w=k+w
+    g=k
   while 0 in d:
     for i in w:
       if d[i]!=0:
@@ -106,10 +104,6 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
       if CatenaAnalysis:
         for j in f[k]:
           g.append(d[j])
-      elif 0 in g:
-        continue
-      elif 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
-        continue
       for j in range(min(i,k)+1,max(i,k)):
         if j in f[i]:
           continue
