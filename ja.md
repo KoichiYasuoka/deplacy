@@ -33,8 +33,8 @@
 ## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
 
 ```py
->>> import spacy
->>> nlp=spacy.load("ja_ginza")
+>>> import ja_ginza
+>>> nlp=ja_ginza.load()
 >>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
 >>> import deplacy
 >>> deplacy.render(doc)
