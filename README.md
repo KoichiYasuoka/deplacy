@@ -9,49 +9,25 @@ Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https:/
 ```py
 >>> import spacy
 >>> nlp=spacy.load("en_core_web_sm")
->>> doc=nlp("The programmer was pleased by the nicely formatted parse tree.")
+>>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy
 >>> deplacy.render(doc)
-The        DET   <╗               det
-programmer NOUN  ═╝<══════════╗   nsubjpass
-was        AUX   <══════════╗ ║   auxpass
-pleased    VERB  ═════════╗═╝═╝═╗ ROOT
-by         ADP   ═══════╗<╝     ║ agent
-the        DET   <════╗ ║       ║ det
-nicely     ADV   <╗   ║ ║       ║ advmod
-formatted  VERB  ═╝<╗ ║ ║       ║ amod
-parse      NOUN  <╗ ║ ║ ║       ║ compound
-tree       NOUN  ═╝═╝═╝<╝       ║ pobj
-.          PUNCT <══════════════╝ punct
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ ROOT
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ dobj
+yesterday NOUN  <══════║═════╝   ║ npadvmod
+which     DET   <════╗ ║         ║ nsubj
+had       AUX   ═══╗═╝<╝         ║ relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ dobj
+.         PUNCT <════════════════╝ punct
 >>> deplacy.serve(doc)
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
 
 `deplacy.serve(doc,port=5000)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser.
-
-## Usage with UniDic2UD
-
-```py
->>> import unidic2ud
->>> nlp=unidic2ud.load(None,"english-ewt")
->>> doc=nlp("The programmer was pleased by the nicely formatted parse tree.")
->>> d=str(doc)
->>> import deplacy
->>> deplacy.render(d)
-The        DET   <╗               det
-programmer NOUN  ═╝<══════════╗   nsubj
-was        AUX   <══════════╗ ║   cop
-pleased    ADJ   ═════════╗═╝═╝═╗ root
-by         ADP   <══════╗ ║     ║ case
-the        DET   <════╗ ║ ║     ║ det
-nicely     ADV   <╗   ║ ║ ║     ║ advmod
-formatted  VERB  ═╝<╗ ║ ║ ║     ║ amod
-parse      NOUN  <╗ ║ ║ ║ ║     ║ compound
-tree       NOUN  ═╝═╝═╝═╝<╝     ║ obl
-.          PUNCT <══════════════╝ punct
->>> deplacy.serve(d)
-```
 
 ## Other Usages
 

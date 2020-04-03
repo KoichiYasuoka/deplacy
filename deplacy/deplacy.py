@@ -127,7 +127,13 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
     if h[i]>=0:
       j=d[i]*2-2
       while j>=0:
-        if p[i][j]>0:
+        if p[i][j]==12:
+          if j>1:
+            if p[i][j-2]==0:
+              j-=1
+              continue
+          break
+        elif p[i][j]>0:
           break
         p[i][j]|=3
         j-=1
