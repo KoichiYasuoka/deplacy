@@ -1,6 +1,6 @@
-# displacyを用いた日本語文法解析
+# [displacy](https://pypi.org/project/displacy)を用いた日本語文法解析
 
-## UniDic2UDで解析
+## [UniDic2UD](https://pypi.org/project/unidic2ud)で解析
 
 ```py
 >>> import unidic2ud
@@ -30,7 +30,7 @@
 。       PUNCT <════════════╝ punct
 ```
 
-## GiNZAで解析
+## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
 
 ```py
 >>> import spacy
@@ -61,7 +61,7 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-# Stanzaで解析
+# [Stanza](https://stanfordnlp.github.io/stanza)で解析
 
 ```py
 >>> import stanza
@@ -92,37 +92,7 @@
 。       PUNCT <════════════╝ punct
 ```
 
-# spacy-udpipeで解析
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("ja")
->>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
->>> import deplacy
->>> deplacy.render(doc)
-國境     NOUN  ═╗<╗           nmod
-の       ADP   <╝ ║           case
-トンネル NOUN  ═╗═╝<╗         nmod
-を       ADP   <╝   ║         case
-拔       NOUN  ═╗═══╝═╗═╗<╗   obl
-ける     AUX   <╝     ║ ║ ║   aux
-と       SCONJ <══════╝ ║ ║   mark
-、       PUNCT <════════╝ ║   punct
-窓       NOUN  ═╗<╗       ║   nmod
-の       ADP   <╝ ║       ║   case
-外       NOUN  ═╗═╝<╗     ║   nmod
-の       ADP   <╝   ║     ║   case
-夜       NOUN  ═╗═══╝<╗   ║   nmod
-の       ADP   <╝     ║   ║   case
-底       NOUN  ═╗═════╝<╗ ║   nsubj
-が       ADP   <╝       ║ ║   case
-白く     ADJ   <══╗     ║ ║   advcl
-なつ     VERB  ═╗═╝═════╝═╝═╗ ROOT
-た       AUX   <╝           ║ aux
-。       PUNCT <════════════╝ punct
-```
-
-# NLP-Cubeで解析
+# [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
 
 ```py
 >>> from cube.api import Cube
@@ -150,5 +120,35 @@
 白く     ADJ   ═════════╝═╝<╗   acl
 なつた   NOUN  ═════════════╝═╗ root
 。       PUNCT <══════════════╝ punct
+```
+
+# [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("ja")
+>>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
+>>> import deplacy
+>>> deplacy.render(doc)
+國境     NOUN  ═╗<╗           nmod
+の       ADP   <╝ ║           case
+トンネル NOUN  ═╗═╝<╗         nmod
+を       ADP   <╝   ║         case
+拔       NOUN  ═╗═══╝═╗═╗<╗   obl
+ける     AUX   <╝     ║ ║ ║   aux
+と       SCONJ <══════╝ ║ ║   mark
+、       PUNCT <════════╝ ║   punct
+窓       NOUN  ═╗<╗       ║   nmod
+の       ADP   <╝ ║       ║   case
+外       NOUN  ═╗═╝<╗     ║   nmod
+の       ADP   <╝   ║     ║   case
+夜       NOUN  ═╗═══╝<╗   ║   nmod
+の       ADP   <╝     ║   ║   case
+底       NOUN  ═╗═════╝<╗ ║   nsubj
+が       ADP   <╝       ║ ║   case
+白く     ADJ   <══╗     ║ ║   advcl
+なつ     VERB  ═╗═╝═════╝═╝═╗ ROOT
+た       AUX   <╝           ║ aux
+。       PUNCT <════════════╝ punct
 ```
 
