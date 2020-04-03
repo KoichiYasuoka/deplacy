@@ -1,4 +1,4 @@
-# [displacy](https://pypi.org/project/displacy)を用いた日本語文法解析
+# [deplacy](https://pypi.org/project/deplacy)を用いた日本語文法解析
 
 ## [UniDic2UD](https://pypi.org/project/unidic2ud)で解析
 
