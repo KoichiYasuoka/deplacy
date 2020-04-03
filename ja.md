@@ -92,36 +92,6 @@
 。       PUNCT <════════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ja")
->>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
->>> import deplacy
->>> deplacy.render(d)
-國境     PROPN ═╗<╗             nmod
-の       ADP   <╝ ║             case
-トンネル NOUN  ═╗═╝<╗           obj
-を       ADP   <╝   ║           case
-拔ける   VERB  ═════╝═╗═╗<╗     advcl
-と       SCONJ <══════╝ ║ ║     mark
-、       PUNCT <════════╝ ║     punct
-窓       NOUN  ═╗<╗       ║     nmod
-の       ADP   <╝ ║       ║     case
-外       NOUN  ═╗═╝<╗     ║     nmod
-の       ADP   <╝   ║     ║     case
-夜       NOUN  ═╗═══╝<╗   ║     nmod
-の       ADP   <╝     ║   ║     case
-底       NOUN  ═╗═════╝<╗ ║     nsubj
-が       ADP   <╝       ║ ║     case
-白く     ADJ   ═════════╝═╝<╗   acl
-なつた   NOUN  ═════════════╝═╗ root
-。       PUNCT <══════════════╝ punct
-```
-
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
 
 ```py
@@ -150,5 +120,35 @@
 なつ     VERB  ═╗═╝═════╝═╝═╗ ROOT
 た       AUX   <╝           ║ aux
 。       PUNCT <════════════╝ punct
+```
+
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("ja")
+>>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
+>>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+>>> import deplacy
+>>> deplacy.render(d)
+國境     PROPN ═╗<╗             nmod
+の       ADP   <╝ ║             case
+トンネル NOUN  ═╗═╝<╗           obj
+を       ADP   <╝   ║           case
+拔ける   VERB  ═════╝═╗═╗<╗     advcl
+と       SCONJ <══════╝ ║ ║     mark
+、       PUNCT <════════╝ ║     punct
+窓       NOUN  ═╗<╗       ║     nmod
+の       ADP   <╝ ║       ║     case
+外       NOUN  ═╗═╝<╗     ║     nmod
+の       ADP   <╝   ║     ║     case
+夜       NOUN  ═╗═══╝<╗   ║     nmod
+の       ADP   <╝     ║   ║     case
+底       NOUN  ═╗═════╝<╗ ║     nsubj
+が       ADP   <╝       ║ ║     case
+白く     ADJ   ═════════╝═╝<╗   acl
+なつた   NOUN  ═════════════╝═╗ root
+。       PUNCT <══════════════╝ punct
 ```
 
