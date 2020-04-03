@@ -46,24 +46,26 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
     f[j].append(i)
   if CatenaAnalysis:
     import functools
-    def CATENA(a,b):
+    def CatenaInseparability(a,b):
       if a==b:
         return 0
       if a-b>0:
-        return -CATENA(b,a)
+        return -CatenaInseparability(b,a)
       if b<NOW:
-        return LL(a,b)
+        return CatenaInseparabilityLL(a,b)
       if a>NOW:
-        return RR(a,b)
-      return LR(a,b)
-    def LL(a,b):
+        return CatenaInseparabilityRR(a,b)
+      return CatenaInseparabilityLR(a,b)
+    def CatenaInseparabilityLL(a,b):
       return 1
-    def RR(a,b):
+    def CatenaInseparabilityRR(a,b):
       if DOC[b].dep_.find("compound")==0:
         if DOC[a].dep_.find("compound")<0:
           return 1
+      if DOC[b].dep_=="svp": # for TIGER Corpus (de_core_news)
+        return 1
       return -1
-    def LR(a,b):
+    def CatenaInseparabilityLR(a,b):
       if DOC[b].dep_.find("punct")==0:
         return -1
       if DOC[b].dep_.find("discourse")==0:
@@ -78,7 +80,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
     for NOW,e in enumerate(f):
       if len(e)<2:
         continue
-      e.sort(key=functools.cmp_to_key(CATENA))
+      e.sort(key=functools.cmp_to_key(CatenaInseparability))
   d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(DOC))]
   if CatenaAnalysis:
     for e in f:
@@ -100,14 +102,14 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
       if d[i]!=0:
         continue
       g=[d[j] for j in f[i]]
-      if 0 in g:
-        continue
       k=h[i]
-      if 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
-        continue
       if CatenaAnalysis:
-        for j in f[h[i]]:
+        for j in f[k]:
           g.append(d[j])
+      elif 0 in g:
+        continue
+      elif 0 in [d[j] for j in range(min(i,k)+1,max(i,k))]:
+        continue
       for j in range(min(i,k)+1,max(i,k)):
         if j in f[i]:
           continue
