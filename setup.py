@@ -6,7 +6,7 @@ URL="https://github.com/KoichiYasuoka/deplacy"
 
 setuptools.setup(
   name="deplacy",
-  version="0.9.3",
+  version="0.9.4",
   description="Simple dependency visualizer",
   long_description=long_description,
   long_description_content_type="text/markdown",
