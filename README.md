@@ -22,12 +22,13 @@ had       AUX   ═══╗═╝<╝         ║ relcl
 no        DET   <╗ ║             ║ det
 name      NOUN  ═╝<╝             ║ dobj
 .         PUNCT <════════════════╝ punct
->>> deplacy.serve(doc)
 ```
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
 
 `deplacy.serve(doc,port=5000)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser.
+
+`deplacy.dot(doc)` returns [raw DOT](https://graphviz.readthedocs.io/en/stable/manual.html#using-raw-dot) string for `graphviz.Source`.
 
 ## Other usages
 
