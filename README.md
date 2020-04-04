@@ -29,12 +29,17 @@ name      NOUN  ═╝<╝             ║ dobj
 
 `deplacy.serve(doc,port=5000)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser.
 
-## Other Usages
+## Other usages
 
 * [English](https://github.com/KoichiYasuoka/deplacy/blob/master/en.md)
 * [日本語](https://github.com/KoichiYasuoka/deplacy/blob/master/ja.md)
 * [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/lzh.md)
 * [Português](https://github.com/KoichiYasuoka/deplacy/blob/master/pt.md)
+
+## Visualization examples
+
+* `deplacy.render()`
+![deplacy.render()](https://raw.githubusercontent.com/KoichiYasuoka/deplacy/master/render.png)
 
 ## Installation
 
