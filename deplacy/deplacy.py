@@ -229,7 +229,7 @@ def dot(doc):
   s='digraph deplacy{\n'
   s+='node[shape=plaintext;fontsize=14];\n'
   s+='edge[color=gray,fontname="sans-serif",fontsize=10];\n'
-  t='word[shape=record,penwidth=0,label="';
+  t='w[shape=record,penwidth=0,label="';
   v=[]
   j=''
   for i in range(len(DOC)):
@@ -245,7 +245,7 @@ def dot(doc):
     j='|'
   t+='"];\n'
   c=[[i] for i in range(len(DOC))]
-  n=["word:"+str(i+1) for i in range(len(DOC))]
+  n=["w:"+str(i+1) for i in range(len(DOC))]
   x=1
   for i in w:
     for j in f[i]:
