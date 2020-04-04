@@ -46,6 +46,10 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ![deplacy.serve()](https://raw.githubusercontent.com/KoichiYasuoka/deplacy/master/serve.png)
 
+### `deplacy.dot()`
+
+![deplacy.dot()](https://raw.githubusercontent.com/KoichiYasuoka/deplacy/master/dot.png)
+
 ## Installation
 
 ```sh
