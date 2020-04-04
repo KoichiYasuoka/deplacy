@@ -9,32 +9,32 @@ PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
 TEMPFILE=tempfile.TemporaryFile()
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
-  if type(doc)==str:
-    DOC=[]
-    for t in doc.split("\n"):
-      x=t.split("\t")
-      if len(x)!=10:
-        continue
-      try:
-        i,j=int(x[0]),int(x[6])
-      except:
-        continue
-      s=type("",(object,),{"i":i})
-      s.orth_=x[1]
-      s.pos_=x[3]
-      s.head=j
-      s.dep_=x[7]
-      DOC.append(s)
-    for i,t in enumerate(DOC):
-      if t.head==0:
-        t.head=t
-      else:
-        t.head=DOC[i+t.head-t.i]
-  else:
-    DOC=doc
-  if len(DOC)==0:
-    return
+def makeDoc(doc):
+  DOC=[]
+  for t in doc.split("\n"):
+    x=t.split("\t")
+    if len(x)!=10:
+      continue
+    try:
+      i,j=int(x[0]),int(x[6])
+    except:
+      continue
+    s=type("",(object,),{"i":i})
+    s.orth_=x[1]
+    s.pos_=x[3]
+    s.head=j
+    s.dep_=x[7]
+    s.whitespace_=(x[9].find("SpaceAfter=No")<0)
+    DOC.append(s)
+  for i,t in enumerate(DOC):
+    if t.head==0:
+      t.head=t
+    else:
+      t.head=DOC[i+t.head-t.i]
+  return DOC
+
+def catenaArray(DOC):
+  import functools
   f=[[] for i in range(len(DOC))]
   h=[]
   for i in range(len(DOC)):
@@ -44,57 +44,65 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
     j=i+DOC[i].head.i-DOC[i].i
     h.append(j)
     f[j].append(i)
-  if CatenaAnalysis:
-    import functools
-    def CatenaInseparability(a,b):
-      if a==b:
-        return 0
-      if a-b>0:
-        return -CatenaInseparability(b,a)
-      if b<NOW:
-        return CatenaInseparabilityLL(a,b)
-      if a>NOW:
-        return CatenaInseparabilityRR(a,b)
-      return CatenaInseparabilityLR(a,b)
-    def CatenaInseparabilityLL(a,b):
-      return 1
-    def CatenaInseparabilityRR(a,b):
-      if DOC[b].dep_.find("compound")==0:
-        if DOC[a].dep_.find("compound")<0:
-          return 1
-      if DOC[b].dep_=="svp": # for TIGER Corpus (de_core_news)
+  def CatenaInseparability(a,b):
+    if a==b:
+      return 0
+    if a-b>0:
+      return -CatenaInseparability(b,a)
+    if b<NOW:
+      return CatenaInseparabilityLL(a,b)
+    if a>NOW:
+      return CatenaInseparabilityRR(a,b)
+    return CatenaInseparabilityLR(a,b)
+  def CatenaInseparabilityLL(a,b):
+    return 1
+  def CatenaInseparabilityRR(a,b):
+    if DOC[b].dep_.find("compound")==0:
+      if DOC[a].dep_.find("compound")<0:
         return 1
-      return -1
-    def CatenaInseparabilityLR(a,b):
-      if DOC[b].dep_.find("punct")==0:
-        return -1
-      if DOC[b].dep_.find("discourse")==0:
-        return -1
-      if DOC[b].dep_.find("parataxis")==0:
-        return -1
-      if DOC[b].dep_.find("mark")==0:
-        return -1
-      if DOC[a].dep_.find("compound")==0:
-        return -1
+    if DOC[b].dep_=="svp": # for TIGER Corpus (de_core_news)
       return 1
-    for NOW,e in enumerate(f):
-      if len(e)<2:
-        continue
-      e.sort(key=functools.cmp_to_key(CatenaInseparability))
+    return -1
+  def CatenaInseparabilityLR(a,b):
+    if DOC[b].dep_.find("punct")==0:
+      return -1
+    if DOC[b].dep_.find("discourse")==0:
+      return -1
+    if DOC[b].dep_.find("parataxis")==0:
+      return -1
+    if DOC[b].dep_.find("mark")==0:
+      return -1
+    if DOC[a].dep_.find("compound")==0:
+      return -1
+    return 1
+  for NOW,e in enumerate(f):
+    if len(e)<2:
+      continue
+    e.sort(key=functools.cmp_to_key(CatenaInseparability))
+  w=[i for i in reversed(range(len(DOC))) if h[i]==-1]
+  j=w
+  while len(w)<len(DOC):
+    k=[]
+    for i in j:
+      k.extend(f[i])
+    w=k+w
+    j=k
+  return f,h,w
+
+def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
+  if type(doc)==str:
+    DOC=makeDoc(doc)
+  else:
+    DOC=doc
+  if len(DOC)==0:
+    return
+  f,h,w=catenaArray(DOC)
   d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(DOC))]
   if CatenaAnalysis:
     for e in f:
       if len(e)>1:
         for i in e[1:]:
            d[i]=0
-  w=[i for i in reversed(range(len(DOC))) if h[i]==-1]
-  g=w
-  while len(w)<len(DOC):
-    k=[]
-    for i in g:
-      k.extend(f[i])
-    w=k+w
-    g=k
   while 0 in d:
     for i in w:
       if d[i]!=0:
@@ -209,4 +217,54 @@ def serve(doc,port=5000):
     httpd.serve_forever()
   except:
     return
+
+def dot(doc):
+  if type(doc)==str:
+    DOC=makeDoc(doc)
+  else:
+    DOC=doc
+  if len(DOC)==0:
+    return None
+  f,h,w=catenaArray(DOC)
+  s='digraph deplacy{\n'
+  s+='node[shape=plaintext;fontsize=14];\n'
+  s+='edge[color=gray,fontname="sans-serif",fontsize=10];\n'
+  s+='word[shape=record,penwidth=0,label="';
+  v=[]
+  j=''
+  for i in range(len(DOC)):
+    s+=j+'|{<'+str(i+1)+'>'
+    j=DOC[i].orth_
+    if j in ['"','|','{','}','<','>','\\']:
+      s+='\\'+j
+      v.append('\\'+j)
+    elif j!='_':
+      s+=j
+      v.append(j)
+    s+='|'+DOC[i].pos_+'}'
+    j='|'
+  s+='"];\n'
+  c=[[i] for i in range(len(DOC))]
+  n=["word:"+str(i+1) for i in range(len(DOC))]
+  x=1
+  t=''
+  for i in w:
+    for j in f[i]:
+      t='x'+str(x)+'->'+n[j]+'[label="'+DOC[j].dep_+'"];\n'+t
+      c[i].extend(c[j])
+      u=""
+      for j in range(min(c[i]),max(c[i])+1):
+        if j in c[i]:
+          u+=v[j]
+        if u.endswith(" "):
+          continue
+        if DOC[j].whitespace_:
+          u+=" "
+      t='x'+str(x)+'[label="'+u.rstrip()+'"];x'+str(x)+'->'+n[i]+';\n'+t
+      n[i]='x'+str(x)
+      x+=1
+    if h[i]==-1:
+      t='r'+str(i)+'[fontname="sans-serif",fontsize=10,fixedsize=true,height=.1,label="root"];r'+str(i)+'->'+n[i]+';\n'+t
+  s+=t+'}\n'
+  return s
 

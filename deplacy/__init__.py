@@ -1,3 +1,3 @@
-from .deplacy import render,serve
+from .deplacy import render,serve,dot
 
-__all__=[ render,serve ]
+__all__=[ render,serve,dot ]
