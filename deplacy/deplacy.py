@@ -241,6 +241,8 @@ def dot(doc):
     elif j!='_':
       t+=j
       v.append(j)
+    else:
+      v.append('')
     t+='|'+DOC[i].pos_+'}'
     j='|'
   t+='"];\n'
