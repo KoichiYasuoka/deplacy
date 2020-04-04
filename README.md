@@ -38,7 +38,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ## Visualization examples
 
-* `deplacy.render()`
+### `deplacy.render()`
 
 ![deplacy.render()](https://raw.githubusercontent.com/KoichiYasuoka/deplacy/master/render.png)
 
