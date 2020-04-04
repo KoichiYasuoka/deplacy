@@ -249,7 +249,12 @@ def dot(doc):
   x=1
   for i in w:
     for j in f[i]:
-      t='x'+str(x)+'->'+n[j]+'[label="'+DOC[j].dep_+'"];\n'+t
+      p='x'+str(x)+'->'+n[i]+';'
+      q='x'+str(x)+'->'+n[j]+'[label="'+DOC[j].dep_+'"];'
+      if i<j:
+        t=p+q+'\n'+t
+      else:
+        t=q+p+'\n'+t
       c[i].extend(c[j])
       u=""
       for j in range(min(c[i]),max(c[i])+1):
@@ -259,7 +264,7 @@ def dot(doc):
           continue
         if DOC[j].whitespace_:
           u+=" "
-      t='x'+str(x)+'[label="'+u.rstrip()+'"];x'+str(x)+'->'+n[i]+';\n'+t
+      t='x'+str(x)+'[label="'+u.rstrip()+'"];\n'+t
       n[i]='x'+str(x)
       x+=1
     if h[i]==-1:
