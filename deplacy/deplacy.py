@@ -229,25 +229,24 @@ def dot(doc):
   s='digraph deplacy{\n'
   s+='node[shape=plaintext;fontsize=14];\n'
   s+='edge[color=gray,fontname="sans-serif",fontsize=10];\n'
-  s+='word[shape=record,penwidth=0,label="';
+  t='word[shape=record,penwidth=0,label="';
   v=[]
   j=''
   for i in range(len(DOC)):
-    s+=j+'|{<'+str(i+1)+'>'
+    t+=j+'|{<'+str(i+1)+'>'
     j=DOC[i].orth_
     if j in ['"','|','{','}','<','>','\\']:
-      s+='\\'+j
+      t+='\\'+j
       v.append('\\'+j)
     elif j!='_':
-      s+=j
+      t+=j
       v.append(j)
-    s+='|'+DOC[i].pos_+'}'
+    t+='|'+DOC[i].pos_+'}'
     j='|'
-  s+='"];\n'
+  t+='"];\n'
   c=[[i] for i in range(len(DOC))]
   n=["word:"+str(i+1) for i in range(len(DOC))]
   x=1
-  t=''
   for i in w:
     for j in f[i]:
       t='x'+str(x)+'->'+n[j]+'[label="'+DOC[j].dep_+'"];\n'+t
