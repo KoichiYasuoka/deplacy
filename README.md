@@ -32,6 +32,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ## Other usages
 
+* [Deutsch](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/de.md)
 * [English](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/en.md)
 * [日本語](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ja.md)
 * [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/lzh.md)
@@ -39,6 +40,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ## Notebook templates for Google Colaboratory
 
+* [Deutsch](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/de.ipynb)
 * [English](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/en.ipynb)
 * [日本語](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ja.ipynb)
 * [漢文/文言文](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/lzh.ipynb)
