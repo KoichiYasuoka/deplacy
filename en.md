@@ -1,4 +1,4 @@
-# Syntax analysis by [deplacy](https://github.com/KoichiYasuoka/deplacy/blob/master/README.md)
+# Syntax analysis by [deplacy](https://koichiyasuoka.github.io/deplacy/)
 
 ## Usage with [Stanza](https://stanfordnlp.github.io/stanza)
 

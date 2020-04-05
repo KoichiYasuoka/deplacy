@@ -1,4 +1,4 @@
-# 使[deplacy](https://github.com/KoichiYasuoka/deplacy/blob/master/README.md)析句
+# 使[deplacy](https://koichiyasuoka.github.io/deplacy/)析句
 
 ## 於[UD-Kanbun](https://github.com/KoichiYasuoka/UD-Kanbun)
 

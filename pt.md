@@ -1,4 +1,4 @@
-# [deplacy](https://github.com/KoichiYasuoka/deplacy/blob/master/README.md) para análise sintática
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) para análise sintática
 
 ## com [spaCy](https://spacy.io/)
 
