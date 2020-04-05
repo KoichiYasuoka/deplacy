@@ -7,6 +7,7 @@ from http import HTTPStatus
 
 PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
+EDITOR_URL="https://koichiyasuoka.github.io/deplacy/deplacy/editor.html"
 TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
@@ -201,12 +202,17 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
     self.wfile.write(b)
 
 def serve(doc,port=5000):
-  import sys
-  from http.server import HTTPServer
   if type(doc)==str:
     c=doc
   else:
     c="".join("\t".join([str(t.i+1),t.orth_,t.lemma_,t.pos_,t.tag_,"_",str(0 if t.head==t else t.head.i+1),t.dep_,"_","_" if t.whitespace_ else "SpaceAfter=No"])+"\n" for t in doc)
+  if port==None:
+    from IPython.display import IFrame,display
+    from urllib.parse import quote
+    display(IFrame(src=EDITOR_URL+"#"+quote(c),width="100%",height="400"))
+    return
+  import sys
+  from http.server import HTTPServer
   f=TEMPFILE
   f.seek(0)
   f.truncate(0)
