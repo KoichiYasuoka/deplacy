@@ -1,9 +1,8 @@
 <!DOCTYPE html><head><meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>CoNLL-U SVG Editor by Koichi Yasuoka, June 15, 2019.</title>
+<title>deplacy CoNLL-U editor</title>
 <script src="conllusvgview.js"></script>
 <script src="conllusvgedit.js"></script>
-<script src="conllusvgload.js"></script>
 <script type="text/javascript">
 function editorCheckURL(textid){
   var tx=document.getElementById(textid);
@@ -36,11 +35,6 @@ conllusvg.insertTextline=function(textid,i,j,t){
 </script>
 </head>
 <body>
-<table noborder><tr><td nowrap>
-<input type="button" value="load CoNLL-U" onclick="conllusvg.loadLocal('conllu')" />
-<input type="button" value="save CoNLL-U" onclick="conllusvg.saveLocal('conllu')" />
-<text id="status" />
-</td></tr></table>
 <textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
 1	I	I	PRON	_	_	2	nsubj	_	_
 2	have	have	VERB	_	_	0	root	_	_
