@@ -58,9 +58,9 @@ name      NOUN  ═╝<╝             ║ dobj
 pip install deplacy
 ```
 
-You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately.
+You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately. For Google Colaboratories, please follow (and edit) the templates shown below.
 
-## Notebook templates for Google Colaboratory
+## Templates for Google Colaboratory
 
 * [Deutsch](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/de.ipynb)
 * [English](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/en.ipynb)
