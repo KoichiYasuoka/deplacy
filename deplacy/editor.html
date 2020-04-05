@@ -1,0 +1,53 @@
+<!DOCTYPE html><head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>CoNLL-U SVG Editor by Koichi Yasuoka, June 15, 2019.</title>
+<script src="conllusvgview.js"></script>
+<script src="conllusvgedit.js"></script>
+<script src="conllusvgload.js"></script>
+<script type="text/javascript">
+function editorCheckURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1))+"\n";
+  if(tx.value==null)
+    tx.textContent=h;
+  else
+    tx.value=h;
+}
+function editorChangeURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href+"#";
+  var i=h.indexOf("#");
+  var v=tx.value;
+  if(v==null)
+    v=tx.textContent;
+  location.href=h.substring(0,i+1)+encodeURIComponent(v);
+}
+editorInsertTextline=conllusvg.insertTextline
+conllusvg.insertTextline=function(textid,i,j,t){
+  editorInsertTextline(textid,i,j,t);
+  editorChangeURL(textid);
+}
+</script>
+</head>
+<body>
+<table noborder><tr><td nowrap>
+<input type="button" value="load CoNLL-U" onclick="conllusvg.loadLocal('conllu')" />
+<input type="button" value="save CoNLL-U" onclick="conllusvg.saveLocal('conllu')" />
+<text id="status" />
+</td></tr></table>
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+1	I	I	PRON	_	_	2	nsubj	_	_
+2	have	have	VERB	_	_	0	root	_	_
+3	a	a	DET	_	_	4	det	_	_
+4	pen	pen	NOUN	_	_	2	obj	_	SpaceAfter=No
+5	.	.	PUNCT	_	_	2	punct	_	_
+</textarea>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu')">
+</svg>
+</body>
