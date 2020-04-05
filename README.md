@@ -37,6 +37,13 @@ name      NOUN  ═╝<╝             ║ dobj
 * [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/lzh.md)
 * [Português](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/pt.md)
 
+## Notebook templates for Google Colaboratory
+
+* [English](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/en.ipynb)
+* [日本語](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ja.ipynb)
+* [漢文/文言文](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/lzh.ipynb)
+* [Português](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/pt.ipynb)
+
 ## Visualization examples
 
 ### `deplacy.render()`
