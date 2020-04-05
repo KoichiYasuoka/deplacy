@@ -32,10 +32,10 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ## Other usages
 
-* [English](https://github.com/KoichiYasuoka/deplacy/blob/master/en.md)
-* [日本語](https://github.com/KoichiYasuoka/deplacy/blob/master/ja.md)
-* [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/lzh.md)
-* [Português](https://github.com/KoichiYasuoka/deplacy/blob/master/pt.md)
+* [English](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/en.md)
+* [日本語](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ja.md)
+* [漢文/文言文](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/lzh.md)
+* [Português](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/pt.md)
 
 ## Visualization examples
 
