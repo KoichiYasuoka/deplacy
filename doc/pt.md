@@ -2,7 +2,7 @@
 
 ## com [spaCy](https://spacy.io/)
 
-```pt
+```py
 >>> import spacy
 >>> nlp=spacy.load("pt_core_news_sm")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
@@ -20,7 +20,7 @@ medo NOUN  <╝         ║ obj
 
 ## com [Stanza](https://stanfordnlp.github.io/stanza)
 
-```pt
+```py
 >>> import stanza
 >>> nlp=stanza.Pipeline("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
@@ -40,7 +40,7 @@ medo NOUN  <╝         ║ obj
 
 ## com [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
-```pt
+```py
 >>> from cube.api import Cube
 >>> nlp=Cube()
 >>> nlp.load("pt")
@@ -60,7 +60,7 @@ medo NOUN  <╝         ║ obj
 
 ## com [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
-```pt
+```py
 >>> import spacy_udpipe
 >>> nlp=spacy_udpipe.load("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")

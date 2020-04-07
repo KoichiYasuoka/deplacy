@@ -2,7 +2,7 @@
 
 ## 和[Stanza](https://stanfordnlp.github.io/stanza)
 
-```pt
+```py
 >>> import stanza
 >>> nlp=stanza.Pipeline("zh-hans")
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")

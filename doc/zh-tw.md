@@ -2,7 +2,7 @@
 
 ## 和[Stanza](https://stanfordnlp.github.io/stanza)
 
-```pt
+```py
 >>> import stanza
 >>> nlp=stanza.Pipeline("zh-hant")
 >>> doc=nlp("夫革命之有破壞，與革命之有建設，固相因而至，相輔而行者也。")
@@ -36,7 +36,7 @@
 
 ## 和[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
-```pt
+```py
 >>> import spacy_udpipe
 >>> nlp=spacy_udpipe.load("zh")
 >>> doc=nlp("夫革命之有破壞，與革命之有建設，固相因而至，相輔而行者也。")
@@ -68,7 +68,7 @@
 
 ## 和[NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
-```pt
+```py
 >>> from cube.api import Cube
 >>> nlp=Cube()
 >>> nlp.load("zh")
