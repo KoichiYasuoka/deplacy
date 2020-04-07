@@ -62,10 +62,11 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("fr")
+>>> nlp=spacy_udpipe.load("fr").tokenizer.model
 >>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(doc)
+>>> deplacy.render(d)
 L'        DET   <╗           det
 essentiel NOUN  ═╝<══════╗   nsubj
 est       AUX   <══════╗ ║   cop

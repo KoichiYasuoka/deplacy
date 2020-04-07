@@ -62,10 +62,11 @@ medo NOUN  <╝         ║ obj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("pt")
+>>> nlp=spacy_udpipe.load("pt").tokenizer.model
 >>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(doc)
+>>> deplacy.render(d)
 Eu   PRON  <══════════╗   nsubj
 quis VERB  ═════════╗═╝═╗ ROOT
 amar VERB  ═══════╗<╝   ║ xcomp
