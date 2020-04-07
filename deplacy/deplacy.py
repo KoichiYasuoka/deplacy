@@ -12,6 +12,7 @@ TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
   DOC=[]
+  misc=""
   for t in doc.split("\n"):
     x=t.split("\t")
     if len(x)!=10:
@@ -26,7 +27,15 @@ def makeDoc(doc):
     s.head=j
     s.dep_=x[7]
     s.whitespace_=(x[9].find("SpaceAfter=No")<0)
+    if s.whitespace_:
+      i=x[9].find("start_char=")
+      if i>=0:
+        j=x[9].find("|",i)
+        k=x[9][i+5:] if j<0 else x[9][i+5:j]
+        if misc.find("end"+k)>=0:
+          DOC[-1].whitespace_=False
     DOC.append(s)
+    misc=x[9]
   for i,t in enumerate(DOC):
     if t.head==0:
       t.head=t
