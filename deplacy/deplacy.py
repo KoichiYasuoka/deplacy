@@ -214,7 +214,12 @@ def serve(doc,port=5000):
   if type(doc)==str:
     c=doc
   else:
-    c="".join("\t".join([str(t.i+1),t.orth_,t.lemma_,t.pos_,t.tag_,"_",str(0 if t.head==t else t.head.i+1),t.dep_,"_","_" if t.whitespace_ else "SpaceAfter=No"])+"\n" for t in doc)
+    c=""
+    for t in doc:
+      c+=str(t.i+1)
+      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,"",str(0 if t.head==t else t.head.i+1),t.dep_,"","" if t.whitespace_ else "SpaceAfter=No"]:
+        c+="\t_" if i.strip()=="" else "\t"+i
+      c+="\n"
   if port==None:
     from IPython.display import IFrame,display
     from urllib.parse import quote
