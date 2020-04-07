@@ -66,36 +66,3 @@
 。   PUNCT <══════════════════╝ punct
 ```
 
-## 和[NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("zh")
->>> doc=nlp("夫革命之有破壞，與革命之有建設，固相因而至，相輔而行者也。".replace("，",",").replace("。","."))
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
->>> import deplacy
->>> deplacy.render(d)
-夫   NOUN  <══╗               nmod
-革命 NOUN  ═╗═╝<╗             det
-之   PART  <╝   ║             case:dec
-有   VERB  ═════╝<╗           cop
-破壞 NOUN  ═══════╝<══════╗   dep
-,    PUNCT <════════════╗ ║   punct
-與   ADP   <════╗       ║ ║   case
-革命 NOUN  ═╗<╗ ║       ║ ║   det
-之   PART  <╝ ║ ║       ║ ║   case:dec
-有   VERB  ═╗═╝═╝<════╗ ║ ║   dep
-建設 NOUN  <╝         ║ ║ ║   obj
-,    PUNCT <════════╗ ║ ║ ║   punct
-固相 NOUN  <══╗     ║ ║ ║ ║   advmod
-因而 ADV   <╗ ║     ║ ║ ║ ║   mark
-至   VERB  ═╝═╝<╗   ║ ║ ║ ║   acl
-,    PUNCT <╗   ║   ║ ║ ║ ║   punct
-相輔 VERB  ═╝═══╝<╗ ║ ║ ║ ║   dep
-而   ADV   <══╗   ║ ║ ║ ║ ║   mark
-行者 NOUN  <╗ ║   ║ ║ ║ ║ ║   nsubj
-也   ADJ   ═╝═╝═══╝═╝═╝═╝═╝═╗ root
-.    PUNCT <════════════════╝ punct
-```
-
