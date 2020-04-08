@@ -12,6 +12,7 @@ TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
   DOC=[]
+  m=[]
   misc=""
   for t in doc.split("\n"):
     x=t.split("\t")
@@ -20,7 +21,14 @@ def makeDoc(doc):
     try:
       i,j=int(x[0]),int(x[6])
     except:
-      continue
+      try:
+        i=x[0].index("-")
+        j=int(x[0][0:i])
+        k=int(x[0][i+1:])
+        m.append((len(DOC),j,k,x[1]))
+        continue
+      except:
+        continue
     s=type("",(object,),{"i":i})
     s.orth_=x[1]
     s.pos_=x[3]
@@ -36,6 +44,9 @@ def makeDoc(doc):
           DOC[-1].whitespace_=False
     DOC.append(s)
     misc=x[9]
+  for i,j,k,f in reversed(m):
+    offset=i-DOC[i].i
+    DOC[k+offset].contract=(f,[i+offset for i in range(j,k+1)])
   for i,t in enumerate(DOC):
     if t.head==0:
       t.head=t
@@ -282,6 +293,11 @@ def dot(doc):
       for j in range(min(c[i]),max(c[i])+1):
         if j in c[i]:
           u+=v[j]
+          if hasattr(DOC[j],"contract"):
+            p,q=DOC[j].contract
+            r="".join(v[k]+" " if DOC[k].whitespace_ else v[k] for k in q).rstrip()
+            if u.endswith(r):
+              u=u[0:-len(r)]+p
         if u.endswith(" "):
           continue
         if DOC[j].whitespace_:
