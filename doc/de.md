@@ -40,10 +40,11 @@ aus   ADP   <══╝     ║ compound:prt
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("de")
+>>> nlp=spacy_udpipe.load("de").tokenizer.model
 >>> doc=nlp("Er sieht sehr jung aus.")
+>>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(doc)
+>>> deplacy.render(d)
 Er    PRON  <══════╗   nsubj
 sieht VERB  ═══╗═╗═╝═╗ ROOT
 sehr  ADV   <╗ ║ ║   ║ advmod
