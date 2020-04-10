@@ -18,7 +18,7 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
-## com [Stanza](https://stanfordnlp.github.io/stanza)
+## avec [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
 >>> import stanza
