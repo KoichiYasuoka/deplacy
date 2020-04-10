@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/)句法分析
 
-## 和[Stanza](https://stanfordnlp.github.io/stanza)
+## 用[Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
 >>> import stanza
