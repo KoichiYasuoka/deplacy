@@ -59,7 +59,7 @@ def catenaArray(DOC):
   f=[[] for i in range(len(DOC))]
   h=[]
   for i in range(len(DOC)):
-    if DOC[i].dep_.lower()=="root":
+    if DOC[i].dep_.lower()=="root" or DOC[i].head==DOC[i]:
       h.append(-1)
       continue
     j=i+DOC[i].head.i-DOC[i].i
