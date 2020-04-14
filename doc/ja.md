@@ -160,26 +160,26 @@
 >>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
 >>> import deplacy
 >>> deplacy.render(doc)
-國       SYM   <╗               compound
-境       PROPN ═╝═╗<╗           nmod
-の       ADP   <══╝ ║           case
-トンネル NOUN  ═╗═══╝<╗         obj
-を       ADP   <╝     ║         case
-拔       SYM   <╗     ║         nsubj
-ける     VERB  ═╝═════╝═╗═╗<╗   advcl
-と       ADP   <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-窓       NOUN  ═╗<╗         ║   nmod
-の       ADP   <╝ ║         ║   case
-外       NOUN  ═╗═╝<╗       ║   nmod
-の       ADP   <╝   ║       ║   case
-夜       NOUN  ═╗<╗ ║       ║   nmod
-の       ADP   <╝ ║ ║       ║   case
-底       NOUN  ═╗═╝═╝<╗     ║   nsubj
-が       ADP   <╝     ║     ║   case
-白く     ADJ   ═╗<╗   ║     ║   advcl
-な       PART  <╝ ║   ║     ║   mark
-つた     NOUN  ═══╝═══╝═════╝═╗ ROOT
-。       PUNCT <══════════════╝ punct
+國境     SYM   ═╗<╗           nmod
+の       ADP   <╝ ║           case
+トンネル NOUN  ═╗═╝<══════╗   obj
+を       ADP   <╝         ║   case
+拔       SYM   <╗         ║   compound
+け       NOUN  ═╝═╗═╗═╗<╗ ║   obl
+る       AUX   <══╝ ║ ║ ║ ║   cop
+と       ADP   <════╝ ║ ║ ║   case
+、       PUNCT <══════╝ ║ ║   punct
+窓       NOUN  ═╗<╗     ║ ║   nmod
+の       ADP   <╝ ║     ║ ║   case
+外       NOUN  ═╗═╝<╗   ║ ║   nmod
+の       ADP   <╝   ║   ║ ║   case
+夜       NOUN  ═╗<╗ ║   ║ ║   nmod
+の       ADP   <╝ ║ ║   ║ ║   case
+底       NOUN  ═╗═╝═╝<╗ ║ ║   nsubj
+が       ADP   <╝     ║ ║ ║   case
+白く     ADJ   <══╗   ║ ║ ║   advcl
+なつ     ADJ   ═╗═╝═══╝═╝═╝═╗ ROOT
+た       AUX   <╝           ║ aux
+。       PUNCT <════════════╝ punct
 ```
 
