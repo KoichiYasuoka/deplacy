@@ -18,6 +18,24 @@ medo NOUN  <╝         ║ obj
 .    PUNCT <══════════╝ punct
 ```
 
+## com [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Eu   PRON  <════════╗   nsubj
+quis VERB  ═╗═════╗═╝═╗ root
+amar VERB  <╝     ║   ║ xcomp
+,    PUNCT <════╗ ║   ║ punct
+mas  CCONJ <══╗ ║ ║   ║ cc
+tive VERB  ═╗═╝═╝<╝   ║ conj
+medo NOUN  <╝         ║ obj
+.    PUNCT <══════════╝ punct
+```
+
 ## com [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py

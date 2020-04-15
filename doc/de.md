@@ -1,5 +1,21 @@
 # Syntaxanalyse durch [Deplacy](https://koichiyasuoka.github.io/deplacy/)
 
+## mit [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    PRON  <══════╗   nsubj
+sieht VERB  ═══╗═╗═╝═╗ root
+sehr  ADV   <╗ ║ ║   ║ advmod
+jung  ADJ   ═╝ ║<╝   ║ xcomp
+aus   ADP   <══╝     ║ compound:prt
+.     PUNCT <════════╝ punct
+```
+
 ## mit [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py

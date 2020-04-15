@@ -1,5 +1,24 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) для синтаксического анализа
 
+## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <════════════╗   nsubj
+слезам NOUN  <══════════╗ ║   iobj
+не     PART  <════════╗ ║ ║   advmod
+верила VERB  ═══════╗═╝═╝═╝═╗ root
+,      PUNCT <════╗ ║       ║ punct
+а      CCONJ <══╗ ║ ║       ║ cc
+верила VERB  ═╗═╝═╝<╝       ║ conj
+любви  NOUN  <╝             ║ iobj
+.      PUNCT <══════════════╝ punct
+```
+
 ## с [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py

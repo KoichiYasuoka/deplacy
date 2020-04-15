@@ -77,3 +77,20 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'essentiel PROPN <════════╗   nsubj
+est         AUX   <══════╗ ║   cop
+invisible   ADJ   ═════╗═╝═╝═╗ root
+pour        ADP   <══╗ ║     ║ case
+les         DET   <╗ ║ ║     ║ det
+yeux        NOUN  ═╝═╝<╝     ║ obl:mod
+.           PUNCT <══════════╝ punct
+```
+
