@@ -152,6 +152,38 @@
 。       PUNCT <══════════════╝ punct
 ```
 
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
+
+```py
+>>> import ja_mecab_udify
+>>> nlp=ja_mecab_udify.load()
+>>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
+>>> import deplacy
+>>> deplacy.render(doc)
+國       NOUN  <╗               compound
+境       NOUN  ═╝═╗<╗           nmod
+の       ADP   <══╝ ║           case
+トンネル NOUN  ═╗═══╝<╗         obj
+を       ADP   <╝     ║         case
+拔       VERB  ═╗═════╝═╗═╗<╗   advcl
+ける     AUX   <╝       ║ ║ ║   aux
+と       SCONJ <════════╝ ║ ║   mark
+、       PUNCT <══════════╝ ║   punct
+窓       NOUN  ═╗<╗         ║   nmod
+の       ADP   <╝ ║         ║   case
+外       NOUN  ═╗═╝<╗       ║   nmod
+の       ADP   <╝   ║       ║   case
+夜       NOUN  ═╗═══╝<╗     ║   nmod
+の       ADP   <╝     ║     ║   case
+底       NOUN  ═╗═════╝<╗   ║   nsubj
+が       ADP   <╝       ║   ║   case
+白く     ADJ   ═╗═══════╝<╗ ║   advcl
+な       AUX   <╝         ║ ║   aux
+つ       VERB  ═╗═════════╝═╝═╗ root
+た       AUX   <╝             ║ aux
+。       PUNCT <══════════════╝ punct
+```
+
 ## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
 
 ```py
