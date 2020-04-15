@@ -155,8 +155,8 @@
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
 
 ```py
->>> import ja_mecab_udify
->>> nlp=ja_mecab_udify.load()
+>>> import spacy
+>>> nlp=spacy.load("ja_mecab_udify")
 >>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
 >>> import deplacy
 >>> deplacy.render(doc)
