@@ -152,7 +152,38 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)のfugashi/unidic-lite版で解析
+
+```py
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("ja",punct_chars=["。"])
+>>> doc=nlp("國境のトンネルを拔けると、窓の外の夜の底が白くなつた。")
+>>> import deplacy
+>>> deplacy.render(doc)
+國       NOUN  <╗               compound
+境       NOUN  ═╝═╗<╗           nmod
+の       ADP   <══╝ ║           case
+トンネル NOUN  ═╗═══╝<╗         obj
+を       ADP   <╝     ║         case
+拔け     VERB  ═╗═════╝═╗═╗<╗   advcl
+る       AUX   <╝       ║ ║ ║   aux
+と       SCONJ <════════╝ ║ ║   mark
+、       PUNCT <══════════╝ ║   punct
+窓       NOUN  ═╗<╗         ║   nmod
+の       ADP   <╝ ║         ║   case
+外       NOUN  ═╗═╝<╗       ║   nmod
+の       ADP   <╝   ║       ║   case
+夜       NOUN  ═╗═══╝<╗     ║   nmod
+の       ADP   <╝     ║     ║   case
+底       NOUN  ═╗═════╝<╗   ║   nsubj
+が       ADP   <╝       ║   ║   case
+白く     ADJ   ═╗═╗═════╝═══╝═╗ root
+なつ     AUX   <╝ ║           ║ aux
+た       AUX   <══╝           ║ aux
+。       PUNCT <══════════════╝ punct
+```
+
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)のMeCab/ipadic版で解析
 
 ```py
 >>> import spacy
