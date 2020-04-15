@@ -21,8 +21,8 @@ alma   NOUN  ═╝<╝       ║ nmod
 ## con [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("es")
 >>> doc=nlp("La pluma es la lengua del alma.")
 >>> import deplacy
 >>> deplacy.render(doc)

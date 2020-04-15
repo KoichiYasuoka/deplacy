@@ -21,8 +21,8 @@ medo NOUN  <╝         ║ obj
 ## com [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
 >>> import deplacy
 >>> deplacy.render(doc)

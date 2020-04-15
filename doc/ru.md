@@ -3,8 +3,8 @@
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("ru")
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)

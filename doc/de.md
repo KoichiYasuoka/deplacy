@@ -3,8 +3,8 @@
 ## mit [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("de")
 >>> doc=nlp("Er sieht sehr jung aus.")
 >>> import deplacy
 >>> deplacy.render(doc)
