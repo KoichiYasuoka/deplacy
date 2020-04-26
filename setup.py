@@ -6,7 +6,7 @@ URL="https://github.com/KoichiYasuoka/deplacy"
 
 setuptools.setup(
   name="deplacy",
-  version="1.1.5",
+  version="1.1.6",
   description="CUI-based Tree Visualizer for Universal Dependencies and Immediate Catena Analysis",
   long_description=long_description,
   long_description_content_type="text/markdown",
