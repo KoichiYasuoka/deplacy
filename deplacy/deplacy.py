@@ -149,9 +149,11 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
     p[min(i,k)][j]|=9
     p[max(i,k)][j]|=5
     for l in range(j):
-      p[k][l]|=3
+      if p[k][l]!=12:
+          p[k][l]|=3
     for l in range(min(i,k)+1,max(i,k)):
-      p[l][j]|=12
+      if p[l][j]!=3:
+          p[l][j]|=12
   for i in range(len(DOC)):
     if h[i]>=0:
       j=d[i]*2-2
@@ -171,7 +173,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
   if CatenaAnalysis:
     u[7]=u[5]
     u[11]=u[9]
-    u[15]=u[13]
+    u[15]=u[12]
   x=[]
   i=[]
   for t in DOC:
