@@ -76,6 +76,12 @@ def catenaArray(DOC):
       return CatenaInseparabilityRR(a,b)
     return CatenaInseparabilityLR(a,b)
   def CatenaInseparabilityLL(a,b):
+    if DOC[b].dep_=="punct":
+        if DOC[a].dep_!="punct":
+            return -1
+    if DOC[b].dep_ in ["vocative","discourse","dislocated"]:
+        if DOC[a].dep_ not in ["vocative","discourse","dislocated"]:
+            return -1
     return 1
   def CatenaInseparabilityRR(a,b):
     if DOC[b].dep_.find("compound")==0:
