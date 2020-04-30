@@ -76,30 +76,33 @@ def catenaArray(DOC):
       return CatenaInseparabilityRR(a,b)
     return CatenaInseparabilityLR(a,b)
   def CatenaInseparabilityLL(a,b):
-    if DOC[b].dep_=="punct":
-        if DOC[a].dep_!="punct":
+    if DOC[b].dep_.startswith("punct"):
+        if not DOC[a].dep_.startswith("punct"):
             return -1
-    if DOC[b].dep_ in ["vocative","discourse","dislocated"]:
-        if DOC[a].dep_ not in ["vocative","discourse","dislocated"]:
+    if DOC[b].dep_.startswith("discourse"):
+        if not DOC[a].dep_.startswith("discourse"):
+            return -1
+    if DOC[b].dep_.startswith("vocative"):
+        if not DOC[a].dep_.startswith("vocative"):
             return -1
     return 1
   def CatenaInseparabilityRR(a,b):
-    if DOC[b].dep_.find("compound")==0:
-      if DOC[a].dep_.find("compound")<0:
+    if DOC[b].dep_.startswith("compound"):
+      if not DOC[a].dep_.startswith("compound"):
         return 1
     if DOC[b].dep_=="svp": # for TIGER Corpus (de_core_news)
       return 1
     return -1
   def CatenaInseparabilityLR(a,b):
-    if DOC[b].dep_.find("punct")==0:
+    if DOC[b].dep_.startswith("punct"):
       return -1
-    if DOC[b].dep_.find("discourse")==0:
+    if DOC[b].dep_.startswith("discourse"):
       return -1
-    if DOC[b].dep_.find("parataxis")==0:
+    if DOC[b].dep_.startswith("parataxis"):
       return -1
-    if DOC[b].dep_.find("mark")==0:
+    if DOC[b].dep_.startswith("mark"):
       return -1
-    if DOC[a].dep_.find("compound")==0:
+    if DOC[a].dep_.startswith("compound"):
       return -1
     return 1
   for NOW,e in enumerate(f):
