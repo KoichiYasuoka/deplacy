@@ -32,6 +32,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 ## Other usages
 
+* [Dansk](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/da.md)
 * [Deutsch](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/de.md)
 * [English](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/en.md)
 * [Español](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/es.md)
@@ -70,6 +71,7 @@ You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately. For Google
 
 ## Templates for Google Colaboratory
 
+* [Dansk](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/da.ipynb)
 * [Deutsch](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/de.ipynb)
 * [English](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/en.ipynb)
 * [Español](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/es.ipynb)
