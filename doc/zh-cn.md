@@ -40,3 +40,28 @@
 。   PUNCT <════════╝ punct
 ```
 
+## 用[UD-Chinese](https://pypi.org/project/udchinese)
+
+```py
+>>> import udchinese
+>>> nlp=udchinese.load()
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> d=str(doc)
+>>> import deplacy
+>>> deplacy.render(d)
+不管 ADP   <════╗           case
+黑   NOUN  <╗   ║           compound
+猫   NOUN  ═╝<╗ ║           nmod
+白   NOUN  <╗ ║ ║           compound
+猫   NOUN  ═╝═╝═╝<╗         obl
+，   PUNCT <══════║═╗       punct
+捉   VERB  ═══════╝═╝═╗<╗   csubj
+到   VERB  <══════════╝ ║   mark
+老   NOUN  <╗           ║   compound
+鼠   NOUN  ═╝<╗         ║   nsubj
+就是 VERB  ═══╝<╗       ║   cop
+好   VERB  <╗   ║       ║   amod
+猫   NOUN  ═╝═══╝═══════╝═╗ root
+。   PUNCT <══════════════╝ punct
+```
+
