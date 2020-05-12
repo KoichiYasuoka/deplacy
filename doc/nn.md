@@ -1,4 +1,4 @@
-# [deplacy](https://koichiyasuoka.github.io/deplacy/) for syntaktisk analyse
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) for syntaktisk analyse på nynorsk
 
 ## med [Stanza](https://stanfordnlp.github.io/stanza)
 
