@@ -161,32 +161,6 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
-
-```py
->>> import camphr
->>> nlp=camphr.load("knp")
->>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
->>> import deplacy
->>> deplacy.render(doc)
-國       SYM   <╗                 compound
-境       NOUN  ═╝═╗<╗             nsubj
-の       ADP   <══╝ ║             case
-長い     ADJ   ═════╝<╗           acl
-トンネル NOUN  ═╗═════╝<╗         obj
-を       ADP   <╝       ║         case
-拔       SYM   <╗       ║         nsubj
-ける     VERB  ═╝═══════╝═╗═╗<╗   advcl
-と       ADP   <══════════╝ ║ ║   mark
-、       PUNCT <════════════╝ ║   punct
-そこ     PRON  ═╗<══╗         ║   nsubj
-は       ADP   <╝   ║         ║   case
-雪國     NOUN  ═╗<╗ ║         ║   obl
-で       ADP   <╝ ║ ║         ║   case
-あつた   NOUN  ═══╝═╝═════════╝═╗ ROOT
-。       PUNCT <════════════════╝ punct
-```
-
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
 
 ```py
@@ -212,5 +186,31 @@
 で     ADP   <╝ ║ ║       ║   case
 あつた NOUN  ═══╝═╝═══════╝═╗ root
 。     PUNCT <══════════════╝ punct
+```
+
+## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
+
+```py
+>>> import camphr
+>>> nlp=camphr.load("knp")
+>>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
+>>> import deplacy
+>>> deplacy.render(doc)
+國       SYM   <╗                 compound
+境       NOUN  ═╝═╗<╗             nsubj
+の       ADP   <══╝ ║             case
+長い     ADJ   ═════╝<╗           acl
+トンネル NOUN  ═╗═════╝<╗         obj
+を       ADP   <╝       ║         case
+拔       SYM   <╗       ║         nsubj
+ける     VERB  ═╝═══════╝═╗═╗<╗   advcl
+と       ADP   <══════════╝ ║ ║   mark
+、       PUNCT <════════════╝ ║   punct
+そこ     PRON  ═╗<══╗         ║   nsubj
+は       ADP   <╝   ║         ║   case
+雪國     NOUN  ═╗<╗ ║         ║   obl
+で       ADP   <╝ ║ ║         ║   case
+あつた   NOUN  ═══╝═╝═════════╝═╗ ROOT
+。       PUNCT <════════════════╝ punct
 ```
 
