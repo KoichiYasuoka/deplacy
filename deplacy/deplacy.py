@@ -11,10 +11,20 @@ EDITOR_URL="https://koichiyasuoka.github.io/deplacy/deplacy/editor.html"
 TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
+  s=str(type(doc))
+  if s.find("spacy")==8:
+    return doc
+  elif s.find("stanza")==8:
+    from stanza.utils.conll import CoNLL
+    d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
+  elif s.find("list")==8:
+    d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+  else:
+    d=str(doc)
   DOC=[]
   m=[]
   misc=""
-  for t in doc.split("\n"):
+  for t in d.split("\n"):
     x=t.split("\t")
     if len(x)!=10:
       continue
@@ -120,10 +130,7 @@ def catenaArray(DOC):
   return f,h,w
 
 def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
-  if type(doc)==str:
-    DOC=makeDoc(doc)
-  else:
-    DOC=doc
+  DOC=makeDoc(doc)
   if len(DOC)==0:
     return
   f,h,w=catenaArray(DOC)
@@ -233,15 +240,21 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
     self.wfile.write(b)
 
 def serve(doc,port=5000):
-  if type(doc)==str:
-    c=doc
-  else:
+  s=str(type(doc))
+  if s.find("spacy")==8:
     c=""
     for t in doc:
       c+=str(t.i+1)
       for i in [t.orth_,t.lemma_,t.pos_,t.tag_,"",str(0 if t.head==t else t.head.i+1),t.dep_,"","" if t.whitespace_ else "SpaceAfter=No"]:
         c+="\t_" if i.strip()=="" else "\t"+i
       c+="\n"
+  elif s.find("stanza")==8:
+    from stanza.utils.conll import CoNLL
+    c=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
+  elif s.find("list")==8:
+    c="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+  else:
+    c=str(doc)
   if port==None:
     from IPython.display import IFrame,display
     from urllib.parse import quote
@@ -261,10 +274,7 @@ def serve(doc,port=5000):
     return
 
 def dot(doc):
-  if type(doc)==str:
-    DOC=makeDoc(doc)
-  else:
-    DOC=doc
+  DOC=makeDoc(doc)
   if len(DOC)==0:
     return None
   f,h,w=catenaArray(DOC)
