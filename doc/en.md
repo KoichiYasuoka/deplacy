@@ -26,10 +26,8 @@ name      NOUN  ═╝<╝             ║ obj
 >>> import stanza
 >>> nlp=stanza.Pipeline("en")
 >>> doc=nlp("I saw a horse yesterday which had no name.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 I         PRON  <══════════════╗   nsubj
 saw       VERB  ═══════════╗═╗═╝═╗ root
 a         DET   <════════╗ ║ ║   ║ det
@@ -49,9 +47,8 @@ name      NOUN  ═╝<╝             ║ obj
 >>> nlp=Cube()
 >>> nlp.load("en")
 >>> doc=nlp("I saw a horse yesterday which had no name.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 I         PRON  <══════════════╗   nsubj
 saw       VERB  ═══════════╗═╗═╝═╗ root
 a         DET   <════════╗ ║ ║   ║ det

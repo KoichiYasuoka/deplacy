@@ -30,10 +30,8 @@ granic     NOUN  ═╝═╝<╝             ║ obl
 >>> import stanza
 >>> nlp=stanza.Pipeline("pl")
 >>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Wcale      ADV   <══════════════╗   advmod
 nie        PART  <════════════╗ ║   advmod
 chcemy     VERB  ═══╗═══════╗═╝═╝═╗ root
@@ -57,9 +55,8 @@ granic     NOUN  ═╝═╝<╝           ║ obl
 >>> nlp=Cube()
 >>> nlp.load("pl")
 >>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Wcale      ADV   <══════════════╗   advmod
 nie        PART  <════════════╗ ║   advmod
 chcemy     VERB  ═══╗═══════╗═╝═╝═╗ root
@@ -80,11 +77,10 @@ granic     NOUN  ═╝═╝<╝           ║ obl
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("pl").tokenizer.model
+>>> nlp=spacy_udpipe.load("pl")
 >>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Wcale      ADV   <════════════════╗   advmod
 nie        PART  <══════════════╗ ║   advmod:neg
 chcemy     VERB  ═══╗═════════╗═╝═╝═╗ root

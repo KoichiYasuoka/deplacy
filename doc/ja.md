@@ -6,9 +6,8 @@
 >>> import unidic2ud
 >>> nlp=unidic2ud.load("qkana")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
->>> d=str(doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 國境     NOUN  ═╗<══╗           nmod
 の       ADP   <╝   ║           case
 長い     ADJ   <══╗ ║           acl
@@ -60,10 +59,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("ja")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 國境     PROPN ═╗<╗             obl
 の       ADP   <╝ ║             case
 長い     ADJ   ═══╝<╗           acl
@@ -168,9 +165,8 @@
 >>> nlp=Cube()
 >>> nlp.load("ja")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 國境   PROPN ═╗<╗             obl
 の     ADP   <╝ ║             case
 長い   ADJ   ═══╝<╗           acl

@@ -27,10 +27,8 @@ mej       PRON  ═╝<══╝         ║ obl
 >>> import stanza
 >>> nlp=stanza.Pipeline("sv")
 >>> doc=nlp("Du har förändrat dej och är så långt från mej.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Du        PRON  <══════════════╗   nsubj
 har       AUX   <════════════╗ ║   aux
 förändrat VERB  ═╗═════════╗═╝═╝═╗ root
@@ -51,9 +49,8 @@ mej       PRON  ═╝<╝             ║ obl
 >>> nlp=Cube()
 >>> nlp.load("sv")
 >>> doc=nlp("Du har förändrat dej och är så långt från mej.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Du        PRON  <══════════════╗   nsubj
 har       AUX   <════════════╗ ║   aux
 förändrat VERB  ═╗═════════╗═╝═╝═╗ root
@@ -71,11 +68,10 @@ mej       PRON  ═╝<╝             ║ nmod
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("sv").tokenizer.model
+>>> nlp=spacy_udpipe.load("sv")
 >>> doc=nlp("Du har förändrat dej och är så långt från mej.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Du        PRON  <════════════╗   nsubj
 har       AUX   <══════════╗ ║   aux
 förändrat VERB  ═╗═══════╗═╝═╝═╗ root

@@ -6,9 +6,8 @@
 >>> import udkanbun
 >>> nlp=udkanbun.load(Danku=True)
 >>> doc=nlp("瓜田不納履李下不正冠")
->>> d=str(doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 瓜 NOUN <╗     nmod
 田 NOUN ═╝<══╗ nsubj
 不 ADV  <══╗ ║ advmod
@@ -47,10 +46,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("lzh")
 >>> doc=nlp("瓜田不納履李下不正冠")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 瓜 NOUN <╗           nmod
 田 NOUN ═╝<════════╗ nsubj
 不 ADV  <════════╗ ║ advmod
@@ -69,9 +66,8 @@
 >>> import udchinese
 >>> nlp=udchinese.load()
 >>> doc=nlp("瓜田不納履李下不正冠")
->>> d=str(doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 瓜 NOUN <╗           nmod
 田 NOUN ═╝<══════╗   nsubj
 不 ADV  <══════╗ ║   advmod

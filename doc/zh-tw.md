@@ -6,10 +6,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("zh-hant")
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 希望 NOUN  <══════╗         nsubj
 是   VERB  ═════╗═╝═╗═╗═╗═╗ root
 附麗 VERB  ═╗═╗<╝   ║ ║ ║ ║ xcomp
@@ -98,9 +96,8 @@
 >>> import udchinese
 >>> nlp=udchinese.load()
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
->>> d=str(doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 希   VERB  ═╗═════╗═╗═╗═╗═╗═╗═╗═╗ root
 望   VERB  <╝     ║ ║ ║ ║ ║ ║ ║ ║ mark
 是   PRON  <╗     ║ ║ ║ ║ ║ ║ ║ ║ nsubj

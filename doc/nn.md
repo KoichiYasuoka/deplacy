@@ -6,10 +6,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("nn")
 >>> doc=nlp("For me priser dauden, men me elskar live.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 For    CCONJ <════════════╗   cc
 me     PRON  <══════════╗ ║   nsubj
 priser VERB  ═╗═══════╗═╝═╝═╗ root
@@ -26,11 +24,10 @@ live   NOUN  <╝             ║ obj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("nn").tokenizer.model
+>>> nlp=spacy_udpipe.load("nn")
 >>> doc=nlp("For me priser dauden, men me elskar live.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 For    CCONJ <════════════╗   cc
 me     PRON  <══════════╗ ║   nsubj
 priser VERB  ═╗═══════╗═╝═╝═╗ root

@@ -55,10 +55,8 @@ spia      NOUN  ═╝═╝═╝<╝             ║ conj
 >>> nlp=stanza.Pipeline("it")
 >>> import deplacy
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Chi       PRON  ═════════════════════╗ root
 non       ADV   <════════════════╗   ║ advmod
 beve      VERB  ═══╗═══════════╗═╝═╗<╝ acl:relcl
@@ -82,9 +80,8 @@ spia      NOUN  ═╝═╝═╝<╝           ║   conj
 >>> nlp=Cube()
 >>> nlp.load("it")
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Chi       PRON  ═══════════════╗ root
 non       ADV   <══════════╗   ║ advmod
 beve      VERB  ═══╗═══╗═╗═╝═╗<╝ acl:relcl
@@ -105,11 +102,10 @@ spia      NOUN  ═╝═╝═╝<══╝   ║   conj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("it").tokenizer.model
+>>> nlp=spacy_udpipe.load("it")
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Chi       PRON  <════════════════╗   nsubj
 non       ADV   <══════════════╗ ║   advmod
 beve      VERB  ═══════════╗═╗═╝═╝═╗ root

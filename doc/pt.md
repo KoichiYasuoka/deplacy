@@ -42,10 +42,8 @@ medo NOUN  <╝         ║ obj
 >>> import stanza
 >>> nlp=stanza.Pipeline("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Eu   PRON  <════════╗   nsubj
 quis VERB  ═╗═════╗═╝═╗ root
 amar VERB  <╝     ║   ║ xcomp
@@ -63,9 +61,8 @@ medo NOUN  <╝         ║ obj
 >>> nlp=Cube()
 >>> nlp.load("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Eu   PRON  <════════╗   nsubj
 quis VERB  ═╗═════╗═╝═╗ root
 amar VERB  <╝     ║   ║ xcomp
@@ -80,11 +77,10 @@ medo NOUN  <╝         ║ obj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("pt").tokenizer.model
+>>> nlp=spacy_udpipe.load("pt")
 >>> doc=nlp("Eu quis amar, mas tive medo.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Eu   PRON  <══════════╗   nsubj
 quis VERB  ═════════╗═╝═╗ ROOT
 amar VERB  ═══════╗<╝   ║ xcomp

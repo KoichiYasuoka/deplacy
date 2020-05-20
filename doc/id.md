@@ -6,10 +6,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("id")
 >>> doc=nlp("Di atas langit masih ada langit.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Di     ADP   <══╗     case
 atas   ADP   <╗ ║     case
 langit NOUN  ═╝═╝<╗   obl
@@ -26,9 +24,8 @@ langit NOUN  <╝     ║ obj
 >>> nlp=Cube()
 >>> nlp.load("id")
 >>> doc=nlp("Di atas langit masih ada langit.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Di     ADP   <══╗     case
 atas   NOUN  ═╗═╝<╗   obl
 langit NOUN  <╝   ║   nmod
@@ -42,11 +39,10 @@ langit NOUN  <╝     ║ obj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("id").tokenizer.model
+>>> nlp=spacy_udpipe.load("id")
 >>> doc=nlp("Di atas langit masih ada langit.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Di     ADP   <══╗     case
 atas   NOUN  ═╗═╝<╗   obl
 langit NOUN  <╝   ║   nmod

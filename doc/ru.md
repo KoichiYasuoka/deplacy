@@ -25,10 +25,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("ru")
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Москва PROPN <════════════╗   nsubj
 слезам NOUN  <══════════╗ ║   iobj
 не     PART  <════════╗ ║ ║   advmod
@@ -47,9 +45,8 @@
 >>> nlp=Cube()
 >>> nlp.load("ru")
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Москва NOUN  <══════════════╗ nsubj
 слезам NOUN  <════════════╗ ║ iobj
 не     PART  <══════════╗ ║ ║ advmod
@@ -65,11 +62,10 @@
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("ru").tokenizer.model
+>>> nlp=spacy_udpipe.load("ru")
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Москва PROPN <════════════╗   nsubj
 слезам NOUN  <══════════╗ ║   iobj
 не     PART  <════════╗ ║ ║   advmod

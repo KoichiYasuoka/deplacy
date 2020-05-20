@@ -22,10 +22,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline(lang="ko",package="gsd")
 >>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 홍시     NOUN  ═╗<╗     nsubj
 맛이     NOUN  <╝ ║     flat
 나서     VERB  ═══╝<╗   advcl
@@ -41,9 +39,8 @@
 >>> nlp=Cube()
 >>> nlp.load("ko")
 >>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 홍시     NOUN  ═╗<╗     nsubj
 맛이     NOUN  <╝ ║     flat
 나서     VERB  ═══╝<╗   advcl

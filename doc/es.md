@@ -42,10 +42,8 @@ alma   NOUN  ═╝<╝       ║ nmod
 >>> import stanza
 >>> nlp=stanza.Pipeline("es")
 >>> doc=nlp("La pluma es la lengua del alma.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 La     DET   <╗           det
 pluma  NOUN  ═╝<══════╗   nsubj
 es     AUX   <══════╗ ║   cop
@@ -63,9 +61,8 @@ alma   NOUN  ═╝<╝       ║ nmod
 >>> nlp=Cube()
 >>> nlp.load("es")
 >>> doc=nlp("La pluma es la lengua del alma.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 La     DET   <╗           det
 pluma  NOUN  ═╝<══════╗   nsubj
 es     AUX   <══════╗ ║   cop
@@ -80,11 +77,10 @@ alma   NOUN  ═╝<╝       ║ nmod
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("es").tokenizer.model
+>>> nlp=spacy_udpipe.load("es")
 >>> doc=nlp("La pluma es la lengua del alma.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 La     DET   <╗           det
 pluma  NOUN  ═╝<══════╗   nsubj
 es     AUX   <══════╗ ║   cop

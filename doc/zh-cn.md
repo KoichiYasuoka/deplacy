@@ -6,10 +6,8 @@
 >>> import stanza
 >>> nlp=stanza.Pipeline("zh-hans")
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 不管 ADP   <══╗       case
 黑猫 NOUN  <╗ ║       nmod
 白猫 NOUN  ═╝═╝<══╗   nmod
@@ -67,9 +65,8 @@
 >>> import udchinese
 >>> nlp=udchinese.load()
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> d=str(doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 不管 ADP   <════╗           case
 黑   NOUN  <╗   ║           compound
 猫   NOUN  ═╝<╗ ║           nmod

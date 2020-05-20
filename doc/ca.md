@@ -25,10 +25,8 @@ importància NOUN  ═╝<══╝   ║ obj
 >>> import stanza
 >>> nlp=stanza.Pipeline("ca")
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
->>> from stanza.utils.conll import CoNLL
->>> d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 El          DET   <╗         det
 tennis      NOUN  ═╝<════╗   nsubj
 té          VERB  ═╗═╗═╗═╝═╗ root
@@ -47,9 +45,8 @@ importància NOUN  ═╝<══╝   ║ obj
 >>> nlp=Cube()
 >>> nlp.load("ca")
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
->>> d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 El          DET   <╗         det
 tennis      NOUN  ═╝<════╗   nsubj
 té          VERB  ═╗═╗═╗═╝═╗ root
@@ -65,11 +62,10 @@ importància NOUN  ═╝<══╝   ║ obj
 
 ```py
 >>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("ca").tokenizer.model
+>>> nlp=spacy_udpipe.load("ca")
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
->>> d=nlp.write(doc,"conllu")
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 El          DET   <╗         det
 tennis      NOUN  ═╝<════╗   nsubj
 té          VERB  ═╗═╗═╗═╝═╗ root
