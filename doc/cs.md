@@ -29,7 +29,7 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 >>> import deplacy
 >>> deplacy.render(doc)
 Z       ADP   <════╗     case
-hrůzy   NOUN  ═══╗═╝<╗   obl
+hrůzy   NOUN  ═══╗═╝<╗   obl:arg
 a       CCONJ <╗ ║   ║   cc
 bolesti NOUN  ═╝<╝   ║   conj
 stali   VERB  ═╗═╗═══╝═╗ ROOT
