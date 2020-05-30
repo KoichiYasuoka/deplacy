@@ -4,7 +4,7 @@
 
 ```py
 >>> import stanza
->>> nlp=stanza.Pipeline("cs")
+>>> nlp=stanza.Pipeline("fi")
 >>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
 >>> import deplacy
 >>> deplacy.render(doc)
