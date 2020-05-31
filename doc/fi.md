@@ -1,6 +1,6 @@
-# syntaktista analyysiä [deplacy](https://koichiyasuoka.github.io/deplacy/)-n kautta
+# syntaktista analyysiä [deplacy](https://koichiyasuoka.github.io/deplacy/):n kautta
 
-## [Stanza](https://stanfordnlp.github.io/stanza)-n kanssa
+## [Stanza](https://stanfordnlp.github.io/stanza):n kanssa
 
 ```py
 >>> import stanza
@@ -27,7 +27,7 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-n kanssa
+## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe):n kanssa
 
 ```py
 >>> import spacy_udpipe
@@ -54,7 +54,7 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-n kanssa
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube):n kanssa
 
 ```py
 >>> from cube.api import Cube
@@ -82,7 +82,7 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-n kanssa
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html):n kanssa
 
 ```py
 >>> from camphr.pipelines import load_udify
