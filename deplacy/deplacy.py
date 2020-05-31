@@ -114,6 +114,9 @@ def catenaArray(DOC):
       return -1
     if DOC[a].dep_.startswith("compound"):
       return -1
+    if DOC[b].dep_.startswith("conj"):
+      if b-NOW-1>NOW-a:
+        return -1
     return 1
   for NOW,e in enumerate(f):
     if len(e)<2:
