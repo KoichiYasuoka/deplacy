@@ -102,35 +102,7 @@
 。       PUNCT <══════════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)のfugashi/unidic-lite版で解析
-
-```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("ja",punct_chars=["。"])
->>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
->>> import deplacy
->>> deplacy.render(doc)
-國       NOUN  <╗               compound
-境       NOUN  ═╝═╗<╗           nmod
-の       ADP   <══╝ ║           case
-長い     ADJ   <══╗ ║           acl
-トンネル NOUN  ═╗═╝═╝<╗         obj
-を       ADP   <╝     ║         case
-拔け     VERB  ═╗═════╝═╗═╗<╗   advcl
-る       AUX   <╝       ║ ║ ║   aux
-と       SCONJ <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-そこ     PRON  ═╗<════╗     ║   nsubj
-は       ADP   <╝     ║     ║   case
-雪       NOUN  <╗     ║     ║   compound
-國       NOUN  ═╝═╗<╗ ║     ║   obl
-で       ADP   <══╝ ║ ║     ║   case
-あつ     VERB  ═╗═══╝═╝═════╝═╗ root
-た       AUX   <╝             ║ aux
-。       PUNCT <══════════════╝ punct
-```
-
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)のMeCab/ipadic版で解析
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
 
 ```py
 >>> import spacy
