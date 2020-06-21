@@ -1,5 +1,29 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) do analizy składniowej
 
+## z [spaCy](https://spacy.io/)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("pl_core_news_sm")
+>>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Wcale      ADV   <══════╗         advmod
+nie        PART  <════╗ ║         advmod
+chcemy     VERB  ═══╗═╝═╝═════╗═╗ ROOT
+zdobywać   VERB  ═╗<╝         ║ ║ xcomp
+kosmosu    NOUN  <╝           ║ ║ obj
+,          PUNCT <══════════╗ ║ ║ punct
+chcemy     VERB  ═════════╗═╝<╝ ║ conj
+tylko      PART  <══════╗ ║     ║ advmod
+rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
+Ziemię     NOUN  <╝   ║         ║ obj
+do         ADP   <══╗ ║         ║ case
+jego       PRON  <╗ ║ ║         ║ nmod
+granic     NOUN  ═╝═╝<╝         ║ obl:arg
+.          PUNCT <══════════════╝ punct
+```
+
 ## z [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
