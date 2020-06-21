@@ -185,27 +185,27 @@
 ## [spaCy](https://spacy.io/)で解析
 ```py
 >>> import spacy
->>> nlp=spacy.load("ja_core_news_sm")
+>>> nlp=spacy.load("ja_core_news_md")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
 >>> deplacy.render(doc)
-國       NOUN  <╗             compound
-境       NOUN  ═╝═╗<╗         nsubj
-の       ADP   <══╝ ║         case
-長い     ADJ   ═════╝<╗       acl
-トンネル NOUN  ═╗═════╝<╗     obj
-を       ADP   <╝       ║     case
-拔け     VERB  <╗       ║     advmod
-る       AUX   ═╝═══════╝═╗═╗ ROOT
-と       CCONJ <══════════╝ ║ mark
-、       PUNCT <════════════╝ punct
-そこ     PRON  ═╗             ROOT
-は       ADP   <╝             case
-雪       NOUN  <╗             dep
-國       NOUN  ═╝═════╗       ROOT
-で       ADP   <╗     ║       dep
-あつ     VERB  ═╝<╗   ║       dep
-た       AUX   ═══╝<╗ ║       dep
-。       PUNCT ═════╝<╝       punct
+國       NOUN  <╗                 compound
+境       NOUN  ═╝═╗<╗             nmod
+の       ADP   <══╝ ║             case
+長い     ADJ   <══╗ ║             acl
+トンネル NOUN  ═╗═╝═╝<╗           obj
+を       ADP   <╝     ║           case
+拔け     VERB  ═══════╝═╗═╗═╗<╗   advcl
+る       AUX   <════════╝ ║ ║ ║   mark
+と       SCONJ <══════════╝ ║ ║   mark
+、       PUNCT <════════════╝ ║   punct
+そこ     PRON  ═╗<════╗       ║   nsubj
+は       ADP   <╝     ║       ║   case
+雪       NOUN  <╗     ║       ║   compound
+國       NOUN  ═╝═╗<╗ ║       ║   advcl
+で       ADP   <══╝ ║ ║       ║   cop
+あつ     VERB  ═╗═══╝═╝═══════╝═╗ ROOT
+た       AUX   <╝               ║ aux
+。       PUNCT <════════════════╝ punct
 ```
 
