@@ -182,3 +182,30 @@
 。       PUNCT <════════════════╝ punct
 ```
 
+## [spaCy](https://spacy.io/)で解析
+```py
+>>> import spacy
+>>> nlp=spacy.load("ja_core_news_sm")
+>>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
+>>> import deplacy
+>>> deplacy.render(doc)
+國       NOUN  <╗             compound
+境       NOUN  ═╝═╗<╗         nsubj
+の       ADP   <══╝ ║         case
+長い     ADJ   ═════╝<╗       acl
+トンネル NOUN  ═╗═════╝<╗     obj
+を       ADP   <╝       ║     case
+拔け     VERB  <╗       ║     advmod
+る       AUX   ═╝═══════╝═╗═╗ ROOT
+と       CCONJ <══════════╝ ║ mark
+、       PUNCT <════════════╝ punct
+そこ     PRON  ═╗             ROOT
+は       ADP   <╝             case
+雪       NOUN  <╗             dep
+國       NOUN  ═╝═════╗       ROOT
+で       ADP   <╗     ║       dep
+あつ     VERB  ═╝<╗   ║       dep
+た       AUX   ═══╝<╗ ║       dep
+。       PUNCT ═════╝<╝       punct
+```
+
