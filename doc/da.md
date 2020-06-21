@@ -44,6 +44,28 @@ fiskehale NOUN  ═╝═╝<╝       ║ obl
 .         PUNCT <════════════╝ punct
 ```
 
+## med [spaCy](https://spacy.io/)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("da_core_news_sm")
+>>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da        ADV   <══════╗       advmod
+sukkede   VERB  ═════╗═╝═══╗═╗ ROOT
+den       DET   <══╗ ║     ║ ║ det
+lille     ADJ   <╗ ║ ║     ║ ║ amod
+havfrue   NOUN  ═╝═╝<╝     ║ ║ nsubj
+og        CCONJ <════════╗ ║ ║ cc
+så        ADV   <══════╗ ║ ║ ║ advmod
+bedrøvet  VERB  ═════╗═╝═╝<╝ ║ conj
+på        ADP   <══╗ ║       ║ case
+sin       DET   <╗ ║ ║       ║ det
+fiskehale NOUN  ═╝═╝<╝       ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
