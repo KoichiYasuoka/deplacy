@@ -83,3 +83,23 @@
 。   PUNCT <══════════════╝ punct
 ```
 
+## 用[spaCy](https://spacy.io/)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("zh_core_web_sm")
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 SCONJ <══╗       advmod
+黑猫 PROPN <╗ ║       compound:nn
+白猫 NOUN  ═╝═╝═╗<╗   dep
+，   PUNCT <════╝ ║   punct
+捉到 VERB  ═╗<══╗ ║   dep
+老鼠 NOUN  <╝   ║ ║   dobj
+就是 ADV   <╗   ║ ║   advmod
+好   ADJ   ═╝<╗ ║ ║   amod
+猫   NOUN  ═══╝═╝═╝═╗ ROOT
+。   PUNCT <════════╝ punct
+```
+
