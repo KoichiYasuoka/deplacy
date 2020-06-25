@@ -132,10 +132,11 @@ def catenaArray(DOC):
     j=k
   return f,h,w
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
-  DOC=makeDoc(doc)
-  if len(DOC)==0:
-    return
+def renderMatrix(doc,CatenaAnalysis):
+  if type(doc)==list:
+    DOC=doc
+  else:
+    DOC=makeDoc(doc)
   f,h,w=catenaArray(DOC)
   d=[1 if f[i]==[] and abs(h[i]-i)==1 else -1 if h[i]==-1 else 0 for i in range(len(DOC))]
   if CatenaAnalysis:
@@ -188,6 +189,13 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
         p[i][j]|=3
         j-=1
       p[i][j+1]=16
+  return p
+
+def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
+  DOC=makeDoc(doc)
+  if len(DOC)==0:
+    return
+  p=renderMatrix(DOC,CatenaAnalysis)
   u=[" ","\u2578","\u257A","\u2550","\u2579","\u255D","\u255A","\u2569","\u257B","\u2557","\u2554","\u2566","\u2551","\u2563","\u2560","\u256C","<"]
   if CatenaAnalysis:
     u[7]=u[5]
