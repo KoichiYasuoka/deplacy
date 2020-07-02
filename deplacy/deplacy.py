@@ -290,7 +290,7 @@ def dot(doc):
     return None
   f,h,w=catenaArray(DOC)
   s='digraph deplacy{\n'
-  s+='node[shape=plaintext;fontsize=14];\n'
+  s+='node[shape=plaintext,fontsize=14];\n'
   s+='edge[color=gray,fontname="sans-serif",fontsize=10];\n'
   t='w[shape=record,penwidth=0,label="';
   v=[]
