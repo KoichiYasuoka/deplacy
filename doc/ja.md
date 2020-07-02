@@ -116,8 +116,8 @@
 長い     ADJ   <══╗ ║           acl
 トンネル NOUN  ═╗═╝═╝<╗         obj
 を       ADP   <╝     ║         case
-拔       VERB  ═╗═════╝═╗═╗<╗   advcl
-ける     AUX   <╝       ║ ║ ║   aux
+拔け     VERB  ═╗═════╝═╗═╗<╗   advcl
+る       AUX   <╝       ║ ║ ║   aux
 と       SCONJ <════════╝ ║ ║   mark
 、       PUNCT <══════════╝ ║   punct
 そこ     PRON  ═╗<════╗     ║   nsubj
