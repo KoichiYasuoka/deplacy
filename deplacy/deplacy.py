@@ -296,7 +296,7 @@ def dot(doc):
   v=[]
   j=''
   for i in range(len(DOC)):
-    t+=j+'|{<'+str(i+1)+'>'
+    t+=j+'{<'+str(i+1)+'>'
     j=DOC[i].orth_
     if j in ['"','|','{','}','<','>','\\']:
       t+='\\'+j
