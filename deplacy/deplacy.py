@@ -334,11 +334,11 @@ def dot(doc):
           continue
         if DOC[j].whitespace_:
           u+=" "
-      t='x'+str(x)+'[label="'+u.rstrip()+'"];\n'+t
+      t='x'+str(x)+'[label="'+u.rstrip()+'"];'+t
       n[i]='x'+str(x)
       x+=1
     if h[i]==-1:
-      t='r'+str(i+1)+'[fontname="sans-serif",fontsize=10,fixedsize=true,height=.15,label="'+DOC[i].dep_+'"];\nr'+str(i+1)+'->'+n[i]+';\n'+t
+      t='r'+str(i+1)+'[fontname="sans-serif",fontsize=10,fixedsize=true,height=.15,label="'+DOC[i].dep_+'"];r'+str(i+1)+'->'+n[i]+';\n'+t
   s+=t+'}\n'
   return s
 
