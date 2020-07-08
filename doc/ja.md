@@ -7,22 +7,22 @@
 >>> nlp=unidic2ud.load("qkana")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國境     NOUN  ═╗<══╗           nmod
-の       ADP   <╝   ║           case
-長い     ADJ   <══╗ ║           acl
-トンネル NOUN  ═╗═╝═╝<╗         obj
-を       ADP   <╝     ║         case
-拔ける   VERB  ═══════╝═╗═╗<╗   advcl
-と       CCONJ <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-そこ     PRON  ═╗<══╗       ║   nsubj
-は       ADP   <╝   ║       ║   case
-雪國     NOUN  ═╗<╗ ║       ║   advcl
-で       AUX   <╝ ║ ║       ║   cop
-あつ     VERB  ═╗═╝═╝═══════╝═╗ root
-た       AUX   <╝             ║ aux
-。       PUNCT <══════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國境     NOUN  ═╗<╗             nsubj(主語)
+の       ADP   <╝ ║             case(格表示)
+長い     ADJ   ═══╝<╗           acl(連体修飾節)
+トンネル NOUN  ═╗═══╝<╗         obj(目的語)
+を       ADP   <╝     ║         case(格表示)
+拔ける   VERB  ═══════╝═╗═╗<╗   advcl(連用修飾節)
+と       CCONJ <════════╝ ║ ║   mark(標識)
+、       PUNCT <══════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<══╗       ║   nsubj(主語)
+は       ADP   <╝   ║       ║   case(格表示)
+雪國     NOUN  ═╗<╗ ║       ║   advcl(連用修飾節)
+で       AUX   <╝ ║ ║       ║   cop(繫辞)
+あつ     VERB  ═╗═╝═╝═══════╝═╗ root(親)
+た       AUX   <╝             ║ aux(動詞補助成分)
+。       PUNCT <══════════════╝ punct(句読点)
 ```
 
 ## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
@@ -32,25 +32,25 @@
 >>> nlp=spacy.load("ja_ginza")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國       NOUN  <╗             compound
-境       NOUN  ═╝═╗<╗         nmod
-の       ADP   <══╝ ║         case
-長い     ADJ   <══╗ ║         amod
-トンネル NOUN  ═╗═╝═╝<╗       obj
-を       ADP   <╝     ║       case
-拔け     VERB  ═╗═╗═══╝═╗<╗   advcl
-る       AUX   <╝ ║     ║ ║   aux
-と       CCONJ <══╝     ║ ║   cc
-、       PUNCT <════════╝ ║   punct
-そこ     PRON  ═╗<════╗   ║   nsubj
-は       ADP   <╝     ║   ║   case
-雪       NOUN  <╗     ║   ║   compound
-國       NOUN  ═╝═╗<╗ ║   ║   nmod
-で       ADP   <══╝ ║ ║   ║   case
-あつ     VERB  ═╗═══╝═╝═══╝═╗ ROOT
-た       AUX   <╝           ║ aux
-。       PUNCT <════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國       NOUN  <╗             compound(複合)
+境       NOUN  ═╝═╗<╗         nmod(体言による連体修飾語)
+の       ADP   <══╝ ║         case(格表示)
+長い     ADJ   <══╗ ║         amod(用言による連体修飾語)
+トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+拔け     VERB  ═╗═╗═══╝═╗<╗   advcl(連用修飾節)
+る       AUX   <╝ ║     ║ ║   aux(動詞補助成分)
+と       CCONJ <══╝     ║ ║   cc(接続詞)
+、       PUNCT <════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<════╗   ║   nsubj(主語)
+は       ADP   <╝     ║   ║   case(格表示)
+雪       NOUN  <╗     ║   ║   compound(複合)
+國       NOUN  ═╝═╗<╗ ║   ║   nmod(体言による連体修飾語)
+で       ADP   <══╝ ║ ║   ║   case(格表示)
+あつ     VERB  ═╗═══╝═╝═══╝═╗ ROOT(親)
+た       AUX   <╝           ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
 ```
 
 ## [Stanza](https://stanfordnlp.github.io/stanza)で解析
@@ -60,21 +60,21 @@
 >>> nlp=stanza.Pipeline("ja")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國境     PROPN ═╗<╗             obl
-の       ADP   <╝ ║             case
-長い     ADJ   ═══╝<╗           acl
-トンネル NOUN  ═╗═══╝<╗         obj
-を       ADP   <╝     ║         case
-拔ける   VERB  ═══════╝═╗═╗<╗   advcl
-と       SCONJ <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-そこ     PRON  ═╗<══╗       ║   nsubj
-は       ADP   <╝   ║       ║   case
-雪國     PROPN ═╗═╗═╝═══════╝═╗ root
-であつ   AUX   <╝ ║           ║ cop
-た       AUX   <══╝           ║ aux
-。       PUNCT <══════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國境     PROPN ═╗<╗             obl(斜格補語)
+の       ADP   <╝ ║             case(格表示)
+長い     ADJ   ═══╝<╗           acl(連体修飾節)
+トンネル NOUN  ═╗═══╝<╗         obj(目的語)
+を       ADP   <╝     ║         case(格表示)
+拔ける   VERB  ═══════╝═╗═╗<╗   advcl(連用修飾節)
+と       SCONJ <════════╝ ║ ║   mark(標識)
+、       PUNCT <══════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<══╗       ║   nsubj(主語)
+は       ADP   <╝   ║       ║   case(格表示)
+雪國     PROPN ═╗═╗═╝═══════╝═╗ root(親)
+であつ   AUX   <╝ ║           ║ cop(繫辞)
+た       AUX   <══╝           ║ aux(動詞補助成分)
+。       PUNCT <══════════════╝ punct(句読点)
 ```
 
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
@@ -84,22 +84,22 @@
 >>> nlp=spacy_udpipe.load("ja")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國境     NOUN  ═╗<══╗           nmod
-の       ADP   <╝   ║           case
-長い     ADJ   <══╗ ║           acl
-トンネル NOUN  ═╗═╝═╝<╗         nmod
-を       ADP   <╝     ║         case
-拔       NOUN  ═╗═════╝═╗═╗<╗   advcl
-ける     AUX   <╝       ║ ║ ║   aux
-と       SCONJ <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-そこ     PRON  ═╗<══╗       ║   nsubj
-は       ADP   <╝   ║       ║   case
-雪國     PROPN <══╗ ║       ║   obl
-であつ   VERB  ═╗═╝═╝═══════╝═╗ ROOT
-た       AUX   <╝             ║ aux
-。       PUNCT <══════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國境     NOUN  ═╗<══╗           nmod(体言による連体修飾語)
+の       ADP   <╝   ║           case(格表示)
+長い     ADJ   <══╗ ║           acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗         nmod(体言による連体修飾語)
+を       ADP   <╝     ║         case(格表示)
+拔       NOUN  ═╗═════╝═╗═╗<╗   advcl(連用修飾節)
+ける     AUX   <╝       ║ ║ ║   aux(動詞補助成分)
+と       SCONJ <════════╝ ║ ║   mark(標識)
+、       PUNCT <══════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<══╗       ║   nsubj(主語)
+は       ADP   <╝   ║       ║   case(格表示)
+雪國     PROPN <══╗ ║       ║   obl(斜格補語)
+であつ   VERB  ═╗═╝═╝═══════╝═╗ ROOT(親)
+た       AUX   <╝             ║ aux(動詞補助成分)
+。       PUNCT <══════════════╝ punct(句読点)
 ```
 
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
@@ -109,25 +109,25 @@
 >>> nlp=spacy.load("ja_mecab_udify")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國       NOUN  <╗               compound
-境       NOUN  ═╝═╗<╗           nmod
-の       ADP   <══╝ ║           case
-長い     ADJ   <══╗ ║           acl
-トンネル NOUN  ═╗═╝═╝<╗         obj
-を       ADP   <╝     ║         case
-拔け     VERB  ═╗═════╝═╗═╗<╗   advcl
-る       AUX   <╝       ║ ║ ║   aux
-と       SCONJ <════════╝ ║ ║   mark
-、       PUNCT <══════════╝ ║   punct
-そこ     PRON  ═╗<════╗     ║   nsubj
-は       ADP   <╝     ║     ║   case
-雪       NOUN  <╗     ║     ║   compound
-國       NOUN  ═╝═╗<╗ ║     ║   obl
-で       ADP   <══╝ ║ ║     ║   case
-あつ     VERB  ═╗═══╝═╝═════╝═╗ root
-た       AUX   <╝             ║ aux
-。       PUNCT <══════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國       NOUN  <╗               compound(複合)
+境       NOUN  ═╝═╗<╗           nmod(体言による連体修飾語)
+の       ADP   <══╝ ║           case(格表示)
+長い     ADJ   <══╗ ║           acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗         obj(目的語)
+を       ADP   <╝     ║         case(格表示)
+拔け     VERB  ═╗═════╝═╗═╗<╗   advcl(連用修飾節)
+る       AUX   <╝       ║ ║ ║   aux(動詞補助成分)
+と       SCONJ <════════╝ ║ ║   mark(標識)
+、       PUNCT <══════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<════╗     ║   nsubj(主語)
+は       ADP   <╝     ║     ║   case(格表示)
+雪       NOUN  <╗     ║     ║   compound(複合)
+國       NOUN  ═╝═╗<╗ ║     ║   obl(斜格補語)
+で       ADP   <══╝ ║ ║     ║   case(格表示)
+あつ     VERB  ═╗═══╝═╝═════╝═╗ root(親)
+た       AUX   <╝             ║ aux(動詞補助成分)
+。       PUNCT <══════════════╝ punct(句読点)
 ```
 
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
@@ -138,22 +138,22 @@
 >>> nlp.load("ja")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國境   PROPN ═╗<╗             obl
-の     ADP   <╝ ║             case
-長い   ADJ   ═══╝<╗           acl
-トン   NOUN  <╗   ║           compound
-ネル   NOUN  ═╝═╗═╝<╗         obj
-を     ADP   <══╝   ║         case
-拔ける VERB  ═══════╝═╗═╗<╗   advcl
-と     SCONJ <════════╝ ║ ║   mark
-、     PUNCT <══════════╝ ║   punct
-そこ   PRON  ═╗<══╗       ║   nmod
-は     ADP   <╝   ║       ║   case
-雪國   PROPN ═╗<╗ ║       ║   nmod
-で     ADP   <╝ ║ ║       ║   case
-あつた NOUN  ═══╝═╝═══════╝═╗ root
-。     PUNCT <══════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國境   PROPN ═╗<╗             obl(斜格補語)
+の     ADP   <╝ ║             case(格表示)
+長い   ADJ   ═══╝<╗           acl(連体修飾節)
+トン   NOUN  <╗   ║           compound(複合)
+ネル   NOUN  ═╝═╗═╝<╗         obj(目的語)
+を     ADP   <══╝   ║         case(格表示)
+拔ける VERB  ═══════╝═╗═╗<╗   advcl(連用修飾節)
+と     SCONJ <════════╝ ║ ║   mark(標識)
+、     PUNCT <══════════╝ ║   punct(句読点)
+そこ   PRON  ═╗<══╗       ║   nmod(体言による連体修飾語)
+は     ADP   <╝   ║       ║   case(格表示)
+雪國   PROPN ═╗<╗ ║       ║   nmod(体言による連体修飾語)
+で     ADP   <╝ ║ ║       ║   case(格表示)
+あつた NOUN  ═══╝═╝═══════╝═╗ root(親)
+。     PUNCT <══════════════╝ punct(句読点)
 ```
 
 ## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
@@ -163,23 +163,23 @@
 >>> nlp=camphr.load("knp")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國       SYM   <╗                 compound
-境       NOUN  ═╝═╗<╗             nsubj
-の       ADP   <══╝ ║             case
-長い     ADJ   ═════╝<╗           acl
-トンネル NOUN  ═╗═════╝<╗         obj
-を       ADP   <╝       ║         case
-拔       SYM   <╗       ║         nsubj
-ける     VERB  ═╝═══════╝═╗═╗<╗   advcl
-と       ADP   <══════════╝ ║ ║   mark
-、       PUNCT <════════════╝ ║   punct
-そこ     PRON  ═╗<══╗         ║   nsubj
-は       ADP   <╝   ║         ║   case
-雪國     NOUN  ═╗<╗ ║         ║   obl
-で       ADP   <╝ ║ ║         ║   case
-あつた   NOUN  ═══╝═╝═════════╝═╗ ROOT
-。       PUNCT <════════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國       SYM   <╗                 compound(複合)
+境       NOUN  ═╝═╗<╗             nsubj(主語)
+の       ADP   <══╝ ║             case(格表示)
+長い     ADJ   ═════╝<╗           acl(連体修飾節)
+トンネル NOUN  ═╗═════╝<╗         obj(目的語)
+を       ADP   <╝       ║         case(格表示)
+拔       SYM   <╗       ║         nsubj(主語)
+ける     VERB  ═╝═══════╝═╗═╗<╗   advcl(連用修飾節)
+と       ADP   <══════════╝ ║ ║   mark(標識)
+、       PUNCT <════════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<══╗         ║   nsubj(主語)
+は       ADP   <╝   ║         ║   case(格表示)
+雪國     NOUN  ═╗<╗ ║         ║   obl(斜格補語)
+で       ADP   <╝ ║ ║         ║   case(格表示)
+あつた   NOUN  ═══╝═╝═════════╝═╗ ROOT(親)
+。       PUNCT <════════════════╝ punct(句読点)
 ```
 
 ## [spaCy](https://spacy.io/)で解析
@@ -188,24 +188,24 @@
 >>> nlp=spacy.load("ja_core_news_md")
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
->>> deplacy.render(doc)
-國       NOUN  <╗                 compound
-境       NOUN  ═╝═╗<╗             nmod
-の       ADP   <══╝ ║             case
-長い     ADJ   <══╗ ║             acl
-トンネル NOUN  ═╗═╝═╝<╗           obj
-を       ADP   <╝     ║           case
-拔け     VERB  ═══════╝═╗═╗═╗<╗   advcl
-る       AUX   <════════╝ ║ ║ ║   mark
-と       SCONJ <══════════╝ ║ ║   mark
-、       PUNCT <════════════╝ ║   punct
-そこ     PRON  ═╗<════╗       ║   nsubj
-は       ADP   <╝     ║       ║   case
-雪       NOUN  <╗     ║       ║   compound
-國       NOUN  ═╝═╗<╗ ║       ║   advcl
-で       ADP   <══╝ ║ ║       ║   cop
-あつ     VERB  ═╗═══╝═╝═══════╝═╗ ROOT
-た       AUX   <╝               ║ aux
-。       PUNCT <════════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+國       NOUN  <╗                 compound(複合)
+境       NOUN  ═╝═╗<╗             nmod(体言による連体修飾語)
+の       ADP   <══╝ ║             case(格表示)
+長い     ADJ   <══╗ ║             acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗           obj(目的語)
+を       ADP   <╝     ║           case(格表示)
+拔け     VERB  ═══════╝═╗═╗═╗<╗   advcl(連用修飾節)
+る       AUX   <════════╝ ║ ║ ║   mark(標識)
+と       CCONJ <══════════╝ ║ ║   mark(標識)
+、       PUNCT <════════════╝ ║   punct(句読点)
+そこ     PRON  ═╗<════╗       ║   nsubj(主語)
+は       ADP   <╝     ║       ║   case(格表示)
+雪       NOUN  <╗     ║       ║   compound(複合)
+國       NOUN  ═╝═╗<╗ ║       ║   advcl(連用修飾節)
+で       ADP   <══╝ ║ ║       ║   cop(繫辞)
+あつ     VERB  ═╗═══╝═╝═══════╝═╗ ROOT(親)
+た       AUX   <╝               ║ aux(動詞補助成分)
+。       PUNCT <════════════════╝ punct(句読点)
 ```
 
