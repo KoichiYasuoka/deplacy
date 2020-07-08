@@ -193,7 +193,7 @@ def renderMatrix(doc,CatenaAnalysis):
       p[i][j+1]=16
   return p
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
+def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None,Japanese=False):
   DOC=makeDoc(doc)
   if len(DOC)==0:
     return
@@ -211,14 +211,26 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None):
   m=max(x)+1
   n=max(i)+1
   s=""
+  if Japanese:
+    import deplacy.deprelja
+    r=deplacy.deprelja.deprelja
+  else:
+    r={}
   for i in range(len(DOC)):
     t="".join(u[j] for j in p[i])
     if BoxDrawingWidth>1:
       t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<")
+    d=DOC[i].dep_
+    if d in r:
+      d+="("+r[d]+")"
+    elif d.find(":")>0:
+      j=d.split(":")
+      if j[0] in r:
+        d+="("+r[j[0]]+"["+j[1]+"])"
     if EnableCR:
-      s+=" "*m+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+DOC[i].dep_+"\r"+DOC[i].orth_+"\n"
+      s+=" "*m+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\r"+DOC[i].orth_+"\n"
     else:
-      s+=DOC[i].orth_+" "*(m-x[i])+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+DOC[i].dep_+"\n"
+      s+=DOC[i].orth_+" "*(m-x[i])+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\n"
   print(s,end="",file=file)
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
