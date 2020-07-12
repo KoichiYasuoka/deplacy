@@ -3,8 +3,8 @@
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)로 분석
 
 ```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("en")
 >>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
 >>> import deplacy
 >>> deplacy.render(doc)
