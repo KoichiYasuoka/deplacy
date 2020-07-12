@@ -105,8 +105,8 @@
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
 
 ```py
->>> import spacy
->>> nlp=spacy.load("ja_mecab_udify")
+>>> from camphr.pipelines import load_udify
+>>> nlp=load_udify("ja",punct_chars=["。"])
 >>> doc=nlp("國境の長いトンネルを拔けると、そこは雪國であつた。")
 >>> import deplacy
 >>> deplacy.render(doc,Japanese=True)
