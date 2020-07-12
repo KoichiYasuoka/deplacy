@@ -98,29 +98,28 @@
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
 >>> import deplacy
 >>> deplacy.render(doc)
-希   VERB  ═╗═════╗═╗═╗═╗═╗═╗═╗═╗ root
-望   VERB  <╝     ║ ║ ║ ║ ║ ║ ║ ║ mark
-是   PRON  <╗     ║ ║ ║ ║ ║ ║ ║ ║ nsubj
-附麗 VERB  ═╝═╗═╗<╝ ║ ║ ║ ║ ║ ║ ║ ccomp
-於   ADP   <══╝ ║   ║ ║ ║ ║ ║ ║ ║ mark
-存   VERB  ═╗<══╝   ║ ║ ║ ║ ║ ║ ║ mark
-在   VERB  <╝       ║ ║ ║ ║ ║ ║ ║ mark
-的   PART  <════════╝ ║ ║ ║ ║ ║ ║ discourse
-，   PUNCT <══════════╝ ║ ║ ║ ║ ║ punct
-有   VERB  <════════════╝ ║ ║ ║ ║ mark
-存   VERB  ═╗<════════════╝ ║ ║ ║ xcomp
-在   VERB  <╝               ║ ║ ║ mark
-，   PUNCT <════╗           ║ ║ ║ punct
-便   ADV   <══╗ ║           ║ ║ ║ mark
-有   VERB  ═╗═╝═╝<╗         ║ ║ ║ advcl
-希望 NOUN  <╝     ║         ║ ║ ║ obj
-，   PUNCT <══════║═╗       ║ ║ ║ punct
-有   VERB  ═╗═════╝═╝<══════╝ ║ ║ ccomp
-希望 NOUN  <╝                 ║ ║ obj
-，   PUNCT <══╗               ║ ║ punct
-便是 AUX   <╗ ║               ║ ║ cop
-光明 ADJ   ═╝═╝<══════════════╝ ║ parataxis
-。   PUNCT <════════════════════╝ punct
+希望 NOUN  <══════════╗             nsubj
+是   AUX   ═════╗═╗<╗ ║             advcl
+附麗 VERB  ═╗═╗<╝ ║ ║ ║             xcomp
+於   ADP   <╝ ║   ║ ║ ║             flat:vv
+存   VERB  ═╗<╝   ║ ║ ║             obj
+在   VERB  <╝     ║ ║ ║             flat:vv
+的   PART  <══════╝ ║ ║             discourse
+，   PUNCT          ║ ║<╗           punct
+有   VERB  ═══╗═════╝═╝═╝<╗         advcl
+存   VERB  ═╗<╝           ║         obj
+在   VERB  <╝             ║         flat:vv
+，   PUNCT <══════════════║═╗       punct
+便   ADV   <══╗           ║ ║       mark
+有   VERB  ═╗═╝═══════════╝═╝═╗═╗═╗ root
+希望 NOUN  <╝                 ║ ║ ║ obj
+，   PUNCT <══════════════════╝ ║ ║ punct
+有   VERB  ═╗═══╗<══════════════╝ ║ parataxis
+希望 NOUN  <╝   ║                 ║ obj
+，   PUNCT <══╗ ║                 ║ punct
+便是 AUX   <╗ ║ ║                 ║ cop
+光明 ADJ   ═╝═╝<╝                 ║ ccomp
+。   PUNCT <══════════════════════╝ punct
 ```
 
 ## 用[spaCy](https://spacy.io/)

@@ -67,20 +67,20 @@
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
 >>> import deplacy
 >>> deplacy.render(doc)
-不管 ADP   <════╗           case
-黑   NOUN  <╗   ║           compound
-猫   NOUN  ═╝<╗ ║           nmod
-白   NOUN  <╗ ║ ║           compound
-猫   NOUN  ═╝═╝═╝<╗         obl
-，   PUNCT <══════║═╗       punct
-捉   VERB  ═══════╝═╝═╗<╗   csubj
-到   VERB  <══════════╝ ║   mark
-老   NOUN  <╗           ║   compound
-鼠   NOUN  ═╝<╗         ║   nsubj
-就是 VERB  ═══╝<╗       ║   cop
-好   VERB  <╗   ║       ║   amod
-猫   NOUN  ═╝═══╝═══════╝═╗ root
-。   PUNCT <══════════════╝ punct
+不管 ADP   <════════╗     case
+黑   NOUN  <════╗   ║     nmod
+猫   NOUN  <══╗ ║   ║     nmod
+白   NOUN  <╗ ║ ║   ║     compound
+猫   NOUN  ═╝═╝═╝<╗ ║     nsubj
+，   PUNCT        ║ ║<╗   punct
+捉   VERB  ═╗═╗<╗ ║ ║ ║   advcl
+到   VERB  <╝ ║ ║ ║ ║ ║   flat:vv
+老   NOUN  <╗ ║ ║ ║ ║ ║   compound
+鼠   NOUN  ═╝<╝ ║ ║ ║ ║   obj
+就是 VERB  ═══╗═╝═╝═╝═╝═╗ root
+好   VERB  <╗ ║         ║ amod
+猫   NOUN  ═╝<╝         ║ obj
+。   PUNCT <════════════╝ punct
 ```
 
 ## 用[spaCy](https://spacy.io/)
