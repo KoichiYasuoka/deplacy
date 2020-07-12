@@ -100,6 +100,8 @@ def catenaArray(DOC):
     if DOC[b].dep_.startswith("compound"):
       if not DOC[a].dep_.startswith("compound"):
         return 1
+    if DOC[b].dep_=="prt": # for Penn Treebank (en_core_web)
+      return 1
     if DOC[b].dep_=="svp": # for TIGER Corpus (de_core_news)
       return 1
     return -1

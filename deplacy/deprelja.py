@@ -50,6 +50,7 @@ deprelja = {
   "npadvmod":"斜格補語[npadvmod]",
   "name":"並列[name]",
   "relcl":"連体修飾節[relcl]",
+  "prt":"複合[prt]",
   "svp":"複合[svp]",
   "ROOT":"親"
 }
