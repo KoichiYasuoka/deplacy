@@ -160,6 +160,7 @@
 ```
 
 ## [spaCy](https://spacy.io/)で解析
+
 ```py
 >>> import spacy
 >>> nlp=spacy.load("ja_core_news_md")
@@ -182,28 +183,25 @@
 た       AUX   <╝         ║ aux(動詞補助成分)
 。       PUNCT <══════════╝ punct(句読点)
 ```
-
 ## [spaCy-SynCha](https://github.com/KoichiYasuoka/spaCy-SynCha)で解析
+
 ```py
 >>> import spacy_syncha
->>> nlp=spacy_syncha.load()
+>>> nlp=spacy_syncha.load("qkana")
 >>> doc=nlp("國境の長いトンネルを拔けると雪國であつた。")
 >>> import deplacy
 >>> deplacy.render(doc,Japanese=True)
-國       NOUN  <╗             compound(複合)
-境       NOUN  ═╝═╗<╗         nmod(体言による連体修飾語)
-の       ADP   <══╝ ║         case(格表示)
+國境     NOUN  ═╗<══╗         obj(目的語)
+の       ADP   <╝   ║         case(格表示)
 長い     ADJ   <══╗ ║         acl(連体修飾節)
-トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+トンネル NOUN  ═╗═╝═╝<╗       obl(斜格補語)
 を       ADP   <╝     ║       case(格表示)
-拔       NOUN  <╗     ║       obl(斜格補語)
-ける     VERB  ═╝═════╝═╗<╗   advcl(連用修飾節)
+拔ける   VERB  ═══════╝═╗<╗   acl(連体修飾節)
 と       CCONJ <════════╝ ║   mark(標識)
-雪       NOUN  <╗         ║   compound(複合)
-國       NOUN  ═╝═╗<╗     ║   obl(斜格補語)
-で       ADP   <══╝ ║     ║   case(格表示)
-あつ     ADJ   ═╗═══╝═════╝═╗ ROOT(親)
-た       AUX   <╝           ║ aux(動詞補助成分)
+雪國     NOUN  ═╗═╗═╗═════╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║       ║ cop(繫辞)
+あつ     AUX   <══╝ ║       ║ cop(繫辞)
+た       AUX   <════╝       ║ cop(繫辞)
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
