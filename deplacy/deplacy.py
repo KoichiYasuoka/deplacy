@@ -272,9 +272,19 @@ def serve(doc,port=5000):
     c=""
     for t in doc:
       c+=str(t.i+1)
-      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,"",str(0 if t.head==t else t.head.i+1),t.dep_,"","" if t.whitespace_ else "SpaceAfter=No"]:
+      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,"",str(0 if t.head==t else t.head.i+1),t.dep_,""]:
         c+="\t_" if i.strip()=="" else "\t"+i
-      c+="\n"
+      if t.ent_iob_=="B" or t.ent_iob_=="I":
+        u="NE="+t.ent_iob_+"-"+t.ent_type_
+      else:
+        u=""
+      if not t.whitespace_:
+        u+=("" if u=="" else "|")+"SpaceAfter=No"
+      if t.norm_!="" and t.norm_!=t.orth_:
+        u+=("" if u=="" else "|")+"Translit="+t.norm_
+      if u=="":
+        u="_"
+      c+="\t"+u+"\n"
   elif s.find("stanza")==8:
     from stanza.utils.conll import CoNLL
     c=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
