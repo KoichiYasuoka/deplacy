@@ -136,6 +136,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [spaCy-ChaPAS](https://github.com/KoichiYasuoka/spaCy-ChaPAS)で解析
+
+```py
+>>> import spacy_chapas
+>>> nlp=spacy_chapas.load("qkana")
+>>> doc=nlp("國境の長いトンネルを拔けると雪國であつた。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+國境     NOUN  ═╗<══╗         obj(目的語)
+の       ADP   <╝   ║         case(格表示)
+長い     ADJ   <══╗ ║         amod(用言による連体修飾語)
+トンネル NOUN  ═╗═╝═╝<╗       obl(斜格補語)
+を       ADP   <╝     ║       case(格表示)
+拔ける   VERB  ═══════╝═╗<╗   advcl(連用修飾節)
+と       CCONJ <════════╝ ║   mark(標識)
+雪國     NOUN  ═╗═╗═╗═════╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║       ║ cop(繫辞)
+あつ     AUX   <══╝ ║       ║ aux(動詞補助成分)
+た       AUX   <════╝       ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)で解析
 
 ```py
