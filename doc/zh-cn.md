@@ -108,7 +108,7 @@
 ```py
 >>> from ddparser import DDParser
 >>> ddp=DDParser(use_pos=True)
->>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,"_",p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t.split("\n"))])
+>>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,"_",p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t)])
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
 >>> import deplacy
 >>> deplacy.render(doc)
