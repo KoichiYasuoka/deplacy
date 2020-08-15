@@ -81,3 +81,23 @@ name      NOUN  ═╝<╝       ║ obj
 .         PUNCT <══════════╝ punct
 ```
 
+## Usage with [en-qai-sm](https://pypi.org/project/en-qai-sm/)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_qai_sm")
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ ROOT
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ dobj
+yesterday NOUN  <══════║═════╝   ║ npadvmod
+which     DET   <════╗ ║         ║ nsubj
+had       VERB  ═══╗═╝<╝         ║ relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ dobj
+.         PUNCT <════════════════╝ punct
+```
+
