@@ -153,3 +153,34 @@
 。   PUNCT <════════════════╝ punct
 ```
 
+## 用[DDParser](https://github.com/baidu/DDParser)
+
+```py
+>>> from ddparser import DDParser
+>>> ddp=DDParser(use_pos=True)
+>>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,"_",p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t.split("\n"))])
+>>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
+>>> import deplacy
+>>> deplacy.render(doc)
+希望 v  <══════════════╗ SBV
+是   v  ═══════╗═╗═╗═╗═╝ HED
+附麗 v  <══╗   ║ ║ ║ ║   SBV
+於   p  <╗ ║   ║ ║ ║ ║   ADV
+存在 vn ═╝═╝<╗ ║ ║ ║ ║   ATT
+的   u  ═════╝<╝ ║ ║ ║   VOB
+，   w  <════════╝ ║ ║   MT
+有   v  ═╗═╗<════╗ ║ ║   IC
+存在 vn <╝ ║     ║ ║ ║   VOB
+，   w  <══╝     ║ ║ ║   MT
+便   d  <══════╗ ║ ║ ║   ADV
+有   v  ═╗═╗═╗═╝═╝<╝ ║   IC
+希望 n  <╝ ║ ║       ║   VOB
+，   w  <══╝ ║       ║   MT
+有   v  ═╗═╗<╝       ║   COO
+希望 n  <╝ ║         ║   VOB
+，   w  <══╝         ║   MT
+便是 v  ═╗═╗<════════╝   IC
+光明 n  <╝ ║             VOB
+。   w  <══╝             MT
+```
+
