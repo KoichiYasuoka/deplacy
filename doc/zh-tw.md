@@ -158,7 +158,7 @@
 ```py
 >>> from ddparser import DDParser
 >>> ddp=DDParser(use_pos=True)
->>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,"_",p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t)])
+>>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,w,p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t)])
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
 >>> import deplacy
 >>> deplacy.render(doc)
