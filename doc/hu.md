@@ -73,7 +73,7 @@ holnapra   NOUN  <╝           ║ nmod:obl
 .          PUNCT <════════════╝ punct
 ```
 
-## [Stanza](https://stanfordnlp.github.io/stanza)-vel
+## [Stanza](https://stanfordnlp.github.io/stanza)-val
 
 ```py
 >>> import stanza
