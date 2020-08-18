@@ -1,5 +1,30 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/)を用いた日本語文法解析
 
+## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("ja_ginza")
+>>> doc=nlp("國境の長いトンネルを拔けると雪國であつた。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+國       NOUN  <╗             compound(複合)
+境       NOUN  ═╝═╗<╗         nmod(体言による連体修飾語)
+の       ADP   <══╝ ║         case(格表示)
+長い     ADJ   <══╗ ║         acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+拔け     VERB  ═╗═╗═══╝<╗     acl(連体修飾節)
+る       AUX   <╝ ║     ║     aux(動詞補助成分)
+と       ADP   <══╝     ║     case(格表示)
+雪       NOUN  <╗       ║     compound(複合)
+國       NOUN  ═╝═╗═════╝<╗   obl(斜格補語)
+で       ADP   <══╝       ║   case(格表示)
+あつ     VERB  ═╗═════════╝═╗ ROOT(親)
+た       AUX   <╝           ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [UniDic2UD](https://pypi.org/project/unidic2ud)で解析
 
 ```py
@@ -20,31 +45,6 @@
 あつ     AUX   <══╝ ║       ║ aux(動詞補助成分)
 た       AUX   <════╝       ║ aux(動詞補助成分)
 。       PUNCT <════════════╝ punct(句読点)
-```
-
-## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
-
-```py
->>> import spacy
->>> nlp=spacy.load("ja_ginza")
->>> doc=nlp("國境の長いトンネルを拔けると雪國であつた。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-國       NOUN  <╗           compound(複合)
-境       NOUN  ═╝═╗<╗       nmod(体言による連体修飾語)
-の       ADP   <══╝ ║       case(格表示)
-長い     ADJ   <══╗ ║       amod(用言による連体修飾語)
-トンネル NOUN  ═╗═╝═╝<╗     obj(目的語)
-を       ADP   <╝     ║     case(格表示)
-拔け     VERB  ═╗═╗═══╝<╗   advcl(連用修飾節)
-る       AUX   <╝ ║     ║   aux(動詞補助成分)
-と       ADP   <══╝     ║   case(格表示)
-雪       NOUN  <╗       ║   compound(複合)
-國       NOUN  ═╝═╗<╗   ║   nmod(体言による連体修飾語)
-で       ADP   <══╝ ║   ║   case(格表示)
-あつ     VERB  ═╗═══╝═══╝═╗ ROOT(親)
-た       AUX   <╝         ║ aux(動詞補助成分)
-。       PUNCT <══════════╝ punct(句読点)
 ```
 
 ## [Stanza](https://stanfordnlp.github.io/stanza)で解析
