@@ -67,8 +67,8 @@ pesagi NOUN  <╝           ║ compound:prt
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ga
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("et")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
 >>> import deplacy
 >>> deplacy.render(doc)
