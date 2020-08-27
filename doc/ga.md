@@ -39,8 +39,8 @@ farraige  NOUN  ═╝<╝     ║ nmod
 ## le [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("ga")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
 >>> import deplacy
 >>> deplacy.render(doc)
