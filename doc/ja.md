@@ -89,31 +89,6 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)で解析
-
-```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("ja",punct_chars=["。"])
->>> doc=nlp("國境の長いトンネルを拔けると雪國であつた。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-國       NOUN  <╗             compound(複合)
-境       NOUN  ═╝═╗<╗         nmod(体言による連体修飾語)
-の       ADP   <══╝ ║         case(格表示)
-長い     ADJ   <══╗ ║         acl(連体修飾節)
-トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
-を       ADP   <╝     ║       case(格表示)
-拔け     VERB  ═╗═════╝═╗<╗   advcl(連用修飾節)
-る       AUX   <╝       ║ ║   aux(動詞補助成分)
-と       SCONJ <════════╝ ║   mark(標識)
-雪       NOUN  <╗         ║   compound(複合)
-國       NOUN  ═╝═╗<╗     ║   obl(斜格補語)
-で       ADP   <══╝ ║     ║   case(格表示)
-あつ     VERB  ═╗═══╝═════╝═╗ root(親)
-た       AUX   <╝           ║ aux(動詞補助成分)
-。       PUNCT <════════════╝ punct(句読点)
-```
-
 ## [spaCy-SynCha](https://github.com/KoichiYasuoka/spaCy-SynCha)で解析
 
 ```py
