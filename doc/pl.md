@@ -27,25 +27,25 @@ granic     NOUN  ═╝═╝<╝         ║ obl:arg
 ## z [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("pl")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Wcale      ADV   <════════════════╗   advmod
-nie        PART  <══════════════╗ ║   advmod
-chcemy     VERB  ═══╗═════════╗═╝═╝═╗ root
-zdobywać   VERB  ═╗<╝         ║     ║ xcomp
-kosmosu    NOUN  <╝           ║     ║ obj
-,          PUNCT <══════════╗ ║     ║ punct
-chcemy     VERB  ═════════╗═╝<╝     ║ conj
-tylko      PART  <══════╗ ║         ║ advmod
-rozszerzyć VERB  ═╗═══╗═╝<╝         ║ xcomp
-Ziemię     PROPN <╝   ║             ║ obj
-do         ADP   <══╗ ║             ║ case
-jego       PRON  <╗ ║ ║             ║ nmod:poss
-granic     NOUN  ═╝═╝<╝             ║ obl
-.          PUNCT <══════════════════╝ punct
+Wcale      ADV   <══════╗         advmod
+nie        PART  <════╗ ║         advmod
+chcemy     VERB  ═══╗═╝═╝═════╗═╗ root
+zdobywać   VERB  ═╗<╝         ║ ║ xcomp
+kosmosu    NOUN  <╝           ║ ║ obj
+,          PUNCT <══════════╗ ║ ║ punct
+chcemy     VERB  ═════════╗═╝<╝ ║ conj
+tylko      PART  <══════╗ ║     ║ advmod
+rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
+Ziemię     PROPN <╝   ║         ║ obj
+do         ADP   <══╗ ║         ║ case
+jego       PRON  <╗ ║ ║         ║ nmod:poss
+granic     NOUN  ═╝═╝<╝         ║ obl
+.          PUNCT <══════════════╝ punct
 ```
 
 ## z [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
