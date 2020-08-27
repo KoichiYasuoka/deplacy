@@ -3,23 +3,23 @@
 ## med [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("da")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Da        ADV   <══════════╗   advmod
-sukkede   VERB  ═════╗═══╗═╝═╗ root
-den       DET   <══╗ ║   ║   ║ det
-lille     ADJ   <╗ ║ ║   ║   ║ amod
-havfrue   NOUN  ═╝═╝<╝   ║   ║ nsubj
-og        CCONJ <══════╗ ║   ║ cc
-så        VERB  ═╗═══╗═╝<╝   ║ conj
-bedrøvet  VERB  <╝   ║       ║ xcomp
-på        ADP   <══╗ ║       ║ case
-sin       DET   <╗ ║ ║       ║ det
-fiskehale NOUN  ═╝═╝<╝       ║ obl
-.         PUNCT <════════════╝ punct
+Da        ADV   <══════╗     advmod
+sukkede   VERB  ═════╗═╝═╗═╗ root
+den       DET   <══╗ ║   ║ ║ det
+lille     ADJ   <╗ ║ ║   ║ ║ amod
+havfrue   NOUN  ═╝═╝<╝   ║ ║ nsubj
+og        CCONJ <══════╗ ║ ║ cc
+så        VERB  ═╗═══╗═╝<╝ ║ conj
+bedrøvet  VERB  <╝   ║     ║ xcomp
+på        ADP   <══╗ ║     ║ case
+sin       DET   <╗ ║ ║     ║ det
+fiskehale NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
 ```
 
 ## med [Stanza](https://stanfordnlp.github.io/stanza)
