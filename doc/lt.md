@@ -39,8 +39,8 @@ duonos NOUN  ═╝<╝     ║ obj
 ## su [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("lt")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Dievas davė dantis, duos ir duonos.")
 >>> import deplacy
 >>> deplacy.render(doc)
