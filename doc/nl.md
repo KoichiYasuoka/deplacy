@@ -25,8 +25,8 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 ## met [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("nl")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
 >>> import deplacy
 >>> deplacy.render(doc)
