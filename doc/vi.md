@@ -18,23 +18,6 @@ chim  NOUN  ═╝═╝<╝   ║ obj
 .     PUNCT <════════╝ punct
 ```
 
-## với [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
-
-```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("vi")
->>> doc=nlp("Một mũi tên trúng hai con chim.")
->>> import deplacy
->>> deplacy.render(doc)
-Một     NUM   <╗         nummod
-mũi_tên NOUN  ═╝<════╗   nsubj
-trúng   VERB  ═════╗═╝═╗ root
-hai     NUM   <══╗ ║   ║ nummod
-con     NOUN  <╗ ║ ║   ║ compound
-chim    NOUN  ═╝═╝<╝   ║ obj
-.       PUNCT <════════╝ punct
-```
-
 ## với [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
