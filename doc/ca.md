@@ -3,8 +3,8 @@
 ## amb [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("ca")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
 >>> import deplacy
 >>> deplacy.render(doc)
