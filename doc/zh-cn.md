@@ -19,27 +19,6 @@
 。   PUNCT <════════╝ punct
 ```
 
-## 用[Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
-
-```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("zh")
->>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> import deplacy
->>> deplacy.render(doc)
-不管 ADP   <══╗             case
-黑猫 NOUN  <╗ ║             nmod
-白猫 NOUN  ═╝═╝═╗<╗         obl
-，   PUNCT <════╝ ║         punct
-捉   VERB  ═══════╝═╗═╗<╗   acl
-到   VERB  <════════╝ ║ ║   mark
-老鼠 NOUN  <══════════╝ ║   obj
-就是 AUX   <══╗         ║   cop
-好   ADJ   <╗ ║         ║   amod
-猫   NOUN  ═╝═╝═════════╝═╗ root
-。   PUNCT <══════════════╝ punct
-```
-
 ## 用[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
