@@ -3,8 +3,8 @@
 ## med [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("nb")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
 >>> import deplacy
 >>> deplacy.render(doc)
