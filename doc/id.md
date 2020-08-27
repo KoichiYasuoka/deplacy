@@ -55,8 +55,8 @@ langit NOUN  <╝     ║ obj
 ## dengan [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("id")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Di atas langit masih ada langit.")
 >>> import deplacy
 >>> deplacy.render(doc)
