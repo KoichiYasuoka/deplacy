@@ -15,6 +15,21 @@
 :     PUNCT <══════╝ punct
 ```
 
+## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ի հետ
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Չկա չարիք առանց բարիք:")
+>>> import deplacy
+>>> deplacy.render(doc)
+Չկա   VERB  ═╗═╗═╗ root
+չարիք NOUN  <╝ ║ ║ nsubj
+առանց ADP   <╗ ║ ║ case
+բարիք NOUN  ═╝<╝ ║ obl
+:     PUNCT <════╝ punct
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-ի հետ
 
 ```py
