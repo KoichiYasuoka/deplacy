@@ -3,22 +3,22 @@
 ## med [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("sv")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Du har förändrat dej och är så långt från mej.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Du        PRON  <════════════╗   nsubj
-har       AUX   <══════════╗ ║   aux
-förändrat VERB  ═╗═══════╗═╝═╝═╗ root
-dej       PRON  <╝       ║     ║ obj
-och       CCONJ <══════╗ ║     ║ cc
-är        VERB  ═══╗═╗═╝<╝     ║ conj
-så        ADV   <╗ ║ ║         ║ advmod
-långt     ADV   ═╝<╝ ║         ║ advmod
-från      ADP   <╗   ║         ║ case
-mej       PRON  ═╝<══╝         ║ obl
-.         PUNCT <══════════════╝ punct
+Du        PRON  <══════════╗   nsubj
+har       AUX   <══╗       ║   aux
+förändrat VERB  ═╗═╝═════╗═╝═╗ root
+dej       PRON  <╝       ║   ║ obj
+och       CCONJ <══════╗ ║   ║ cc
+är        VERB  ═══╗═╗═╝<╝   ║ conj
+så        ADV   <╗ ║ ║       ║ advmod
+långt     ADV   ═╝<╝ ║       ║ advmod
+från      ADP   <╗   ║       ║ case
+mej       PRON  ═╝<══╝       ║ obl
+.         PUNCT <════════════╝ punct
 ```
 
 ## med [Stanza](https://stanfordnlp.github.io/stanza)
