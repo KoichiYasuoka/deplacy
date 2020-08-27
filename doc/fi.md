@@ -85,8 +85,8 @@ selviämään VERB  <╝                   ║ xcomp
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html):n kanssa
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("fi")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
 >>> import deplacy
 >>> deplacy.render(doc)
