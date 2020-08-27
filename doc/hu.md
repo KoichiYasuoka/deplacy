@@ -3,8 +3,8 @@
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-vel
 
 ```py
->>> from camphr.pipelines import load_udify
->>> nlp=load_udify("hu")
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
 >>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
 >>> import deplacy
 >>> deplacy.render(doc)
