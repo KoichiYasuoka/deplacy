@@ -1,23 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) para a análise sintática do galego
 
-## con [Stanza](https://stanfordnlp.github.io/stanza)
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("gl")
->>> doc=nlp("Cando hai fame non hai pan duro.")
->>> import deplacy
->>> deplacy.render(doc)
-Cando PRON  <══════════╗ nsubj
-hai   VERB  ═╗═══════╗═╝ root
-fame  NOUN  <╝       ║   obj
-non   PART  <════╗   ║   advmod
-hai   VERB  ═══╗═╝═╗<╝   ccomp
-pan   NOUN  ═╗<╝   ║     obj
-duro  ADJ   <╝     ║     amod
-.     PUNCT <══════╝     punct
-```
-
 ## con [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
@@ -34,6 +16,24 @@ hai   VERB  ═══╗═╝═╝═╗ root
 pan   NOUN  ═╗<╝     ║ obj
 duro  ADJ   <╝       ║ amod
 .     PUNCT <════════╝ punct
+```
+
+## con [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("gl")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══════════╗ nsubj
+hai   VERB  ═╗═══════╗═╝ root
+fame  NOUN  <╝       ║   obj
+non   PART  <════╗   ║   advmod
+hai   VERB  ═══╗═╝═╗<╝   ccomp
+pan   NOUN  ═╗<╝   ║     obj
+duro  ADJ   <╝     ║     amod
+.     PUNCT <══════╝     punct
 ```
 
 ## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
