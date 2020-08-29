@@ -18,6 +18,24 @@ duro  ADJ   <╝     ║     amod
 .     PUNCT <══════╝     punct
 ```
 
+## con [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando ADV   <══╗       advmod
+hai   VERB  ═╗═╝<══╗   advcl
+fame  NOUN  <╝     ║   obj
+non   ADV   <════╗ ║   advmod
+hai   VERB  ═══╗═╝═╝═╗ root
+pan   NOUN  ═╗<╝     ║ obj
+duro  ADJ   <╝       ║ amod
+.     PUNCT <════════╝ punct
+```
+
 ## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
