@@ -8,15 +8,15 @@
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Москва PROPN <════════════╗   nsubj
-слезам NOUN  <══════════╗ ║   iobj
-не     PART  <════════╗ ║ ║   advmod
-верила VERB  ═══════╗═╝═╝═╝═╗ root
-,      PUNCT <════╗ ║       ║ punct
-а      CCONJ <══╗ ║ ║       ║ cc
-верила VERB  ═╗═╝═╝<╝       ║ conj
-любви  NOUN  <╝             ║ iobj
-.      PUNCT <══════════════╝ punct
+Москва PROPN <══════════╗   nsubj
+слезам NOUN  <════════╗ ║   iobj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ root
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ iobj
+.      PUNCT <════════════╝ punct
 ```
 
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
@@ -47,15 +47,15 @@
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Москва NOUN  <══════════════╗ nsubj
-слезам NOUN  <════════════╗ ║ iobj
-не     PART  <══════════╗ ║ ║ advmod
-верила VERB  ═════════╗═╝═╝═╝ root
-,      PUNCT <════╗   ║       punct
-а      CCONJ <══╗ ║   ║       cc
-верила VERB  ═╗═╝═╝═╗<╝       conj
-любви  NOUN  <╝     ║         obj
-.      PUNCT <══════╝         punct
+Москва NOUN  <════════════╗ nsubj
+слезам NOUN  <══════════╗ ║ iobj
+не     PART  <╗         ║ ║ advmod
+верила VERB  ═╝═══════╗═╝═╝ root
+,      PUNCT <════╗   ║     punct
+а      CCONJ <══╗ ║   ║     cc
+верила VERB  ═╗═╝═╝═╗<╝     conj
+любви  NOUN  <╝     ║       obj
+.      PUNCT <══════╝       punct
 ```
 
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
@@ -66,14 +66,14 @@
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Москва PROPN <════════════╗   nsubj
-слезам NOUN  <══════════╗ ║   iobj
-не     PART  <════════╗ ║ ║   advmod
-верила VERB  ═══════╗═╝═╝═╝═╗ root
-,      PUNCT <════╗ ║       ║ punct
-а      CCONJ <══╗ ║ ║       ║ cc
-верила NOUN  ═╗═╝═╝<╝       ║ conj
-любви  NOUN  <╝             ║ nmod
-.      PUNCT <══════════════╝ punct
+Москва NOUN  <════════════╗ nsubj
+слезам NOUN  <══════════╗ ║ iobj
+не     PART  <╗         ║ ║ advmod
+верила VERB  ═╝═══════╗═╝═╝ root
+,      PUNCT <════╗   ║     punct
+а      CCONJ <══╗ ║   ║     cc
+верила VERB  ═╗═╝═╝═╗<╝     conj
+любви  NOUN  <╝     ║       obj
+.      PUNCT <══════╝       punct
 ```
 
