@@ -18,6 +18,24 @@
 .        PUNCT <════════════╝ punct
 ```
 
+## з [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("en_udify")
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ root
+алеї     NOUN  ═════════╗<╝ ║ nsubj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
 ## з [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
