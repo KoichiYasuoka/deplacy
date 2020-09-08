@@ -6,9 +6,8 @@
 >>> import classla
 >>> nlp=classla.Pipeline("sl")
 >>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
->>> d=doc.conll_file.conll_as_string()
 >>> import deplacy
->>> deplacy.render(d)
+>>> deplacy.render(doc)
 Po        ADP   <╗         case
 koroškem  ADJ   ═╝<════╗   obl
 po        ADP   <╗     ║   case

@@ -17,6 +17,8 @@ def makeDoc(doc):
   elif s.find("stanza")==8:
     from stanza.utils.conll import CoNLL
     d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
+  elif s.find("classla")==8:
+    d=doc.conll_file.conll_as_string()
   elif s.find("list")==8:
     d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   else:
@@ -163,10 +165,7 @@ def renderMatrix(doc,CatenaAnalysis):
         if j in f[i]:
           continue
         g.append(d[j]-1 if j in f[k] else d[j])
-        if min(f[j]+[m])<m:
-          g.append(d[min(f[j])])
-        if max(f[j]+[n])>n:
-          g.append(d[max(f[j])])
+        g.extend([d[e] for e in f[j] if e<m or e>n])
       g.append(0)
       d[i]=max(g)+1
   m=max(d)
