@@ -1,5 +1,24 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) za sklandenjsko analizo
 
+## z [CLASSLA](https://github.com/clarinsi/classla-stanfordnlp)
+
+```py
+>>> import classla
+>>> nlp=classla.Pipeline("sl")
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> d=doc.conll_file.conll_as_string()
+>>> import deplacy
+>>> deplacy.render(d)
+Po        ADP   <╗         case
+koroškem  ADJ   ═╝<════╗   obl
+po        ADP   <╗     ║   case
+kranjskem ADJ   ═╝<══╗ ║   obl
+že        PART  <══╗ ║ ║   advmod
+ajda      NOUN  <╗ ║ ║ ║   nsubj
+zori      VERB  ═╝═╝═╝═╝═╗ root
+.         PUNCT <════════╝ punct
+```
+
 ## z [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
