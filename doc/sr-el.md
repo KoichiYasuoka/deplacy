@@ -47,6 +47,31 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
+## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-om
+
+```py
+>>> from spacy.lang.sr import Serbian
+>>> nlp=Serbian()
+>>> import spacy
+>>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ conj
+i        CCONJ <════════╗ ║ ║ cc
+moja     DET   <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-om
 
 ```py
@@ -91,30 +116,5 @@ znala    VERB  ═════╗═╝═╝═╝═╝<╝     conj
 gibati   VERB  ═╗═╗<╝               xcomp
 gibanicu NOUN  <╝ ║                 obj
 .        PUNCT <══╝                 punct
-```
-
-## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-om
-
-```py
->>> import spacy
->>> nlp=spacy.load("en_udify")
->>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
->>> import deplacy
->>> deplacy.render(doc)
-Da       CCONJ <══════════════╗   discourse
-i        CCONJ <╗             ║   discourse
-m        PRON  ═╝<══════════╗ ║   discourse
-a        CCONJ <════╗       ║ ║   cc
-sira     NOUN  ═══╗═╝═╗<══╗ ║ ║   nsubj
-i        CCONJ <╗ ║   ║   ║ ║ ║   cc
-masla    NOUN  ═╝<╝   ║   ║ ║ ║   conj
-i        CCONJ <══╗   ║   ║ ║ ║   cc
-moja     DET   <╗ ║   ║   ║ ║ ║   det
-bi       AUX    ║ ║<══║═╗ ║ ║ ║   aux
-mati     NOUN  ═╝═╝<══╝ ║ ║ ║ ║   conj
-znala    VERB  ═══╗═════╝═╝═╝═╝═╗ root
-gibati   VERB  ═╗<╝             ║ xcomp
-gibanicu NOUN  <╝               ║ obj
-.        PUNCT <════════════════╝ punct
 ```
 
