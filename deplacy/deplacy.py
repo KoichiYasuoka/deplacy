@@ -17,7 +17,7 @@ def makeDoc(doc):
   elif s.find("stanza")==8:
     from stanza.utils.conll import CoNLL
     d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
-  elif s.find("classla")==8:
+  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
     d=doc.conll_file.conll_as_string()
   elif s.find("list")==8:
     d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
@@ -293,7 +293,7 @@ def serve(doc,port=5000):
   elif s.find("stanza")==8:
     from stanza.utils.conll import CoNLL
     c=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
-  elif s.find("classla")==8:
+  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
     c=doc.conll_file.conll_as_string()
   elif s.find("list")==8:
     c="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
