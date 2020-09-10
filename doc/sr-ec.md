@@ -1,4 +1,4 @@
-# [deplacy](https://koichiyasuoka.github.io/deplacy/) за синтактичку анализу на српском језику
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) за синтаксну анализу на српском језику
 
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ом
 

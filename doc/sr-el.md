@@ -1,4 +1,4 @@
-# [deplacy](https://koichiyasuoka.github.io/deplacy/) za sintaktičku analizu na srpskom jeziku
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) za sintaksnu analizu na srpskom jeziku
 
 ## s [CLASSLA](https://github.com/clarinsi/classla-stanfordnlp)-om
 
