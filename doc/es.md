@@ -91,3 +91,23 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
+## con [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> from spacy.lang.es import Spanish
+>>> nlp=Spanish()
+>>> import spacy
+>>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   <════╗ ║ ║   det
+lengua NOUN  ═══╗═╝═╝═╝═╗ root
+del    ADP   <╗ ║       ║ case
+alma   NOUN  ═╝<╝       ║ nmod
+.      PUNCT <══════════╝ punct
+```
+
