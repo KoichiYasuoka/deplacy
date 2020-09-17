@@ -1,20 +1,20 @@
 # Analisi sintaktikoa [deplacy](https://koichiyasuoka.github.io/deplacy/)-ren bidez
 
-## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-rekin
+## [spaCy-ixaKat](https://github.com/KoichiYasuoka/spaCy-ixaKat)-rekin
 
 ```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("eu")
+>>> import spacy_ixakat
+>>> nlp=spacy_ixakat.load("eu")
 >>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Euskaldun NOUN  ═╗═════╗═╗═╗ ROOT
-izatea    AUX   <╝     ║ ║ ║ cop
-lan       NOUN  <══╗   ║ ║ ║ nmod
-extra     NOUN  ═╗═╝<╗ ║ ║ ║ nsubj
-bat       NUM   <╝   ║ ║ ║ ║ nummod
-izatea    VERB  ═════╝<╝ ║ ║ xcomp
-da        AUX   <════════╝ ║ cop
+Euskaldun PROPN <╗           obl
+izatea    VERB  ═╝<══════╗   csubj
+lan       NOUN  ═╗═╗<╗   ║   obl
+extra     NOUN  <╝ ║ ║   ║   nmod
+bat       NUM   <══╝ ║   ║   nummod
+izatea    VERB  ═════╝<╗ ║   ccomp
+da        VERB  ═══════╝═╝═╗ ROOT
 .         PUNCT <══════════╝ punct
 ```
 
@@ -34,6 +34,24 @@ bat       NUM   <══╝ ║ ║   nummod
 izatea    VERB  ═╗═══╝═╝═╗ root
 da        AUX   <╝       ║ cop
 .         PUNCT <════════╝ punct
+```
+
+## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-rekin
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("eu")
+>>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Euskaldun NOUN  ═╗═════╗═╗═╗ ROOT
+izatea    AUX   <╝     ║ ║ ║ cop
+lan       NOUN  <══╗   ║ ║ ║ nmod
+extra     NOUN  ═╗═╝<╗ ║ ║ ║ nsubj
+bat       NUM   <╝   ║ ║ ║ ║ nummod
+izatea    VERB  ═════╝<╝ ║ ║ xcomp
+da        AUX   <════════╝ ║ cop
+.         PUNCT <══════════╝ punct
 ```
 
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-rekin
