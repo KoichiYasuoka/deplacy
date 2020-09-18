@@ -200,41 +200,52 @@ def renderMatrix(doc,CatenaAnalysis):
       p[i][j+1]=16
   return p
 
-def render(doc,BoxDrawingWidth=1,EnableCR=False,CatenaAnalysis=True,file=None,Japanese=False):
+def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=True,file=None,Japanese=False):
   DOC=makeDoc(doc)
   if len(DOC)==0:
     return
   p=renderMatrix(DOC,CatenaAnalysis)
   u=[" ","\u2578","\u257A","\u2550","\u2579","\u255D","\u255A","\u2569","\u257B","\u2557","\u2554","\u2566","\u2551","\u2563","\u2560","\u256C","<"]
+  if WordRight:
+    for i in [1,5,9,13]:
+      u[i],u[i+1]=u[i+1],u[i]
+    u[16]=">"
   if CatenaAnalysis:
     u[7]=u[5]
     u[11]=u[9]
     u[15]=u[12]
-  x=[]
-  i=[]
-  for t in DOC:
-    x.append(len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]))
-    i.append(len(t.pos_))
-  m=max(x)+1
-  n=max(i)+1
-  s=""
+  r={}
   if Japanese:
     import deplacy.deprelja
     r=deplacy.deprelja.deprelja
-  else:
-    r={}
+  deps=[]
   for i in range(len(DOC)):
-    t="".join(u[j] for j in p[i])
-    if BoxDrawingWidth>1:
-      t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<")
     d=DOC[i].dep_
     if d in r:
       d+="("+r[d]+")"
     elif d.find(":")>0:
       j=d.split(":")
       if j[0] in r:
-        d+="("+r[j[0]]+"["+j[1]+"])"
-    if EnableCR:
+        d+="("+r[j[0]]+"["+":".join(j[1:])+"])"
+    deps.append(d)
+  if WordRight:
+    x=[len(d)+len([c for c in d if ord(c)>12287]) for d in deps]
+  else:
+    x=[len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]) for t in DOC]
+  m=max(x)+1
+  n=max([len(t.pos_) for t in DOC])+1
+  s=""
+  for i in range(len(DOC)):
+    if WordRight:
+      t="".join(u[j] for j in reversed(p[i]))
+    else:
+      t="".join(u[j] for j in p[i])
+    if BoxDrawingWidth>1:
+      t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<").replace(">",">"+" "*(BoxDrawingWidth-1))
+    d=deps[i]
+    if WordRight:
+      s+=" "*(m-x[i]-1)+d+" "+t+" "+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+DOC[i].orth_+"\n"
+    elif EnableCR:
       s+=" "*m+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\r"+DOC[i].orth_+"\n"
     else:
       s+=DOC[i].orth_+" "*(m-x[i])+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\n"
