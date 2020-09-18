@@ -328,7 +328,7 @@ def serve(doc,port=5000):
   except:
     return
 
-def dot(doc):
+def dot(doc,RtoL=False):
   DOC=makeDoc(doc)
   if len(DOC)==0:
     return None
@@ -340,8 +340,12 @@ def dot(doc):
   v=[]
   j=''
   for i in range(len(DOC)):
-    t+=j+'{<'+str(i+1)+'>'
-    j=DOC[i].orth_
+    if RtoL:
+      t+=j+'{<'+str(len(DOC)-i)+'>'
+      j=DOC[len(DOC)-i-1].orth_
+    else:
+      t+=j+'{<'+str(i+1)+'>'
+      j=DOC[i].orth_
     if j in ['"','|','{','}','<','>','\\']:
       t+='\\'+j
       v.append('\\'+j)
@@ -350,8 +354,13 @@ def dot(doc):
       v.append(j)
     else:
       v.append('')
-    t+='|'+DOC[i].pos_+'}'
+    if RtoL:
+      t+='|'+DOC[len(DOC)-i-1].pos_+'}'
+    else:
+      t+='|'+DOC[i].pos_+'}'
     j='|'
+  if RtoL:
+    v.reverse()
   t+='"];\n'
   c=[[i] for i in range(len(DOC))]
   n=["w:"+str(i+1) for i in range(len(DOC))]
@@ -360,10 +369,10 @@ def dot(doc):
     for j in f[i]:
       p='x'+str(x)+'->'+n[i]+';'
       q='x'+str(x)+'->'+n[j]+'[label="'+DOC[j].dep_+'"];'
-      if i<j:
-        t=p+q+'\n'+t
-      else:
+      if (i<j)==RtoL:
         t=q+p+'\n'+t
+      else:
+        t=p+q+'\n'+t
       c[i].extend(c[j])
       u=""
       for j in range(min(c[i]),max(c[i])+1):
