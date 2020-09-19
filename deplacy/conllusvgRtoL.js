@@ -65,6 +65,14 @@ conllusvg.writeNodesSVG=function(textid){
       t.setAttribute("stroke","none");
       if(c.nodes[n].misc.indexOf("FontStyle=Italic")>=0)
 	t.setAttribute("font-style","oblique");
+      if(c.nodes[n].misc.indexOf("Direction=LtoR")>=0){
+        t.setAttribute("unicode-bidi","bidi-override");
+        t.setAttribute("direction","ltr");
+      }
+      if(c.nodes[n].misc.indexOf("Direction=RtoL")>=0){
+        t.setAttribute("unicode-bidi","bidi-override");
+        t.setAttribute("direction","rtl");
+      }
       g.appendChild(t);
       w=t.getBBox().width;
       if(w>90){
