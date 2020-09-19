@@ -6,9 +6,9 @@ conllusvg.writeNodesSVG=function(textid){
   var n,g,t,w;
   c.svg.setAttribute("width",c.width);
   c.svg.setAttribute("height",c.height);
-  c.svg.setAttribute("transform","scale(-1,1)");
   for(n in c.nodes){
     g=document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.setAttribute("transform","scale(-1,1) translate(-"+c.width+" 0)")
     g.setAttribute("stroke","black");
     g.setAttribute("fill","black");
     if(c.nodes[n].svg!=null)
@@ -105,9 +105,9 @@ conllusvg.writeLinksSVG=function(textid){
   var n,g;
   c.svg.setAttribute("width",c.width);
   c.svg.setAttribute("height",c.height);
-  c.svg.setAttribute("transform","scale(-1,1)")
   for(n in c.links){
     g=document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.setAttribute("transform","scale(-1,1) translate(-"+c.width+" 0)")
     g.setAttribute("stroke","black");
     g.setAttribute("fill","black");
     if(c.links[n].svg!=null)
@@ -238,7 +238,7 @@ conllusvg.writeLinksSVGdouble=function(link){
   link.svg.appendChild(t);
   lower.w=t.getBBox().width;
   if(lower.len-lower.w<5){
-    t.setAttribute("transform","scale("+((lower.len-5)/lower.w)+",1)");
+    t.setAttribute("transform","scale("+(-(lower.len-5)/lower.w)+",1)");
     t.setAttribute("x",lower.fromX*lower.w/(lower.len-5));
     lower.w=lower.len-5;
   }
@@ -250,41 +250,4 @@ conllusvg.writeLinksSVGdouble=function(link){
   t=document.createElementNS("http://www.w3.org/2000/svg","path");
   t.setAttribute("d","M "+link.toX+" "+link.toY+" l -4 -10 h 8 Z");
   link.svg.appendChild(t);
-}
-conllusvg.redArrowSVG=function(textid){
-  var c=conllusvg.main[textid];
-  var r=c.svg.getBoundingClientRect();
-  var x=c.event.handler.clientX-r.left;
-  var y=c.event.handler.clientY-r.top;
-  var i=x-c.event.startX;
-  var j=y-c.event.startY;
-  var k=Math.sqrt(i*i+j*j);
-  var t;
-  if(k<15){
-    if(c.event.redArrow!=null){
-      c.svg.removeChild(c.event.redArrow);
-      c.svg.removeChild(c.event.redTriangle);
-      c.event.redArrow=c.event.redTriangle=null;
-    }
-    return;
-  }
-  x-=i*5/k;
-  y-=j*5/k;
-  if(c.event.redArrow==null){
-    t=document.createElementNS("http://www.w3.org/2000/svg","path");
-    t.setAttribute("stroke","red");
-    t.setAttribute("fill","none");
-    t.setAttribute("stroke-width",1);
-    t.setAttribute("d","M "+(c.width-c.event.startX)+" "+c.event.startY+" L "+(c.width-x)+" "+y);
-    c.svg.appendChild(t);
-    c.event.redArrow=t;
-    t=document.createElementNS("http://www.w3.org/2000/svg","path");
-    t.setAttribute("fill","red");
-    t.setAttribute("d","M 0 0 l -4 -10 h 8 Z");
-    c.svg.appendChild(t);
-    c.event.redTriangle=t;
-  }
-  else
-    c.event.redArrow.setAttribute("d","M "+(c.width-c.event.startX)+" "+c.event.startY+" L "+(c.width-x)+" "+y);
-  c.event.redTriangle.setAttribute("transform","matrix("+(-j/k)+" "+(-i/k)+" "+(-i/k)+" "+(j/k)+" "+(c.width-x)+" "+y+")");
 }
