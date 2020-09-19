@@ -21,13 +21,13 @@ punct   ╚════════> PUNCT .
 
 ```py
 >>> def nlp(text):
-...  import sys,subprocess,tempfile
-...  f=tempfile.NamedTemporaryFile("w",encoding="utf-8")
-...  print(text,file=f)
-...  f.flush()
-...  d=subprocess.check_output([sys.executable,"-c","import hebpipe","-q",f.name])
-...  f.close()
-...  return d.decode("utf-8")
+...   import sys,subprocess,tempfile
+...   f=tempfile.NamedTemporaryFile("w",encoding="utf-8")
+...   print(text,file=f)
+...   f.flush()
+...   d=subprocess.check_output([sys.executable,"-c","import hebpipe","-q",f.name])
+...   f.close()
+...   return d.decode("utf-8")
 ...
 >>> doc=nlp("על טעם וריח אין להתווכח.")
 >>> import deplacy
