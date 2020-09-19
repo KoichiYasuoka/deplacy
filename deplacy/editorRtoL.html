@@ -1,0 +1,50 @@
+<!DOCTYPE html><head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>deplacy CoNLL-U editor RtoL</title>
+<script src="conllusvgview.js"></script>
+<script src="conllusvgedit.js"></script>
+<script src="conllusvgRtoL.js"></script>
+<script type="text/javascript">
+function editorCheckURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1))+"\n";
+  if(tx.value==null)
+    tx.textContent=h;
+  else
+    tx.value=h;
+}
+function editorChangeURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href+"#";
+  var i=h.indexOf("#");
+  var v=tx.value;
+  if(v==null)
+    v=tx.textContent;
+  location.href=h.substring(0,i+1)+encodeURIComponent(v);
+}
+editorInsertTextline=conllusvg.insertTextline
+conllusvg.insertTextline=function(textid,i,j,t){
+  editorInsertTextline(textid,i,j,t);
+  editorChangeURL(textid);
+}
+</script>
+</head>
+<body onresize="conllusvg.rewriteAll()">
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+1	על	על	ADP	ADP	_	2	case	_	_
+2	טעם	טעם	NOUN	NOUN	_	6	obl	_	_
+3	ו	ו	CCONJ	CCONJ	_	4	cc	_	SpaceAfter=No
+4	ריח	ריח	NOUN	NOUN	_	2	conj	_	_
+5	אין	אין	AUX	AUX	_	6	aux	_	_
+6	להתווכח	התווכח	VERB	VERB	_	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	PUNCT	_	6	punct	_	_
+</textarea>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu')">
+</svg>
+</body>
