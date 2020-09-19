@@ -8,6 +8,8 @@ from http import HTTPStatus
 PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
 EDITOR_URL="https://koichiyasuoka.github.io/deplacy/deplacy/editor.html"
+EDITOR_RTOL="https://koichiyasuoka.github.io/deplacy/deplacy/editorRtoL.html"
+HEADER_HTML="header.html"
 TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
@@ -265,7 +267,7 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
       self.send_response(HTTPStatus.NOT_FOUND)
       return
     else:
-      f=open(os.path.join(PACKAGE_DIR,"header.html"),"r",encoding="utf-8")
+      f=open(os.path.join(PACKAGE_DIR,HEADER_HTML),"r",encoding="utf-8")
       r=f.read()
       f.close()
       f=TEMPFILE
@@ -282,7 +284,13 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
     self.end_headers()
     self.wfile.write(b)
 
-def serve(doc,port=5000):
+class DeplacyRequestHandlerLtoR(DeplacyRequestHandler):
+  HEADER_HTML="header.html"
+
+class DeplacyRequestHandlerRtoL(DeplacyRequestHandler):
+  HEADER_HTML="headerRtoL.html"
+
+def serve(doc,port=5000,RtoL=False):
   s=str(type(doc))
   if s.find("spacy")==8:
     c=""
@@ -313,7 +321,10 @@ def serve(doc,port=5000):
   if port==None:
     from IPython.display import IFrame,display
     from urllib.parse import quote
-    display(IFrame(src=EDITOR_URL+"#"+quote(c),width="100%",height="400"))
+    if RtoL:
+      display(IFrame(src=EDITOR_RTOL+"#"+quote(c),width="100%",height="400"))
+    else:
+      display(IFrame(src=EDITOR_URL+"#"+quote(c),width="100%",height="400"))
     return
   import sys
   from http.server import HTTPServer
@@ -321,7 +332,10 @@ def serve(doc,port=5000):
   f.seek(0)
   f.truncate(0)
   f.write(c.encode("utf-8"))
-  httpd=HTTPServer(("",port),DeplacyRequestHandler)
+  if RtoL:
+    httpd=HTTPServer(("",port),DeplacyRequestHandlerRtoL)
+  else:
+    httpd=HTTPServer(("",port),DeplacyRequestHandlerLtoR)
   print("http://127.0.0.1:"+str(port)+"   "+VERSION,file=sys.stderr)
   try:
     httpd.serve_forever()
