@@ -9,7 +9,6 @@ PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 VERSION="HTTP deplacy/"+get_distribution("deplacy").version
 EDITOR_URL="https://koichiyasuoka.github.io/deplacy/deplacy/editor.html"
 EDITOR_RTOL="https://koichiyasuoka.github.io/deplacy/deplacy/editorRtoL.html"
-HEADER_HTML="header.html"
 TEMPFILE=tempfile.TemporaryFile()
 
 def makeDoc(doc):
@@ -255,6 +254,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=T
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
   server_version=VERSION
+  header_html="header.html"
   def do_GET(self):
     p=self.path
     p=p[p.rfind("/")+1:]
@@ -267,7 +267,7 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
       self.send_response(HTTPStatus.NOT_FOUND)
       return
     else:
-      f=open(os.path.join(PACKAGE_DIR,HEADER_HTML),"r",encoding="utf-8")
+      f=open(os.path.join(PACKAGE_DIR,self.header_html),"r",encoding="utf-8")
       r=f.read()
       f.close()
       f=TEMPFILE
@@ -284,11 +284,8 @@ class DeplacyRequestHandler(BaseHTTPRequestHandler):
     self.end_headers()
     self.wfile.write(b)
 
-class DeplacyRequestHandlerLtoR(DeplacyRequestHandler):
-  HEADER_HTML="header.html"
-
 class DeplacyRequestHandlerRtoL(DeplacyRequestHandler):
-  HEADER_HTML="headerRtoL.html"
+  header_html="headerRtoL.html"
 
 def serve(doc,port=5000,RtoL=False):
   s=str(type(doc))
@@ -335,7 +332,7 @@ def serve(doc,port=5000,RtoL=False):
   if RtoL:
     httpd=HTTPServer(("",port),DeplacyRequestHandlerRtoL)
   else:
-    httpd=HTTPServer(("",port),DeplacyRequestHandlerLtoR)
+    httpd=HTTPServer(("",port),DeplacyRequestHandler)
   print("http://127.0.0.1:"+str(port)+"   "+VERSION,file=sys.stderr)
   try:
     httpd.serve_forever()
