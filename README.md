@@ -26,7 +26,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 `deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=True,file=None,Japanese=False)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` or `WordRight=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
 
-`deplacy.serve(doc,port=5000)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser. For Google Colaboratory, `port=None` visualizes `doc` directly on the notebook.
+`deplacy.serve(doc,port=5000,RtoL=False)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser. For Google Colaboratory, `port=None` visualizes `doc` directly on the notebook.
 
 `deplacy.dot(doc,RtoL=False)` returns [raw DOT](https://graphviz.readthedocs.io/en/stable/manual.html#using-raw-dot) string for `graphviz.Source`.
 
