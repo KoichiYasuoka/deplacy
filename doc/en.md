@@ -61,6 +61,26 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
+## Usage with [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("en_ewt")
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ ROOT
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ obj
+yesterday NOUN  <══════║═════╝   ║ obl:tmod
+which     PRON  <════╗ ║         ║ nsubj
+had       VERB  ═══╗═╝<╝         ║ acl:relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ obj
+.         PUNCT <════════════════╝ punct
+```
+
 ## Usage with [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
