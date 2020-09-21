@@ -71,6 +71,22 @@ compound:smixut   ║   ╚> PROPN וריח
           punct ╚══════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("he_htb")
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+           case     ╔══> ADP   על
+            obl   ╔>╚═╔═ NOUN  טעם
+compound:smixut   ║   ╚> NOUN  וריח
+           ROOT ╔═╚═══╔═ AUX   אין
+          xcomp ║     ╚> VERB  להתווכח
+          punct ╚══════> PUNCT .
+```
+
 <h2 dir="rtl"> עם <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
 
 ```py
