@@ -111,3 +111,25 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
+## met [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("nl_alpino")
+>>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ondanks    ADP   <╗                 case
+alles      PRON  ═╝<════════════╗   obl
+geloof     VERB  ═╗═══════════╗═╝═╗ ROOT
+ik         PRON  <╝           ║   ║ nsubj
+in         ADP   <══════════╗ ║   ║ case
+de         DET   <════════╗ ║ ║   ║ det
+innerlijke ADJ   <══════╗ ║ ║ ║   ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╝   ║ obl
+van        ADP   <══╗ ║           ║ case
+de         DET   <╗ ║ ║           ║ det
+mens       NOUN  ═╝═╝<╝           ║ nmod
+.          PUNCT <════════════════╝ punct
+```
+
