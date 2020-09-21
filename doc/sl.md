@@ -73,6 +73,24 @@ zori      VERB  ═╝═╝═══╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
+## z [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("sl_ssj")
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Po        ADP   <════╗     case
+koroškem  PROPN ═══╗═╝<╗   obl
+po        ADP   <╗ ║   ║   case
+kranjskem PROPN ═╝<╝   ║   nmod
+že        PART  <══╗   ║   advmod
+ajda      PROPN <╗ ║   ║   nsubj
+zori      VERB  ═╝═╝═══╝═╗ ROOT
+.         PUNCT <════════╝ punct
+```
+
 ## z [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
