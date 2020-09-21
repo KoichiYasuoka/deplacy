@@ -109,3 +109,30 @@ selviämään VERB  ═╝═╝═╝═╗<╝             xcomp
 .          PUNCT <══════╝               punct
 ```
 
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO):n kanssa
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("fi_ftb")
+>>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nyt        ADV   <════════╗             advmod
+minä       PRON  <══════╗ ║             nsubj
+olen       VERB  <════╗ ║ ║             aux
+syönyt     VERB  ═══╗═╝═╝═╝═══════════╗ ROOT
+ja         CCONJ <╗ ║                 ║ cc
+ajatellut  VERB  ═╝<╝                 ║ conj
+ja         CCONJ <════════════════╗   ║ cc
+nyt        ADV   <══════════════╗ ║   ║ advmod
+minusta    PRON  <════════════╗ ║ ║   ║ nmod
+alkaa      VERB  <══════════╗ ║ ║ ║   ║ aux
+tuntua     VERB  ═════════╗═╝═╝═╝═╝═╗<╝ conj
+,          PUNCT <════════║═════════╝   punct
+että       SCONJ <════╗   ║             mark
+asiat      NOUN  <══╗ ║   ║             nsubj
+rupeavat   VERB  <╗ ║ ║   ║             aux
+selviämään VERB  ═╝═╝═╝═╗<╝             advcl
+.          PUNCT <══════╝               punct
+```
+
