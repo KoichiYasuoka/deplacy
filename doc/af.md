@@ -52,6 +52,32 @@ hart  NOUN  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
+## met [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("af_afribooms")
+>>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
+>>> import deplacy
+>>> deplacy.render(doc)
+As    SCONJ ═══════════════╗<╗   amod
+jy    PRON  <══════════╗   ║ ║   nsubj
+met   ADP   <╗         ║   ║ ║   case
+hom   PRON  ═╝<══════╗ ║   ║ ║   obl
+praat VERB  ═══════╗═╝═╝═╗<╝ ║   dep
+in    ADP   <════╗ ║     ║   ║   case
+sy    PRON  <══╗ ║ ║     ║   ║   det
+eie   ADJ   <╗ ║ ║ ║     ║   ║   amod
+taal  NOUN  ═╝═╝═╝<╝     ║   ║   obl
+,     PUNCT <════════════╝   ║   punct
+gaan  VERB  ═╗═══╗═══════════╝═╗ ROOT
+dit   PRON  <╝   ║             ║ nsubj
+na    ADP   <══╗ ║             ║ case
+sy    PRON  <╗ ║ ║             ║ det
+hart  NOUN  ═╝═╝<╝             ║ obl
+.     PUNCT <══════════════════╝ punct
+```
+
 ## met [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
