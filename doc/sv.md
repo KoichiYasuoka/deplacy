@@ -64,6 +64,27 @@ mej       PRON  ═╝<╝             ║ nmod
 .         PUNCT <════════════════╝ punct
 ```
 
+## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("sv_talbanken")
+>>> doc=nlp("Du har förändrat dej och är så långt från mej.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Du        PRON  <════╗         nsubj
+har       AUX   <══╗ ║         aux
+förändrat VERB  ═╗═╝═╝═════╗═╗ ROOT
+dej       PRON  <╝         ║ ║ obj
+och       CCONJ <════════╗ ║ ║ cc
+är        AUX   <══════╗ ║ ║ ║ cop
+så        ADV   <════╗ ║ ║ ║ ║ advmod
+långt     ADV   ═══╗═╝═╝═╝<╝ ║ conj
+från      ADP   <╗ ║         ║ case
+mej       PRON  ═╝<╝         ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
