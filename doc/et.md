@@ -42,6 +42,27 @@ pesagi NOUN  ═╝<╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-ga
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("et_edt")
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ ROOT
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+kärbse NOUN  <╗ ║         ║ nmod
+pesagi NOUN  ═╝<╝         ║ nsubj
+.      PUNCT <════════════╝ punct
+```
+
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-ga
 
 ```py
