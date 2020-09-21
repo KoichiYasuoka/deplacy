@@ -65,6 +65,22 @@
 .      PUNCT <══════╝ punct
 ```
 
+## с [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("bg_btb")
+>>> doc=nlp("Гладна мечка хоро не играе.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Гладна ADJ   <══╗     amod
+мечка  NOUN  ═╗═╝<╗   nsubj
+хоро   NOUN  <╝   ║   nmod
+не     PART  <╗   ║   advmod
+играе  VERB  ═╝═══╝═╗ ROOT
+.      PUNCT <══════╝ punct
+```
+
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
