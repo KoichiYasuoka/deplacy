@@ -8,14 +8,14 @@
 >>> doc=nlp("Eu quis amar, mas tive medo.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Eu   PRON  <════════╗   nsubj
-quis VERB  ═╗═════╗═╝═╗ ROOT
-amar VERB  <╝     ║   ║ xcomp
-,    PUNCT <════╗ ║   ║ punct
-mas  CCONJ <══╗ ║ ║   ║ cc
-tive VERB  ═╗═╝═╝<╝   ║ conj
-medo NOUN  <╝         ║ obj
-.    PUNCT <══════════╝ punct
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ ROOT
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
 ```
 
 ## com [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
@@ -44,14 +44,14 @@ medo NOUN  <╝       ║ obj
 >>> doc=nlp("Eu quis amar, mas tive medo.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Eu   PRON  <════════╗   nsubj
-quis VERB  ═╗═════╗═╝═╗ root
-amar VERB  <╝     ║   ║ xcomp
-,    PUNCT <════╗ ║   ║ punct
-mas  CCONJ <══╗ ║ ║   ║ cc
-tive VERB  ═╗═╝═╝<╝   ║ conj
-medo NOUN  <╝         ║ obj
-.    PUNCT <══════════╝ punct
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ root
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
 ```
 
 ## com [NLP-Cube](https://github.com/Adobe/NLP-Cube)
@@ -63,14 +63,14 @@ medo NOUN  <╝         ║ obj
 >>> doc=nlp("Eu quis amar, mas tive medo.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Eu   PRON  <════════╗   nsubj
-quis VERB  ═╗═════╗═╝═╗ root
-amar VERB  <╝     ║   ║ xcomp
-,    PUNCT <════╗ ║   ║ punct
-mas  CCONJ <══╗ ║ ║   ║ cc
-tive VERB  ═╗═╝═╝<╝   ║ conj
-medo NOUN  <╝         ║ obj
-.    PUNCT <══════════╝ punct
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ root
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
 ```
 
 ## com [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
