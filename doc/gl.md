@@ -73,3 +73,21 @@ duro  ADJ   <╝           ║ amod
 .     PUNCT <════════════╝ punct
 ```
 
+## con [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("gl_ctg")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══╗       nsubj
+hai   VERB  ═╗═╝<══╗   nsubj
+fame  NOUN  <╝     ║   obj
+non   PART  <════╗ ║   advmod
+hai   VERB  ═══╗═╝═╝═╗ ROOT
+pan   NOUN  ═╗<╝     ║ obj
+duro  ADJ   <╝       ║ amod
+.     PUNCT <════════╝ punct
+```
+
