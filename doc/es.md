@@ -111,3 +111,21 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
+## con [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("es_ancora")
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   <════╗ ║ ║   det
+lengua NOUN  ═══╗═╝═╝═╝═╗ ROOT
+del    ADP   <╗ ║       ║ case
+alma   NOUN  ═╝<╝       ║ nmod
+.      PUNCT <══════════╝ punct
+```
+
