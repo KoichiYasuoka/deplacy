@@ -175,6 +175,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)で解析
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("ja_gsd")
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<╗           obl(斜格補語)
+の       ADP   <╝ ║           case(格表示)
+長い     ADJ   ═══╝<╗         acl(連体修飾節)
+トンネル NOUN  ═╗═══╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+抜ける   VERB  ═══════╝═╗<╗   acl(連体修飾節)
+と       SCONJ <════════╝ ║   mark(標識)
+雪国     PROPN ═╗═╗═╗═════╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║       ║ case(格表示)
+あっ     AUX   <══╝ ║       ║ fixed(固着)
+た       AUX   <════╝       ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
 
 ```py
