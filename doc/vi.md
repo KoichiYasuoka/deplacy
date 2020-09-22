@@ -18,6 +18,23 @@ chim  NOUN  ═╝═╝<╝   ║ obj
 .     PUNCT <════════╝ punct
 ```
 
+## với [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("vi_vtb")
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một     NUM   <╗         nummod
+mũi_tên NOUN  ═╝═════╗═╗ ROOT
+trúng   VERB  ═════╗<╝ ║ xcomp
+hai     NUM   <══╗ ║   ║ nummod
+con     NOUN  <╗ ║ ║   ║ compound
+chim    NOUN  ═╝═╝<╝   ║ obj
+.       PUNCT <════════╝ punct
+```
+
 ## với [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
