@@ -1,22 +1,5 @@
 <h1 dir="rtl"> ניתוח תחבירי על <a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a></h1>
 
-<h2 dir="rtl"> עם <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("he")
->>> doc=nlp("על טעם וריח אין להתווכח.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
- case       ╔════> ADP   על
-  obl     ╔>╚═╔═══ NOUN  טעם
-   cc     ║   ║ ╔> CCONJ ו
- conj     ║   ╚>╚═ NOUN  ריח
-  aux ╔>╔═╚═══════ AUX   אין
- root ╚═══════════ VERB  להתווכח
-punct   ╚════════> PUNCT .
-```
-
 <h2 dir="rtl"> עם <a href="https://github.com/amir-zeldes/HebPipe">HebPipe</a></h2>
 
 ```py
