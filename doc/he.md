@@ -7,7 +7,7 @@
 ...   import sys,subprocess,tempfile
 ...   with tempfile.NamedTemporaryFile("w",encoding="utf-8") as f:
 ...     print(t,file=f,flush=True)
-...     return subprocess.check_output([sys.executable,"-c","import hebpipe","-q",f.name]).decode("utf-8")
+...     return subprocess.check_output([sys.executable,"-c","import hebpipe","-q",f.name]).decode("utf-8")+"\n"
 ...
 >>> doc=nlp("על טעם וריח אין להתווכח.")
 >>> import deplacy
