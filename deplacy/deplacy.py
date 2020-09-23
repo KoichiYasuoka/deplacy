@@ -232,7 +232,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=T
   if WordRight:
     x=[len(d)+len([c for c in d if ord(c)>12287]) for d in deps]
   else:
-    x=[len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287]) for t in DOC]
+    x=[len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287])-len([c for c in t.orth_ if ord(c)>767 and ord(c)<880]) for t in DOC]
   m=max(x)+1
   n=max([len(t.pos_) for t in DOC])+1
   s=""
