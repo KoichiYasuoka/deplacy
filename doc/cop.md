@@ -17,6 +17,21 @@
 ·      PUNCT            punct
 ```
 
+## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("coptic")
+>>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
+>>> import deplacy
+>>> deplacy.render(doc)
+ⲙⲟⲟϣⲉ    VERB  ═════╗═╗ ROOT
+ϩⲱⲥ      CCONJ <══╗ ║ ║ mark
+ϣⲏⲣⲉ     NOUN  ═╗═╝<╝ ║ advcl
+ⲙⲡⲟⲩⲟⲉⲓⲛ PROPN <╝     ║ appos
+·        PUNCT <══════╝ punct
+```
+
 ## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
@@ -32,20 +47,5 @@
 ⲙ       ADP   <╗ ║       ║ case
 ⲡⲟⲩⲟⲉⲓⲛ NOUN  ═╝<╝       ║ nmod
 ·       PUNCT <══════════╝ punct
-```
-
-## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("coptic")
->>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
->>> import deplacy
->>> deplacy.render(doc)
-ⲙⲟⲟϣⲉ    VERB  ═════╗═╗ ROOT
-ϩⲱⲥ      CCONJ <══╗ ║ ║ mark
-ϣⲏⲣⲉ     NOUN  ═╗═╝<╝ ║ advcl
-ⲙⲡⲟⲩⲟⲉⲓⲛ PROPN <╝     ║ appos
-·        PUNCT <══════╝ punct
 ```
 
