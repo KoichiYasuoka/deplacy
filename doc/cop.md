@@ -7,14 +7,14 @@
 >>> nlp=spacy_coptic.load()
 >>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
 >>> import deplacy
->>> deplacy.render(doc)
-ⲙⲟⲟϣⲉ  VERB  ═════════╗ ROOT
-ϩⲱⲥ    CCONJ <══════╗ ║ mark
-ϣⲏⲣⲉ   NOUN  ═════╗═╝<╝ advcl
-ⲙ      ADP   <══╗ ║     case
-ⲡ      DET   <╗ ║ ║     det
-ⲟⲩⲟⲉⲓⲛ NOUN  ═╝═╝<╝     nmod
-·      PUNCT            punct
+>>> deplacy.render(doc,WordRight=True)
+ ROOT ╔═════════ VERB  ⲙⲟⲟϣⲉ
+ mark ║ ╔══════> CCONJ ϩⲱⲥ
+advcl ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
+ case     ║ ╔══> ADP   ⲙ
+  det     ║ ║ ╔> DET   ⲡ
+ nmod     ╚>╚═╚═ NOUN  ⲟⲩⲟⲉⲓⲛ
+punct            PUNCT ·
 ```
 
 ## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
@@ -24,12 +24,12 @@
 >>> nlp=spacy_udpipe.load("coptic")
 >>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
 >>> import deplacy
->>> deplacy.render(doc)
-ⲙⲟⲟϣⲉ    VERB  ═════╗═╗ ROOT
-ϩⲱⲥ      CCONJ <══╗ ║ ║ mark
-ϣⲏⲣⲉ     NOUN  ═╗═╝<╝ ║ advcl
-ⲙⲡⲟⲩⲟⲉⲓⲛ PROPN <╝     ║ appos
-·        PUNCT <══════╝ punct
+>>> deplacy.render(doc,WordRight=True)
+ ROOT ╔═╔═════ VERB  ⲙⲟⲟϣⲉ
+ mark ║ ║ ╔══> CCONJ ϩⲱⲥ
+advcl ║ ╚>╚═╔═ NOUN  ϣⲏⲣⲉ
+appos ║     ╚> PROPN ⲙⲡⲟⲩⲟⲉⲓⲛ
+punct ╚══════> PUNCT ·
 ```
 
 ## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
@@ -39,13 +39,13 @@
 >>> nlp=stanza.Pipeline("cop")
 >>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
 >>> import deplacy
->>> deplacy.render(doc)
-ⲙⲟⲟ     ADV   <════════╗   advmod
-ϣⲉ      PART  <══════╗ ║   advmod
-ϩⲱⲥ     VERB  ═════╗═╝═╝═╗ root
-ϣⲏⲣⲉ    NOUN  ═══╗<╝     ║ nsubj
-ⲙ       ADP   <╗ ║       ║ case
-ⲡⲟⲩⲟⲉⲓⲛ NOUN  ═╝<╝       ║ nmod
-·       PUNCT <══════════╝ punct
+>>> deplacy.render(doc,WordRight=True)
+advmod   ╔════════> ADV   ⲙⲟⲟ
+advmod   ║ ╔══════> PART  ϣⲉ
+  root ╔═╚═╚═╔═════ VERB  ϩⲱⲥ
+ nsubj ║     ╚>╔═══ NOUN  ϣⲏⲣⲉ
+  case ║       ║ ╔> ADP   ⲙ
+  nmod ║       ╚>╚═ NOUN  ⲡⲟⲩⲟⲉⲓⲛ
+ punct ╚══════════> PUNCT ·
 ```
 
