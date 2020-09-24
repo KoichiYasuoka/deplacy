@@ -1,6 +1,6 @@
-# [deplacy](https://koichiyasuoka.github.io/deplacy/) ⲉⲛⲁⲛⲁⲗⲩ ⲙ̄ⲡⲥⲩⲛⲧⲁⲜ
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) ⲉⲛⲁⲛⲁⲗⲩ ⲙⲡⲥⲩⲛⲧⲁⲜ
 
-## ϩ︤ⲛ[spaCy-Coptic](https://github.com/KoichiYasuoka/spaCy-Coptic)
+## ϩⲛ[spaCy-Coptic](https://github.com/KoichiYasuoka/spaCy-Coptic)
 
 ```py
 >>> import spacy_coptic
@@ -17,7 +17,7 @@
 ·      PUNCT            punct
 ```
 
-## ϩ︤ⲛ[Stanza](https://stanfordnlp.github.io/stanza)
+## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
 >>> import stanza
@@ -34,7 +34,7 @@
 ·       PUNCT <══════════╝ punct
 ```
 
-## ϩ︤ⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
+## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
 >>> import spacy_udpipe
