@@ -68,7 +68,7 @@
 ...   with tempfile.NamedTemporaryFile("r",encoding="utf-8") as f:
 ...     with tempfile.NamedTemporaryFile("w",encoding="utf-8") as g:
 ...       print(t,file=g,flush=True)
-...       subprocess.check_output([sys.executable,"End-to-End-Parser/predict.py","--model_path","End-to-End-Parser/model.pkl","--input_path",g.name,"--output_path",f.name])
+...       subprocess.check_output([sys.executable,"End-to-end-Parser/predict.py","--model_path","End-to-end-Parser/model.pkl","--input_path",g.name,"--output_path",f.name])
 ...     return f.read()
 ...
 >>> doc=nlp("Չկա չարիք առանց բարիք:")
