@@ -45,3 +45,17 @@
 :     PUNCT <══════╝ punct
 ```
 
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-ի հետ
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("hy_armtdp")
+>>> doc=nlp("Չկա չարիք առանց բարիք:")
+>>> import deplacy
+>>> deplacy.render(doc)
+Չկա   ADV   <╗     aux
+չարիք NOUN  ═╝<╗   obj
+առանց ADJ   <╗ ║   case
+բարիք NOUN  ═╝═╝═╗ obj
+:     PUNCT <════╝ punct
+```
