@@ -1,4 +1,4 @@
-// CoNLL-U SVG RtoL by Koichi Yasuoka, September 19, 2020.
+// CoNLL-U SVG RtoL by Koichi Yasuoka, September 29, 2020.
 // "conllusvgview.js" is needed.
 "use strict";
 conllusvg.writeNodesSVG=function(textid){
@@ -49,8 +49,8 @@ conllusvg.writeNodesSVG=function(textid){
       g.appendChild(t);
       w=t.getBBox().width;
       if(w>90){
-	t.setAttribute("transform","scale("+(90/w)+",1)");
-	t.setAttribute("x",c.nodes[n].x*w/90);
+	t.setAttribute("transform","scale("+(-90/w)+",1)");
+	t.setAttribute("x",-c.nodes[n].x*w/90);
       }
     }
     if(c.nodes[n].form!="_"){

@@ -300,6 +300,9 @@ def serve(doc,port=5000,RtoL=False):
         u="NE="+t.ent_iob_+"-"+t.ent_type_
       else:
         u=""
+      if RtoL and len(t.orth_)>1:
+        if len([c for c in t.orth_ if ord(c)>12287])>0:
+          u+=("" if u=="" else "|")+"Direction=RtoL"
       if not t.whitespace_:
         u+=("" if u=="" else "|")+"SpaceAfter=No"
       if t.norm_!="" and t.norm_!=t.orth_:
