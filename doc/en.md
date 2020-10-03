@@ -81,6 +81,26 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
+## Usage with [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_en_ewt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ root
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ obj
+yesterday NOUN  <══════║═════╝   ║ obl:tmod
+which     PRON  <════╗ ║         ║ nsubj
+had       VERB  ═══╗═╝<╝         ║ acl:relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ obj
+.         PUNCT <════════════════╝ punct
+```
+
 ## Usage with [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
