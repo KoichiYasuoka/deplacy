@@ -110,6 +110,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)で解析
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ja_gsd/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<══╗         nmod(体言による連体修飾語)
+の       ADP   <╝   ║         case(格表示)
+長い     ADJ   <══╗ ║         acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+抜ける   VERB  ═══════╝═╗<╗   advcl(連用修飾節)
+と       SCONJ <════════╝ ║   mark(標識)
+雪       NOUN  <╗         ║   compound(複合)
+国       NOUN  ═╝═╗═╗═════╝═╗ root(親)
+であっ   AUX   <══╝ ║       ║ cop(繫辞)
+た       AUX   <════╝       ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [UniDic2UD](https://pypi.org/project/unidic2ud)で解析
 
 ```py
