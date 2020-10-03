@@ -15,3 +15,16 @@ nsubj ╔══>╚═ NOUN  หัว
   det     ╚> DET   เดียว
 ```
 
+## กับ [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_th_pud/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+    root ╔═══ VERB  หลายหัว
+compound ║ ╔> PROPN ดีกว่า
+     obj ╚>╚═ NOUN  หัวเดียว
+```
+
