@@ -48,7 +48,7 @@ compound:smixut   ║   ╚> NOUN  וריח
            case     ╔══> ADP   על
             obl   ╔>╚═╔═ NOUN  טעם
 compound:smixut   ║   ╚> NOUN  וריח
-           ROOT ╔═╚═══╔═ AUX   אין
+           root ╔═╚═══╔═ AUX   אין
           xcomp ║     ╚> VERB  להתווכח
           punct ╚══════> PUNCT .
 ```
