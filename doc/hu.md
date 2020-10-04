@@ -55,6 +55,24 @@ holnapra   ADV   <╝           ║ nmod
 .          PUNCT <════════════╝ punct
 ```
 
+## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-vel
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_hu_szeged/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <══════════╗   obj
+ma         ADV   <════════╗ ║   advmod:tlocy
+megtehetsz VERB  ═══════╗═╝═╝═╗ root
+,          PUNCT <════╗ ║     ║ punct
+ne         ADV   <══╗ ║ ║     ║ advmod:to
+halaszd    VERB  ═╗═╝═╝<╝     ║ ccomp:obj
+holnapra   ADV   <╝           ║ compound:preverb
+.          PUNCT <════════════╝ punct
+```
+
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-vel
 
 ```py
