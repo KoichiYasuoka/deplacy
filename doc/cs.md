@@ -96,3 +96,22 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 .       PUNCT <════════╝ punct
 ```
 
+## s [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_cs_pdt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Z       ADP   <════╗     case
+hrůzy   NOUN  ═══╗═╝<╗   obl:arg
+a       CCONJ <╗ ║   ║   cc
+bolesti NOUN  ═╝<╝   ║   conj
+stali   VERB  ═╗═╗═══╝═╗ root
+jsme    AUX   <╝ ║     ║ aux
+se      ADP   <╗ ║     ║ case
+dušemi  NOUN  ═╝<╝     ║ obj
+.       PUNCT <════════╝ punct
+```
+
