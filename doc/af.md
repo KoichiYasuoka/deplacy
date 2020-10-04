@@ -78,6 +78,32 @@ hart  NOUN  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
+## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_af_afribooms/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
+>>> import deplacy
+>>> deplacy.render(doc)
+As    SCONJ ═══════════════╗<╗   amod
+jy    PRON  <══════════╗   ║ ║   nsubj
+met   ADP   <╗         ║   ║ ║   case
+hom   PRON  ═╝<══════╗ ║   ║ ║   obl
+praat VERB  ═══════╗═╝═╝═╗<╝ ║   dep
+in    ADP   <════╗ ║     ║   ║   case
+sy    PRON  <══╗ ║ ║     ║   ║   det
+eie   ADJ   <╗ ║ ║ ║     ║   ║   amod
+taal  NOUN  ═╝═╝═╝<╝     ║   ║   obl
+,     PUNCT <════════════╝   ║   punct
+gaan  VERB  ═╗═══╗═══════════╝═╗ root
+dit   PRON  <╝   ║             ║ obj
+na    ADP   <══╗ ║             ║ case
+sy    PRON  <╗ ║ ║             ║ det
+hart  NOUN  ═╝═╝<╝             ║ obl
+.     PUNCT <══════════════════╝ punct
+```
+
 ## met [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
