@@ -21,6 +21,38 @@ xcomp ║       ╚> VERB  להתווכח
 punct ╚════════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("he_htb")
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+           case     ╔══> ADP   על
+            obl   ╔>╚═╔═ NOUN  טעם
+compound:smixut   ║   ╚> NOUN  וריח
+           ROOT ╔═╚═══╔═ AUX   אין
+          xcomp ║     ╚> VERB  להתווכח
+          punct ╚══════> PUNCT .
+```
+
+<h2 dir="rtl"> עם <a href="https://turkunlp.org/Turku-neural-parser-pipeline/">Turku-neural-parser-pipeline</a></h2>
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_he_htb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+           case     ╔══> ADP   על
+            obl   ╔>╚═╔═ NOUN  טעם
+compound:smixut   ║   ╚> NOUN  וריח
+           ROOT ╔═╚═══╔═ AUX   אין
+          xcomp ║     ╚> VERB  להתווכח
+          punct ╚══════> PUNCT .
+```
+
 <h2 dir="rtl"> עם <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
 
 ```py
@@ -50,22 +82,6 @@ compound:smixut   ║   ╚> PROPN וריח
             obl   ╔>╚═╔═ NOUN  טעם
 compound:smixut   ║   ╚> PROPN וריח
            root ╔═╚═══╔═ AUX   אין
-          xcomp ║     ╚> VERB  להתווכח
-          punct ╚══════> PUNCT .
-```
-
-<h2 dir="rtl"> עם <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("he_htb")
->>> doc=nlp("על טעם וריח אין להתווכח.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-           case     ╔══> ADP   על
-            obl   ╔>╚═╔═ NOUN  טעם
-compound:smixut   ║   ╚> NOUN  וריח
-           ROOT ╔═╚═══╔═ AUX   אין
           xcomp ║     ╚> VERB  להתווכח
           punct ╚══════> PUNCT .
 ```
