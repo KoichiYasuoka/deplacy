@@ -8,20 +8,44 @@
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Chi       PRON  <════════════╗   nsubj
-non       ADV   <══════════╗ ║   advmod
-beve      VERB  ═══╗═══╗═╗═╝═╝═╗ ROOT
-in        ADP   <╗ ║   ║ ║     ║ case
-compagnia NOUN  ═╝<╝   ║ ║     ║ obl
-o         CONJ  <════╗ ║ ║     ║ cc
-è         VERB  <══╗ ║ ║ ║     ║ cop
-un        DET   <╗ ║ ║ ║ ║     ║ det
-ladro     NOUN  ═╝═╝═╝<╝ ║     ║ conj
-o         CONJ  <════╗   ║     ║ cc
-è         VERB  <══╗ ║   ║     ║ cop
-una       DET   <╗ ║ ║   ║     ║ det
-spia      NOUN  ═╝═╝═╝<══╝     ║ conj
-.         PUNCT <══════════════╝ punct
+Chi       PRON  <══════╗       nsubj
+non       ADV   <════╗ ║       advmod
+beve      VERB  ═══╗═╝═╝═╗═╗═╗ ROOT
+in        ADP   <╗ ║     ║ ║ ║ case
+compagnia NOUN  ═╝<╝     ║ ║ ║ obl
+o         SCONJ <════╗   ║ ║ ║ cc
+è         VERB  <══╗ ║   ║ ║ ║ cop
+un        DET   <╗ ║ ║   ║ ║ ║ det
+ladro     NOUN  ═╝═╝═╝<══╝ ║ ║ conj
+o         SCONJ <════╗     ║ ║ cc
+è         VERB  <══╗ ║     ║ ║ cop
+una       DET   <╗ ║ ║     ║ ║ det
+spia      NOUN  ═╝═╝═╝<════╝ ║ conj
+.         PUNCT <════════════╝ punct
+```
+
+## con [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_it_isdt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Chi       PRON  <══════╗       nsubj
+non       ADV   <════╗ ║       advmod
+beve      VERB  ═══╗═╝═╝═╗═╗═╗ root
+in        ADP   <╗ ║     ║ ║ ║ case
+compagnia NOUN  ═╝<╝     ║ ║ ║ obl
+o         CCONJ <════╗   ║ ║ ║ cc
+è         AUX   <══╗ ║   ║ ║ ║ cop
+un        DET   <╗ ║ ║   ║ ║ ║ det
+ladro     NOUN  ═╝═╝═╝<══╝ ║ ║ conj
+o         CCONJ <════╗     ║ ║ cc
+è         AUX   <══╗ ║     ║ ║ cop
+una       DET   <╗ ║ ║     ║ ║ det
+spia      NOUN  ═╝═╝═╝<════╝ ║ conj
+.         PUNCT <════════════╝ punct
 ```
 
 ## con [Stanza](https://stanfordnlp.github.io/stanza)
