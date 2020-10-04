@@ -54,6 +54,24 @@ farraige  NOUN  ═╝<╝     ║ compound
 .         PUNCT <════════╝ punct
 ```
 
+## le [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ga_idt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Táimid    VERB  ═══╗═══╗═╗ root
+faoi      ADP   <╗ ║   ║ ║ case
+dhraíocht NOUN  ═╝<╝   ║ ║ xcomp:pred
+ag        ADP   <════╗ ║ ║ case
+ceol      NOUN  ═══╗═╝<╝ ║ obl
+na        DET   <╗ ║     ║ det
+farraige  NOUN  ═╝<╝     ║ compound
+.         PUNCT <════════╝ punct
+```
+
 ## le [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
