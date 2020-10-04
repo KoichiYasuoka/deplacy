@@ -44,6 +44,28 @@ fiskehale NOUN  ═╝═╝<╝       ║ obl
 .         PUNCT <════════════╝ punct
 ```
 
+## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_da_ddt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da        ADV   <══════╗     advmod
+sukkede   VERB  ═════╗═╝═╗═╗ root
+den       DET   <══╗ ║   ║ ║ det
+lille     ADJ   <╗ ║ ║   ║ ║ amod
+havfrue   NOUN  ═╝═╝<╝   ║ ║ nsubj
+og        CCONJ <══════╗ ║ ║ cc
+så        VERB  ═╗═══╗═╝<╝ ║ conj
+bedrøvet  ADJ   <╝   ║     ║ amod
+på        ADP   <══╗ ║     ║ case
+sin       DET   <╗ ║ ║     ║ det
+fiskehale NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
 ## med [spaCy](https://spacy.io/)
 
 ```py
