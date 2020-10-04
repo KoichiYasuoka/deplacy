@@ -73,6 +73,26 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+
+```py
+>>> from spacy.lang.fr import French
+>>> nlp=French()
+>>> import spacy
+>>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        DET   <╗           det
+essentiel NOUN  ═╝<══════╗   nsubj
+est       AUX   <══════╗ ║   cop
+invisible ADJ   ═════╗═╝═╝═╗ root
+pour      ADP   <══╗ ║     ║ case
+les       DET   <╗ ║ ║     ║ det
+yeux      NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
 ## avec [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
@@ -91,13 +111,11 @@ yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
-## avec [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## avec [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
->>> from spacy.lang.fr import French
->>> nlp=French()
->>> import spacy
->>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_fr_sequoia/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
 >>> doc=nlp("L'essentiel est invisible pour les yeux.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -107,7 +125,7 @@ est       AUX   <══════╗ ║   cop
 invisible ADJ   ═════╗═╝═╝═╗ root
 pour      ADP   <══╗ ║     ║ case
 les       DET   <╗ ║ ║     ║ det
-yeux      NOUN  ═╝═╝<╝     ║ obl
+yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
