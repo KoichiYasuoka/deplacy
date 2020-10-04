@@ -17,6 +17,23 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
+## dengan [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_id_gsd/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <══╗     case
+atas   ADP   <╗ ║     case
+langit NOUN  ═╝═╝<╗   obl
+masih  ADV   <══╗ ║   advmod
+ada    VERB  ═╗═╝═╝═╗ root
+langit NOUN  <╝     ║ obj
+.      PUNCT <══════╝ punct
+```
+
 ## dengan [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
