@@ -51,6 +51,31 @@ spia      NOUN  ═╝═╝═╝<╝       ║ conj
 .         PUNCT <══════════════╝ punct
 ```
 
+## con [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("it")
+>>> import deplacy
+>>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Chi       PRON  ═══════════════╗ root
+non       ADV   <════╗         ║ advmod
+beve      VERB  ═══╗═╝═════╗═╗<╝ acl:relcl
+in        ADP   <╗ ║       ║ ║   case
+compagnia NOUN  ═╝<╝       ║ ║   obl
+o         CCONJ <════════╗ ║ ║   cc
+è         AUX   <══╗     ║ ║ ║   cop
+un        DET   <╗ ║     ║ ║ ║   det
+ladro     NOUN  ═╝═╝═══╗═╝<╝ ║   conj
+o         CCONJ <════╗ ║     ║   cc
+è         AUX   <══╗ ║ ║     ║   cop
+una       DET   <╗ ║ ║ ║     ║   det
+spia      NOUN  ═╝═╝═╝<╝     ║   conj
+.         PUNCT <════════════╝   punct
+```
+
 ## con [spaCy](https://spacy.io/)
 
 ```py
@@ -97,31 +122,6 @@ o         CCONJ <════╗     ║ ║ cc
 una       DET   <╗ ║ ║     ║ ║ det
 spia      NOUN  ═╝═╝═╝<════╝ ║ conj
 .         PUNCT <════════════╝ punct
-```
-
-## con [Stanza](https://stanfordnlp.github.io/stanza)
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("it")
->>> import deplacy
->>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> import deplacy
->>> deplacy.render(doc)
-Chi       PRON  ═══════════════╗ root
-non       ADV   <════╗         ║ advmod
-beve      VERB  ═══╗═╝═════╗═╗<╝ acl:relcl
-in        ADP   <╗ ║       ║ ║   case
-compagnia NOUN  ═╝<╝       ║ ║   obl
-o         CCONJ <════════╗ ║ ║   cc
-è         AUX   <══╗     ║ ║ ║   cop
-un        DET   <╗ ║     ║ ║ ║   det
-ladro     NOUN  ═╝═╝═══╗═╝<╝ ║   conj
-o         CCONJ <════╗ ║     ║   cc
-è         AUX   <══╗ ║ ║     ║   cop
-una       DET   <╗ ║ ║ ║     ║   det
-spia      NOUN  ═╝═╝═╝<╝     ║   conj
-.         PUNCT <════════════╝   punct
 ```
 
 ## con [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
