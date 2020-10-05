@@ -121,6 +121,30 @@ granic     NOUN  ═╝═╝<╝       ║ obl
 .          PUNCT <════════════╝ punct
 ```
 
+## z [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_pl_lfg/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Wcale      ADV   <══════╗       advmod
+nie        PART  <════╗ ║       advmod
+chcemy     VERB  ═══╗═╝═╝═══╗═╗ root
+zdobywać   VERB  ═╗<╝       ║ ║ xcomp
+kosmosu    NOUN  <╝         ║ ║ obj
+,          PUNCT <════════╗ ║ ║ punct
+chcemy     VERB  ═╗═════╗═╝<╝ ║ conj
+tylko      PART  <╝     ║     ║ advmod
+rozszerzyć VERB  ═╗═══╗<╝     ║ xcomp
+Ziemię     NOUN  <╝   ║       ║ obj
+do         ADP   <══╗ ║       ║ case
+jego       PRON  <╗ ║ ║       ║ nmod:poss
+granic     NOUN  ═╝═╝<╝       ║ obl
+.          PUNCT <════════════╝ punct
+```
+
 ## z [PDBparser](http://zil.ipipan.waw.pl/PDB/PDBparser)
 
 ```py
