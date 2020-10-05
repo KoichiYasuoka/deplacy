@@ -32,6 +32,38 @@
 .        PUNCT <══════╝ punct
 ```
 
+## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)로 분석
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ko_gsd/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
+>>> import deplacy
+>>> deplacy.render(doc)
+홍시     NOUN  ═╗<╗     nsubj
+맛이     NOUN  <╝ ║     flat
+나서     VERB  ═══╝<╗   advcl
+홍시라   VERB  <╗   ║   ccomp
+생각한다 VERB  ═╝═══╝═╗ root
+.        PUNCT <══════╝ punct
+```
+
+## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)로 분석
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("ko-gsd")
+>>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
+>>> import deplacy
+>>> deplacy.render(doc)
+홍시     NOUN  <══╗     nsubj
+맛이     NOUN  <╗ ║     nsubj
+나서     VERB  ═╝═╝<╗   advcl
+홍시라   VERB  <╗   ║   acl:relcl
+생각한다 VERB  ═╝═══╝═╗ ROOT
+.        PUNCT <══════╝ punct
+```
+
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)로 분석
 
 ```py
@@ -49,18 +81,18 @@
 .        PUNCT <══════╝ punct
 ```
 
-## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)로 분석
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)로 분석
 
 ```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("ko-gsd")
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("ko_gsd")
 >>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
 >>> import deplacy
 >>> deplacy.render(doc)
-홍시     NOUN  <══╗     nsubj
-맛이     NOUN  <╗ ║     nsubj
-나서     VERB  ═╝═╝<╗   advcl
-홍시라   VERB  <╗   ║   acl:relcl
+홍시     NOUN  ═╗<╗     nsubj
+맛이     NOUN  <╝ ║     flat
+나서     VERB  ═══╝<╗   advcl
+홍시라   NOUN  <╗   ║   nsubj
 생각한다 VERB  ═╝═══╝═╗ ROOT
 .        PUNCT <══════╝ punct
 ```
