@@ -133,3 +133,25 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
+## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_nl_alpino/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ondanks    ADP   <╗                 case
+alles      PRON  ═╝<════════════╗   obl
+geloof     VERB  ═╗═══════════╗═╝═╗ root
+ik         PRON  <╝           ║   ║ nsubj
+in         ADP   <══════════╗ ║   ║ case
+de         DET   <════════╗ ║ ║   ║ det
+innerlijke ADJ   <══════╗ ║ ║ ║   ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╝   ║ obl
+van        ADP   <══╗ ║           ║ case
+de         DET   <╗ ║ ║           ║ det
+mens       NOUN  ═╝═╝<╝           ║ nmod
+.          PUNCT <════════════════╝ punct
+```
+
