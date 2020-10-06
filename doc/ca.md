@@ -77,6 +77,28 @@ importància NOUN  ═╝<══╝   ║ obj
 .           PUNCT <════════╝ punct
 ```
 
+## amb [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=ca&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("El tennis té avui a Catalunya molta importància.")
+>>> import deplacy
+>>> deplacy.render(doc)
+El          DET   <╗         det
+tennis      NOUN  ═╝<════╗   nsubj
+té          VERB  ═╗═╗═╗═╝═╗ root
+avui        ADV   <╝ ║ ║   ║ advmod
+a           ADP   <╗ ║ ║   ║ case
+Catalunya   PROPN ═╝<╝ ║   ║ obl
+molta       DET   <╗   ║   ║ det
+importància NOUN  ═╝<══╝   ║ obj
+.           PUNCT <════════╝ punct
+```
+
 ## amb [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
