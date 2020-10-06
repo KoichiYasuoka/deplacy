@@ -36,6 +36,42 @@
 .        PUNCT <════════════╝ punct
 ```
 
+## з [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("uk_iu")
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ ROOT
+алеї     NOUN  ═════════╗<╝ ║ nsubj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
+## з [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_uk_iu/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ root
+алеї     NOUN  ═════════╗<╝ ║ nsubj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
 ## з [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
@@ -65,24 +101,6 @@
 >>> deplacy.render(doc)
 Біжать   VERB  ═══════════╗═╗ ROOT
 алеї     PRON  ═════════╗<╝ ║ obj
-звуків   NOUN  ═══════╗<╝   ║ nmod
-,        PUNCT <════╗ ║     ║ punct
-саджених ADJ   ═══╗═╝<╝     ║ amod
-у        ADP   <╗ ║         ║ case
-гами     NOUN  ═╝<╝         ║ obl
-.        PUNCT <════════════╝ punct
-```
-
-## з [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("uk_iu")
->>> doc=nlp("Біжать алеї звуків, саджених у гами.")
->>> import deplacy
->>> deplacy.render(doc)
-Біжать   VERB  ═══════════╗═╗ ROOT
-алеї     NOUN  ═════════╗<╝ ║ nsubj
 звуків   NOUN  ═══════╗<╝   ║ nmod
 ,        PUNCT <════╗ ║     ║ punct
 саджених ADJ   ═══╗═╝<╝     ║ amod
