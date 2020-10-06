@@ -72,6 +72,29 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
+## s [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-om
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_sr_set/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ conj
+i        CCONJ <════════╗ ║ ║ cc
+moja     PRON  <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     PROPN ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-om
 
 ```py
@@ -116,5 +139,28 @@ znala    VERB  ═════╗═╝═╝═╝═╝<╝     conj
 gibati   VERB  ═╗═╗<╝               xcomp
 gibanicu NOUN  <╝ ║                 obj
 .        PUNCT <══╝                 punct
+```
+
+## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-om
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("sr_set")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗         mark
+ima      VERB  ═════╗═╝═══════╗ ROOT
+sira     NOUN  ═══╗<╝         ║ obj
+i        CCONJ <╗ ║           ║ cc
+masla    NOUN  ═╝<╝           ║ conj
+i        CCONJ <══════════╗   ║ cc
+moja     PRON  <════════╗ ║   ║ nsubj
+bi       AUX   <══════╗ ║ ║   ║ aux
+mati     ADV   <════╗ ║ ║ ║   ║ advmod
+znala    VERB  ═══╗═╝═╝═╝═╝═╗<╝ conj
+gibati   VERB  ═╗<╝         ║   xcomp
+gibanicu NOUN  <╝           ║   obj
+.        PUNCT <════════════╝   punct
 ```
 
