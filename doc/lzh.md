@@ -80,3 +80,26 @@
 冠 NOUN <╝           obj
 ```
 
+## 於[UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=lzh&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜 NOUN <╗       nmod
+田 NOUN ═╝<════╗ nsubj
+不 ADV  <════╗ ║ advmod
+納 VERB ═══╗═╝═╝ root
+履 VERB ═╗<╝     obj
+李 NOUN <╝       obj
+下 NOUN <════╗   nsubj
+不 ADV  <══╗ ║   advmod
+正 VERB ═╗═╝═╝   root
+冠 NOUN <╝       obj
+```
+
