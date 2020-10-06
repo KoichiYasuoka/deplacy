@@ -17,6 +17,21 @@ advcl ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
 punct            PUNCT ·
 ```
 
+## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("coptic")
+>>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ ROOT ╔═╔═════ VERB  ⲙⲟⲟϣⲉ
+ mark ║ ║ ╔══> CCONJ ϩⲱⲥ
+advcl ║ ╚>╚═╔═ NOUN  ϣⲏⲣⲉ
+appos ║     ╚> PROPN ⲙⲡⲟⲩⲟⲉⲓⲛ
+punct ╚══════> PUNCT ·
+```
+
 ## ϩⲛ[UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
@@ -32,21 +47,6 @@ punct            PUNCT ·
  mark ║ ║ ╔══> CCONJ ϩⲱⲥ
 nsubj ║ ║ ║ ╔> NOUN  ϣⲏⲣⲉ
 ccomp ║ ╚>╚═╚═ VERB  ⲙⲡⲟⲩⲟⲉⲓⲛ
-punct ╚══════> PUNCT ·
-```
-
-## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("coptic")
->>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
- ROOT ╔═╔═════ VERB  ⲙⲟⲟϣⲉ
- mark ║ ║ ╔══> CCONJ ϩⲱⲥ
-advcl ║ ╚>╚═╔═ NOUN  ϣⲏⲣⲉ
-appos ║     ╚> PROPN ⲙⲡⲟⲩⲟⲉⲓⲛ
 punct ╚══════> PUNCT ·
 ```
 
