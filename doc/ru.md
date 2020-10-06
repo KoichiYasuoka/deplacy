@@ -96,3 +96,22 @@
 .      PUNCT <══════╝       punct
 ```
 
+## с [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ru_syntagrus/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <════════════╗ nsubj
+слезам NOUN  <══════════╗ ║ iobj
+не     PART  <╗         ║ ║ advmod
+верила VERB  ═╝═══════╗═╝═╝ root
+,      PUNCT <════╗   ║     punct
+а      CCONJ <══╗ ║   ║     cc
+верила VERB  ═╗═╝═╝═╗<╝     conj
+любви  NOUN  <╝     ║       obl
+.      PUNCT <══════╝       punct
+```
+
