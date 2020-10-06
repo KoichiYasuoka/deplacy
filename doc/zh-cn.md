@@ -23,7 +23,8 @@
 
 ```py
 >>> def nlp(t):
-...   import urllib.request,urllib.parse,json                                   ...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=zh_gsdsimp&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=zh_gsdsimp&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
 ...     return json.loads(r.read())["result"]
 ...
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
