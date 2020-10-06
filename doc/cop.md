@@ -17,6 +17,24 @@ advcl ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
 punct            PUNCT ·
 ```
 
+## ϩⲛ[UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=cop&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ root ╔═╔═════ VERB  ⲙⲟⲟϣⲉ
+ mark ║ ║ ╔══> CCONJ ϩⲱⲥ
+nsubj ║ ║ ║ ╔> NOUN  ϣⲏⲣⲉ
+ccomp ║ ╚>╚═╚═ VERB  ⲙⲡⲟⲩⲟⲉⲓⲛ
+punct ╚══════> PUNCT ·
+```
+
 ## ϩⲛ[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
