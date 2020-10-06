@@ -91,6 +91,24 @@ medo NOUN  <╝       ║ obj
 .    PUNCT <════════╝ punct
 ```
 
+## com [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_pt_bosque/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ root
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
+```
+
 ## com [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
