@@ -40,6 +40,29 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
+## Usage with [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=en&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ root
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ obj
+yesterday NOUN  <══════║═════╝   ║ obl:tmod
+which     PRON  <════╗ ║         ║ nsubj
+had       VERB  ═══╗═╝<╝         ║ acl:relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ obj
+.         PUNCT <════════════════╝ punct
+```
+
 ## Usage with [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
