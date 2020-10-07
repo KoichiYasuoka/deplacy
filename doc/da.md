@@ -22,6 +22,31 @@ fiskehale NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
+## med [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=da&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da        ADV   <══════╗     advmod
+sukkede   VERB  ═════╗═╝═╗═╗ root
+den       DET   <══╗ ║   ║ ║ det
+lille     ADJ   <╗ ║ ║   ║ ║ amod
+havfrue   NOUN  ═╝═╝<╝   ║ ║ nsubj
+og        CCONJ <══════╗ ║ ║ cc
+så        VERB  ═╗═══╗═╝<╝ ║ conj
+bedrøvet  VERB  <╝   ║     ║ xcomp
+på        ADP   <══╗ ║     ║ case
+sin       DET   <╗ ║ ║     ║ det
+fiskehale NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
 ## med [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
