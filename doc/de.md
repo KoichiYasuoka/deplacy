@@ -32,6 +32,25 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
+## mit [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=de&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    PRON  <══════╗   nsubj
+sieht VERB  ═══╗═╗═╝═╗ root
+sehr  ADV   <╗ ║ ║   ║ advmod
+jung  ADJ   ═╝ ║<╝   ║ xcomp
+aus   ADP   <══╝     ║ compound:prt
+.     PUNCT <════════╝ punct
+```
+
 ## mit [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
