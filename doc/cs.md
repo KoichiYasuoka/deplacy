@@ -19,6 +19,28 @@ dušemi  NOUN  <════╝   ║ obj
 .       PUNCT <════════╝ punct
 ```
 
+## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=cs&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Z       ADP   <════╗     case
+hrůzy   NOUN  ═══╗═╝<╗   obl
+a       CCONJ <╗ ║   ║   cc
+bolesti NOUN  ═╝<╝   ║   conj
+stali   VERB  ═╗═╗═╗═╝═╗ root
+jsme    AUX   <╝ ║ ║   ║ aux
+se      PRON  <══╝ ║   ║ expl:pv
+dušemi  NOUN  <════╝   ║ obl:arg
+.       PUNCT <════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
