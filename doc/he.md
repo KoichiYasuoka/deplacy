@@ -53,6 +53,25 @@ compound:smixut   ║   ╚> NOUN  וריח
           punct ╚══════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="http://ufal.mff.cuni.cz/udpipe/2">UDPipe 2</a></h2>
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=he&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+           case       ╔══> ADP   על
+            obl     ╔>╚═╔═ NOUN  טעם
+compound:smixut     ║   ╚> NOUN  וריח
+            aux ╔>╔═╚═════ AUX   אין
+           root ╚═════════ VERB  להתווכח
+          punct   ╚══════> PUNCT .
+```
+
 <h2 dir="rtl"> עם <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
 
 ```py
