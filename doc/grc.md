@@ -83,8 +83,7 @@
 .           PUNCT <══════════╝ punct
 ```
 
-## δῐᾰ́́ [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-p
-ipeline/)
+## δῐᾰ́́ [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
 >>> import sys,subprocess
