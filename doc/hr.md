@@ -20,6 +20,28 @@ podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
+## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-om
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=hr&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Činilo    VERB  ═╗═╗═════╗═╗ root
+mi        PRON  <╝ ║     ║ ║ obj
+se        PRON  <══╝     ║ ║ expl
+:         PUNCT <══════╗ ║ ║ punct
+ništa     PRON  <════╗ ║ ║ ║ nsubj
+nije      AUX   <══╗ ║ ║ ║ ║ aux
+teže      VERB  ═╗═╝═╝═╝<╝ ║ parataxis
+podnijeti VERB  <╝         ║ xcomp
+.         PUNCT <══════════╝ punct
+```
+
 ## s [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-om
 
 ```py
@@ -112,28 +134,6 @@ ništa     PRON  <════╗ ║ ║ ║ obj
 nije      AUX   <══╗ ║ ║ ║ ║ cop
 teže      ADJ   ═╗═╝═╝═╝<╝ ║ parataxis
 podnijeti VERB  <╝         ║ nsubj
-.         PUNCT <══════════╝ punct
-```
-
-## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-om
-
-```py
->>> def nlp(t):
-...   import urllib.request,urllib.parse,json
-...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=hr&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
-...     return json.loads(r.read())["result"]
-...
->>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
->>> import deplacy
->>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ root
-mi        PRON  <╝ ║     ║ ║ obj
-se        PRON  <══╝     ║ ║ expl
-:         PUNCT <══════╗ ║ ║ punct
-ništa     PRON  <════╗ ║ ║ ║ nsubj
-nije      AUX   <══╗ ║ ║ ║ ║ aux
-teže      VERB  ═╗═╝═╝═╝<╝ ║ parataxis
-podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
