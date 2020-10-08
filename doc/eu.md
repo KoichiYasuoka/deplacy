@@ -127,3 +127,24 @@ da        AUX   <╝         ║ cop
 .         PUNCT <══════════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-rekin
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=eu&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Euskaldun ADJ   ═╗═════╗═╗<╗ csubj
+izatea    AUX   <╝     ║ ║ ║ cop
+lan       NOUN  ═╗═╗═╗═════╝ root
+extra     NOUN  <╝ ║ ║ ║ ║   amod
+bat       NUM   <══╝ ║ ║ ║   nummod
+izatea    AUX   <════║═╝ ║   cop
+da        AUX   <════║═══╝   cop
+.         PUNCT <════╝       punct
+```
+
