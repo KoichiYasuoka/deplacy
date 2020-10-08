@@ -18,6 +18,27 @@ farraige  NOUN  ═╝<╝     ║ nmod
 .         PUNCT <════════╝ punct
 ```
 
+## le [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=ga&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Táimid    VERB  ═══╗═══╗═╗ root
+faoi      ADP   <╗ ║   ║ ║ case
+dhraíocht NOUN  ═╝<╝   ║ ║ xcomp:pred
+ag        ADP   <════╗ ║ ║ case
+ceol      NOUN  ═══╗═╝<╝ ║ obl
+na        DET   <╗ ║     ║ det
+farraige  NOUN  ═╝<╝     ║ nmod
+.         PUNCT <════════╝ punct
+```
+
 ## le [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
