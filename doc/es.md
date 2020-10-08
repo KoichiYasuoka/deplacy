@@ -54,6 +54,27 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
+## con [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=es&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   <════╗ ║ ║   det
+lengua NOUN  ═══╗═╝═╝═╝═╗ root
+del    ADP   <╗ ║       ║ case
+alma   NOUN  ═╝<╝       ║ nmod
+.      PUNCT <══════════╝ punct
+```
+
 ## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
