@@ -109,3 +109,24 @@ duro  ADJ   <╝       ║ amod
 .     PUNCT <════════╝ punct
 ```
 
+## con [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=gl&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══╗       nsubj
+hai   VERB  ═╗═╝<══╗   nsubj
+fame  NOUN  <╝     ║   obj
+non   PART  <════╗ ║   advmod
+hai   VERB  ═══╗═╝═╝═╗ root
+pan   NOUN  ═╗<╝     ║ obj
+duro  ADJ   <╝       ║ amod
+.     PUNCT <════════╝ punct
+```
+
