@@ -155,13 +155,18 @@ def renderMatrix(doc,CatenaAnalysis):
     for i in w:
       if d[i]!=0:
         continue
-      g=[d[j] for j in f[i]]
       k=h[i]
+      m=min(i,k)
+      n=max(i,k)
+      if -1 in d[m+1:n]:
+        if 0 in d[m+1:n]:
+          continue
+      g=[d[j] for j in f[i]]
+      if 0 in g:
+        continue
       if CatenaAnalysis:
         for j in f[k]:
           g.append(d[j])
-      m=min(i,k)
-      n=max(i,k)
       for j in range(m+1,n):
         if j in f[i]:
           continue
