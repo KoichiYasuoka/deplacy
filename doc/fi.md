@@ -27,6 +27,36 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2):n kanssa
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=fi&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nyt        ADV   <════════╗             advmod
+minä       PRON  <══════╗ ║             nsubj
+olen       AUX   <════╗ ║ ║             aux
+syönyt     VERB  ═══╗═╝═╝═╝═════════╗═╗ root
+ja         CCONJ <╗ ║               ║ ║ cc
+ajatellut  VERB  ═╝<╝               ║ ║ conj
+ja         CCONJ <════════════════╗ ║ ║ cc
+nyt        ADV   <══════════════╗ ║ ║ ║ advmod
+minusta    PRON  <════════════╗ ║ ║ ║ ║ obl
+alkaa      VERB  ═══════════╗═╝═╝═╝<╝ ║ conj
+tuntua     VERB  ═════════╗<╝         ║ xcomp
+,          PUNCT <══════╗ ║           ║ punct
+että       SCONJ <════╗ ║ ║           ║ mark
+asiat      NOUN  <══╗ ║ ║ ║           ║ nsubj
+rupeavat   VERB  ═╗═╝═╝═╝<╝           ║ ccomp
+selviämään VERB  <╝                   ║ xcomp
+.          PUNCT <════════════════════╝ punct
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe):n kanssa
 
 ```py
