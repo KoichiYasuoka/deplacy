@@ -43,7 +43,7 @@
 .           PUNCT <══════════╝ punct
 ```
 
-## δῐᾰ́́ [SpaCy-COMBO](https://github.com/KoichiYasuoka/SpaCy-COMBO)
+## δῐᾰ́́ [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
 >>> import spacy_combo

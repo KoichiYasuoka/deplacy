@@ -100,7 +100,7 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
-## mit [SpaCy-COMBO](https://github.com/KoichiYasuoka/SpaCy-COMBO)
+## mit [SpaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
 >>> import spacy_combo
