@@ -84,6 +84,30 @@ pesagi NOUN  ═╝<╝         ║ nsubj
 .      PUNCT <════════════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-ga
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=et&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ root
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+kärbse NOUN  <╗ ║         ║ nmod
+pesagi NOUN  ═╝<╝         ║ nsubj
+.      PUNCT <════════════╝ punct
+```
+
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-ga
 
 ```py
