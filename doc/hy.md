@@ -30,6 +30,24 @@
 :     PUNCT <════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-ի հետ
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=hy&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Չկա չարիք առանց բարիք:")
+>>> import deplacy
+>>> deplacy.render(doc)
+Չկա   VERB  ═════╗═╗ root
+չարիք NOUN  ═══╗<╝ ║ xcomp
+առանց ADP   <╗ ║   ║ case
+բարիք NOUN  ═╝<╝   ║ nmod:npmod
+:     PUNCT <══════╝ punct
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-ի հետ
 
 ```py
