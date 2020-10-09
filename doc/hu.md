@@ -1,5 +1,26 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) a szintaktikai elemzéshez
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-vel
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=hu&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <══╗       obj
+ma         ADV   <╗ ║       advmod:tlocy
+megtehetsz VERB  ═╝═╝<╗     advcl
+,          PUNCT <════║═╗   punct
+ne         ADV   <══╗ ║ ║   advmod
+halaszd    VERB  ═╗═╝═╝═╝═╗ root
+holnapra   NOUN  <╝       ║ nmod:obl
+.          PUNCT <════════╝ punct
+```
+
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-vel
 
 ```py
