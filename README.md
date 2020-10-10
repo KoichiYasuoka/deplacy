@@ -11,7 +11,7 @@ Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https:/
 >>> nlp=spacy.load("en_core_web_sm")
 >>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy
->>> deplacy.render(doc,WordRight=True)
+>>> deplacy.render(doc)
 I         PRON  <══════════════╗   nsubj
 saw       VERB  ═══════════╗═╗═╝═╗ ROOT
 a         DET   <════════╗ ║ ║   ║ det
@@ -24,7 +24,7 @@ name      NOUN  ═╝<╝             ║ dobj
 .         PUNCT <════════════════╝ punct
 ```
 
-`deplacy.render(doc,WordRight=True,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=True,file=None,Japanese=False)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` or `WordRight=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
+`deplacy.render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=True,file=None,Japanese=False)` renders `doc` on a terminal. For old terminals, whose Box Drawing characters are "fullwidth", `BoxDrawingWidth=2` nicely works. For several languages with "proportional" characters, `EnableCR=True` or `WordRight=True` may work well. `CatenaAnalysis=False` disables Immediate Catena Analysis.
 
 `deplacy.serve(doc,port=5000,RtoL=False)` invokes a simple web-server to visualize `doc` with SVG. Try to connect `http://127.0.0.1:5000` with your local browser. For Google Colaboratory, `port=None` visualizes `doc` directly on the notebook.
 
