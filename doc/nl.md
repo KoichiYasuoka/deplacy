@@ -133,6 +133,31 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
+## met [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=nl&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ondanks    ADP   <╗                 case
+alles      PRON  ═╝<════════════╗   obl
+geloof     VERB  ═╗═══════════╗═╝═╗ root
+ik         PRON  <╝           ║   ║ nsubj
+in         ADP   <══════════╗ ║   ║ case
+de         DET   <════════╗ ║ ║   ║ det
+innerlijke ADJ   <══════╗ ║ ║ ║   ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╝   ║ obl
+van        ADP   <══╗ ║           ║ case
+de         DET   <╗ ║ ║           ║ det
+mens       NOUN  ═╝═╝<╝           ║ nmod
+.          PUNCT <════════════════╝ punct
+```
+
 ## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
