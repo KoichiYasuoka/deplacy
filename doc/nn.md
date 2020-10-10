@@ -60,6 +60,29 @@ live   ADJ   <╝         ║ advmod
 .      PUNCT <══════════╝ punct
 ```
 
+## med [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=nn&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("For me priser dauden, men me elskar live.")
+>>> import deplacy
+>>> deplacy.render(doc)
+For    CCONJ <════╗       cc
+me     PRON  <══╗ ║       nsubj
+priser VERB  ═╗═╝═╝═══╗═╗ root
+dauden ADJ   <╝       ║ ║ advmod
+,      PUNCT <══════╗ ║ ║ punct
+men    CCONJ <════╗ ║ ║ ║ cc
+me     PRON  <══╗ ║ ║ ║ ║ nsubj
+elskar VERB  ═╗═╝═╝═╝<╝ ║ conj
+live   ADJ   <╝         ║ advmod
+.      PUNCT <══════════╝ punct
+```
+
 ## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
