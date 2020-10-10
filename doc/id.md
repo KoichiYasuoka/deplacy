@@ -86,6 +86,26 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
+## dengan [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=id&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <╗         case
+atas   ADP   ═╝<════╗   obl
+langit NOUN  <════╗ ║   obl
+masih  ADV   <══╗ ║ ║   advmod
+ada    VERB  ═╗═╝═╝═╝═╗ root
+langit NOUN  <╝       ║ obj
+.      PUNCT <════════╝ punct
+```
+
 ## dengan [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
