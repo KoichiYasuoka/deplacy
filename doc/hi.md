@@ -25,3 +25,25 @@ acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚══════════════════> PUNCT ।
 ```
 
+## [Stanza](https://stanfordnlp.github.io/stanza) पर विश्लेषण
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("hi")
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+    nsubj   ╔══════════════> PRON  खुद
+      obj   ║ ╔>╔═══════════ PRON  वो
+ compound   ║ ║ ║         ╔> NOUN  बदलाव
+     root ╔═╚═╚═══════════╚═ VERB  बनिए
+    nsubj ║     ║ ╔════════> PRON  जो
+    nsubj ║     ║ ║ ╔══════> PRON  आप
+      obl ║     ║ ║ ║   ╔>╔═ NOUN  दुनिया
+     case ║     ║ ║ ║   ║ ╚> ADP   में
+      obj ║     ║ ║ ║ ╔>╚═══ VERB  देखना
+acl:relcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
+      aux ║               ╚> AUX   हैं
+    punct ╚════════════════> PUNCT ।
+```
+
