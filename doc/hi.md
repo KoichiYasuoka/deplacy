@@ -22,6 +22,29 @@ acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
       aux ║                 ╚> AUX   हैं
     punct ╚══════════════════> PUNCT ।
 ```
+
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) पर विश्लेषण
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("hi_hdtb")
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     nmod     ╔══════════════> PRON  खुद
+      det     ║ ╔════════════> DET   वो
+      obj   ╔>╚═╚═╔═══════════ NOUN  बदलाव
+     ROOT ╔═╚═════════════════ VERB  बनिए
+      obj ║       ║ ╔════════> PRON  जो
+    nsubj ║       ║ ║ ╔══════> PRON  आप
+      obl ║       ║ ║ ║   ╔>╔═ NOUN  दुनिया
+     case ║       ║ ║ ║   ║ ╚> ADP   में
+      obj ║       ║ ║ ║ ╔>╚═══ VERB  देखना
+acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
+      aux ║                 ╚> AUX   हैं
+    punct ╚══════════════════> PUNCT ।
+```
+
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) पर विश्लेषण
 
 ```py
@@ -47,6 +70,28 @@ acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚══════════════════> PUNCT ।
 ```
 
+## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) पर विश्लेषण
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_hi_hdtb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+    nsubj   ╔════════════════> PRON  खुद
+      det   ║   ╔════════════> DET   वो
+    nsubj   ║ ╔>╚═╔═══════════ NOUN  बदलाव
+     root ╔═╚═╚═══════════════ VERB  बनिए
+      obj ║       ║     ╔════> PRON  जो
+    nsubj ║       ║ ╔═══║════> PRON  आप
+      obl ║       ║ ║   ║ ╔>╔═ NOUN  दुनिया
+     case ║       ║ ║   ║ ║ ╚> ADP   में
+      obj ║       ║ ║ ╔>╚═╚═══ VERB  देखना
+acl:relcl ║       ╚>╚═╚═════╔═ VERB  चाहते
+      aux ║                 ╚> AUX   हैं
+    punct ╚══════════════════> PUNCT ।
+```
+
 ## [Stanza](https://stanfordnlp.github.io/stanza) पर विश्लेषण
 
 ```py
@@ -59,6 +104,28 @@ acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
       obj   ║ ╔>╔═══════════ PRON  वो
  compound   ║ ║ ║         ╔> NOUN  बदलाव
      root ╔═╚═╚═══════════╚═ VERB  बनिए
+    nsubj ║     ║ ╔════════> PRON  जो
+    nsubj ║     ║ ║ ╔══════> PRON  आप
+      obl ║     ║ ║ ║   ╔>╔═ NOUN  दुनिया
+     case ║     ║ ║ ║   ║ ╚> ADP   में
+      obj ║     ║ ║ ║ ╔>╚═══ VERB  देखना
+acl:relcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
+      aux ║               ╚> AUX   हैं
+    punct ╚════════════════> PUNCT ।
+```
+
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube) पर विश्लेषण
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("hi")
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+    nsubj   ╔══════════════> PRON  खुद
+      det   ║             ╔> DET   वो
+      obj   ║ ╔══════════>╚═ NOUN  बदलाव
+     ROOT ╔═╚═╚═╔═══════════ VERB  बनिए
     nsubj ║     ║ ╔════════> PRON  जो
     nsubj ║     ║ ║ ╔══════> PRON  आप
       obl ║     ║ ║ ║   ╔>╔═ NOUN  दुनिया
