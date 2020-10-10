@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) के माध्यम से वाक्यविन्यास विश्लेषण
 
-## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) पर
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) पर विश्लेषण
 
 ```py
 >>> def nlp(t):
