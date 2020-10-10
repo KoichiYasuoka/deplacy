@@ -54,6 +54,26 @@ duonos NOUN  ═╝<══╝     ║ conj
 .      PUNCT <══════════╝ punct
 ```
 
+## su [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=lt&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:  ...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Dievas davė dantis, duos ir duonos.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Dievas NOUN  <══════════╗   nsubj
+davė   VERB  ═════════╗═╝═╗ root
+dantis NOUN  ═══════╗<╝   ║ nsubj
+,      PUNCT <════╗ ║     ║ punct
+duos   NOUN  ═══╗═╝<╝     ║ conj
+ir     CCONJ <╗ ║         ║ cc
+duonos NOUN  ═╝<╝         ║ conj
+.      PUNCT <════════════╝ punct
+```
+
 ## su [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
