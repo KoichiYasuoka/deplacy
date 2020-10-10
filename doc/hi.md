@@ -114,7 +114,7 @@ acl:relcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚════════════════> PUNCT ।
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube) पर विश्लेषण
+## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe) पर विश्लेषण
 
 ```py
 >>> import spacy_udpipe
