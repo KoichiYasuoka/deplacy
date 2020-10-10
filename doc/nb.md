@@ -40,6 +40,29 @@ spor      NOUN  ═══╝═╝<╝     ║ xcomp
 .         PUNCT <════════════╝ punct
 ```
 
+## med [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=nb&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ikke      PART  <╗             advmod
+tusen     NUM   ═╝<╗           nummod
+ord       NOUN  ═══╝<══════╗   nsubj
+seg       PRON  <════════╗ ║   obj
+prenter   VERB  ═══════╗═╝═╝═╗ root
+som       SCONJ <════╗ ║     ║ mark
+én        NUM   <╗   ║ ║     ║ nummod
+gjernings NOUN  ═╝<╗ ║ ║     ║ nmod
+spor      NOUN  ═══╝═╝<╝     ║ xcomp
+.         PUNCT <════════════╝ punct
+```
+
 ## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
