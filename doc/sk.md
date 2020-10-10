@@ -19,6 +19,28 @@ spadne  VERB  ═══╝═════╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
+## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=sk&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Kto     PRON  <════╗     nsubj
+druhému ADJ   <╗   ║     amod
+jamu    NOUN  ═╝<╗ ║     obj
+kope    VERB  ═══╝═╝<╗   advcl
+sám     DET   <════╗ ║   xcomp
+do      ADP   <╗   ║ ║   case
+nej     PRON  ═╝<╗ ║ ║   obl
+spadne  VERB  ═══╝═╝═╝═╗ root
+.       PUNCT <════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
