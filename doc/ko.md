@@ -32,6 +32,25 @@
 .        PUNCT <══════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)로 분석
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=ko_gsd&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
+>>> import deplacy
+>>> deplacy.render(doc)
+홍시     NOUN  ═╗<╗     nsubj
+맛이     NOUN  <╝ ║     flat
+나서     VERB  ═══╝<╗   advcl
+홍시라   VERB  <╗   ║   ccomp
+생각한다 VERB  ═╝═══╝═╗ root
+.        PUNCT <══════╝ punct
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)로 분석
 
 ```py
