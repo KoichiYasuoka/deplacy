@@ -55,6 +55,27 @@ zori      VERB  ═╝═╝═╝═╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
+## z [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=sl&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Po        ADP   <╗         case
+koroškem  ADJ   ═╝<════╗   obl
+po        ADP   <╗     ║   case
+kranjskem ADJ   ═╝<══╗ ║   obl
+že        PART  <══╗ ║ ║   advmod
+ajda      ADV   <╗ ║ ║ ║   advmod
+zori      VERB  ═╝═╝═╝═╝═╗ root
+.         PUNCT <════════╝ punct
+```
+
 ## z [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
