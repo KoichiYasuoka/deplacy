@@ -54,6 +54,27 @@
 .        PUNCT <════════════╝ punct
 ```
 
+## з [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=uk&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ root
+алеї     NOUN  ═════════╗<╝ ║ nsubj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
 ## з [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
