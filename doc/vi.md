@@ -89,3 +89,21 @@ chim      NOUN  ═╝<╝   ║ obj
 .         PUNCT <══════╝ punct
 ```
 
+## với [VnCoreNLP](https://github.com/vncorenlp/VnCoreNLP)
+
+```py
+>>> from vncorenlp import VnCoreNLP
+>>> vnp=VnCoreNLP("VnCoreNLP/VnCoreNLP-1.1.1.jar",annotators="wseg,pos,parse")
+>>> nlp=lambda t:"".join(["\n".join(["\t".join([str(v["index"]),v["form"],"_",v["posTag"],v["posTag"],"_",str(v["head"]),v["depLabel"],"_","_"]) for v in s])+"\n\n" for s in vnp.annotate(t)["sentences"]])
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một     M  <╗         det
+mũi_tên N  ═╝<════╗   sub
+trúng   V  ═════╗═╝═╗ root
+hai     M  <══╗ ║   ║ det
+con     Nc ═╗═╝<╝   ║ dob
+chim    N  <╝       ║ nmod
+.       CH <════════╝ punct
+```
+
