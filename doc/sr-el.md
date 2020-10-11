@@ -23,25 +23,27 @@ gibanicu NOUN  <╝         ║   obj
 .        PUNCT <══════════╝   punct
 ```
 
-## s [NLP-Cube](https://github.com/Adobe/NLP-Cube)-om
+## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-om
 
 ```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("sr")
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=sr&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
 >>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
 >>> import deplacy
 >>> deplacy.render(doc)
 Da       SCONJ <══════╗       mark
-ima      VERB  ═════╗═╝<══╗   advcl
-sira     NOUN  ═══╗<╝     ║   obj
-i        CCONJ <╗ ║       ║   cc
-masla    NOUN  ═╝<╝       ║   conj
-i        CCONJ <════════╗ ║   cc
-moja     PRON  <╗       ║ ║   det
-bi       AUX    ║<════╗ ║ ║   aux
-mati     NOUN  ═╝<══╗ ║ ║ ║   nsubj
-znala    VERB  ═══╗═╝═╝═╝═╝═╗ root
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ conj
+i        CCONJ <════════╗ ║ ║ cc
+moja     DET   <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
 gibati   VERB  ═╗<╝         ║ xcomp
 gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
@@ -90,6 +92,30 @@ moja     PRON  <╗       ║ ║ ║ det
 bi       AUX    ║<════╗ ║ ║ ║ aux
 mati     PROPN ═╝<══╗ ║ ║ ║ ║ nsubj
 znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
+## s [NLP-Cube](https://github.com/Adobe/NLP-Cube)-om
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("sr")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝<══╗   advcl
+sira     NOUN  ═══╗<╝     ║   obj
+i        CCONJ <╗ ║       ║   cc
+masla    NOUN  ═╝<╝       ║   conj
+i        CCONJ <════════╗ ║   cc
+moja     PRON  <╗       ║ ║   det
+bi       AUX    ║<════╗ ║ ║   aux
+mati     NOUN  ═╝<══╗ ║ ║ ║   nsubj
+znala    VERB  ═══╗═╝═╝═╝═╝═╗ root
 gibati   VERB  ═╗<╝         ║ xcomp
 gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
