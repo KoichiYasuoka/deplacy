@@ -85,6 +85,30 @@ mej       PRON  ═╝<╝         ║ obl
 .         PUNCT <════════════╝ punct
 ```
 
+## med [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=sv&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Du har förändrat dej och är så långt från mej.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Du        PRON  <════╗         nsubj
+har       AUX   <══╗ ║         aux
+förändrat VERB  ═╗═╝═╝═════╗═╗ root
+dej       PRON  <╝         ║ ║ obj
+och       CCONJ <════════╗ ║ ║ cc
+är        VERB  <══════╗ ║ ║ ║ cop
+så        ADV   <════╗ ║ ║ ║ ║ advmod
+långt     ADV   ═══╗═╝═╝═╝<╝ ║ conj
+från      ADP   <╗ ║         ║ case
+mej       NOUN  ═╝<╝         ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
