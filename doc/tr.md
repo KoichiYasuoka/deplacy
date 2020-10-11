@@ -81,6 +81,25 @@ gelir   VERB  ═════╝═╗ root
 .       PUNCT <══════╝ punct
 ```
 
+## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) ile analiz
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=tr&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("İyi insan sözünün üstüne gelir.")
+>>> import deplacy
+>>> deplacy.render(doc)
+İyi     ADJ   <╗         amod
+insan   NOUN  ═╝<╗       nmod:poss
+sözünün NOUN  ═══╝<╗     nmod:poss
+üstüne  ADJ   ═════╝<╗   amod
+gelir   VERB  ═══════╝═╗ root
+.       PUNCT <════════╝ punct
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe) ile analiz
 
 ```py
