@@ -1,5 +1,26 @@
 <h1 dir="rtl"><a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a> برای تحلیل نحو</h1>
 
+<h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
+
+```py
+>>> import spacy_combo
+>>> nlp=spacy_combo.load("fa_seraji")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case           ╔══> ADP   به
+     nmod     ╔════>╚═╔═ NOUN  اعتقاد
+nmod:poss     ║       ╚> PRON  من
+     ROOT ╔═══║═════════ NOUN  موسيقي
+nmod:poss ╚>╔═╚═╔═════╔═ NOUN  هنر
+      cop   ║   ║     ╚> AUX   نيست
+    punct   ║   ║ ╔════> PUNCT ،
+    nsubj   ║   ║ ║ ╔══> NOUN  بلكه
+     conj   ║   ╚>╚═╚═╔═ NOUN  متافيزيك
+      cop   ║         ╚> AUX   است
+    punct   ╚══════════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://turkunlp.org/Turku-neural-parser-pipeline/">Turku-neural-parser-pipeline</a></h2>
 
 ```py
@@ -40,27 +61,6 @@ nmod:poss       ║   ╚> PRON  من
      conj ║ ╚══>╚═╚═╔═ ADJ   متافيزيك
       cop ║         ╚> AUX   است
     punct ╚══════════> PUNCT .
-```
-
-<h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("fa_seraji")
->>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     case           ╔══> ADP   به
-     nmod     ╔════>╚═╔═ NOUN  اعتقاد
-nmod:poss     ║       ╚> PRON  من
-     ROOT ╔═══║═════════ NOUN  موسيقي
-nmod:poss ╚>╔═╚═╔═════╔═ NOUN  هنر
-      cop   ║   ║     ╚> AUX   نيست
-    punct   ║   ║ ╔════> PUNCT ،
-    nsubj   ║   ║ ║ ╔══> NOUN  بلكه
-     conj   ║   ╚>╚═╚═╔═ NOUN  متافيزيك
-      cop   ║         ╚> AUX   است
-    punct   ╚══════════> PUNCT .
 ```
 
 <h2 dir="rtl"> با <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
