@@ -1,4 +1,4 @@
-<h1 dir="rtl"> برای تحلیل نحو <a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a></h1>
+<h1 dir="rtl"><a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a> برای تحلیل نحو</h1>
 
 <h2 dir="rtl"> با <a href="https://turkunlp.org/Turku-neural-parser-pipeline/">Turku-neural-parser-pipeline</a></h2>
 
