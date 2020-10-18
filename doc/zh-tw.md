@@ -156,6 +156,40 @@
 。   PUNCT <════════════════╝ punct
 ```
 
+## 用[LTP](https://github.com/HIT-SCIR/ltp)
+
+```py
+>>> from ltp import LTP
+>>> ltp=LTP("base")
+>>> def nlp(t):
+...   s,r=ltp.seg(ltp.sent_split([t]))
+...   return "".join(["\n".join(["\t".join([str(i),w,w,p,p,"_",str(h),d,"_","SpaceAfter=No"]) for w,p,(i,h,d) in zip(j,k,l)])+"\n\n" for j,k,l in zip(s,ltp.pos(r),ltp.dep(r))])
+...
+>>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
+>>> import deplacy
+>>> deplacy.render(doc)
+希望 n  <══════════════╗ SBV
+是   v  ═══════╗═╗═╗═╗═╝ HED
+附麗 v  ═══╗═╗<╝ ║ ║ ║   VOB
+於   p  ═╗<╝ ║   ║ ║ ║   CMP
+存在 v  <╝   ║   ║ ║ ║   POB
+的   u  <════╝   ║ ║ ║   RAD
+，   wp <════════╝ ║ ║   WP
+有   v  ═╗═╗═╗═╗═╗<╝ ║   COO
+存在 v  <╝ ║ ║ ║ ║   ║   VOB
+，   wp <══╝ ║ ║ ║   ║   WP
+便   d  <══╗ ║ ║ ║   ║   ADV
+有   v  ═╗═╝<╝ ║ ║   ║   COO
+希望 n  <╝     ║ ║   ║   VOB
+，   wp <══════╝ ║   ║   WP
+有   v  ═╗═╗<╗   ║   ║   SBV
+希望 n  <╝ ║ ║   ║   ║   VOB
+，   wp <══╝ ║   ║   ║   WP
+便是 v  ═╗═══╝<══╝   ║   COO
+光明 n  <╝           ║   VOB
+。   wp <════════════╝   WP
+```
+
 ## 用[DDParser](https://github.com/baidu/DDParser)
 
 ```py
