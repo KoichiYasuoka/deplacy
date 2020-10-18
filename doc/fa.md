@@ -21,6 +21,27 @@ nmod:poss ║       ║ ╚> NOUN  متافيزيك
     punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> با <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("fa")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case         ╔══> ADP   به
+     nmod       ╔>╚═╔═ NOUN  اعتقاد
+nmod:poss       ║   ╚> PRON  من
+    nsubj     ╔>╚═════ NOUN  موسيقي
+     ROOT ╔═╔═╚═════╔═ NOUN  هنر
+      cop ║ ║       ╚> AUX   نيست
+    punct ║ ║   ╔════> PUNCT ،
+       cc ║ ║   ║ ╔══> CCONJ بلكه
+     conj ║ ╚══>╚═╚═╔═ ADJ   متافيزيك
+      cop ║         ╚> AUX   است
+    punct ╚══════════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
 
 ```py
@@ -84,27 +105,6 @@ nmod:poss     ║ ║   ╚> NOUN  نيست
      root ╔═╚═╚═╚═╔═╔═ NOUN  بلكه
 nmod:poss ║       ║ ╚> NOUN  متافيزيك
       cop ║       ╚══> AUX   است
-    punct ╚══════════> PUNCT .
-```
-
-<h2 dir="rtl"> با <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("fa")
->>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     case         ╔══> ADP   به
-     nmod       ╔>╚═╔═ NOUN  اعتقاد
-nmod:poss       ║   ╚> PRON  من
-    nsubj     ╔>╚═════ NOUN  موسيقي
-     ROOT ╔═╔═╚═════╔═ NOUN  هنر
-      cop ║ ║       ╚> AUX   نيست
-    punct ║ ║   ╔════> PUNCT ،
-       cc ║ ║   ║ ╔══> CCONJ بلكه
-     conj ║ ╚══>╚═╚═╔═ ADJ   متافيزيك
-      cop ║         ╚> AUX   است
     punct ╚══════════> PUNCT .
 ```
 
