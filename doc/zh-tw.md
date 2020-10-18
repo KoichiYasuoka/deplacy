@@ -156,7 +156,7 @@
 。   PUNCT <════════════════╝ punct
 ```
 
-## 用[LTP](https://github.com/HIT-SCIR/ltp)
+## 用[LTP](https://ltp.readthedocs.io)
 
 ```py
 >>> from ltp import LTP

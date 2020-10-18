@@ -104,27 +104,7 @@
 。   PUNCT <══════════╝ punct
 ```
 
-## 用[pyhanlp](https://github.com/hankcs/pyhanlp)
-
-```py
->>> import pyhanlp
->>> nlp=pyhanlp.HanLP.parseDependency
->>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> import deplacy
->>> deplacy.render(doc)
-不管 c  <══════════╗ 状中结构
-黑猫 n  <══╗       ║ 定中关系
-白猫 n  ═╗═╝<════╗ ║ 主谓关系
-，   wp <╝       ║ ║ 标点符号
-捉到 v  ═╗<════╗ ║ ║ 主谓关系
-老鼠 n  <╝     ║ ║ ║ 动宾关系
-就是 v  ═══╗═╗═╝═╝═╝ 核心关系
-好   a  <╗ ║ ║       定中关系
-猫   n  ═╝<╝ ║       动宾关系
-。   wp <════╝       标点符号
-```
-
-## 用[LTP](https://github.com/HIT-SCIR/ltp)
+## 用[LTP](https://ltp.readthedocs.io)
 
 ```py
 >>> from ltp import LTP
@@ -170,5 +150,25 @@
 就是 v ═╗═╗═════╝ HED
 好猫 n <╝ ║       VOB
 。   w <══╝       MT
+```
+
+## 用[pyhanlp](https://github.com/hankcs/pyhanlp)
+
+```py
+>>> import pyhanlp
+>>> nlp=pyhanlp.HanLP.parseDependency
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 c  <══════════╗ 状中结构
+黑猫 n  <══╗       ║ 定中关系
+白猫 n  ═╗═╝<════╗ ║ 主谓关系
+，   wp <╝       ║ ║ 标点符号
+捉到 v  ═╗<════╗ ║ ║ 主谓关系
+老鼠 n  <╝     ║ ║ ║ 动宾关系
+就是 v  ═══╗═╗═╝═╝═╝ 核心关系
+好   a  <╗ ║ ║       定中关系
+猫   n  ═╝<╝ ║       动宾关系
+。   wp <════╝       标点符号
 ```
 
