@@ -21,30 +21,6 @@ nmod:poss ║       ║ ╚> NOUN  متافيزيك
     punct ╚══════════> PUNCT .
 ```
 
-<h2 dir="rtl"> با <a href="http://ufal.mff.cuni.cz/udpipe/2">UDPipe 2</a></h2>
-
-```py
->>> def nlp(t):
-...   import urllib.request,urllib.parse,json
-...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=fa&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
-...     return json.loads(r.read())["result"]
-...
->>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     case         ╔══> ADP   به
-     nmod     ╔══>╚═╔═ NOUN  اعتقاد
-nmod:poss     ║     ╚> PRON  من
-    nsubj     ║ ╔>╔═══ NOUN  موسيقي
-nmod:poss     ║ ║ ╚>╔═ NOUN  هنر
-nmod:poss     ║ ║   ╚> NOUN  نيست
-    punct   ╔>║ ║      PUNCT ،
-     root ╔═╚═╚═╚═╔═╔═ NOUN  بلكه
-nmod:poss ║       ║ ╚> NOUN  متافيزيك
-      cop ║       ╚══> AUX   است
-    punct ╚══════════> PUNCT .
-```
-
 <h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
 
 ```py
@@ -87,26 +63,28 @@ nmod:poss     ║ ║ ╚>╔═ NOUN  هنر
     punct ╚══════════> PUNCT .
 ```
 
-<h2 dir="rtl"> با <a href="https://github.com/Adobe/NLP-Cube">NLP-Cube</a></h2>
+<h2 dir="rtl"> با <a href="http://ufal.mff.cuni.cz/udpipe/2">UDPipe 2</a></h2>
 
 ```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("fa")
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=fa&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
 >>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
-     case           ╔══> ADP   به
-      obl   ╔══════>╚═╔═ NOUN  اعتقاد
-nmod:poss   ║         ╚> PRON  من
-    nsubj   ║ ╔══════>╔═ NOUN  موسيقي
-nmod:poss   ║ ║       ╚> NOUN  هنر
-     root ╔═╚═╚═╔═══════ VERB  نيست
-    punct ║     ║ ╔════> PUNCT ،
-   advmod ║     ║ ║ ╔══> X     بلكه
-     conj ║     ╚>╚═╚═╔═ ADJ   متافيزيك
-      cop ║           ╚> AUX   است
-    punct ╚════════════> PUNCT .
+     case         ╔══> ADP   به
+     nmod     ╔══>╚═╔═ NOUN  اعتقاد
+nmod:poss     ║     ╚> PRON  من
+    nsubj     ║ ╔>╔═══ NOUN  موسيقي
+nmod:poss     ║ ║ ╚>╔═ NOUN  هنر
+nmod:poss     ║ ║   ╚> NOUN  نيست
+    punct   ╔>║ ║      PUNCT ،
+     root ╔═╚═╚═╚═╔═╔═ NOUN  بلكه
+nmod:poss ║       ║ ╚> NOUN  متافيزيك
+      cop ║       ╚══> AUX   است
+    punct ╚══════════> PUNCT .
 ```
 
 <h2 dir="rtl"> با <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
@@ -128,6 +106,28 @@ nmod:poss       ║   ╚> PRON  من
      conj ║ ╚══>╚═╚═╔═ ADJ   متافيزيك
       cop ║         ╚> AUX   است
     punct ╚══════════> PUNCT .
+```
+
+<h2 dir="rtl"> با <a href="https://github.com/Adobe/NLP-Cube">NLP-Cube</a></h2>
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("fa")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case           ╔══> ADP   به
+      obl   ╔══════>╚═╔═ NOUN  اعتقاد
+nmod:poss   ║         ╚> PRON  من
+    nsubj   ║ ╔══════>╔═ NOUN  موسيقي
+nmod:poss   ║ ║       ╚> NOUN  هنر
+     root ╔═╚═╚═╔═══════ VERB  نيست
+    punct ║     ║ ╔════> PUNCT ،
+   advmod ║     ║ ║ ╔══> X     بلكه
+     conj ║     ╚>╚═╚═╔═ ADJ   متافيزيك
+      cop ║           ╚> AUX   است
+    punct ╚════════════> PUNCT .
 ```
 
 <h2 dir="rtl"> با <a href="https://github.com/sobhe/hazm">Hazm</a></h2>
