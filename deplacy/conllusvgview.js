@@ -1,4 +1,4 @@
-// CoNLL-U SVG Viewer by Koichi Yasuoka, September 19, 2020.
+// CoNLL-U SVG Viewer by Koichi Yasuoka, October 18, 2020.
 // Nos. 1, 2, 4, 5, 7, 8 and 10 columns are used.
 "use strict";
 var conllusvg=new Object();
@@ -49,7 +49,7 @@ conllusvg.parseStrict=function(textid){
 	  return(false);
 	i++;
       }
-      else if(t=="#")
+      else if(t=="#"&&j==0)
 	state="com";
       else{
 	state="char";
@@ -107,7 +107,7 @@ conllusvg.parseLoose=function(textid){
 	j=0;
 	i++;
       }
-      else if(t=="#")
+      else if(t=="#"&&j==0)
 	state="com";
       else{
 	state="char";
