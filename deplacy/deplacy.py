@@ -20,6 +20,8 @@ def makeDoc(doc):
     d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
   elif s.find("classla")==8 or s.find("stanfordnlp")==8:
     d=doc.conll_file.conll_as_string()
+  elif s.find("nltk")==8:
+    d=doc.to_conll(10)
   elif s.find("list")==8:
     d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   else:
@@ -320,6 +322,8 @@ def serve(doc,port=5000,RtoL=False):
     c=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
   elif s.find("classla")==8 or s.find("stanfordnlp")==8:
     c=doc.conll_file.conll_as_string()
+  elif s.find("nltk")==8:
+    c=doc.to_conll(10)
   elif s.find("list")==8:
     c="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   else:
