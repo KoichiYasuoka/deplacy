@@ -92,3 +92,20 @@ advmod ║   ║ ╔════> PART  لا
  punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> مع <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("ar")
+>>> doc=nlp("من قال لا أدري فقد أفتى.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+  mark   ╔════════> ADP   من
+  root ╔═╚═╔═══════ VERB  قال
+advmod ║   ║ ╔════> PART  لا
+   obj ║   ╚>╚═╔═══ X     أدري
+   obj ║       ╚>╔═ NOUN  فقد
+   acl ║         ╚> VERB  أفتى
+ punct ╚══════════> PUNCT .
+```
+
