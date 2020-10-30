@@ -83,6 +83,7 @@ name      NOUN  ═╝<╝             ║ dobj
 * [Türkçe](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/tr.md)
 * [Українська](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/uk.md)
 * [Tiếng Việt](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/vi.md)
+* [Wolof](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/wo.md)
 * [中文(简体)](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/zh-cn.md)
 * [中文(繁體)](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/zh-tw.md)
 
@@ -161,6 +162,7 @@ You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately. For Google
 * [Türkçe](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/tr.ipynb)
 * [Українська](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/uk.ipynb)
 * [Tiếng Việt](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/vi.ipynb)
+* [Wolof](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/wo.ipynb)
 * [中文(简体)](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/zh-cn.ipynb)
 * [中文(繁體)](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/zh-tw.ipynb)
 
