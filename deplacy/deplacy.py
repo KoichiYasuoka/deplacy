@@ -242,7 +242,7 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=T
   else:
     x=[len(t.orth_)+len([c for c in t.orth_ if ord(c)>12287])-len([c for c in t.orth_ if unicodedata.category(c)=="Mn"]) for t in DOC]
   m=max(x)+1
-  n=max([len(t.pos_) for t in DOC])+1
+  n=max([len(t.pos_) for t in DOC if t.pos_!="_"]+[-1])+1
   s=""
   for i in range(len(DOC)):
     if WordRight:
@@ -252,12 +252,13 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=T
     if BoxDrawingWidth>1:
       t=t.replace(" "," "*BoxDrawingWidth).replace("<"," "*(BoxDrawingWidth-1)+"<").replace(">",">"+" "*(BoxDrawingWidth-1))
     d=deps[i]
+    r="" if DOC[i].pos_=="_" else DOC[i].pos_
     if WordRight:
-      s+=" "*(m-x[i]-1)+d+" "+t+" "+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+DOC[i].orth_+"\n"
+      s+=" "*(m-x[i]-1)+d+" "+t+" "+r+" "*(n-len(r))+DOC[i].orth_+"\n"
     elif EnableCR:
-      s+=" "*m+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\r"+DOC[i].orth_+"\n"
+      s+=" "*m+r+" "*(n-len(r))+t+" "+d+"\r"+DOC[i].orth_+"\n"
     else:
-      s+=DOC[i].orth_+" "*(m-x[i])+DOC[i].pos_+" "*(n-len(DOC[i].pos_))+t+" "+d+"\n"
+      s+=DOC[i].orth_+" "*(m-x[i])+r+" "*(n-len(r))+t+" "+d+"\n"
   print(s,end="",file=file)
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
