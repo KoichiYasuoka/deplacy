@@ -150,3 +150,22 @@ yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("fr_sequoia.camembert-large")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=t,prob=True,text="fr",cache_dir="/tmp").sentences])
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        <╗           det
+essentiel ═╝<══════╗   nsubj
+est       <══════╗ ║   cop
+invisible ═════╗═╝═╝═╗ root
+pour      <══╗ ║     ║ case
+les       <╗ ║ ║     ║ det
+yeux      ═╝═╝<╝     ║ obl:mod
+.         <══════════╝ punct
+```
+
