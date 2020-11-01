@@ -274,18 +274,18 @@
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=tokenizer.tokenize(t),prob=True,text=None).sentences])
 >>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
 >>> import deplacy
->>> deplacy.render(doc)
-国境     ═╗<══╗         nmod
-の       <╝   ║         case
-長い     <══╗ ║         acl
-トンネル ═╗═╝═╝<╗       obj
-を       <╝     ║       case
-抜ける   ═══════╝═╗<╗   acl
-と       <════════╝ ║   mark
-雪国     ═╗═╗═╗═════╝═╗ root
-で       <╝ ║ ║       ║ cop
-あっ     <══╝ ║       ║ aux
-た       <════╝       ║ aux
-。       <════════════╝ punct
+>>> deplacy.render(doc,Japanese=True)
+国境     ═╗<══╗         nmod(体言による連体修飾語)
+の       <╝   ║         case(格表示)
+長い     <══╗ ║         acl(連体修飾節)
+トンネル ═╗═╝═╝<╗       obj(目的語)
+を       <╝     ║       case(格表示)
+抜ける   ═══════╝═╗<╗   acl(連体修飾節)
+と       <════════╝ ║   mark(標識)
+雪国     ═╗═╗═╗═════╝═╗ root(親)
+で       <╝ ║ ║       ║ cop(繫辞)
+あっ     <══╝ ║       ║ aux(動詞補助成分)
+た       <════╝       ║ aux(動詞補助成分)
+。       <════════════╝ punct(句読点)
 ```
 
