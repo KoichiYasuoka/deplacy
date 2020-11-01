@@ -264,3 +264,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [DiaParser](https://github.com/Unipisa/diaparser)で解析
+
+```py
+>>> from transformers.tokenization_bert_japanese import MecabTokenizer
+>>> tokenizer=MecabTokenizer(mecab_dic="unidic_lite")
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("ja_gsd.mbert")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=tokenizer.tokenize(t),prob=True,text=None).sentences])
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc)
+国境     ═╗<══╗         nmod
+の       <╝   ║         case
+長い     <══╗ ║         acl
+トンネル ═╗═╝═╝<╗       obj
+を       <╝     ║       case
+抜ける   ═══════╝═╗<╗   acl
+と       <════════╝ ║   mark
+雪国     ═╗═╗═╗═════╝═╗ root
+で       <╝ ║ ║       ║ cop
+あっ     <══╝ ║       ║ aux
+た       <════╝       ║ aux
+。       <════════════╝ punct
+```
+
