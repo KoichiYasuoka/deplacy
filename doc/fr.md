@@ -153,9 +153,10 @@ yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 ## avec [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
+>>> import os
 >>> from diaparser.parsers import Parser
 >>> parser=Parser.load("fr_sequoia.camembert-large")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=t,prob=True,text="fr",cache_dir="/tmp").sentences])
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=t,prob=True,text="fr",cache_dir=os.path.expanduser("~/.cache/diaparser")).sentences])
 >>> doc=nlp("L'essentiel est invisible pour les yeux.")
 >>> import deplacy
 >>> deplacy.render(doc)
