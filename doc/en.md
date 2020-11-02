@@ -144,6 +144,28 @@ name      NOUN  ═╝<╝       ║ obj
 .         PUNCT <══════════╝ punct
 ```
 
+## Usage with [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from nltk.tokenize import word_tokenize
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("en_ewt.electra-base")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=word_tokenize(t),prob=True,text=None).sentences])
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         <══════════════╗   nsubj
+saw       ═══════════╗═╗═╝═╗ root
+a         <════════╗ ║ ║   ║ det
+horse     ═══════╗═╝<╝ ║   ║ obj
+yesterday <══════║═════╝   ║ obl:tmod
+which     <════╗ ║         ║ nsubj
+had       ═══╗═╝<╝         ║ acl:relcl
+no        <╗ ║             ║ det
+name      ═╝<╝             ║ obj
+.         <════════════════╝ punct
+```
+
 ## Usage with [en-qai-sm](https://pypi.org/project/en-qai-sm/)
 
 ```py
