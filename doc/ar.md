@@ -109,3 +109,22 @@ advmod ║   ║ ╔════> PART  لا
  punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> مع <a href="https://github.com/Unipisa/diaparser">DiaParser</a></h2>
+
+```py
+>>> import os
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("ar_padt.asafaya")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=t,prob=True,text="ar",cache_dir=os.path.expanduser("~/.cache/diaparser")).sentences])
+>>> doc=nlp("من قال لا أدري فقد أفتى.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+      nsubj ╔>╔═══════ من
+        acl ║ ╚>╔═╔═══ قال
+     advmod ║   ║ ║ ╔> لا
+        obj ║   ║ ╚>╚═ أدري
+advmod:emph ║   ║   ╔> فقد
+       root ╚═══════╚═ أفتى
+      punct     ╚════> .
+```
+
