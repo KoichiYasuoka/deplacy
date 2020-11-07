@@ -104,33 +104,6 @@
 。   PUNCT <══════════╝ punct
 ```
 
-## 用[LTP](https://ltp.readthedocs.io)
-
-```py
->>> from ltp import LTP
->>> ltp=LTP("base")
->>> def nlp(t):
-...   s,r=ltp.seg(ltp.sent_split([t]))
-...   return "".join(["\n".join(["\t".join([str(i),w,w,p,p,"_",str(h),d,"_","SpaceAfter=No"]) for w,p,(i,h,d) in zip(j,k,l)])+"\n\n" for j,k,l in zip(s,ltp.pos(r),ltp.dep(r))])
-...
->>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> import deplacy
->>> deplacy.render(doc)
-不管 c  <════════╗   ATT
-黑   a  <══════╗ ║   ATT
-猫   n  ═══╗═╗═╝═╝<╗ SBV
-白   a  <╗ ║ ║     ║ ATT
-猫   n  ═╝<╝ ║     ║ COO
-，   wp <════╝     ║ WP
-捉   v  ═╗═╗<══╗   ║ SBV
-到   v  <╝ ║   ║   ║ CMP
-老鼠 n  <══╝   ║   ║ VOB
-就是 d  ═══╗═╗═╝═══╝ HED
-好   a  <╗ ║ ║       ATT
-猫   n  ═╝<╝ ║       VOB
-。   wp <════╝       WP
-```
-
 ## 用[DDParser](https://github.com/baidu/DDParser)
 
 ```py
