@@ -66,6 +66,31 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
+## met [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=nl&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ondanks    ADP   <╗                 case
+alles      PRON  ═╝<════════════╗   obl
+geloof     VERB  ═╗═══════════╗═╝═╗ root
+ik         PRON  <╝           ║   ║ nsubj
+in         ADP   <══════════╗ ║   ║ case
+de         DET   <════════╗ ║ ║   ║ det
+innerlijke ADJ   <══════╗ ║ ║ ║   ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╝   ║ obl
+van        ADP   <══╗ ║           ║ case
+de         DET   <╗ ║ ║           ║ det
+mens       NOUN  ═╝═╝<╝           ║ nmod
+.          PUNCT <════════════════╝ punct
+```
+
 ## met [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
@@ -133,14 +158,11 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
-## met [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
->>> def nlp(t):
-...   import urllib.request,urllib.parse,json
-...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=nl&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
-...     return json.loads(r.read())["result"]
-...
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_nl_alpino/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
 >>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -158,11 +180,17 @@ mens       NOUN  ═╝═╝<╝           ║ nmod
 .          PUNCT <════════════════╝ punct
 ```
 
-## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+## met [Alpino](http://www.let.rug.nl/vannoord/alp/Alpino/)
 
 ```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_nl_alpino/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> def nlp(t):
+...   import urllib.request,urllib.parse
+...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/alpino?words="+urllib.parse.quote(t)) as r:
+...     q=r.read().decode("utf-8")
+...   i=q.index("conllu?tmp/")
+...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/"+q[i:q.index("'",i)]) as r:
+...     return r.read().decode("utf-8")
+...
 >>> doc=nlp("Ondanks alles geloof ik in de innerlijke goedheid van de mens.")
 >>> import deplacy
 >>> deplacy.render(doc)
