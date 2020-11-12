@@ -1,5 +1,43 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) voor syntactische analyse
 
+## met [Alpino](http://www.let.rug.nl/vannoord/alp/Alpino/)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse
+...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/alpino?words="+urllib.parse.quote(t)) as r:
+...     q=r.read().decode("utf-8")
+...   i=q.index("conllu?tmp/")
+...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/"+q[i:q.index("'",i)]) as r:
+...     return r.read().decode("utf-8")
+...
+>>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Toch       ADV   <══════════════════════╗         advmod
+houd       VERB  ═╗═╗═╗═══════════════╗═╝═╗═╗═╗═╗ root
+ik         PRON   ║<╝ ║               ║   ║ ║ ║ ║ nsubj
+ze         PRON   ║<══╝               ║   ║ ║ ║ ║ obj
+vast       ADJ   <╝                   ║   ║ ║ ║ ║ compound:prt
+,          PUNCT <════════════════════║═══╝ ║ ║ ║ punct
+ondanks    ADP   <╗                   ║     ║ ║ ║ case
+alles      PRON  ═╝<══════════════════║═════╝ ║ ║ obl
+,          PUNCT <════════════════════║═══════╝ ║ punct
+omdat      SCONJ <══════════════════╗ ║         ║ mark
+ik         PRON  <════════════════╗ ║ ║         ║ nsubj
+nog        ADV   <╗               ║ ║ ║         ║ advmod
+steeds     ADV   ═╝<════════════╗ ║ ║ ║         ║ advmod
+aan        ADP   <══════════╗   ║ ║ ║ ║         ║ case
+de         DET   <════════╗ ║   ║ ║ ║ ║         ║ det
+innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║         ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║         ║ obl
+van        ADP   <══╗ ║       ║ ║ ║ ║ ║         ║ case
+den        DET   <╗ ║ ║       ║ ║ ║ ║ ║         ║ det
+mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║         ║ nmod
+geloof     VERB  ═════════════╝═╝═╝═╝<╝         ║ advcl
+.          PUNCT <══════════════════════════════╝ punct
+```
+
 ## met [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
@@ -161,44 +199,6 @@ den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║   ║ det
 mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
 geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝   ║ advcl
 .          PUNCT <══════════════════════════╝ punct
-```
-
-## met [Alpino](http://www.let.rug.nl/vannoord/alp/Alpino/)
-
-```py
->>> def nlp(t):
-...   import urllib.request,urllib.parse
-...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/alpino?words="+urllib.parse.quote(t)) as r:
-...     q=r.read().decode("utf-8")
-...   i=q.index("conllu?tmp/")
-...   with urllib.request.urlopen("https://urd2.let.rug.nl/~vannoord/bin/"+q[i:q.index("'",i)]) as r:
-...     return r.read().decode("utf-8")
-...
->>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
->>> import deplacy
->>> deplacy.render(doc)
-Toch       ADV   <══════════════════════╗         advmod
-houd       VERB  ═╗═╗═╗═══════════════╗═╝═╗═╗═╗═╗ root
-ik         PRON   ║<╝ ║               ║   ║ ║ ║ ║ nsubj
-ze         PRON   ║<══╝               ║   ║ ║ ║ ║ obj
-vast       ADJ   <╝                   ║   ║ ║ ║ ║ compound:prt
-,          PUNCT <════════════════════║═══╝ ║ ║ ║ punct
-ondanks    ADP   <╗                   ║     ║ ║ ║ case
-alles      PRON  ═╝<══════════════════║═════╝ ║ ║ obl
-,          PUNCT <════════════════════║═══════╝ ║ punct
-omdat      SCONJ <══════════════════╗ ║         ║ mark
-ik         PRON  <════════════════╗ ║ ║         ║ nsubj
-nog        ADV   <╗               ║ ║ ║         ║ advmod
-steeds     ADV   ═╝<════════════╗ ║ ║ ║         ║ advmod
-aan        ADP   <══════════╗   ║ ║ ║ ║         ║ case
-de         DET   <════════╗ ║   ║ ║ ║ ║         ║ det
-innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║         ║ amod
-goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║         ║ obl
-van        ADP   <══╗ ║       ║ ║ ║ ║ ║         ║ case
-den        DET   <╗ ║ ║       ║ ║ ║ ║ ║         ║ det
-mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║         ║ nmod
-geloof     VERB  ═════════════╝═╝═╝═╝<╝         ║ advcl
-.          PUNCT <══════════════════════════════╝ punct
 ```
 
 ## met [spaCy](https://spacy.io/)
