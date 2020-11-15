@@ -42,6 +42,28 @@ pesagi NOUN  ═╝<╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
+## [EstMalt](https://github.com/EstSyntax/EstMalt/)-ga
+
+```py
+>>> import ufal.udpipe
+>>> model=ufal.udpipe.Model.load("estudmodel4")
+>>> nlp=ufal.udpipe.Pipeline(model,"tokenize","","","").process
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ root
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+kärbse NOUN  <╗ ║         ║ nmod
+pesagi NOUN  ═╝<╝         ║ obj
+.      PUNCT <════════════╝ punct
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-ga
 
 ```py
