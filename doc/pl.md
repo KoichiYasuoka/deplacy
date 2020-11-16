@@ -99,6 +99,30 @@ granic     NOUN  ═╝═╝<╝         ║ obl
 .          PUNCT <══════════════╝ punct
 ```
 
+## z [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("pl",ignore_tag_map=True)
+>>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Wcale      ADV   <══════╗         advmod
+nie        PART  <════╗ ║         advmod:neg
+chcemy     VERB  ═══╗═╝═╝═════╗═╗ ROOT
+zdobywać   VERB  ═╗<╝         ║ ║ xcomp
+kosmosu    NOUN  <╝           ║ ║ obj
+,          PUNCT <══════════╗ ║ ║ punct
+chcemy     VERB  ═════════╗═╝<╝ ║ conj
+tylko      PART  <══════╗ ║     ║ advmod:emph
+rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
+Ziemię     PROPN <╝   ║         ║ obj
+do         ADP   <══╗ ║         ║ case
+jego       PRON  <╗ ║ ║         ║ nmod
+granic     NOUN  ═╝═╝<╝         ║ obl
+.          PUNCT <══════════════╝ punct
+```
+
 ## z [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
