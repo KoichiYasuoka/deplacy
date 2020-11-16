@@ -146,3 +146,23 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
+## cu [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("ro",ignore_tag_map=True)
+>>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nu      PART  <════════════╗   advmod
+te      PRON  <══════════╗ ║   obj
+băga    VERB  ═══════╗═╗═╝═╝═╗ ROOT
+in      ADP   ═╗═╗<╗ ║ ║     ║ mark
+tărâţe  NOUN  <╝ ║ ║ ║ ║     ║ fixed
+că      SCONJ <══╝ ║ ║ ║     ║ fixed
+te      PRON  <╗   ║ ║ ║     ║ obj
+mănâncă VERB  ═╝═══╝<╝ ║     ║ advcl
+porcii  NOUN  <════════╝     ║ nsubj
+.       PUNCT <══════════════╝ punct
+```
+
