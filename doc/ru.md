@@ -137,3 +137,41 @@
 .      PUNCT <══════╝       punct
 ```
 
+## с [natasha](https://github.com/natasha/natasha)
+
+```py
+>>> from natasha import Doc,Segmenter,NewsEmbedding,NewsMorphTagger,NewsSyntaxParser,MorphVocab
+>>> tokenizer=Segmenter()
+>>> embedding=NewsEmbedding()
+>>> tagger=NewsMorphTagger(embedding)
+>>> parser=NewsSyntaxParser(embedding)
+>>> lemmatizer=MorphVocab()
+>>> def nlp(t):
+...   d=Doc(t)
+...   d.segment(tokenizer)
+...   d.tag_morph(tagger)
+...   d.parse_syntax(parser)
+...   u=""
+...   for s in d.sents:
+...     for t in s.tokens:
+...       t.lemmatize(lemmatizer)
+...       i=t.id.find("_")
+...       f="_" if t.feats=={} else "|".join([k+"="+v for k,v in t.feats.items()])
+...       u+="\t".join([t.id if i<0 else t.id[i+1:],t.text,t.lemma,t.pos,t.pos+("" if f=="_" else "|"+f),f,t.head_id if i<0 else t.head_id[i+1:],t.rel,"_","start_char="+str(t.start)+"|end_char="+str(t.stop)])+"\n"
+...     u+="\n"
+...   return u
+...
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <══════════╗   nsubj
+слезам NOUN  <════════╗ ║   nsubj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ root
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ obj
+.      PUNCT <════════════╝ punct
+```
+
