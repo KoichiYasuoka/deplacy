@@ -38,6 +38,25 @@
 .      PUNCT <════════════╝ punct
 ```
 
+## с [COMBO-pytorch](https://github.com/ipipan/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("russian")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <══════════╗   nsubj
+слезам PRON  <════════╗ ║   iobj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ root
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ obj
+.      PUNCT <════════════╝ punct
+```
+
 ## с [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
