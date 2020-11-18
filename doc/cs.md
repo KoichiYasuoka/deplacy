@@ -99,6 +99,25 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 .       PUNCT <════════╝ punct
 ```
 
+## s [COMBO-pytorch](https://github.com/ipipan/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("czech")
+>>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Z       ADP   <════╗     case
+hrůzy   NOUN  ═══╗═╝<╗   obl:arg
+a       CCONJ <╗ ║   ║   cc
+bolesti NOUN  ═╝<╝   ║   conj
+stali   VERB  ═╗═╗═══╝═╗ root
+jsme    AUX   <╝ ║     ║ aux
+se      ADP   <╗ ║     ║ case
+dušemi  NOUN  ═╝<╝     ║ obl:arg
+.       PUNCT <════════╝ punct
+```
+
 ## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
