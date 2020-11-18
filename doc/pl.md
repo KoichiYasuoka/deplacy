@@ -72,6 +72,30 @@ granic     NOUN  ═╝═╝<╝         ║ obl
 .          PUNCT <══════════════╝ punct
 ```
 
+## z [COMBO-pytorch](https://github.com/ipipan/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("polish-herbert-large")
+>>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Wcale      ADV   <══════╗         advmod
+nie        PART  <════╗ ║         advmod:neg
+chcemy     VERB  ═══╗═╝═╝═════╗═╗ root
+zdobywać   VERB  ═╗<╝         ║ ║ xcomp
+kosmosu    NOUN  <╝           ║ ║ obj
+,          PUNCT <══════════╗ ║ ║ punct
+chcemy     VERB  ═════════╗═╝<╝ ║ conj
+tylko      PART  <══════╗ ║     ║ advmod:emph
+rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
+Ziemię     PROPN <╝   ║         ║ obj
+do         ADP   <══╗ ║         ║ case
+jego       PRON  <╗ ║ ║         ║ nmod
+granic     NOUN  ═╝═╝<╝         ║ obl
+.          PUNCT <══════════════╝ punct
+```
+
 ## z [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
