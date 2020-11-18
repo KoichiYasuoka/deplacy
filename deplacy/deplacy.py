@@ -22,6 +22,9 @@ def makeDoc(doc):
     d=doc.conll_file.conll_as_string()
   elif s.find("nltk")==8:
     d=doc.to_conll(10)
+  elif s.find("combo")==8:
+    from combo.data import sentence2conllu
+    d=sentence2conllu(doc,False).serialize()
   elif s.find("list")==8:
     d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   else:
@@ -325,6 +328,9 @@ def serve(doc,port=5000,RtoL=False):
     c=doc.conll_file.conll_as_string()
   elif s.find("nltk")==8:
     c=doc.to_conll(10)
+  elif s.find("combo")==8:
+    from combo.data import sentence2conllu
+    c=sentence2conllu(doc,False).serialize()
   elif s.find("list")==8:
     c="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   else:
