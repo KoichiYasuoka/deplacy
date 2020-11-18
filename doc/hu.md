@@ -58,6 +58,24 @@ holnapra   NOUN  <╝       ║ nmod:obl
 .          PUNCT <════════╝ punct
 ```
 
+## [COMBO-pytorch](https://github.com/ipipan/combo)-vel
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("hungarian")
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <════════╗   obj
+ma         ADV   <╗       ║   advmod:tlocy
+megtehetsz VERB  ═╝═════╗═╝═╗ root
+,          PUNCT <════╗ ║   ║ punct
+ne         ADV   <╗   ║ ║   ║ compound:preverb
+halaszd    VERB  ═╝═╗═╝<╝   ║ conj
+holnapra   NOUN  <══╝       ║ nmod:obl
+.          PUNCT <══════════╝ punct
+```
+
 ## [hu_core_ud_lg](https://github.com/oroszgy/spacy-hungarian-models)-vel
 
 ```py
@@ -94,7 +112,7 @@ holnapra   ADV   <╝           ║ compound:preverb
 .          PUNCT <════════════╝ punct
 ```
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-vel
+## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-val
 
 ```py
 >>> import spacy_combo
