@@ -292,3 +292,41 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 .          PUNCT <════════════════════════╝ punct
 ```
 
+## met [Frog](https://languagemachines.github.io/frog)
+
+```py
+>>> def nlp(t):
+...   import subprocess
+...   u=""
+...   for s in subprocess.check_output(["frog"],input=t.encode("utf-8")).decode("utf-8").split("\n"):
+...     t=s.split("\t")
+...     u+=s+"\n" if len(t)!=10 else "\t".join([t[0],t[1],t[2],t[4].split("(")[0],t[4],"_",t[8],t[9],"_","_"])+"\n"
+...   return u
+...
+>>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Toch       BW  <══════════════════════════════╗ mod
+houd       WW  ═╗═╗═════════════════════════╗═╝ ROOT
+ik         VNW <╝ ║                         ║   su
+ze         VNW <══╝                         ║   obj1
+vast       ADJ ═╗═════════════════════════╗<╝   predc
+,          LET <╝                         ║     punct
+ondanks    VZ  ═════════════════════════╗<╝     mod
+alles      VNW ═╗═════════════════════╗<╝       obj1
+,          LET <╝                     ║         punct
+omdat      VG  ═════════════════════╗<╝         mod
+ik         VNW <════════════════╗   ║           su
+nog        BW  <╗               ║   ║           mod
+steeds     BW  ═╝<════════════╗ ║   ║           mod
+aan        VZ  ═══════════╗<╗ ║ ║   ║           mod
+de         LID <════════╗ ║ ║ ║ ║   ║           det
+innerlijke ADJ <══════╗ ║ ║ ║ ║ ║   ║           mod
+goedheid   N   ═════╗═╝═╝<╝ ║ ║ ║   ║           obj1
+van        VZ  ═══╗<╝       ║ ║ ║   ║           mod
+den        LID <╗ ║         ║ ║ ║   ║           det
+mens       N   ═╝<╝         ║ ║ ║   ║           obj1
+geloof     WW  ═════════════╝═╝═╝═╗<╝           body
+.          LET <══════════════════╝             punct
+```
+
