@@ -304,8 +304,14 @@ def serve(doc,port=5000,RtoL=False):
   if s.find("spacy")==8:
     c=""
     for t in doc:
+      try:
+        m=str(t.morph)
+        if m.startswith("<spacy"):
+          m=""
+      except:
+        m=""
       c+=str(t.i+1)
-      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,"",str(0 if t.head==t else t.head.i+1),t.dep_,""]:
+      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,m,str(0 if t.head==t else t.head.i+1),t.dep_,""]:
         c+="\t_" if i.strip()=="" else "\t"+i
       if t.ent_iob_=="B" or t.ent_iob_=="I":
         u="NE="+t.ent_iob_+"-"+t.ent_type_
