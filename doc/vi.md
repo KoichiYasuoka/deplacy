@@ -127,3 +127,22 @@ chim    N  <╝       ║ nmod
 .       CH <════════╝ punct
 ```
 
+## với [BkParser](https://github.com/trietnm2/BkParser)
+
+```py
+>>> from bkparser import BKParser
+>>> bkp=BKParser()
+>>> nlp=lambda text:"".join(["\t".join([t.id,t.form,t.lemma,t.uPOSTag,t.xPOSTag,t.feats,t.head,t.depRel,t.deps,t.misc])+"\n" for t in bkp.parse(text)])
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một   DT    <══════╗   det
+mũi   NN    ═╗═╗═╗═╝═╗ ROOT
+tên   NN    <╝ ║ ║   ║ nmod
+trúng JJ    <══╝ ║   ║ amod
+hai   CD    <╗   ║   ║ nummod
+con   NN    ═╝═╗<╝   ║ nmod
+chim  NN    <══╝     ║ nmod
+.     PUNCT <════════╝ punct
+```
+
