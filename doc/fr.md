@@ -150,6 +150,24 @@ yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [Talismane](https://github.com/joliciel-informatique/talismane)
+
+```py
+>>> import subprocess
+>>> nlp=lambda t:"".join([s+"\n" for s in subprocess.run(["java","-Xmx1G","-Dconfig.file=talismane-fr-ud-6.1.0.conf","-jar","talismane-core-6.1.0.jar","--analyse","--sessionId=fr"],cwd="talismane",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout.split("\n") if s=="" or len(s.split("\t"))==10]).replace("\t\t","\t_\t")
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        DET   <╗           det
+essentiel ADJ   ═╝<══════╗   nsubj
+est       AUX   <══════╗ ║   cop
+invisible ADJ   ═════╗═╝═╝═╗ root
+pour      ADP   <══╗ ║     ║ case
+les       DET   <╗ ║ ║     ║ det
+yeux      NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
 ## avec [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
