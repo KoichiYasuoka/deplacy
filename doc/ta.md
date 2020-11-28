@@ -89,7 +89,7 @@ advmod:emph   ║ ║     ║ ╚> PART  உம்
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ta")
+>>> parser=Parser.load("ta_ttb.mbert")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ta",prob=True).sentences])
 >>> doc=nlp("காசுக்கு ஒரு குதிரையும் வேண்டும், காற்றைப் போலப் பறக்கவும் வேண்டும்.")
 >>> import deplacy

@@ -172,7 +172,7 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("fr")
+>>> parser=Parser.load("fr_sequoia.camembert-large")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="fr",prob=True).sentences])
 >>> doc=nlp("L'essentiel est invisible pour les yeux.")
 >>> import deplacy
