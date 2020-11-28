@@ -146,14 +146,14 @@ importància NOUN  ═╝<══╝   ║ obj
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
 >>> import deplacy
 >>> deplacy.render(doc)
-El          <╗         det
-tennis      ═╝<════╗   nsubj
-té          ═╗═╗═╗═╝═╗ root
-avui        <╝ ║ ║   ║ advmod
-a           <╗ ║ ║   ║ case
-Catalunya   ═╝<╝ ║   ║ obl
-molta       <╗   ║   ║ det
-importància ═╝<══╝   ║ obj
-.           <════════╝ punct
+El          <╗             det
+tennis      ═╝<════════╗   nsubj
+té          <════════╗ ║   nsubj
+avui        ═══════╗═╝═╝═╗ root
+a           <════╗ ║     ║ case
+Catalunya   <══╗ ║ ║     ║ compound
+molta       <╗ ║ ║ ║     ║ compound
+importància ═╝═╝═╝<╝     ║ obl
+.           <════════════╝ punct
 ```
 
