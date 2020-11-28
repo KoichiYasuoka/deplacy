@@ -113,7 +113,7 @@ advmod ║   ║ ╔════> PART  لا
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ar_padt.asafaya")
+>>> parser=Parser.load("ar")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ar",prob=True).sentences])
 >>> doc=nlp("من قال لا أدري فقد أفتى.")
 >>> import deplacy

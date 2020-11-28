@@ -169,7 +169,7 @@ name      NOUN  ═╝<╝       ║ obj
 ```py
 >>> from nltk.tokenize import word_tokenize
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("en_ewt.electra-base")
+>>> parser=Parser.load("en")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="en",prob=True).sentences])
 >>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy

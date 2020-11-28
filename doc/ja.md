@@ -267,11 +267,9 @@
 ## [DiaParser](https://github.com/Unipisa/diaparser)で解析
 
 ```py
->>> from transformers.tokenization_bert_japanese import MecabTokenizer
->>> tokenizer=MecabTokenizer(mecab_dic="unidic_lite")
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ja_gsd.mbert")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=tokenizer.tokenize(t),prob=True,text=None).sentences])
+>>> parser=Parser.load("ja")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ja",prob=True).sentences])
 >>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
 >>> import deplacy
 >>> deplacy.render(doc,Japanese=True)
@@ -282,10 +280,9 @@
 を       <╝     ║       case(格表示)
 抜ける   ═══════╝═╗<╗   acl(連体修飾節)
 と       <════════╝ ║   mark(標識)
-雪国     ═╗═╗═╗═════╝═╗ root(親)
-で       <╝ ║ ║       ║ cop(繫辞)
-あっ     <══╝ ║       ║ aux(動詞補助成分)
-た       <════╝       ║ aux(動詞補助成分)
+雪国     ═╗═╗═══════╝═╗ root(親)
+であっ   <╝ ║         ║ cop(繫辞)
+た       <══╝         ║ aux(動詞補助成分)
 。       <════════════╝ punct(句読点)
 ```
 

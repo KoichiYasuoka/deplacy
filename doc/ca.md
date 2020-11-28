@@ -141,7 +141,7 @@ importància NOUN  ═╝<══╝   ║ obj
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ca_ancora.mbert")
+>>> parser=Parser.load("ca")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ca",prob=True).sentences])
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
 >>> import deplacy
