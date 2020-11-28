@@ -199,28 +199,3 @@ spia      NOUN  ═╝═╝═╝<════════╝ ║ conj
 .         PUNCT <════════════════╝ punct
 ```
 
-## con [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("it_isdt.dbmdz-xxl")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="it",prob=True).sentences])
->>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> import deplacy
->>> deplacy.render(doc)
-Chi       <══════╗       nsubj
-non       <════╗ ║       advmod
-beve      ═══╗═╝═╝═╗═╗═╗ root
-in        <╗ ║     ║ ║ ║ case
-compagnia ═╝<╝     ║ ║ ║ obl
-o         <════╗   ║ ║ ║ cc
-è         <══╗ ║   ║ ║ ║ cop
-un        <╗ ║ ║   ║ ║ ║ det
-ladro     ═╝═╝═╝<══╝ ║ ║ conj
-o         <════╗     ║ ║ cc
-è         <══╗ ║     ║ ║ cop
-una       <╗ ║ ║     ║ ║ det
-spia      ═╝═╝═╝<════╝ ║ conj
-.         <════════════╝ punct
-```
-
