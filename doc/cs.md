@@ -156,3 +156,23 @@ dušemi  NOUN  ═╝<╝     ║ obj
 .       PUNCT <════════╝ punct
 ```
 
+## s [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("cs_pdt.DeepPavlov")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="cs",prob=True).sentences])
+>>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Z       <════╗     case
+hrůzy   ═══╗═╝<╗   obl
+a       <╗ ║   ║   cc
+bolesti ═╝<╝   ║   conj
+stali   ═╗═╗═╗═╝═╗ root
+jsme    <╝ ║ ║   ║ aux
+se      <══╝ ║   ║ expl:pv
+dušemi  <════╝   ║ obl:arg
+.       <════════╝ punct
+```
+
