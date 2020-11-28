@@ -171,7 +171,6 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 ## avec [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
->>> import os
 >>> from diaparser.parsers import Parser
 >>> parser=Parser.load("fr_sequoia.camembert-large")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="fr",prob=True).sentences])
