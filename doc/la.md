@@ -151,3 +151,25 @@ amet    VERB  ═╝<══════╝     ║ conj
 .       PUNCT <══════════════╝ punct
 ```
 
+## per [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("la_ittb_llct.mbert")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="la",prob=True).sentences])
+>>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cras    ═════╗<════╗   nsubj
+amet    ═════════╗═╝═╗ root
+qui     <══╗ ║   ║   ║ nsubj
+numquam <╗ ║ ║   ║   ║ advmod:emph
+amavit  ═╝═╝<╝   ║   ║ acl:relcl
+,       <══════╗ ║   ║ punct
+quique  <════╗ ║ ║   ║ mark
+amavit  ═╗═╗═╝═╝<╝   ║ ccomp
+cras    <╝ ║         ║ obj
+amet    <══╝         ║ ccomp
+.       <════════════╝ punct
+```
+
