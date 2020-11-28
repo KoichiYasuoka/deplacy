@@ -141,19 +141,19 @@ importància NOUN  ═╝<══╝   ║ obj
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ca")
+>>> parser=Parser.load("ca_ancora.mbert")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ca",prob=True).sentences])
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
 >>> import deplacy
 >>> deplacy.render(doc)
-El          <╗             det
-tennis      ═╝<════════╗   nsubj
-té          <════════╗ ║   nsubj
-avui        ═══════╗═╝═╝═╗ root
-a           <════╗ ║     ║ case
-Catalunya   <══╗ ║ ║     ║ compound
-molta       <╗ ║ ║ ║     ║ compound
-importància ═╝═╝═╝<╝     ║ obl
-.           <════════════╝ punct
+El          <╗         det
+tennis      ═╝<════╗   nsubj
+té          ═╗═╗═╗═╝═╗ root
+avui        <╝ ║ ║   ║ advmod
+a           <╗ ║ ║   ║ case
+Catalunya   ═╝<╝ ║   ║ obl
+molta       <╗   ║   ║ det
+importància ═╝<══╝   ║ obj
+.           <════════╝ punct
 ```
 
