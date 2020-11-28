@@ -202,10 +202,9 @@ spia      NOUN  ═╝═╝═╝<════════╝ ║ conj
 ## con [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
->>> import os
 >>> from diaparser.parsers import Parser
 >>> parser=Parser.load("it_isdt.dbmdz-xxl")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(data=t,prob=True,text="it",cache_dir=os.path.expanduser("~/.cache/diaparser")).sentences])
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="it",prob=True).sentences])
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
 >>> import deplacy
 >>> deplacy.render(doc)
