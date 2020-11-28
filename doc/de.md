@@ -148,3 +148,19 @@ aus   ADP   <══╝     ║ svp
 .     PUNCT <════════╝ punct
 ```
 
+## mit [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("de_hdt.dbmdz-bert-base")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="de",prob=True).sentences])
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    <══════╗   nsubj
+sieht ═══╗═╗═╝═╗ root
+sehr  <╗ ║ ║   ║ advmod
+jung  ═╝ ║<╝   ║ xcomp
+aus   <══╝     ║ compound:prt
+.     <════════╝ punct
+```
