@@ -219,3 +219,31 @@ selviämään VERB  ═╝═╝═╝═╗<╝             xcomp
 .          PUNCT <══════╝               punct
 ```
 
+## [DiaParser](https://github.com/Unipisa/diaparser):n kanssa
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("fi_tdt.TurkuNLP")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="fi",prob=True).sentences])
+>>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nyt        <════════╗             advmod
+minä       <══════╗ ║             nsubj
+olen       <════╗ ║ ║             aux
+syönyt     ═══╗═╝═╝═╝═════════╗═╗ root
+ja         <╗ ║               ║ ║ cc
+ajatellut  ═╝<╝               ║ ║ conj
+ja         <════════════════╗ ║ ║ cc
+nyt        <══════════════╗ ║ ║ ║ advmod
+minusta    <══════════╗   ║ ║ ║ ║ obl
+alkaa      ═════════════╗═╝═╝<╝ ║ conj
+tuntua     ═════════╗═╝<╝       ║ xcomp
+,          <══════╗ ║           ║ punct
+että       <════╗ ║ ║           ║ mark
+asiat      <══╗ ║ ║ ║           ║ nsubj
+rupeavat   ═╗═╝═╝═╝<╝           ║ ccomp
+selviämään <╝                   ║ xcomp
+.          <════════════════════╝ punct
+```
+
