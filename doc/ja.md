@@ -268,7 +268,7 @@
 
 ```py
 >>> from diaparser.parsers import Parser
->>> parser=Parser.load("ja")
+>>> parser=Parser.load("ja_gsd.mbert")
 >>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ja",prob=True).sentences])
 >>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
 >>> import deplacy
