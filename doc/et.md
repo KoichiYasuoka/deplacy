@@ -173,3 +173,25 @@ pesagi NOUN  <══╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
+## [DiaParser](https://github.com/Unipisa/diaparser)-ga
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("et_edt.mbert")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="et",prob=True).sentences])
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  <════╗         obj
+teeb   ═══╗═╝═════╗═╗ root
+suure  <╗ ║       ║ ║ amod
+linna  ═╝<╝       ║ ║ nsubj
+,      <════════╗ ║ ║ punct
+käega  <══════╗ ║ ║ ║ obl
+ei     <════╗ ║ ║ ║ ║ aux
+tee    ═══╗═╝═╝═╝<╝ ║ conj
+kärbse <╗ ║         ║ amod
+pesagi ═╝<╝         ║ obj
+.      <════════════╝ punct
+```
+
