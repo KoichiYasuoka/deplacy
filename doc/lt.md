@@ -92,3 +92,21 @@ duonos NOUN  ═╝<╝       ║ conj
 .      PUNCT <══════════╝ punct
 ```
 
+## su [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("lt_alksnis.mbert")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="lt",prob=True).sentences])
+>>> doc=nlp("Dievas davė dantis, duos ir duonos.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Dievas <════════╗   nsubj
+davė   ═══════╗═╝═╗ root
+dantis ═══╗═╗<╝   ║ obj
+,      <╗ ║ ║     ║ punct
+duos   ═╝<╝ ║     ║ conj
+ir     <╗   ║     ║ cc
+duonos ═╝<══╝     ║ conj
+.      <══════════╝ punct
+```
