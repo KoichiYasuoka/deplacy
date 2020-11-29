@@ -137,3 +137,23 @@ spadne  VERB  ═══╝═╝═╝═╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
+## s [DiaParser](https://github.com/Unipisa/diaparser)
+
+```py
+>>> from diaparser.parsers import Parser
+>>> parser=Parser.load("sk_snk.mbert")
+>>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="sk",prob=True).sentences])
+>>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Kto     <════╗     mark
+druhému <╗   ║     amod
+jamu    ═╝<╗ ║     obl
+kope    ═╗═╝═╝<╗   advcl
+sám     <╝     ║   xcomp
+do      <╗     ║   case
+nej     ═╝<╗   ║   obl
+spadne  ═══╝═══╝═╗ root
+.       <════════╝ punct
+```
+
