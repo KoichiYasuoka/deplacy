@@ -135,6 +135,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)で解析
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("ja_gsd")
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<══╗         nmod(体言による連体修飾語)
+の       ADP   <╝   ║         case(格表示)
+長い     ADJ   <══╗ ║         acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+抜ける   VERB  ═══════╝═╗<╗   advcl(連用修飾節)
+と       SCONJ <════════╝ ║   mark(標識)
+雪国     ADJ   ═╗═╗═╗═════╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║       ║ aux(動詞補助成分)
+あっ     AUX   <══╝ ║       ║ fixed(固着)
+た       AUX   <════╝       ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)で解析
 
 ```py
@@ -218,28 +240,6 @@
 雪       NOUN  <╗         ║   compound(複合)
 国       NOUN  ═╝═╗═╗═════╝═╗ ROOT(親)
 であっ   AUX   <══╝ ║       ║ cop(繫辞)
-た       AUX   <════╝       ║ aux(動詞補助成分)
-。       PUNCT <════════════╝ punct(句読点)
-```
-
-## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)で解析
-
-```py
->>> import spacy_jptdp
->>> nlp=spacy_jptdp.load("ja_gsd")
->>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-国境     NOUN  ═╗<══╗         nmod(体言による連体修飾語)
-の       ADP   <╝   ║         case(格表示)
-長い     ADJ   <══╗ ║         acl(連体修飾節)
-トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
-を       ADP   <╝     ║       case(格表示)
-抜ける   VERB  ═══════╝═╗<╗   advcl(連用修飾節)
-と       SCONJ <════════╝ ║   mark(標識)
-雪国     ADJ   ═╗═╗═╗═════╝═╗ ROOT(親)
-で       AUX   <╝ ║ ║       ║ aux(動詞補助成分)
-あっ     AUX   <══╝ ║       ║ fixed(固着)
 た       AUX   <════╝       ║ aux(動詞補助成分)
 。       PUNCT <════════════╝ punct(句読点)
 ```
