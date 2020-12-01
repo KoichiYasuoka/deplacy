@@ -109,6 +109,23 @@ advmod ║   ║ ╔════> PART  لا
  punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> مع <a href="https://github.com/KoichiYasuoka/spaCy-jPTDP">spaCy-jPTDP</a></h2>
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("ar_padt")
+>>> doc=nlp("من قال لا أدري فقد أفتى.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ nsubj   ╔════════> DET   من
+  ROOT ╔═╚═╔═══════ VERB  قال
+advmod ║   ║ ╔════> PART  لا
+   obj ║   ╚>╚═╔═══ X     أدري
+   obj ║       ╚>╔═ NOUN  فقد
+  nmod ║         ╚> X     أفتى
+ punct ╚══════════> PUNCT .
+```
+
 <h2 dir="rtl"> مع <a href="https://github.com/Unipisa/diaparser">DiaParser</a></h2>
 
 ```py
