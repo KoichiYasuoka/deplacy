@@ -100,6 +100,22 @@
 .      PUNCT <══════╝ punct
 ```
 
+## с [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("bg_btb")
+>>> doc=nlp("Гладна мечка хоро не играе.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Гладна ADJ   <══╗     amod
+мечка  NOUN  ═╗═╝<╗   nsubj
+хоро   NOUN  <╝   ║   nmod
+не     PART  <╗   ║   advmod
+играе  VERB  ═╝═══╝═╗ ROOT
+.      PUNCT <══════╝ punct
+```
+
 ## с [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
