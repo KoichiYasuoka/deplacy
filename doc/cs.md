@@ -1,24 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) pro syntaktickou analýzu
 
-## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
-
-```py
->>> import spacy_jptdp
->>> nlp=spacy_jptdp.load("cs_pdt")
->>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
->>> import deplacy
->>> deplacy.render(doc)
-Z       ADP   <════╗     case
-hrůzy   NOUN  ═══╗═╝<╗   obl:arg
-a       CCONJ <╗ ║   ║   cc
-bolesti NOUN  ═╝<╝   ║   conj
-stali   VERB  ═╗═╗═╗═╝═╗ ROOT
-jsme    AUX   <╝ ║ ║   ║ aux
-se      PRON  <══╝ ║   ║ expl:pv
-dušemi  NOUN  <════╝   ║ obj
-.       PUNCT <════════╝ punct
-```
-
 ## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
@@ -32,6 +13,25 @@ hrůzy   NOUN  ═══╗═╝<╗   obl
 a       CCONJ <╗ ║   ║   cc
 bolesti NOUN  ═╝<╝   ║   conj
 stali   VERB  ═╗═╗═╗═╝═╗ root
+jsme    AUX   <╝ ║ ║   ║ aux
+se      PRON  <══╝ ║   ║ expl:pv
+dušemi  NOUN  <════╝   ║ obj
+.       PUNCT <════════╝ punct
+```
+
+## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("cs_pdt")
+>>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Z       ADP   <════╗     case
+hrůzy   NOUN  ═══╗═╝<╗   obl:arg
+a       CCONJ <╗ ║   ║   cc
+bolesti NOUN  ═╝<╝   ║   conj
+stali   VERB  ═╗═╗═╗═╝═╗ ROOT
 jsme    AUX   <╝ ║ ║   ║ aux
 se      PRON  <══╝ ║   ║ expl:pv
 dušemi  NOUN  <════╝   ║ obj
