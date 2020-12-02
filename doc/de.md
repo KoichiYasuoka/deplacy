@@ -67,6 +67,22 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
+## mit [SpaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("de_gsd")
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    PRON  <══════╗   nsubj
+sieht VERB  ═══╗═╗═╝═╗ ROOT
+sehr  ADV   <╗ ║ ║   ║ advmod
+jung  ADJ   ═╝ ║<╝   ║ xcomp
+aus   ADP   <══╝     ║ compound:prt
+.     PUNCT <════════╝ punct
+```
+
 ## mit [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
