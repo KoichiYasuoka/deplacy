@@ -164,6 +164,26 @@ name      NOUN  ═╝<╝       ║ obj
 .         PUNCT <══════════╝ punct
 ```
 
+## Usage with [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("en_ewt")
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════╗   nsubj
+saw       VERB  ═══╗═════╗═╝═╗ ROOT
+a         DET   <╗ ║     ║   ║ det
+horse     NOUN  ═╝<╝     ║   ║ obj
+yesterday NOUN  ═══════╗<╝   ║ obl:tmod
+which     PRON  <════╗ ║     ║ nsubj
+had       VERB  ═══╗═╝<╝     ║ acl:relcl
+no        DET   <╗ ║         ║ det
+name      NOUN  ═╝<╝         ║ obj
+.         PUNCT <════════════╝ punct
+```
+
 ## Usage with [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
