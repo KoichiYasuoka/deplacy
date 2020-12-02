@@ -158,6 +158,28 @@ fiskehale NOUN  ═╝═╝<╝         ║ obl
 .         PUNCT <══════════════╝ punct
 ```
 
+## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("da_ddt")
+>>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da        ADV   <══════╗       advmod
+sukkede   VERB  ═════╗═╝═══╗═╗ ROOT
+den       DET   <══╗ ║     ║ ║ det
+lille     ADJ   <╗ ║ ║     ║ ║ amod
+havfrue   NOUN  ═╝═╝<╝     ║ ║ nsubj
+og        CCONJ <════════╗ ║ ║ cc
+så        VERB  <══════╗ ║ ║ ║ advmod
+bedrøvet  VERB  ═════╗═╝═╝<╝ ║ conj
+på        ADP   <══╗ ║       ║ case
+sin       DET   <╗ ║ ║       ║ det
+fiskehale NOUN  ═╝═╝<╝       ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
