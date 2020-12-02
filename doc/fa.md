@@ -42,6 +42,27 @@ nmod:poss ║       ║ ╚> NOUN  متافيزيك
     punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-jPTDP">spaCy-jPTDP</a></h2>
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("fa_seraji")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case             ╔══> ADP   به
+     nmod   ╔════════>╚═╔═ NOUN  اعتقاد
+nmod:poss   ║           ╚> PRON  من
+     ROOT ╔═╚═╔═╔═════════ NOUN  موسيقي
+nmod:poss ║   ║ ╚>╔═══════ NOUN  هنر
+     amod ║   ║   ╚>╔═════ ADJ   نيست
+    punct ║   ║     ║ ╔══> PUNCT ،
+       cc ║   ║     ║ ║ ╔> CCONJ بلكه
+     conj ║   ║     ╚>╚═╚═ NOUN  متافيزيك
+      cop ║   ╚══════════> AUX   است
+    punct ╚══════════════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
 
 ```py
