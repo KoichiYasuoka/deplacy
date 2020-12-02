@@ -106,6 +106,27 @@ pesagi NOUN  ═╝<╝         ║ nsubj
 .      PUNCT <════════════╝ punct
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-ga
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("et_edt")
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ ROOT
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+kärbse NOUN  <╗ ║         ║ nmod
+pesagi NOUN  ═╝<╝         ║ nsubj
+.      PUNCT <════════════╝ punct
+```
+
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-ga
 
 ```py
