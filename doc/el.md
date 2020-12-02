@@ -57,23 +57,6 @@
 .         PUNCT <════════╝ punct
 ```
 
-## με [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
-
-```py
->>> import spacy_jptdp
->>> nlp=spacy_jptdp.load("el_gdt")
->>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
->>> import deplacy
->>> deplacy.render(doc)
-Δεν       PART  <══════╗   advmod
-υπάρχει   VERB  ═══╗═╗═╝═╗ ROOT
-βασιλικός ADJ   <╗ ║ ║   ║ amod
-δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
-στη       DET   <╗   ║   ║ det
-γεωμετρία NOUN  ═╝<══╝   ║ obl
-.         PUNCT <════════╝ punct
-```
-
 ## με [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
@@ -89,6 +72,23 @@
 σ         ADP   <══╗ ║   ║ case
 τη        DET   <╗ ║ ║   ║ det
 γεωμετρία NOUN  ═╝═╝<╝   ║ obl
+.         PUNCT <════════╝ punct
+```
+
+## με [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("el_gdt")
+>>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Δεν       PART  <══════╗   advmod
+υπάρχει   VERB  ═══╗═╗═╝═╗ ROOT
+βασιλικός ADJ   <╗ ║ ║   ║ amod
+δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
+στη       DET   <╗   ║   ║ det
+γεωμετρία NOUN  ═╝<══╝   ║ obl
 .         PUNCT <════════╝ punct
 ```
 
