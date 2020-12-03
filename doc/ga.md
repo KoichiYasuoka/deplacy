@@ -75,6 +75,24 @@ farraige  NOUN  ═╝<╝     ║ compound
 .         PUNCT <════════╝ punct
 ```
 
+## le [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("ga_idt")
+>>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Táimid    VERB  ═══╗═══╗═╗ ROOT
+faoi      ADP   <╗ ║   ║ ║ case
+dhraíocht NOUN  ═╝<╝   ║ ║ xcomp:pred
+ag        ADP   <════╗ ║ ║ case
+ceol      NOUN  ═══╗═╝<╝ ║ obl
+na        DET   <╗ ║     ║ det
+farraige  NOUN  ═╝<╝     ║ compound
+.         PUNCT <════════╝ punct
+```
+
 ## le [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
