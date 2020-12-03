@@ -126,7 +126,7 @@ podnijeti VERB  <╝         ║ nsubj
 >>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ parataxis
+Činilo    VERB  ═╗═╗═════╗═╗ ROOT
 mi        PRON  <╝ ║     ║ ║ obj
 se        PRON  <══╝     ║ ║ expl:pv
 :         PUNCT <══════╗ ║ ║ punct
@@ -134,6 +134,25 @@ ništa     PRON  <════╗ ║ ║ ║ obj
 nije      AUX   <══╗ ║ ║ ║ ║ cop
 teže      ADJ   ═╗═╝═╝═╝<╝ ║ parataxis
 podnijeti VERB  <╝         ║ nsubj
+.         PUNCT <══════════╝ punct
+```
+
+## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-om
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("hr_set")
+>>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Činilo    VERB  ═╗═╗═════╗═╗ ROOT
+mi        PRON  <╝ ║     ║ ║ obj
+se        PRON  <══╝     ║ ║ expl:pv
+:         PUNCT <══════╗ ║ ║ punct
+ništa     PRON  <════╗ ║ ║ ║ obj
+nije      AUX   ═╗<╗ ║ ║ ║ ║ aux
+teže      ADJ   <╝ ║ ║ ║ ║ ║ advmod
+podnijeti VERB  ═══╝═╝═╝<╝ ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
