@@ -74,7 +74,7 @@
 Չկա   ADV   <╗     aux
 չարիք NOUN  ═╝<╗   obj
 առանց ADJ   <╗ ║   case
-բարիք NOUN  ═╝═╝═╗ obj
+բարիք NOUN  ═╝═╝═╗ ROOT
 :     PUNCT <════╝ punct
 ```
 
