@@ -37,6 +37,22 @@ compound:smixut   ║   ╚> NOUN  וריח
           punct ╚══════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="https://github.com/KoichiYasuoka/spaCy-jPTDP">spaCy-jPTDP</a></h2>
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("he_htb")
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+           case     ╔══> ADP   על
+            obl   ╔>╚═╔═ NOUN  טעם
+compound:smixut   ║   ╚> NOUN  וריח
+           ROOT ╔═╚═══╔═ AUX   אין
+          xcomp ║     ╚> VERB  להתווכח
+          punct ╚══════> PUNCT .
+```
+
 <h2 dir="rtl"> עם <a href="https://turkunlp.org/Turku-neural-parser-pipeline/">Turku-neural-parser-pipeline</a></h2>
 
 ```py
