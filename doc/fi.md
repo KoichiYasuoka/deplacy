@@ -219,6 +219,33 @@ selviämään VERB  ═╝═╝═╝═╗<╝             xcomp
 .          PUNCT <══════╝               punct
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP):n kanssa
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("fi_tdt")
+>>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nyt        ADV   <════════════════════════════╗ advmod
+minä       PRON  <══════════════════════════╗ ║ nsubj
+olen       AUX   <════════════════════════╗ ║ ║ aux
+syönyt     VERB  ═══════════════════════╗═╝═╝═╝ ROOT
+ja         CCONJ <╗                     ║       cc
+ajatellut  VERB  ═╝═══════════════════╗<╝       conj
+ja         CCONJ <════════════════╗   ║         cc
+nyt        ADV   <══════════════╗ ║   ║         advmod
+minusta    PRON  <════════════╗ ║ ║   ║         obl
+alkaa      VERB  ═══════════╗═╝═╝═╝═╗<╝         conj
+tuntua     VERB  ═════════╗<╝       ║           xcomp
+,          PUNCT <══════╗ ║         ║           punct
+että       SCONJ <════╗ ║ ║         ║           mark
+asiat      NOUN  <══╗ ║ ║ ║         ║           nsubj
+rupeavat   VERB  ═╗═╝═╝═╝<╝         ║           ccomp
+selviämään VERB  <╝                 ║           xcomp
+.          PUNCT <══════════════════╝           punct
+```
+
 ## [DiaParser](https://github.com/Unipisa/diaparser):n kanssa
 
 ```py
