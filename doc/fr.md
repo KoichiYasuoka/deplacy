@@ -132,6 +132,24 @@ yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("fr_sequoia")
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        DET   <╗           det
+essentiel NOUN  ═╝<══════╗   nsubj
+est       AUX   <══════╗ ║   cop
+invisible ADJ   ═════╗═╝═╝═╗ ROOT
+pour      ADP   <══╗ ║     ║ case
+les       DET   <╗ ║ ║     ║ det
+yeux      NOUN  ═╝═╝<╝     ║ obl:mod
+.         PUNCT <══════════╝ punct
+```
+
 ## avec [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
