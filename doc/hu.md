@@ -166,3 +166,21 @@ holnapra   NOUN  <╝           ║ nmod:obl
 .          PUNCT <════════════╝ punct
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-val
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("hu_szeged")
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <════════╗     obj
+ma         ADV   <══════╗ ║     advmod:tlocy
+megtehetsz VERB  ═════╗═╝═╝═╗═╗ ROOT
+,          PUNCT <════║═════╝ ║ punct
+ne         ADV   <══╗ ║       ║ nsubj
+halaszd    ADJ   <╗ ║ ║       ║ amod:att
+holnapra   NOUN  ═╝═╝<╝       ║ ccomp:obj
+.          PUNCT <════════════╝ punct
+```
+
