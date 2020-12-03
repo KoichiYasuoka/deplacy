@@ -63,6 +63,26 @@
 .           PUNCT <══════════╝ punct
 ```
 
+## δῐᾰ́́ [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("grc_perseus")
+>>> doc=nlp("Γνώσεσθε τὴν ἀλήθειαν, καὶ ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Γνώσεσθε    VERB  ═══╗═╗═╗═╗═╗ ROOT
+τὴν         DET   <╗ ║ ║ ║ ║ ║ det
+ἀλήθειαν    NOUN  ═╝<╝ ║ ║ ║ ║ obj
+,           PUNCT <════╝ ║ ║ ║ punct
+καὶ         CCONJ <══════╝ ║ ║ cc
+ἡ           DET   <╗       ║ ║ det
+ἀλήθεια     NOUN  ═╝<╗     ║ ║ nsubj
+ἐλευθερώσει VERB  ═╗═╝<════╝ ║ conj
+ὑμᾶς        PRON  <╝         ║ obj
+.           PUNCT <══════════╝ punct
+```
+
 ## δῐᾰ́́ [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
