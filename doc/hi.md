@@ -114,6 +114,28 @@ acl:relcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚════════════════> PUNCT ।
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP) पर विश्लेषण
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("hi_hdtb")
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+  obl   ╔══════════════> PRON  खुद
+  det   ║             ╔> DET   वो
+  obj   ║ ╔══════════>╚═ NOUN  बदलाव
+ ROOT ╔═╚═╚═╔═══════════ VERB  बनिए
+  obj ║     ║ ╔════════> PRON  जो
+nsubj ║     ║ ║ ╔══════> PRON  आप
+  obl ║     ║ ║ ║   ╔>╔═ NOUN  दुनिया
+ case ║     ║ ║ ║   ║ ╚> ADP   में
+  obj ║     ║ ║ ║ ╔>╚═══ VERB  देखना
+advcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
+  aux ║               ╚> AUX   हैं
+punct ╚════════════════> PUNCT ।
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe) पर विश्लेषण
 
 ```py
