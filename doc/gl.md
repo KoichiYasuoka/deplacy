@@ -36,6 +36,24 @@ duro  ADJ   <╝     ║     amod
 .     PUNCT <══════╝     punct
 ```
 
+## con [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("gl_ctg")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══════════╗ nsubj
+hai   VERB  ═╗═══════╗═╝ ROOT
+fame  NOUN  <╝       ║   obj
+non   PART  <════╗   ║   advmod
+hai   VERB  ═══╗═╝═╗<╝   obj
+pan   NOUN  ═╗<╝   ║     obj
+duro  ADJ   <╝     ║     amod
+.     PUNCT <══════╝     punct
+```
+
 ## con [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
