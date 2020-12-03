@@ -151,6 +151,30 @@ spia      NOUN  ═╝═╝═╝<════╝ ║ conj
 .         PUNCT <════════════╝ punct
 ```
 
+## con [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("it_isdt")
+>>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Chi       PRON  <══════╗       nsubj
+non       ADV   <════╗ ║       advmod
+beve      VERB  ═══╗═╝═╝═╗═╗═╗ ROOT
+in        ADP   <╗ ║     ║ ║ ║ case
+compagnia NOUN  ═╝<╝     ║ ║ ║ obl
+o         CCONJ <════╗   ║ ║ ║ cc
+è         AUX   <══╗ ║   ║ ║ ║ cop
+un        DET   <╗ ║ ║   ║ ║ ║ det
+ladro     NOUN  ═╝═╝═╝<══╝ ║ ║ conj
+o         CCONJ <════╗     ║ ║ cc
+è         AUX   <══╗ ║     ║ ║ cop
+una       DET   <╗ ║ ║     ║ ║ det
+spia      NOUN  ═╝═╝═╝<════╝ ║ conj
+.         PUNCT <════════════╝ punct
+```
+
 ## con [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
