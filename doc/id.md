@@ -135,6 +135,23 @@ langit NOUN  <╝       ║ obj
 .      PUNCT <════════╝ punct
 ```
 
+## dengan [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("id_gsd")
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <╗         case
+atas   ADP   ═╝<════╗   obl
+langit NOUN  <════╗ ║   obl
+masih  ADV   <══╗ ║ ║   advmod
+ada    VERB  ═╗═╝═╝═╝═╗ ROOT
+langit NOUN  <╝       ║ obj
+.      PUNCT <════════╝ punct
+```
+
 ## dengan [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
