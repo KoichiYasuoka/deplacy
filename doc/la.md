@@ -151,6 +151,27 @@ amet    VERB  ═╝<══════╝     ║ conj
 .       PUNCT <══════════════╝ punct
 ```
 
+## per [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("la_ittb")
+>>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cras    NOUN  <╗                 nsubj
+amet    VERB  ═╝═══════════════╗ ROOT
+qui     PRON  <════════════╗   ║ nsubj
+numquam ADV   <══════════╗ ║   ║ advmod:emph
+amavit  VERB  ═════════╗═╝═╝<╗ ║ csubj
+,       PUNCT <══════╗ ║     ║ ║ punct
+quique  PRON  <════╗ ║ ║     ║ ║ obj
+amavit  VERB  ═══╗═╝═╝<╝     ║ ║ acl
+cras    NOUN  <╗ ║           ║ ║ obj
+amet    VERB  ═╝<╝           ║ ║ ccomp
+.       PUNCT ═══════════════╝<╝ punct
+```
+
 ## per [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
