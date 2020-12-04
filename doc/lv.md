@@ -179,6 +179,31 @@ gadi       NOUN  ═╝═╝<╝               ║ conj
 .          PUNCT <════════════════════╝ punct
 ```
 
+## ar [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("lv_lvtb")
+>>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Latvija    PROPN <══════════════════╗   nsubj
+vienu      NUM   <════════════════╗ ║   acl
+pēc        ADP   <╗               ║ ║   case
+otras      NUM   ═╝<╗             ║ ║   nummod
+pārdzīvoja VERB  ═══╝═══════════╗═╝═╝═╗ ROOT
+trīs       NUM   <╗             ║     ║ nummod
+okupācijas NOUN  ═╝═══════════╗<╝     ║ obj
+,          PUNCT <══════════╗ ║       ║ punct
+kuru       PRON  <════════╗ ║ ║       ║ obj
+kopējais   ADJ   ═══════╗═╝═╝<╝       ║ acl
+ilgums     NOUN  ═════╗<╝             ║ nsubj
+,          PUNCT <══╗ ║               ║ punct
+piecdesmit NUM   <╗ ║ ║               ║ nummod
+gadi       NOUN  ═╝═╝<╝               ║ parataxis
+.          PUNCT <════════════════════╝ punct
+```
+
 ## ar [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
