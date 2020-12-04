@@ -292,6 +292,38 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 .          PUNCT <════════════════════════╝ punct
 ```
 
+## met [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("nl_alpino")
+>>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Toch       ADV   <══════════════════════════════╗   advmod
+houd       VERB  ═╗═╗═╗═══════════════════════╗═╝═╗ ROOT
+ik         PRON   ║<╝ ║                       ║   ║ nsubj
+ze         PRON   ║<══╝                       ║   ║ obj
+vast       ADJ   <╝                           ║   ║ compound:prt
+,          PUNCT <══════════════════════════╗ ║   ║ punct
+ondanks    ADP   <════════════════════════╗ ║ ║   ║ case
+alles      PRON  ═══════════════════════╗═╝═╝<╝   ║ obl
+,          PUNCT <════════════════════╗ ║         ║ punct
+omdat      SCONJ <══════════════════╗ ║ ║         ║ mark
+ik         PRON  <════════════════╗ ║ ║ ║         ║ nsubj
+nog        ADV   <╗               ║ ║ ║ ║         ║ advmod
+steeds     ADV   ═╝<════════════╗ ║ ║ ║ ║         ║ advmod
+aan        ADP   <══════════╗   ║ ║ ║ ║ ║         ║ case
+de         DET   <════════╗ ║   ║ ║ ║ ║ ║         ║ det
+innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║ ║         ║ amod
+goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║ ║         ║ obl
+van        ADP   <══╗ ║       ║ ║ ║ ║ ║ ║         ║ case
+den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║         ║ det
+mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║         ║ nmod
+geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝         ║ acl
+.          PUNCT <════════════════════════════════╝ punct
+```
+
 ## met [Frog](https://languagemachines.github.io/frog)
 
 ```py
