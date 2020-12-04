@@ -83,6 +83,26 @@ spor      NOUN  ═══╝═╝<╝   ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
+## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("no_bokmaal")
+>>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ikke      PART  <╗             advmod
+tusen     NOUN  ═╝<╗           nummod
+ord       NOUN  ═══╝<══════╗   nsubj
+seg       PRON  <════════╗ ║   nsubj
+prenter   VERB  ═══════╗═╝═╝═╗ ROOT
+som       SCONJ <════╗ ║     ║ mark
+én        NUM   <══╗ ║ ║     ║ nummod
+gjernings NOUN  <╗ ║ ║ ║     ║ nmod
+spor      NOUN  ═╝═╝═╝<╝     ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [spaCy](https://spacy.io/)
 
 ```py
