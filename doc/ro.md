@@ -131,7 +131,7 @@ porcii  NOUN  <╝           ║ nsubj
 ```py
 >>> import sys,subprocess
 >>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ro_rrt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
+>>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
 >>> import deplacy
 >>> deplacy.render(doc)
 Nu      PART  <══════════╗   advmod
@@ -142,6 +142,26 @@ tărâţe  NOUN  <══╝   ║     ║ fixed
 că      SCONJ <════╗ ║     ║ mark
 te      PRON  <══╗ ║ ║     ║ obj
 mănâncă VERB  ═╗═╝═╝<╝     ║ ccomp:pmod
+porcii  NOUN  <╝           ║ nsubj
+.       PUNCT <════════════╝ punct
+```
+
+## cu [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("ro_rrt")
+>>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nu      PART  <══════════╗   advmod
+te      PRON  <════════╗ ║   iobj
+băga    VERB  ═╗═╗═══╗═╝═╝═╗ ROOT
+in      ADP   <╝ ║   ║     ║ fixed
+tărâţe  NOUN  <══╝   ║     ║ fixed
+că      SCONJ <════╗ ║     ║ mark
+te      PRON  <══╗ ║ ║     ║ obj
+mănâncă VERB  ═╗═╝═╝<╝     ║ csubj
 porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
