@@ -8,16 +8,16 @@
 >>> doc=nlp("For me priser dauden, men me elskar live.")
 >>> import deplacy
 >>> deplacy.render(doc)
-For    CCONJ <════════════╗   cc
-me     PRON  <══════════╗ ║   nsubj
-priser VERB  ═╗═══════╗═╝═╝═╗ root
-dauden NOUN  <╝       ║     ║ obj
-,      PUNCT <══════╗ ║     ║ punct
-men    CCONJ <════╗ ║ ║     ║ cc
-me     PRON  <══╗ ║ ║ ║     ║ nsubj
-elskar VERB  ═╗═╝═╝═╝<╝     ║ conj
-live   NOUN  <╝             ║ obj
-.      PUNCT <══════════════╝ punct
+For    CCONJ <════╗       cc
+me     PRON  <══╗ ║       nsubj
+priser VERB  ═╗═╝═╝═══╗═╗ root
+dauden NOUN  <╝       ║ ║ obj
+,      PUNCT <══════╗ ║ ║ punct
+men    CCONJ <════╗ ║ ║ ║ cc
+me     PRON  <══╗ ║ ║ ║ ║ nsubj
+elskar VERB  ═╗═╝═╝═╝<╝ ║ conj
+live   NOUN  <╝         ║ obj
+.      PUNCT <══════════╝ punct
 ```
 
 ## med [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
@@ -28,16 +28,16 @@ live   NOUN  <╝             ║ obj
 >>> doc=nlp("For me priser dauden, men me elskar live.")
 >>> import deplacy
 >>> deplacy.render(doc)
-For    CCONJ <════════════╗   cc
-me     PRON  <══════════╗ ║   nsubj
-priser VERB  ═╗═══════╗═╝═╝═╗ root
-dauden NOUN  <╝       ║     ║ obj
-,      PUNCT <══════╗ ║     ║ punct
-men    CCONJ <════╗ ║ ║     ║ cc
-me     PRON  <══╗ ║ ║ ║     ║ nsubj
-elskar VERB  ═╗═╝═╝═╝<╝     ║ conj
-live   ADV   <╝             ║ advmod
-.      PUNCT <══════════════╝ punct
+For    CCONJ <════╗       cc
+me     PRON  <══╗ ║       nsubj
+priser VERB  ═╗═╝═╝═══╗═╗ ROOT
+dauden NOUN  <╝       ║ ║ obj
+,      PUNCT <══════╗ ║ ║ punct
+men    CCONJ <════╗ ║ ║ ║ cc
+me     PRON  <══╗ ║ ║ ║ ║ nsubj
+elskar VERB  ═╗═╝═╝═╝<╝ ║ conj
+live   ADV   <╝         ║ advmod
+.      PUNCT <══════════╝ punct
 ```
 
 ## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
@@ -57,6 +57,26 @@ men    CCONJ <════╗   ║ ║ cc
 me     PRON  <══╗ ║   ║ ║ nsubj
 elskar VERB  ═╗═╝═╝<══╝ ║ conj
 live   ADJ   <╝         ║ advmod
+.      PUNCT <══════════╝ punct
+```
+
+## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("no_nynorsk")
+>>> doc=nlp("For me priser dauden, men me elskar live.")
+>>> import deplacy
+>>> deplacy.render(doc)
+For    CCONJ <════╗       cc
+me     PRON  <══╗ ║       nsubj
+priser VERB  ═╗═╝═╝═╗═╗═╗ ROOT
+dauden NOUN  <╝     ║ ║ ║ obj
+,      PUNCT <══════╝ ║ ║ punct
+men    CCONJ <════╗   ║ ║ cc
+me     PRON  <══╗ ║   ║ ║ nsubj
+elskar VERB  ═╗═╝═╝<══╝ ║ conj
+live   NOUN  <╝         ║ obj
 .      PUNCT <══════════╝ punct
 ```
 
