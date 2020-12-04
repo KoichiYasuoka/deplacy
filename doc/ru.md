@@ -115,6 +115,25 @@
 .      PUNCT <══════╝       punct
 ```
 
+## с [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("ru_syntagrus")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва NOUN  <════════════╗ nsubj
+слезам NOUN  <══════════╗ ║ iobj
+не     PART  <╗         ║ ║ advmod
+верила VERB  ═╝═══════╗═╝═╝ ROOT
+,      PUNCT <════╗   ║     punct
+а      CCONJ <══╗ ║   ║     cc
+верила VERB  ═╗═╝═╝═╗<╝     conj
+любви  NOUN  <╝     ║       obl
+.      PUNCT <══════╝       punct
+```
+
 ## с [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
