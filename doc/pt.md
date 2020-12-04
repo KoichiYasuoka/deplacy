@@ -91,6 +91,24 @@ medo NOUN  <╝       ║ obj
 .    PUNCT <════════╝ punct
 ```
 
+## com [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("pt_bosque")
+>>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ ROOT
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
+```
+
 ## com [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
