@@ -130,6 +130,27 @@ mej       NOUN  ═╝═╝═╝═╝<╝ ║ conj
 .         PUNCT <══════════╝ punct
 ```
 
+## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("sv_talbanken")
+>>> doc=nlp("Du har förändrat dej och är så långt från mej.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Du        PRON  <════╗         nsubj
+har       AUX   <══╗ ║         aux
+förändrat VERB  ═╗═╝═╝═════╗═╗ ROOT
+dej       PRON  <╝         ║ ║ obj
+och       CCONJ <════════╗ ║ ║ cc
+är        AUX   <══╗     ║ ║ ║ cop
+så        ADV   <╗ ║     ║ ║ ║ advmod
+långt     ADV   ═╝═╝<╗   ║ ║ ║ advmod
+från      ADP   ═════╝<╗ ║ ║ ║ case
+mej       NOUN  ═══════╝═╝<╝ ║ conj
+.         PUNCT <════════════╝ punct
+```
+
 ## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
