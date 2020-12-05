@@ -36,6 +36,23 @@ chim  NOUN  ═══╝<╝   ║ obj
 .     PUNCT <════════╝ punct
 ```
 
+## với [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("vi_vtb")
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một     NUM   <╗         nummod
+mũi_tên NOUN  ═╝<════╗   nsubj
+trúng   VERB  ═════╗═╝═╗ ROOT
+hai     NUM   <╗   ║   ║ nummod
+con     NOUN  ═╝═╗<╝   ║ obj
+chim    VERB  <══╝     ║ xcomp
+.       PUNCT <════════╝ punct
+```
+
 ## với [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
