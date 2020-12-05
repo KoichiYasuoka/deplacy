@@ -190,3 +190,26 @@ gibanicu NOUN  <╝           ║   obj
 .        PUNCT <════════════╝   punct
 ```
 
+## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-om
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("sr_set")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗         mark
+ima      VERB  ═════╗═╝═════╗═╗ ROOT
+sira     NOUN  ═══╗<╝       ║ ║ obj
+i        CCONJ <╗ ║         ║ ║ cc
+masla    NOUN  ═╝<╝         ║ ║ conj
+i        CCONJ <══════════╗ ║ ║ cc
+moja     PRON  <════════╗ ║ ║ ║ nsubj
+bi       AUX   <══════╗ ║ ║ ║ ║ aux
+mati     ADJ   <════╗ ║ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝═╝<╝ ║ conj
+gibati   ADJ   <╗ ║           ║ amod
+gibanicu NOUN  ═╝<╝           ║ obj
+.        PUNCT <══════════════╝ punct
+```
+
