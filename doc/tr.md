@@ -49,6 +49,22 @@ gelir   VERB  ═══╝═╝═╗ ROOT
 .       PUNCT <══════╝ punct
 ```
 
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP) ile analiz
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("tr_imst")
+>>> doc=nlp("İyi insan sözünün üstüne gelir.")
+>>> import deplacy
+>>> deplacy.render(doc)
+İyi     ADJ   <╗       amod
+insan   NOUN  ═╝<══╗   nsubj
+sözünün NOUN  <╗   ║   nmod:poss
+üstüne  ADJ   ═╝<╗ ║   amod
+gelir   VERB  ═══╝═╝═╗ ROOT
+.       PUNCT <══════╝ punct
+```
+
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html) ile analiz
 
 ```py
