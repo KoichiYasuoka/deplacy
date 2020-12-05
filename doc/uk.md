@@ -130,6 +130,24 @@
 .        PUNCT <════════════╝ punct
 ```
 
+## з [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("uk_iu")
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ ROOT
+алеї     NOUN  ═════════╗<╝ ║ obj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
 ## з [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
