@@ -137,6 +137,25 @@ spadne  VERB  ═══╝═╝═╝═╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
+## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("sk_snk")
+>>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Kto     PRON  <══════════╗   nsubj
+druhému ADJ   <╗         ║   amod
+jamu    NOUN  ═╝<══════╗ ║   obj
+kope    ADV   <══════╗ ║ ║   advmod
+sám     DET   <════╗ ║ ║ ║   obl
+do      ADP   <╗   ║ ║ ║ ║   case
+nej     PRON  ═╝<╗ ║ ║ ║ ║   obl
+spadne  VERB  ═══╝═╝═╝═╝═╝═╗ ROOT
+.       PUNCT <════════════╝ punct
+```
+
 ## s [DiaParser](https://github.com/Unipisa/diaparser)
 
 ```py
