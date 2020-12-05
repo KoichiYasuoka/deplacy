@@ -130,6 +130,24 @@ zori      VERB  ═╝═╝═══╝═╗ ROOT
 .         PUNCT <════════╝ punct
 ```
 
+## z [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
+
+```py
+>>> import spacy_jptdp
+>>> nlp=spacy_jptdp.load("sl_ssj")
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Po        ADP   <════╗     case
+koroškem  PROPN ═══╗═╝<╗   obl
+po        ADP   <╗ ║   ║   case
+kranjskem ADJ   ═╝<╝   ║   nmod
+že        PART  <══╗   ║   advmod
+ajda      VERB  ═╗═╝═══╝═╗ ROOT
+zori      NOUN  <╝       ║ obj
+.         PUNCT <════════╝ punct
+```
+
 ## z [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
