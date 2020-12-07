@@ -178,5 +178,5 @@ Koichi Yasuoka (安岡孝一)
 
 ## Reference
 
-* 安岡孝一: [Universal Dependenciesの拡張にもとづく古典中国語(漢文)の直接構成鎖解析の試み](http://hdl.handle.net/2433/241358), 情報処理学会研究報告, Vol.2019-CH-120『人文科学とコンピュータ』, No.1 (2019年5月11日), pp.1-8.
+* Koichi Yasuoka [deplacy: a CUI-based tree visualizer for Universal Dependencies](http://id.nii.ac.jp/1001/00208581/), 人文科学とコンピュータシンポジウム「じんもんこん2020」論文集 (December 2020), pp.95-100.
 
