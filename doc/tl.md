@@ -1,4 +1,4 @@
-# [deplacy](https://koichiyasuoka.github.io/deplacy/) para sintaktik analysis
+# [deplacy](https://koichiyasuoka.github.io/deplacy/) para sintaktik pagtatasa
 
 ## sa [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
