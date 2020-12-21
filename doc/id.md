@@ -90,7 +90,7 @@ langit NOUN  <╝     ║ obj
 
 ```py
 >>> import malaya
->>> tokenizer=malaya.preprocessing.SocialTokenizer()
+>>> tokenizer=malaya.preprocessing.TOKENIZER()
 >>> tagger=malaya.pos.transformer()
 >>> parser=malaya.dependency.transformer()
 >>> def nlp(t):
