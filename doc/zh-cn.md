@@ -125,3 +125,25 @@
 。   w <══╝       MT
 ```
 
+## 用[fastHan](https://github.com/fastnlp/fastHan)
+
+```
+>>> from fastHan import FastHan
+>>> model=FastHan()
+>>> nlp=lambda x:"".join("\n".join("\t".join([str(i+1),t.word,"_",t.pos,t.pos,"_",str(t.head),t.head_label,"_","SpaceAfter=No"]) for i,t in enumerate(s))+"\n\n" for s in model(x,"Parsing"))
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 AD <══╗         advmod
+黑猫 NN <╗ ║         nn
+白猫 NN ═╝═╝<╗       nsubj
+，   PU <════║═══╗   punct
+捉到 VV ═╗═══╝<╗ ║   dep
+老鼠 NN <╝     ║ ║   dobj
+就   AD <════╗ ║ ║   advmod
+是   VC ═══╗═╝═╝═╝═╗ root
+好   JJ <╗ ║       ║ amod
+猫   NN ═╝<╝       ║ attr
+。   PU <══════════╝ punct
+```
+
