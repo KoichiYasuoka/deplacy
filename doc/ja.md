@@ -135,6 +135,28 @@
 。       PUNCT <════════════╝ punct(句読点)
 ```
 
+## [UniDic-COMBO](https://github.com/KoichiYasuoka/UniDic-COMBO)で解析
+
+```py
+>>> import unidic_combo
+>>> nlp=unidic_combo.load()
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<══╗         nmod(体言による連体修飾語)
+の       ADP   <╝   ║         case(格表示)
+長い     ADJ   <══╗ ║         acl(連体修飾節)
+トンネル NOUN  ═╗═╝═╝<╗       obj(目的語)
+を       ADP   <╝     ║       case(格表示)
+抜ける   VERB  ═══════╝═╗<╗   acl(連体修飾節)
+と       CCONJ <════════╝ ║   mark(標識)
+雪国     NOUN  ═╗═╗═╗═════╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║       ║ cop(繫辞)
+あっ     AUX   <══╝ ║       ║ aux(動詞補助成分)
+た       AUX   <════╝       ║ aux(動詞補助成分)
+。       PUNCT <════════════╝ punct(句読点)
+```
+
 ## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)で解析
 
 ```py
