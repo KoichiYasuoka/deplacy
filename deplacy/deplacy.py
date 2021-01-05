@@ -121,7 +121,8 @@ def catenaArray(DOC):
     if DOC[b].dep_.startswith("parataxis"):
       return -1
     if DOC[b].dep_.startswith("mark"):
-      return -1
+      if DOC[b].pos_=="PART":
+        return -1
     if DOC[a].dep_.startswith("compound"):
       return -1
     if DOC[a].dep_.startswith("nummod"):
