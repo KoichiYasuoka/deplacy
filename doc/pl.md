@@ -24,6 +24,30 @@ granic     NOUN  ═╝═╝<╝         ║ obl:arg
 .          PUNCT <══════════════╝ punct
 ```
 
+## z [spaCyPL](http://zil.ipipan.waw.pl/SpacyPL)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("pl_spacy_model")
+>>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Wcale      ADV   <══════╗         advmod
+nie        PART  <════╗ ║         advmod:neg
+chcemy     VERB  ═══╗═╝═╝═════╗═╗ ROOT
+zdobywać   VERB  ═╗<╝         ║ ║ xcomp
+kosmosu    NOUN  <╝           ║ ║ obj
+,          PUNCT <══════════╗ ║ ║ punct
+chcemy     VERB  ═════════╗═╝<╝ ║ conj
+tylko      PART  <══════╗ ║     ║ advmod
+rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
+Ziemię     NOUN  <╝   ║         ║ obj
+do         ADP   <══╗ ║         ║ case
+jego       PRON  <╗ ║ ║         ║ nmod
+granic     NOUN  ═╝═╝<╝         ║ obl:arg
+.          PUNCT <══════════════╝ punct
+```
+
 ## z [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
