@@ -1,5 +1,25 @@
 # 以[deplacy](https://koichiyasuoka.github.io/deplacy/)析句
 
+## 於[GuwenCOMBO](https://github.com/KoichiYasuoka/GuwenCOMBO)
+
+```py
+>>> import guwencombo
+>>> nlp=guwencombo.load(Danku=True)
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜 NOUN <╗     nmod
+田 NOUN ═╝<══╗ nsubj
+不 ADV  <══╗ ║ advmod
+納 VERB ═╗═╝═╝ root
+履 NOUN <╝     obj
+李 NOUN <╗     nmod
+下 NOUN ═╝<══╗ nsubj
+不 ADV  <══╗ ║ advmod
+正 VERB ═╗═╝═╝ root
+冠 NOUN <╝     obj
+```
+
 ## 於[UD-Kanbun](https://github.com/KoichiYasuoka/UD-Kanbun)
 
 ```py
