@@ -58,11 +58,11 @@ holnapra   NOUN  <╝       ║ nmod:obl
 .          PUNCT <════════╝ punct
 ```
 
-## [COMBO-pytorch](https://github.com/ipipan/combo)-vel
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-vel
 
 ```py
 >>> import combo.predict
->>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("hungarian")
+>>> nlp=combo.predict.COMBO.from_pretrained("hungarian-ud27")
 >>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -72,7 +72,7 @@ megtehetsz VERB  ═╝═════╗═╝═╗ root
 ,          PUNCT <════╗ ║   ║ punct
 ne         ADV   <╗   ║ ║   ║ compound:preverb
 halaszd    VERB  ═╝═╗═╝<╝   ║ conj
-holnapra   NOUN  <══╝       ║ nmod:obl
+holnapra   ADV   <══╝       ║ nmod:obl
 .          PUNCT <══════════╝ punct
 ```
 
