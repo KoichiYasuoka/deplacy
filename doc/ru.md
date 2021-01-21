@@ -38,16 +38,57 @@
 .      PUNCT <════════════╝ punct
 ```
 
-## с [COMBO-pytorch](https://github.com/ipipan/combo)
+## с [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("russian")
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=ru&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)
 Москва PROPN <══════════╗   nsubj
-слезам PRON  <════════╗ ║   iobj
+слезам NOUN  <════════╗ ║   iobj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ root
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ obl
+.      PUNCT <════════════╝ punct
+```
+
+## с [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+
+```py
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ru_syntagrus/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <════════════╗ nsubj
+слезам NOUN  <══════════╗ ║ iobj
+не     PART  <╗         ║ ║ advmod
+верила VERB  ═╝═══════╗═╝═╝ root
+,      PUNCT <════╗   ║     punct
+а      CCONJ <══╗ ║   ║     cc
+верила VERB  ═╗═╝═╝═╗<╝     conj
+любви  NOUN  <╝     ║       obl
+.      PUNCT <══════╝       punct
+```
+
+## с [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("russian-ud27")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва NOUN  <══════════╗   nsubj
+слезам NOUN  <════════╗ ║   iobj
 не     PART  <╗       ║ ║   advmod
 верила VERB  ═╝═════╗═╝═╝═╗ root
 ,      PUNCT <════╗ ║     ║ punct
@@ -127,47 +168,6 @@
 слезам NOUN  <══════════╗ ║ iobj
 не     PART  <╗         ║ ║ advmod
 верила VERB  ═╝═══════╗═╝═╝ ROOT
-,      PUNCT <════╗   ║     punct
-а      CCONJ <══╗ ║   ║     cc
-верила VERB  ═╗═╝═╝═╗<╝     conj
-любви  NOUN  <╝     ║       obl
-.      PUNCT <══════╝       punct
-```
-
-## с [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
-
-```py
->>> def nlp(t):
-...   import urllib.request,urllib.parse,json
-...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=ru&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
-...     return json.loads(r.read())["result"]
-...
->>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> import deplacy
->>> deplacy.render(doc)
-Москва PROPN <══════════╗   nsubj
-слезам NOUN  <════════╗ ║   iobj
-не     PART  <╗       ║ ║   advmod
-верила VERB  ═╝═════╗═╝═╝═╗ root
-,      PUNCT <════╗ ║     ║ punct
-а      CCONJ <══╗ ║ ║     ║ cc
-верила VERB  ═╗═╝═╝<╝     ║ conj
-любви  NOUN  <╝           ║ obl
-.      PUNCT <════════════╝ punct
-```
-
-## с [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ru_syntagrus/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> import deplacy
->>> deplacy.render(doc)
-Москва PROPN <════════════╗ nsubj
-слезам NOUN  <══════════╗ ║ iobj
-не     PART  <╗         ║ ║ advmod
-верила VERB  ═╝═══════╗═╝═╝ root
 ,      PUNCT <════╗   ║     punct
 а      CCONJ <══╗ ║   ║     cc
 верила VERB  ═╗═╝═╝═╗<╝     conj
