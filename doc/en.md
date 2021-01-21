@@ -40,11 +40,11 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
-## Usage with [COMBO-pytorch](https://github.com/ipipan/combo)
+## Usage with [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
 >>> import combo.predict
->>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("english")
+>>> nlp=combo.predict.COMBO.from_pretrained("english-ud27")
 >>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy
 >>> deplacy.render(doc)
