@@ -118,11 +118,11 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 .       PUNCT <════════╝ punct
 ```
 
-## s [COMBO-pytorch](https://github.com/ipipan/combo)
+## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
 >>> import combo.predict
->>> nlp=combo.predict.SemanticMultitaskPredictor.from_pretrained("czech")
+>>> nlp=combo.predict.COMBO.from_pretrained("czech-ud27")
 >>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
 >>> import deplacy
 >>> deplacy.render(doc)
