@@ -21,6 +21,24 @@ holnapra   NOUN  <╝       ║ nmod:obl
 .          PUNCT <════════╝ punct
 ```
 
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-vel
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("hungarian-ud27")
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <════════╗   obj
+ma         ADV   <╗       ║   advmod:tlocy
+megtehetsz VERB  ═╝═════╗═╝═╗ root
+,          PUNCT <════╗ ║   ║ punct
+ne         ADV   <╗   ║ ║   ║ compound:preverb
+halaszd    VERB  ═╝═╗═╝<╝   ║ conj
+holnapra   ADV   <══╝       ║ nmod:obl
+.          PUNCT <══════════╝ punct
+```
+
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-vel
 
 ```py
@@ -56,24 +74,6 @@ ne         VERB  <══╗ ║ ║   advmod
 halaszd    NUM   ═╗═╝═╝═╝═╗ root
 holnapra   NOUN  <╝       ║ nmod:obl
 .          PUNCT <════════╝ punct
-```
-
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-vel
-
-```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("hungarian-ud27")
->>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
->>> import deplacy
->>> deplacy.render(doc)
-Amit       PRON  <════════╗   obj
-ma         ADV   <╗       ║   advmod:tlocy
-megtehetsz VERB  ═╝═════╗═╝═╗ root
-,          PUNCT <════╗ ║   ║ punct
-ne         ADV   <╗   ║ ║   ║ compound:preverb
-halaszd    VERB  ═╝═╗═╝<╝   ║ conj
-holnapra   ADV   <══╝       ║ nmod:obl
-.          PUNCT <══════════╝ punct
 ```
 
 ## [hu_core_ud_lg](https://github.com/oroszgy/spacy-hungarian-models)-vel
