@@ -18,6 +18,24 @@ da        VERB  ═══════╝═╝═╗ ROOT
 .         PUNCT <══════════╝ punct
 ```
 
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-rekin
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("basque-ud27")
+>>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Euskaldun ADJ   ═╗<════╗   csubj
+izatea    AUX   <╝     ║   cop
+lan       NOUN  ═╗═╗<╗ ║   nsubj
+extra     ADJ   <╝ ║ ║ ║   amod
+bat       NUM   <══╝ ║ ║   nummod
+izatea    VERB  ═╗═══╝═╝═╗ root
+da        AUX   <╝       ║ cop
+.         PUNCT <════════╝ punct
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-rekin
 
 ```py
