@@ -159,6 +159,32 @@ hart  NOUN  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
+## met [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("afrikaans-ud27")
+>>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
+>>> import deplacy
+>>> deplacy.render(doc)
+As    SCONJ ═══════════════╗<╗   amod
+jy    PRON  <════════════╗ ║ ║   nsubj
+met   ADP   <╗           ║ ║ ║   case
+hom   PRON  ═╝<════════╗ ║ ║ ║   obl
+praat VERB  ═════════╗═╝═╝<╝ ║   dep
+in    ADP   <════╗   ║       ║   case
+sy    PRON  <══╗ ║   ║       ║   det
+eie   ADJ   <╗ ║ ║   ║       ║   amod
+taal  NOUN  ═╝═╝═╝═╗<╝       ║   obl
+,     PUNCT <══════╝         ║   punct
+gaan  AUX   ═╗═══╗═══════════╝═╗ root
+dit   PRON  <╝   ║             ║ nsubj
+na    ADP   <══╗ ║             ║ case
+sy    PRON  <╗ ║ ║             ║ det
+hart  PRON  ═╝═╝<╝             ║ obl
+.     PUNCT <══════════════════╝ punct
+```
+
 ## met [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
