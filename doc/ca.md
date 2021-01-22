@@ -77,6 +77,25 @@ importància NOUN  ═╝<══╝   ║ obj
 .           PUNCT <════════╝ punct
 ```
 
+## amb [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("catalan-ud27")
+>>> doc=nlp("El tennis té avui a Catalunya molta importància.")
+>>> import deplacy
+>>> deplacy.render(doc)
+El          DET   <╗         det
+tennis      NOUN  ═╝<════╗   nsubj
+té          VERB  ═╗═╗═╗═╝═╗ root
+avui        ADV   <╝ ║ ║   ║ advmod
+a           ADP   <╗ ║ ║   ║ case
+Catalunya   PROPN ═╝<╝ ║   ║ obl
+molta       DET   <╗   ║   ║ det
+importància NOUN  ═╝<══╝   ║ obj
+.           PUNCT <════════╝ punct
+```
+
 ## amb [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
