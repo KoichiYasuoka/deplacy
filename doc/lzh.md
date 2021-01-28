@@ -88,16 +88,16 @@
 >>> doc=nlp("瓜田不納履李下不正冠")
 >>> import deplacy
 >>> deplacy.render(doc)
-瓜 NOUN <╗           nmod
-田 NOUN ═╝<════════╗ nsubj
-不 ADV  <════════╗ ║ advmod
-納 VERB ═══════╗═╝═╝ root
-履 VERB ═══╗═╗<╝     ccomp
-李 NOUN ═╗<╝ ║       obj
-下 NOUN <╝   ║       flat
-不 ADV  <══╗ ║       advmod
-正 VERB ═╗═╝<╝       conj
-冠 NOUN <╝           obj
+瓜 NOUN ═╗<════╗   nsubj
+田 NOUN <╝     ║   conj
+不 ADV  <════╗ ║   advmod
+納 VERB ═╗═╗═╝═╝═╗ root
+履 NOUN <╝ ║     ║ obj
+李 NOUN <╗ ║     ║ nmod
+下 NOUN ═╝<╝     ║ obj
+不 ADV  <══╗     ║ advmod
+正 VERB ═╗═╝<════╝ parataxis
+冠 NOUN <╝         obj
 ```
 
 ## 於[UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
