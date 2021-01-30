@@ -1,5 +1,25 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) for syntaktisk analyse på bokmål
 
+## med [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("nb")
+>>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ikke      PART  <╗             advmod
+tusen     NUM   ═╝<╗           nummod
+ord       NOUN  ═══╝<══════╗   nsubj
+seg       PRON  <════════╗ ║   nsubj
+prenter   VERB  ═══════╗═╝═╝═╗ root
+som       SCONJ <════╗ ║     ║ mark
+én        NUM   <╗   ║ ║     ║ nummod
+gjernings NOUN  ═╝<╗ ║ ║     ║ nmod
+spor      NOUN  ═══╝═╝<╝     ║ xcomp
+.         PUNCT <════════════╝ punct
+```
+
 ## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
