@@ -73,3 +73,26 @@ hwn     PRON  <╝                 ║ det
 .       PUNCT <══════════════════╝ punct
 ```
 
+## gyda [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("cy")
+>>> doc=nlp("Benthyg dros amser byr yw popeth a geir yn y byd hwn.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Benthyg VERB  ═════╗═════╗═╗ root
+dros    ADP   <══╗ ║     ║ ║ case
+amser   NOUN  ═╗═╝<╝     ║ ║ obl:agent
+byr     NOUN  <╝         ║ ║ nmod
+yw      AUX   <════════╗ ║ ║ cop
+popeth  NOUN  ═══╗═══╗═╝<╝ ║ obj
+a       PRON  <╗ ║   ║     ║ nmod:poss
+geir    NOUN  ═╝<╝   ║     ║ nmod
+yn      ADP   <════╗ ║     ║ case
+y       DET   <══╗ ║ ║     ║ det
+byd     NOUN  ═╗═╝═╝<╝     ║ nmod
+hwn     PRON  <╝           ║ det
+.       PUNCT <════════════╝ punct
+```
+
