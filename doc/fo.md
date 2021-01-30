@@ -17,3 +17,20 @@ børn  NOUN  ═╝═╝<╝   ║ obj
 .     PUNCT <════════╝ punct
 ```
 
+## av [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("fo")
+>>> doc=nlp("Ofta taka trøll góða manna børn.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ofta  VERB  ═══╗═╗═╗ root
+taka  NOUN  ═╗<╝ ║ ║ nsubj
+trøll NOUN  <╝   ║ ║ nmod
+góða  ADP   <══╗ ║ ║ case
+manna NOUN  ═╗═╝<╝ ║ obl
+børn  PROPN <╝     ║ flat
+.     PUNCT <══════╝ punct
+```
+
