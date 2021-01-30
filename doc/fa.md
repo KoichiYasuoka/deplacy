@@ -1,5 +1,26 @@
 <h1 dir="rtl"><a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a> برای تحلیل نحو</h1>
 
+<h2 dir="rtl"> با <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("fa")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ case           ╔══> ADP   به
+  obl   ╔══════>╚═╔═ NOUN  اعتقاد
+ nmod   ║         ╚> PRON  من
+nsubj   ║ ╔══════>╔═ NOUN  موسيقي
+ nmod   ║ ║       ╚> NOUN  هنر
+ root ╔═╚═╚═╔═══════ VERB  نيست
+punct ╚═════║══════> PUNCT ،
+   cc       ║   ╔══> CCONJ بلكه
+ conj       ╚>╔═╚═╔═ NOUN  متافيزيك
+  cop         ║   ╚> AUX   است
+punct         ╚════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
 
 ```py
