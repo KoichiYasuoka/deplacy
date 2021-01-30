@@ -21,6 +21,22 @@ xcomp ║       ╚> VERB  להתווכח
 punct ╚════════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("he")
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+case     ╔════> ADP   על
+ obl   ╔>╚═╔═══ NOUN  טעם
+  cc   ║   ║ ╔> CCONJ ו
+conj   ║   ╚>╚═ NOUN  ריח
+ aux ╔>╚═══════ AUX   אין
+root ╚═════════ VERB  להתווכח.
+```
+
 <h2 dir="rtl"> עם <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
 
 ```py
