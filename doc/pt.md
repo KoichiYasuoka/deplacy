@@ -54,6 +54,24 @@ medo NOUN  <╝       ║ obj
 .    PUNCT <════════╝ punct
 ```
 
+## com [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("portuguese-ud27")
+>>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Eu   PRON  <══╗       nsubj
+quis VERB  ═╗═╝═══╗═╗ root
+amar VERB  <╝     ║ ║ xcomp
+,    PUNCT <════╗ ║ ║ punct
+mas  CCONJ <══╗ ║ ║ ║ cc
+tive VERB  ═╗═╝═╝<╝ ║ conj
+medo NOUN  <╝       ║ obj
+.    PUNCT <════════╝ punct
+```
+
 ## com [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
