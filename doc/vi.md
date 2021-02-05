@@ -89,6 +89,24 @@ chim  NOUN  <╝     ║   amod
 .     PUNCT <══════╝   punct
 ```
 
+## với [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("vietnamese-ud27")
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một   NUM   <╗         nummod
+mũi   NOUN  ═╝═╗═══╗═╗ root
+tên   NOUN  <══╝   ║ ║ compound
+trúng ADJ   <════╗ ║ ║ case
+hai   NUM   <╗   ║ ║ ║ nummod
+con   NOUN  ═╝═╗═╝<╝ ║ compound
+chim  VERB  <══╝     ║ xcomp
+.     PUNCT <════════╝ punct
+```
+
 ## với [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
