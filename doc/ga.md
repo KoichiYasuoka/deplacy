@@ -39,6 +39,24 @@ farraige  NOUN  ═╝<╝     ║ nmod
 .         PUNCT <════════╝ punct
 ```
 
+## le [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("irish-ud27")
+>>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Táimid    VERB  ═══╗═══╗═╗ root
+faoi      ADP   <╗ ║   ║ ║ case
+dhraíocht NOUN  ═╝<╝   ║ ║ xcomp:pred
+ag        ADP   <════╗ ║ ║ case
+ceol      NOUN  ═══╗═╝<╝ ║ obl
+na        DET   <╗ ║     ║ det
+farraige  NOUN  ═╝<╝     ║ nmod
+.         PUNCT <════════╝ punct
+```
+
 ## le [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
