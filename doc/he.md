@@ -104,6 +104,22 @@ compound:smixut     ║   ╚> NOUN  וריח
           punct   ╚══════> PUNCT .
 ```
 
+<h2 dir="rtl"> עם <a href="https://gitlab.clarin-pl.eu/syntactic-tools/combo">COMBO-pytorch</a></h2>
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("hebrew-ud27")
+>>> doc=nlp("על טעם וריח אין להתווכח.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ case       ╔══> ADP   על
+  obl     ╔>╚═╔═ NOUN  טעם
+ amod     ║   ╚> ADJ   וריח
+  aux ╔>╔═╚═════ AUX   אין
+ root ╚═════════ VERB  להתווכח
+punct   ╚══════> PUNCT .
+```
+
 <h2 dir="rtl"> עם <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
 
 ```py
