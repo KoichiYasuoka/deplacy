@@ -109,6 +109,23 @@
 .         PUNCT <════════╝ punct
 ```
 
+## με [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("greek-ud27")
+>>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Δεν       PART  <══════╗   advmod
+υπάρχει   VERB  ═══╗═╗═╝═╗ root
+βασιλικός ADJ   <╗ ║ ║   ║ amod
+δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
+στη       ADJ   <╗   ║   ║ amod
+γεωμετρία NOUN  ═╝<══╝   ║ obl
+.         PUNCT <════════╝ punct
+```
+
 ## με [spaCy](https://spacy.io/)
 
 ```py
