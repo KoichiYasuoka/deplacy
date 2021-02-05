@@ -135,6 +135,23 @@ langit NOUN  <╝       ║ obj
 .      PUNCT <════════╝ punct
 ```
 
+## dengan [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("indonesian-ud27")
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <╗         case
+atas   ADP   ═╝<════╗   obl
+langit NOUN  <════╗ ║   obl
+masih  ADV   <══╗ ║ ║   advmod
+ada    VERB  ═╗═╝═╝═╝═╗ root
+langit NOUN  <╝       ║ obj
+.      PUNCT <════════╝ punct
+```
+
 ## dengan [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
