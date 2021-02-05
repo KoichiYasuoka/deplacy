@@ -132,3 +132,18 @@ gelir   VERB  ═══════╝═╗ ROOT
 .       PUNCT <════════╝ punct
 ```
 
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo) ile analiz
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("turkish-ud27")
+>>> doc=nlp("İyi insan sözünün üstüne gelir.")
+>>> import deplacy
+>>> deplacy.render(doc)
+İyi     ADJ   <╗         amod
+insan   NOUN   ║<════╗   nsubj
+sözünün NOUN  ═╝<╗   ║   nmod:poss
+üstüne  ADJ   ═══╝<╗ ║   obl
+gelir   VERB  ═════╝═╝═╗ root
+.       PUNCT <════════╝ punct
+```
