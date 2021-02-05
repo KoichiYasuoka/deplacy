@@ -85,6 +85,27 @@ pesagi NOUN  ═╝<╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-ga
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("estonian-ud27")
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ root
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+kärbse ADJ   <╗ ║         ║ amod
+pesagi NOUN  ═╝<╝         ║ obj
+.      PUNCT <════════════╝ punct
+```
+
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-ga
 
 ```py
