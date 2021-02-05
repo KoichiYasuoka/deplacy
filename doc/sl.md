@@ -76,6 +76,24 @@ zori      VERB  ═╝═╝═╝═╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
+## z [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("slovenian-ud27")
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Po        ADP   <╗         case
+koroškem  ADJ   ═╝<════╗   obl
+po        ADP   <╗     ║   case
+kranjskem ADJ   ═╝<══╗ ║   obl
+že        PART  <══╗ ║ ║   advmod
+ajda      ADV   <╗ ║ ║ ║   advmod
+zori      VERB  ═╝═╝═╝═╝═╗ root
+.         PUNCT <════════╝ punct
+```
+
 ## z [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
