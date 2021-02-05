@@ -21,6 +21,27 @@ mej       PRON  ═╝<══╝       ║ obl
 .         PUNCT <════════════╝ punct
 ```
 
+## med [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> import combo.predict
+>>> nlp=combo.predict.COMBO.from_pretrained("swedish-ud27")
+>>> doc=nlp("Du har förändrat dej och är så långt från mej.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Du        PRON  <══════════╗   nsubj
+har       AUX   <══╗       ║   aux
+förändrat VERB  ═╗═╝═════╗═╝═╗ root
+dej       PRON  <╝       ║   ║ obj
+och       CCONJ <══════╗ ║   ║ cc
+är        VERB  ═══╗═╗═╝<╝   ║ conj
+så        ADV   <╗ ║ ║       ║ advmod
+långt     ADV   ═╝<╝ ║       ║ advmod
+från      ADP   <╗   ║       ║ case
+mej       NOUN  ═╝<══╝       ║ obl
+.         PUNCT <════════════╝ punct
+```
+
 ## med [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
