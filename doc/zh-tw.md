@@ -129,31 +129,31 @@
 
 ```py
 >>> import spacy
->>> nlp=spacy.load("zh_core_web_md")
+>>> nlp=spacy.load("zh_core_web_trf")
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
 >>> import deplacy
 >>> deplacy.render(doc)
-希望 VERB  ═════════╗═══╗═╗═╗ ROOT
-是   VERB  <════╗   ║   ║ ║ ║ cop
-附麗 NOUN  <══╗ ║   ║   ║ ║ ║ nsubj
-於   NOUN  <╗ ║ ║   ║   ║ ║ ║ case
-存在 VERB  ═╝═╝═╝═╗<╝   ║ ║ ║ ccomp
-的   PART  <══════╝     ║ ║ ║ discourse
-，   PUNCT <══╗         ║ ║ ║ punct
-有   VERB  ═╗═╝═╗═╗═╗═╗<╝ ║ ║ dep
-存在 NOUN  <╝   ║ ║ ║ ║   ║ ║ dobj
-，   PUNCT <════╝ ║ ║ ║   ║ ║ punct
-便   ADV   <══╗   ║ ║ ║   ║ ║ advmod
-有   VERB  ═╗═╝<══╝ ║ ║   ║ ║ conj
-希望 NOUN  <╝       ║ ║   ║ ║ dobj
-，   PUNCT <════════╝ ║   ║ ║ punct
-有   VERB  ═╗<════════╝   ║ ║ conj
-希望 NOUN  <╝             ║ ║ dobj
-，   PUNCT <════╗         ║ ║ punct
-便   ADV   <══╗ ║         ║ ║ advmod
-是   VERB  <╗ ║ ║         ║ ║ cop
-光明 NOUN  ═╝═╝═╝<════════╝ ║ conj
-。   PUNCT <════════════════╝ punct
+希望 NOUN  <══════╗             nsubj
+是   VERB  <════╗ ║             cop
+附麗 VERB  ═══╗═╝═╝═╗═╗═╗═╗═╗═╗ ROOT
+於   ADP   <╗ ║     ║ ║ ║ ║ ║ ║ case
+存在 VERB  ═╝<╝     ║ ║ ║ ║ ║ ║ nmod:prep
+的   PART  <════════╝ ║ ║ ║ ║ ║ mark
+，   PUNCT <══════════╝ ║ ║ ║ ║ punct
+有   VERB  ═╗<══╗       ║ ║ ║ ║ dep
+存在 NOUN  <╝   ║       ║ ║ ║ ║ dobj
+，   PUNCT <════║═╗     ║ ║ ║ ║ punct
+便   ADV   <══╗ ║ ║     ║ ║ ║ ║ advmod
+有   VERB  ═╗═╝═╝═╝<════╝ ║ ║ ║ conj
+希望 NOUN  <╝             ║ ║ ║ dobj
+，   PUNCT <══════════════╝ ║ ║ punct
+有   VERB  ═╗<══╗           ║ ║ dep
+希望 NOUN  <╝   ║           ║ ║ dobj
+，   PUNCT <════║═╗         ║ ║ punct
+便   ADV   <══╗ ║ ║         ║ ║ advmod
+是   VERB  <╗ ║ ║ ║         ║ ║ cop
+光明 VERB  ═╝═╝═╝═╝<════════╝ ║ conj
+。   PUNCT <══════════════════╝ punct
 ```
 
 ## 用[DDParser](https://github.com/baidu/DDParser)
