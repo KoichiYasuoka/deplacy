@@ -130,7 +130,7 @@
 ```
 >>> from fastHan import FastHan
 >>> model=FastHan()
->>> nlp=lambda x:"".join("\n".join("\t".join([str(i+1),t.word,"_",t.pos,t.pos,"_",str(t.head),t.head_label,"_","SpaceAfter=No"]) for i,t in enumerate(s))+"\n\n" for s in model(x,"Parsing"))
+>>> nlp=lambda x:"".join("\n".join("\t".join([str(i+1),t[0],"_",t[3],t[3],"_",str(t[1]),t[2],"_","SpaceAfter=No"]) for i,t in enumerate(s))+"\n\n" for s in model(x,"Parsing"))
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
 >>> import deplacy
 >>> deplacy.render(doc)
