@@ -79,6 +79,25 @@
 .      PUNCT <══════╝       punct
 ```
 
+## с [spaCy](https://spacy.io/)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("ru_core_news_md")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <══════════╗   nsubj
+слезам NOUN  <════════╗ ║   iobj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ ROOT
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ obj
+.      PUNCT <════════════╝ punct
+```
+
 ## с [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
