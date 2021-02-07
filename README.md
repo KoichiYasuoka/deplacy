@@ -34,6 +34,7 @@ name      NOUN  ═╝<╝             ║ dobj
 
 * [Afrikaans](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/af.md)
 * [العربية](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ar.md)
+* [Беларуская](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/be.md)
 * [Български](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/bg.md)
 * [Català](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ca.md)
 * [ⲙⲉⲧⲣⲉⲙⲛⲭⲏⲙⲓ](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/cop.md)
@@ -119,6 +120,7 @@ You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately. For Google
 
 * [Afrikaans](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/af.ipynb)
 * [العربية](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ar.ipynb)
+* [Беларуская](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/be.ipynb)
 * [Български](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/bg.ipynb)
 * [Català](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ca.ipynb)
 * [ⲙⲉⲧⲣⲉⲙⲛⲭⲏⲙⲓ](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/cop.ipynb)
