@@ -148,20 +148,3 @@
 .      PUNCT <══════╝ punct
 ```
 
-## с [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("bg_btb.DeepPavlov")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="bg",prob=True).sentences])
->>> doc=nlp("Гладна мечка хоро не играе.")
->>> import deplacy
->>> deplacy.render(doc)
-Гладна <╗       amod
-мечка  ═╝<══╗   nsubj
-хоро   <══╗ ║   obj
-не     <╗ ║ ║   advmod
-играе  ═╝═╝═╝═╗ root
-.      <══════╝ punct
-```
-

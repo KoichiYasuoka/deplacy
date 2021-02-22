@@ -168,22 +168,3 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
-## con [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("es_ancora.mbert")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="es",prob=True).sentences])
->>> doc=nlp("La pluma es la lengua del alma.")
->>> import deplacy
->>> deplacy.render(doc)
-La     <╗           det
-pluma  ═╝<══════╗   nsubj
-es     <══════╗ ║   cop
-la     <════╗ ║ ║   det
-lengua ═══╗═╝═╝═╝═╗ root
-del    <╗ ║       ║ case
-alma   ═╝<╝       ║ nmod
-.      <══════════╝ punct
-```
-

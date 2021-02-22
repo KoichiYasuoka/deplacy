@@ -206,24 +206,3 @@ porcii  NOUN  <════════╝     ║ nsubj
 .       PUNCT <══════════════╝ punct
 ```
 
-## cu [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("ro_rrt.mbert")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ro",prob=True).sentences])
->>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
->>> import deplacy
->>> deplacy.render(doc)
-Nu      <══════════╗   advmod
-te      <════════╗ ║   obj
-băga    ═══╗═══╗═╝═╝═╗ root
-in      <╗ ║   ║     ║ case
-tărâţe  ═╝<╝   ║     ║ obl
-că      <════╗ ║     ║ mark
-te      <══╗ ║ ║     ║ expl:pv
-mănâncă ═╗═╝═╝<╝     ║ advcl
-porcii  <╝           ║ nsubj
-.       <════════════╝ punct
-```
-

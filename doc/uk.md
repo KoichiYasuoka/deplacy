@@ -166,22 +166,3 @@
 .        PUNCT <════════════╝ punct
 ```
 
-## з [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("uk_iu.TurkuNLP")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="uk",prob=True).sentences])
->>> doc=nlp("Біжать алеї звуків, саджених у гами.")
->>> import deplacy
->>> deplacy.render(doc)
-Біжать   ═══════════╗═╗ root
-алеї     ═════════╗<╝ ║ nsubj
-звуків   ═══════╗<╝   ║ nmod
-,        <════╗ ║     ║ punct
-саджених ═══╗═╝<╝     ║ amod
-у        <╗ ║         ║ case
-гами     ═╝<╝         ║ obl
-.        <════════════╝ punct
-```
-

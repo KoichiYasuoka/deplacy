@@ -204,29 +204,3 @@ gadi       NOUN  ═╝═╝<╝               ║ parataxis
 .          PUNCT <════════════════════╝ punct
 ```
 
-## ar [DiaParser](https://github.com/Unipisa/diaparser)
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("lv_lvtb.mbert")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="lv",prob=True).sentences])
->>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
->>> import deplacy
->>> deplacy.render(doc)
-Latvija    <════════════════╗   nsubj
-vienu      ═══╗<══════════╗ ║   obj
-pēc        <╗ ║           ║ ║   case
-otras      ═╝<╝           ║ ║   nmod
-pārdzīvoja ═════════════╗═╝═╝═╗ root
-trīs       <╗           ║     ║ nummod
-okupācijas ═╝═════════╗<╝     ║ obj
-,          <════════╗ ║       ║ punct
-kuru       <══╗     ║ ║       ║ det
-kopējais   <╗ ║     ║ ║       ║ amod
-ilgums     ═╝═╝<╗   ║ ║       ║ nsubj
-,          <════║═╗ ║ ║       ║ punct
-piecdesmit <╗   ║ ║ ║ ║       ║ nummod
-gadi       ═╝═══╝═╝═╝<╝       ║ appos
-.          <══════════════════╝ punct
-```
-
