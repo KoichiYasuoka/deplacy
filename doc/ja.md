@@ -223,6 +223,28 @@
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
+## [SuPar-UniDic](https://github.com/KoichiYasuoka/SuPar-UniDic)で解析
+
+```py
+>>> import suparunidic
+>>> nlp=suparunidic.load()
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<╗         nsubj(主語)
+の       ADP   <╝ ║         case(格表示)
+長い     ADJ   ═══╝<╗       acl(連体修飾節)
+トンネル NOUN  ═╗═══╝<╗     obj(目的語)
+を       ADP   <╝     ║     case(格表示)
+抜ける   VERB  ═╗═════╝<╗   advcl(連用修飾節)
+と       CCONJ <╝       ║   mark(標識)
+雪国     NOUN  ═╗═╗═╗═══╝═╗ ROOT(親)
+で       AUX   <╝ ║ ║     ║ cop(繫辞)
+あっ     AUX   <══╝ ║     ║ aux(動詞補助成分)
+た       AUX   <════╝     ║ aux(動詞補助成分)
+。       PUNCT <══════════╝ punct(句読点)
+```
+
 ## [Stanza](https://stanfordnlp.github.io/stanza)で解析
 
 ```py
@@ -231,16 +253,17 @@
 >>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
 >>> import deplacy
 >>> deplacy.render(doc,Japanese=True)
-国境     NOUN  ═╗<╗         obl(斜格補語)
+国境     NOUN  ═╗<╗         nsubj(主語)
 の       ADP   <╝ ║         case(格表示)
 長い     ADJ   ═══╝<╗       acl(連体修飾節)
 トンネル NOUN  ═╗═══╝<╗     obj(目的語)
 を       ADP   <╝     ║     case(格表示)
-抜ける   VERB  ═╗═════╝<╗   advcl(連用修飾節)
+抜ける   VERB  ═╗═════╝<╗   acl(連体修飾節)
 と       SCONJ <╝       ║   mark(標識)
-雪国     PROPN ═╗═╗═════╝═╗ root(親)
-であっ   AUX   <╝ ║       ║ cop(繫辞)
-た       AUX   <══╝       ║ aux(動詞補助成分)
+雪国     PROPN ═╗═╗═╗═══╝═╗ root(親)
+で       AUX   <╝ ║ ║     ║ cop(繫辞)
+あっ     AUX   <══╝ ║     ║ aux(動詞補助成分)
+た       AUX   <════╝     ║ aux(動詞補助成分)
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
@@ -306,27 +329,5 @@
 雪国     NOUN  ═╗═══════╝═╗ ROOT(親)
 であった AUX   <╝         ║ cop(繫辞)
 。       PUNCT <══════════╝ punct(句読点)
-```
-
-## [DiaParser](https://github.com/Unipisa/diaparser)で解析
-
-```py
->>> from diaparser.parsers import Parser
->>> parser=Parser.load("ja_gsd.mbert")
->>> nlp=lambda t:"\n".join([str(s) for s in parser.predict(t,text="ja",prob=True).sentences])
->>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-国境     ═╗<══╗       nmod(体言による連体修飾語)
-の       <╝   ║       case(格表示)
-長い     <══╗ ║       acl(連体修飾節)
-トンネル ═╗═╝═╝<╗     obj(目的語)
-を       <╝     ║     case(格表示)
-抜ける   ═╗═════╝<╗   acl(連体修飾節)
-と       <╝       ║   mark(標識)
-雪国     ═╗═╗═════╝═╗ root(親)
-であっ   <╝ ║       ║ cop(繫辞)
-た       <══╝       ║ aux(動詞補助成分)
-。       <══════════╝ punct(句読点)
 ```
 
