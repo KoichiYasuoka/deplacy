@@ -265,6 +265,51 @@ def render(doc,BoxDrawingWidth=1,EnableCR=False,WordRight=False,CatenaAnalysis=T
       s+=DOC[i].orth_+" "*(m-x[i])+r+" "*(n-len(r))+t+" "+d+"\n"
   print(s,end="",file=file)
 
+def to_conllu(doc,RtoL=False):
+  s=str(type(doc))
+  if s.find("spacy")==8:
+    c=""
+    for s in doc.sents:
+      for t in s:
+        try:
+          m=str(t.morph)
+          if m.startswith("<spacy"):
+            m=""
+        except:
+          m=""
+        c+=str(t.i-s.start+1)
+        for i in [t.orth_,t.lemma_,t.pos_,t.tag_,m,str(0 if t.head==t else t.head.i-s.start+1),t.dep_,""]:
+          c+="\t_" if i.strip()=="" else "\t"+i
+        if t.ent_iob_=="B" or t.ent_iob_=="I":
+          u="NE="+t.ent_iob_+"-"+t.ent_type_
+        else:
+          u=""
+        if RtoL and len(t.orth_)>1:
+          if len([c for c in t.orth_ if ord(c)>12287])>0:
+            u+=("" if u=="" else "|")+"Direction=RtoL"
+        if not t.whitespace_:
+          u+=("" if u=="" else "|")+"SpaceAfter=No"
+        if t.norm_!="" and t.norm_!=t.orth_:
+          u+=("" if u=="" else "|")+"Translit="+t.norm_
+        if u=="":
+          u="_"
+        c+="\t"+u+"\n"
+      c+="\n"
+    return c
+  elif s.find("stanza")==8:
+    from stanza.utils.conll import CoNLL
+    return CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
+  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
+    return doc.conll_file.conll_as_string()
+  elif s.find("nltk")==8:
+    return doc.to_conll(10)
+  elif s.find("combo")==8:
+    from combo.data import sentence2conllu
+    return sentence2conllu(doc,False).serialize()
+  elif s.find("list")==8:
+    return "".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+  return str(doc)
+
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
   server_version=VERSION
   header_html="header.html"
@@ -301,47 +346,7 @@ class DeplacyRequestHandlerRtoL(DeplacyRequestHandler):
   header_html="headerRtoL.html"
 
 def serve(doc,port=5000,RtoL=False):
-  s=str(type(doc))
-  if s.find("spacy")==8:
-    c=""
-    for t in doc:
-      try:
-        m=str(t.morph)
-        if m.startswith("<spacy"):
-          m=""
-      except:
-        m=""
-      c+=str(t.i+1)
-      for i in [t.orth_,t.lemma_,t.pos_,t.tag_,m,str(0 if t.head==t else t.head.i+1),t.dep_,""]:
-        c+="\t_" if i.strip()=="" else "\t"+i
-      if t.ent_iob_=="B" or t.ent_iob_=="I":
-        u="NE="+t.ent_iob_+"-"+t.ent_type_
-      else:
-        u=""
-      if RtoL and len(t.orth_)>1:
-        if len([c for c in t.orth_ if ord(c)>12287])>0:
-          u+=("" if u=="" else "|")+"Direction=RtoL"
-      if not t.whitespace_:
-        u+=("" if u=="" else "|")+"SpaceAfter=No"
-      if t.norm_!="" and t.norm_!=t.orth_:
-        u+=("" if u=="" else "|")+"Translit="+t.norm_
-      if u=="":
-        u="_"
-      c+="\t"+u+"\n"
-  elif s.find("stanza")==8:
-    from stanza.utils.conll import CoNLL
-    c=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
-  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
-    c=doc.conll_file.conll_as_string()
-  elif s.find("nltk")==8:
-    c=doc.to_conll(10)
-  elif s.find("combo")==8:
-    from combo.data import sentence2conllu
-    c=sentence2conllu(doc,False).serialize()
-  elif s.find("list")==8:
-    c="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
-  else:
-    c=str(doc)
+  c=to_conllu(doc,RtoL)
   if port==None:
     from IPython.display import IFrame,display
     from urllib.parse import quote

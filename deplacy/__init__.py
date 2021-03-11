@@ -1,3 +1,1 @@
-from .deplacy import renderMatrix,render,serve,dot,PACKAGE_DIR
-
-__all__=[ renderMatrix,render,serve,dot,PACKAGE_DIR ]
+from .deplacy import renderMatrix,render,to_conllu,serve,dot,PACKAGE_DIR
