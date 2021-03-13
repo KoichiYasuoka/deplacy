@@ -286,7 +286,7 @@ def to_conllu(doc,RtoL=False):
           u=""
         if RtoL and len(t.orth_)>1:
           if len([c for c in t.orth_ if ord(c)>12287])>0:
-            u+=("" if u=="" else "|")+"Direction=RtoL"
+            u="Direction=RtoL" if u=="" else "Direction=RtoL|"+u
         if not t.whitespace_:
           u+=("" if u=="" else "|")+"SpaceAfter=No"
         if t.norm_!="" and t.norm_!=t.orth_:
