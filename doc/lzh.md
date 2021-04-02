@@ -1,25 +1,5 @@
 # 以[deplacy](https://koichiyasuoka.github.io/deplacy/)析句
 
-## 於[SuPar-Kanbun](https://github.com/KoichiYasuoka/SuPar-Kanbun)
-
-```py
->>> import suparkanbun
->>> nlp=suparkanbun.load(Danku=True)
->>> doc=nlp("瓜田不納履李下不正冠")
->>> import deplacy
->>> deplacy.render(doc)
-瓜 NOUN <╗     nmod
-田 NOUN ═╝<══╗ nsubj
-不 ADV  <══╗ ║ advmod
-納 VERB ═╗═╝═╝ ROOT
-履 NOUN <╝     obj
-李 NOUN ═╗<══╗ nsubj
-下 NOUN <╝   ║ flat
-不 ADV  <══╗ ║ advmod
-正 VERB ═╗═╝═╝ ROOT
-冠 NOUN <╝     obj
-```
-
 ## 於[GuwenCOMBO](https://github.com/KoichiYasuoka/GuwenCOMBO)
 
 ```py
@@ -77,6 +57,26 @@
 下 NOUN <╝   ║ ║ flat
 不 ADV  <══╗ ║ ║ advmod
 正 VERB ═╗═╝═╝<╝ parataxis
+冠 NOUN <╝       obj
+```
+
+## 於[SuPar-Kanbun](https://github.com/KoichiYasuoka/SuPar-Kanbun)
+
+```py
+>>> import suparkanbun
+>>> nlp=suparkanbun.load(Danku=True)
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜 NOUN <╗       nmod
+田 NOUN ═╝<══╗   nsubj
+不 ADV  <══╗ ║   advmod
+納 VERB ═╗═╝═╝   ROOT
+履 NOUN <╝       obj
+李 NOUN <══════╗ nsubj
+下 NOUN <════╗ ║ nsubj
+不 ADV  <══╗ ║ ║ advmod
+正 VERB ═╗═╝═╝═╝ ROOT
 冠 NOUN <╝       obj
 ```
 
