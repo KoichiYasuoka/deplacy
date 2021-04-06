@@ -64,35 +64,6 @@ advmod:emph ║         ║ ╚> PART  உம்
       punct ╚════════════> PUNCT .
 ```
 
-## [ThamizhiUDp](http://nlp-tools.uom.lk/thamizhi-udp/) ஆல் பகுப்பாய்வு
-
-```py
->>> import stanza
->>> tagger=stanza.Pipeline(lang="ta",processors="tokenize,mwt,pos",pos_model_path="thamizhi-udp/models/ta_amr_tagger.pt",pos_pretrain_path="thamizhi-udp/models/ta_amr.pretrain.pt")
->>> def nlp(t):
-...   import subprocess,tempfile
-...   from stanza.utils.conll import CoNLL
-...   with tempfile.NamedTemporaryFile("w",encoding="utf-8") as f:
-...     print(CoNLL.conll_as_string(CoNLL.convert_dict(tagger(t).to_dict())),file=f,flush=True)
-...     subprocess.run(["sh","./parse.sh",f.name],cwd="thamizhi-udp")
-...   with open("thamizhi-udp/ud-tagged.txt","r",encoding="utf-8") as f:
-...     return f.read()
-...
->>> doc=nlp("காசுக்கு ஒரு குதிரையும் வேண்டும், காற்றைப் போலப் பறக்கவும் வேண்டும்.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-  obl       ╔════> NOUN  காசுக்கு
- amod       ║ ╔══> DET   ஒரு
-nsubj     ╔>╚═╚═╔═ NOUN  குதிரையும்
-  aux     ║     ╚> VAUX  வேண்டும்
-punct   ╔═║══════> PUNCT ,
- nmod   ║ ║     ╔> NOUN  காற்றைப்
-  obj   ║ ║   ╔>╚═ ADP   போலப்
- root ╔═╚═╚═══╚═╔═ VERB  பறக்கவும்
-  aux ║         ╚> VAUX  வேண்டும்
-punct ╚══════════> PUNCT .
-```
-
 ## [Stanza](https://stanfordnlp.github.io/stanza) ஆல் பகுப்பாய்வு
 
 ```py
