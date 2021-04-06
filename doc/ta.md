@@ -81,17 +81,16 @@ advmod:emph ║         ║ ╚> PART  உம்
 >>> doc=nlp("காசுக்கு ஒரு குதிரையும் வேண்டும், காற்றைப் போலப் பறக்கவும் வேண்டும்.")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
-        obl ╔════════════════> NOUN  காசுக்கு
-       amod ║ ╔══════════════> DET   ஒரு
-       root ╚═╚═╔═╔═╔═════════ NOUN  குதிரையைய்
-advmod:emph     ║ ╚═║════════> NOUN  உம்
-        aux     ╚═══║════════> VAUX  வேண்டும்
-      punct         ║   ╔════> PUNCT ,
-       nmod         ║   ║   ╔> NOUN  காற்றைப்
-      nsubj         ║   ║ ╔>╚═ ADP   போலப்
-   compound         ╚>╔═╚═╚═╔═ VERB  பறக்கவும்
-        aux           ║     ╚> VAUX  வேண்டும்
-      punct           ╚══════> PUNCT .
+  obl       ╔════> NOUN  காசுக்கு
+ amod       ║ ╔══> DET   ஒரு
+nsubj     ╔>╚═╚═╔═ NOUN  குதிரையும்
+  aux     ║     ╚> VAUX  வேண்டும்
+punct   ╔═║══════> PUNCT ,
+ nmod   ║ ║     ╔> NOUN  காற்றைப்
+  obj   ║ ║   ╔>╚═ ADP   போலப்
+ root ╔═╚═╚═══╚═╔═ VERB  பறக்கவும்
+  aux ║         ╚> VAUX  வேண்டும்
+punct ╚══════════> PUNCT .
 ```
 
 ## [Stanza](https://stanfordnlp.github.io/stanza) ஆல் பகுப்பாய்வு
@@ -102,16 +101,15 @@ advmod:emph     ║ ╚═║════════> NOUN  உம்
 >>> doc=nlp("காசுக்கு ஒரு குதிரையும் வேண்டும், காற்றைப் போலப் பறக்கவும் வேண்டும்.")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
-       nmod       ╔══════> PROPN காசுக்கு
-       amod       ║ ╔════> ADJ   ஒரு
-        obj   ╔>╔═╚═╚═╔═╔═ NOUN  குதிரையைய்
-advmod:emph   ║ ║     ║ ╚> PART  உம்
-        aux   ║ ║     ╚══> AUX   வேண்டும்
-      punct   ║ ║     ╔══> PUNCT ,
-       conj   ║ ╚════>╚═╔═ NOUN  காற்றைப்
-       case   ║         ╚> ADP   போலப்
-       root ╔═╚═════════╔═ VERB  பறக்கவும்
-        aux ║           ╚> AUX   வேண்டும்
-      punct ╚════════════> PUNCT .
+ nmod         ╔════> PROPN காசுக்கு
+ amod         ║ ╔══> ADJ   ஒரு
+  obj       ╔>╚═╚═╔═ NOUN  குதிரையும்
+  aux       ║     ╚> AUX   வேண்டும்
+punct     ╔═║══════> PUNCT ,
+  obj     ║ ║     ╔> NOUN  காற்றைப்
+advcl   ╔>╚═╚═════╚═ VERB  போலப்
+ root ╔═╚═════════╔═ VERB  பறக்கவும்
+  aux ║           ╚> AUX   வேண்டும்
+punct ╚════════════> PUNCT .
 ```
 
