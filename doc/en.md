@@ -124,11 +124,11 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
-## Usage with [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
+## Usage with [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_en_ewt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
+>>> import trankit
+>>> nlp=trankit.Pipeline("english")
 >>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -143,11 +143,12 @@ no        DET   <╗ ║             ║ det
 name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
-## Usage with [Trankit](https://github.com/nlp-uoregon/trankit)
+
+## Usage with [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
->>> import trankit
->>> nlp=trankit.Pipeline("english")
+>>> import sys,subprocess
+>>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_en_ewt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
 >>> doc=nlp("I saw a horse yesterday which had no name.")
 >>> import deplacy
 >>> deplacy.render(doc)
