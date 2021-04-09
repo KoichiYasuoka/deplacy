@@ -267,6 +267,27 @@
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit)で解析
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("japanese")
+>>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
+>>> import deplacy
+>>> deplacy.render(doc,Japanese=True)
+国境     NOUN  ═╗<╗         obl(斜格補語)
+の       ADP   <╝ ║         case(格表示)
+長い     ADJ   ═══╝<╗       acl(連体修飾節)
+トンネル NOUN  ═╗═══╝<╗     obj(目的語)
+を       ADP   <╝     ║     case(格表示)
+抜ける   VERB  ═╗═════╝<╗   advcl(連用修飾節)
+と       SCONJ <╝       ║   mark(標識)
+雪国     NOUN  ═╗═╗═════╝═╗ root(親)
+であっ   AUX   <╝ ║       ║ cop(繫辞)
+た       AUX   <══╝       ║ aux(動詞補助成分)
+。       PUNCT <══════════╝ punct(句読点)
+```
+
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)で解析
 
 ```py
