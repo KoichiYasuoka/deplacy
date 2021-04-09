@@ -80,6 +80,25 @@
 冠 NOUN ═══╝<╝ obj
 ```
 
+## 於[Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("classical-chinese")
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜田 NOUN  <════╗ nsubj
+不   ADV   <══╗ ║ advmod
+納   VERB  ═╗═╝═╝ root
+履   NOUN  <╝     obj
+李   PROPN ═╗<══╗ nsubj
+下   NOUN  <╝   ║ flat
+不   ADV   <══╗ ║ advmod
+正   VERB  ═╗═╝═╝ root
+冠   VERB  <╝     obj
+```
+
 ## 於[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
