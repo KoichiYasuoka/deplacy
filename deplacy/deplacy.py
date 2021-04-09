@@ -27,6 +27,8 @@ def makeDoc(doc):
     d=sentence2conllu(doc,False).serialize()
   elif s.find("list")==8:
     d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+  elif s.find("dict")==8 and "sentences" in doc:
+    d=trankitDoc(doc)
   else:
     d=str(doc)
   DOC=[]
@@ -308,7 +310,24 @@ def to_conllu(doc,RtoL=False):
     return sentence2conllu(doc,False).serialize()
   elif s.find("list")==8:
     return "".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
+  elif s.find("dict")==8 and "sentences" in doc:
+    return trankitDoc(doc)
   return str(doc)
+
+def trankitDoc(doc):
+  from trankit.utils.conll import CoNLL
+  d=[]
+  for s in doc["sentences"]:
+    e=[]
+    for t in s["tokens"]:
+      if "span" in t:
+        i,j=t["span"]
+        t["misc"]="start_char="+str(i)+"|end_char="+str(j)
+      e.append(t)
+      if "expanded" in t:
+        e.extend(t["expanded"])
+    d.append(list(e))
+  return CoNLL.conll_as_string(CoNLL.convert_dict(d))
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
   server_version=VERSION
