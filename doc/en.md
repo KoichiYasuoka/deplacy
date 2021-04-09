@@ -143,6 +143,25 @@ no        DET   <╗ ║             ║ det
 name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
+## Usage with [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("english")
+>>> doc=nlp("I saw a horse yesterday which had no name.")
+>>> import deplacy
+>>> deplacy.render(doc)
+I         PRON  <══════════════╗   nsubj
+saw       VERB  ═══════════╗═╗═╝═╗ root
+a         DET   <════════╗ ║ ║   ║ det
+horse     NOUN  ═══════╗═╝<╝ ║   ║ obj
+yesterday NOUN  <══════║═════╝   ║ obl:tmod
+which     PRON  <════╗ ║         ║ nsubj
+had       VERB  ═══╗═╝<╝         ║ acl:relcl
+no        DET   <╗ ║             ║ det
+name      NOUN  ═╝<╝             ║ obj
+.         PUNCT <════════════════╝ punct
+```
 
 ## Usage with [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
