@@ -1,5 +1,24 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/)句法分析
 
+## 用[Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("chinese")
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 ADP   <══╗         case
+黑猫 NOUN  ═╗═╝<╗       obl
+白猫 NOUN  <╝   ║       conj
+，   PUNCT <════║═══╗   punct
+捉到 VERB  ═╗═══╝<╗ ║   csubj
+老鼠 NOUN  <╝     ║ ║   obj
+就是 AUX   <╗     ║ ║   cop
+好猫 ADJ   ═╝═════╝═╝═╗ root
+。   PUNCT <══════════╝ punct
+```
+
 ## 用[Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
