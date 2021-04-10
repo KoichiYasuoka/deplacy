@@ -96,6 +96,25 @@ importància NOUN  ═╝<══╝   ║ obj
 .           PUNCT <════════╝ punct
 ```
 
+## amb [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("catalan")
+>>> doc=nlp("El tennis té avui a Catalunya molta importància.")
+>>> import deplacy
+>>> deplacy.render(doc)
+El          DET   <╗         det
+tennis      NOUN  ═╝<════╗   nsubj
+té          VERB  ═╗═╗═╗═╝═╗ root
+avui        ADV   <╝ ║ ║   ║ advmod
+a           ADP   <╗ ║ ║   ║ case
+Catalunya   PROPN ═╝<╝ ║   ║ obl
+molta       DET   <╗   ║   ║ det
+importància NOUN  ═╝<══╝   ║ obj
+.           PUNCT <════════╝ punct
+```
+
 ## amb [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
