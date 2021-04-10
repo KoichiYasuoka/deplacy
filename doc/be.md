@@ -44,6 +44,28 @@
 .           PUNCT <════════════════════╝ punct
 ```
 
+## з [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("belarusian")
+>>> doc=nlp("Тэлебачанне стварае міфы, міфы тых, у чыіх руках тэлебачанне.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Тэлебачанне PROPN <══════════════════╗   nsubj
+стварае     VERB  ═════════════════╗═╝═╗ root
+міфы        NOUN  ═════════════╗═╗<╝   ║ obj
+,           PUNCT <══════════╗ ║ ║     ║ punct
+міфы        NOUN  ═══════╗═╗═╝<╝ ║     ║ conj
+тых         PRON         ║ ║<════╝     ║ det
+,           PUNCT <════╗ ║ ║           ║ punct
+у           ADP   <══╗ ║ ║ ║           ║ case
+чыіх        DET   <╗ ║ ║ ║ ║           ║ det
+руках       NOUN  ═╝═╝═╝<╝ ║           ║ nmod
+тэлебачанне NOUN  <════════╝           ║ nsubj
+.           PUNCT <════════════════════╝ punct
+```
+
 ## з [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
