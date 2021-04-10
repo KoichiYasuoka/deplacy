@@ -4,7 +4,7 @@
 
 ```py
 >>> import trankit
->>> nlp=trankit.Pipeline("chinese")
+>>> nlp=trankit.Pipeline("traditional-chinese")
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -12,22 +12,21 @@
 是   VERB  ═══════╗═╝═╗═══╗═╗ root
 附麗 VERB  ═╗═╗═╗<╝   ║   ║ ║ xcomp
 於   VERB  <╝ ║ ║     ║   ║ ║ mark
-存在 VERB  <══╝ ║     ║   ║ ║ xcomp
+存在 VERB  <══╝ ║     ║   ║ ║ obj
 的   PART  <════╝     ║   ║ ║ discourse
 ，   PUNCT <══════════╝   ║ ║ punct
 有   VERB  ═╗<══╗         ║ ║ advcl
-存在 NOUN  <╝   ║         ║ ║ obj
+存在 VERB  <╝   ║         ║ ║ xcomp
 ，   PUNCT <════║═╗       ║ ║ punct
 便   ADV   <══╗ ║ ║       ║ ║ mark
-有   VERB  ═╗═╝═╝═╝<╗     ║ ║ advcl
+有   VERB  ═╗═╝═╝═╝<╗     ║ ║ acl
 希望 NOUN  <╝       ║     ║ ║ obj
 ，   PUNCT <════════║═══╗ ║ ║ punct
-有   VERB  ═╗<══╗   ║   ║ ║ ║ advcl
-希望 NOUN  <╝   ║   ║   ║ ║ ║ obj
-，   PUNCT <════║═══║═╗ ║ ║ ║ punct
-便   ADV   <══╗ ║   ║ ║ ║ ║ ║ mark
-是   AUX   <╗ ║ ║   ║ ║ ║ ║ ║ cop
-光明 ADJ   ═╝═╝═╝═══╝═╝═╝<╝ ║ parataxis
+有   VERB  ═╗<╗     ║   ║ ║ ║ csubj
+希望 NOUN  <╝ ║     ║   ║ ║ ║ obj
+，   PUNCT <══║═════║═╗ ║ ║ ║ punct
+便是 AUX   <╗ ║     ║ ║ ║ ║ ║ cop
+光明 NOUN  ═╝═╝═════╝═╝═╝<╝ ║ parataxis
 。   PUNCT <════════════════╝ punct
 ```
 
