@@ -30,6 +30,21 @@
 :     PUNCT <════╝ punct
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit)-ի հետ
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("armenian")
+>>> doc=nlp("Չկա չարիք առանց բարիք:")
+>>> import deplacy
+>>> deplacy.render(doc)
+Չկա   VERB  ═╗═╗═╗ root
+չարիք NOUN  <╝ ║ ║ nsubj
+առանց ADP   <╗ ║ ║ case
+բարիք NOUN  ═╝<╝ ║ obl
+:     PUNCT <════╝ punct
+```
+
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-ի հետ
 
 ```py
