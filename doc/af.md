@@ -81,6 +81,32 @@ hart  NOUN  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
+## met [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("afrikaans")
+>>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
+>>> import deplacy
+>>> deplacy.render(doc)
+As    SCONJ ═══════════════╗<╗   amod
+jy    PRON  <══════════╗   ║ ║   nsubj
+met   ADP   <╗         ║   ║ ║   case
+hom   PRON  ═╝<══════╗ ║   ║ ║   obl
+praat VERB  ═══════╗═╝═╝═╗<╝ ║   dep
+in    ADP   <════╗ ║     ║   ║   case
+sy    PRON  <══╗ ║ ║     ║   ║   det
+eie   ADJ   <╗ ║ ║ ║     ║   ║   amod
+taal  NOUN  ═╝═╝═╝<╝     ║   ║   obl
+,     PUNCT <════════════╝   ║   punct
+gaan  VERB  ═╗═══╗═══════════╝═╗ root
+dit   PRON  <╝   ║             ║ nsubj
+na    ADP   <══╗ ║             ║ case
+sy    PRON  <╗ ║ ║             ║ det
+hart  NOUN  ═╝═╝<╝             ║ obl
+.     PUNCT <══════════════════╝ punct
+```
+
 ## met [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
