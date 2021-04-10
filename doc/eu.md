@@ -36,6 +36,24 @@ da        AUX   <╝       ║ cop
 .         PUNCT <════════╝ punct
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit)-rekin
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("basque")
+>>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Euskaldun NOUN  ═╗<════╗   csubj
+izatea    AUX   <╝     ║   cop
+lan       NOUN  ═╗═╗═╗═╝═╗ root
+extra     ADJ   <╝ ║ ║   ║ amod
+bat       NUM   <══╝ ║   ║ nummod
+izatea    AUX   ═╗<══╝   ║ cop
+da        AUX   <╝       ║ cop
+.         PUNCT <════════╝ punct
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-rekin
 
 ```py
