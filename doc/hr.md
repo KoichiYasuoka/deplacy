@@ -80,6 +80,25 @@ podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
+## s [Trankit](https://github.com/nlp-uoregon/trankit)-om
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("croatian")
+>>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Činilo    VERB  ═╗═╗═════╗═╗ root
+mi        PRON  <╝ ║     ║ ║ obj
+se        PRON  <══╝     ║ ║ expl:pv
+:         PUNCT <══════╗ ║ ║ punct
+ništa     PRON  <════╗ ║ ║ ║ obj
+nije      AUX   <══╗ ║ ║ ║ ║ cop
+teže      ADV   ═╗═╝═╝═╝<╝ ║ ccomp
+podnijeti VERB  <╝         ║ nsubj
+.         PUNCT <══════════╝ punct
+```
+
 ## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-om
 
 ```py
