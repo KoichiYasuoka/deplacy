@@ -29,8 +29,8 @@
 >>> deplacy.render(doc)
 不管 ADP   <══╗       case
 黑猫 NOUN  <╗ ║       nmod
-白猫 NOUN  ═╝═╝<══╗   nmod
-，   PUNCT <════╗ ║   punct
+白猫 NOUN  ═╝═╝<╗     nmod
+，   PUNCT <════║═╗   punct
 捉到 VERB  ═╗<╗ ║ ║   csubj
 老鼠 NOUN  <╝ ║ ║ ║   obj
 就是 AUX   <╗ ║ ║ ║   cop
@@ -68,15 +68,15 @@
 >>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
 >>> import deplacy
 >>> deplacy.render(doc)
-不管 ADP   <══╗       case
-黑猫 NOUN  <╗ ║       nmod
-白猫 NOUN  ═╝═╝<╗     obl
-，   PUNCT <╗   ║     punct
-捉到 VERB  ═╝═══╝═╗═╗ ROOT
-老鼠 NOUN  <══╗   ║ ║ nsubj
-就是 AUX   <╗ ║   ║ ║ cop
-好猫 NOUN  ═╝═╝<══╝ ║ parataxis
-。   PUNCT <════════╝ punct
+不管 ADP   <══╗         case
+黑猫 NOUN  <╗ ║         nmod
+白猫 NOUN  ═╝═╝<╗       obl
+，   PUNCT <════║═╗     punct
+捉到 VERB  ═════╝═╝═╗═╗ ROOT
+老鼠 NOUN  <══╗     ║ ║ nsubj
+就是 AUX   <╗ ║     ║ ║ cop
+好猫 NOUN  ═╝═╝<════╝ ║ parataxis
+。   PUNCT <══════════╝ punct
 ```
 
 ## 用[UD-Chinese](https://pypi.org/project/udchinese)
