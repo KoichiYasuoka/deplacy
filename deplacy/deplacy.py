@@ -15,22 +15,7 @@ def makeDoc(doc):
   s=str(type(doc))
   if s.find("spacy")==8:
     return doc
-  elif s.find("stanza")==8:
-    from stanza.utils.conll import CoNLL
-    d=CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
-  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
-    d=doc.conll_file.conll_as_string()
-  elif s.find("nltk")==8:
-    d=doc.to_conll(10)
-  elif s.find("combo")==8:
-    from combo.data import sentence2conllu
-    d=sentence2conllu(doc,False).serialize()
-  elif s.find("list")==8:
-    d="".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
-  elif s.find("dict")==8 and "sentences" in doc:
-    d=trankitDoc(doc)
-  else:
-    d=str(doc)
+  d=to_conllu(doc)
   DOC=[]
   m=[]
   misc=""
@@ -311,23 +296,20 @@ def to_conllu(doc,RtoL=False):
   elif s.find("list")==8:
     return "".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   elif s.find("dict")==8 and "sentences" in doc:
-    return trankitDoc(doc)
+    from trankit.utils.conll import CoNLL
+    d=[]
+    for s in doc["sentences"]:
+      e=[]
+      for t in s["tokens"]:
+        if "span" in t:
+          i,j=t["span"]
+          t["misc"]="start_char="+str(i)+"|end_char="+str(j)
+        e.append(t)
+        if "expanded" in t:
+          e.extend(t["expanded"])
+      d.append(list(e))
+    return CoNLL.conll_as_string(CoNLL.convert_dict(d))
   return str(doc)
-
-def trankitDoc(doc):
-  from trankit.utils.conll import CoNLL
-  d=[]
-  for s in doc["sentences"]:
-    e=[]
-    for t in s["tokens"]:
-      if "span" in t:
-        i,j=t["span"]
-        t["misc"]="start_char="+str(i)+"|end_char="+str(j)
-      e.append(t)
-      if "expanded" in t:
-        e.extend(t["expanded"])
-    d.append(list(e))
-  return CoNLL.conll_as_string(CoNLL.convert_dict(d))
 
 class DeplacyRequestHandler(BaseHTTPRequestHandler):
   server_version=VERSION
