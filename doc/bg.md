@@ -1,5 +1,21 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) за синтактичен анализ
 
+## с [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("bulgarian")
+>>> doc=nlp("Гладна мечка хоро не играе.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Гладна ADJ   <╗       amod
+мечка  NOUN  ═╝<══╗   nsubj
+хоро   NOUN  <══╗ ║   obj
+не     PART  <╗ ║ ║   advmod
+играе  VERB  ═╝═╝═╝═╗ root
+.      PUNCT <══════╝ punct
+```
+
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
