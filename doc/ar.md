@@ -1,5 +1,23 @@
 <h1 dir="rtl"><a href="https://koichiyasuoka.github.io/deplacy/">deplacy</a> لتحليل النحو</h1>
 
+<h2 dir="rtl"> مع <a href="http://github.com/nlp-uoregon/trankit">Trankit</a></h2>
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("arabic")
+>>> doc=nlp("من قال لا أدري فقد أفتى.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ nsubj   ╔>╔═════ DET   من
+   acl   ║ ╚>╔═══ VERB  قال
+advmod   ║   ║ ╔> PART  لا
+ ccomp   ║   ╚>╚═ VERB  أدري
+    cc   ║   ╔══> CCONJ ف
+   aux   ║   ║ ╔> AUX   قد
+  root ╔═╚═══╚═╚═ VERB  أفتى
+ punct ╚════════> PUNCT .
+```
+
 <h2 dir="rtl"> مع <a href="http://ufal.mff.cuni.cz/udpipe/2">UDPipe 2</a></h2>
 
 ```py
