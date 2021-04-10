@@ -103,6 +103,26 @@
 .           PUNCT <══════════╝ punct
 ```
 
+## δῐᾰ́́ [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("ancient-greek-perseus")
+>>> doc=nlp("Γνώσεσθε τὴν ἀλήθειαν, καὶ ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Γνώσεσθε    VERB  ═══╗═╗═╗═╗═╗ root
+τὴν         DET   <╗ ║ ║ ║ ║ ║ det
+ἀλήθειαν    NOUN  ═╝<╝ ║ ║ ║ ║ obj
+,           PUNCT <════╝ ║ ║ ║ punct
+καὶ         CCONJ <══════╝ ║ ║ cc
+ἡ           DET   <╗       ║ ║ det
+ἀλήθεια     NOUN  ═╝<╗     ║ ║ nsubj
+ἐλευθερώσει VERB  ═╗═╝<════╝ ║ conj
+ὑμᾶς        PRON  <╝         ║ obj
+.           PUNCT <══════════╝ punct
+```
+
 ## δῐᾰ́́ [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
