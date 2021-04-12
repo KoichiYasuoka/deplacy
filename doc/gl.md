@@ -145,6 +145,25 @@ duro  ADJ   <╝       ║ amod
 .     PUNCT <════════╝ punct
 ```
 
+## con [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("galician")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══╗       nsubj
+hai   VERB  ═╗═╝<══╗   nsubj
+fame  NOUN  <╝     ║   obj
+non   PART  <════╗ ║   advmod
+hai   VERB  ═══╗═╝═╝═╗ root
+pan   NOUN  ═╗<╝     ║ obj
+duro  ADJ   <╝       ║ amod
+.     PUNCT <════════╝ punct
+```
+
+
 ## con [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
