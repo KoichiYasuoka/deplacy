@@ -76,6 +76,24 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
+## avec [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("french")
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        DET   <╗           det
+essentiel NOUN  ═╝<══════╗   nsubj
+est       AUX   <══════╗ ║   cop
+invisible ADJ   ═════╗═╝═╝═╗ root
+pour      ADP   <══╗ ║     ║ case
+les       DET   <╗ ║ ║     ║ det
+yeux      NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
 ## avec [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
