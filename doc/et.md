@@ -172,6 +172,27 @@ pesagi NOUN  ═╝<╝         ║ nsubj
 .      PUNCT <════════════╝ punct
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit)-ga
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("estonian")
+>>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Suuga  NOUN  <════╗         obl
+teeb   VERB  ═══╗═╝═════╗═╗ root
+suure  ADJ   <╗ ║       ║ ║ amod
+linna  NOUN  ═╝<╝       ║ ║ obj
+,      PUNCT <════════╗ ║ ║ punct
+käega  NOUN  <══════╗ ║ ║ ║ obl
+ei     AUX   <════╗ ║ ║ ║ ║ aux
+tee    VERB  ═╗═╗═╝═╝═╝<╝ ║ conj
+kärbse NOUN  <╝ ║         ║ obl
+pesagi NOUN  <══╝         ║ obj
+.      PUNCT <════════════╝ punct
+```
+
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-ga
 
 ```py
