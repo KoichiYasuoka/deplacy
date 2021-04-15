@@ -73,8 +73,8 @@
 不 ADV  <══╗ ║ advmod
 納 VERB ═╗═╝═╝ ROOT
 履 NOUN <╝     obj
-李 NOUN <╗     nmod
-下 NOUN ═╝<╗   nsubj
+李 NOUN ═╗<╗   nsubj
+下 NOUN <╝ ║   flat
 不 ADV  <╗ ║   advmod
 正 VERB ═╝═║═╗ ROOT
 冠 NOUN ═══╝<╝ obj
