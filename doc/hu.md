@@ -184,7 +184,7 @@ holnapra   NOUN  <╝           ║ nmod:obl
 .          PUNCT <════════════╝ punct
 ```
 
-## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-val
+## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-vel
 
 ```py
 >>> import spacy_jptdp
