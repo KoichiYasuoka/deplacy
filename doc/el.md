@@ -39,6 +39,24 @@
 .         PUNCT <════════╝ punct
 ```
 
+## με [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("greek")
+>>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Δεν       PART  <══════╗   advmod
+υπάρχει   VERB  ═══╗═╗═╝═╗ root
+βασιλικός ADJ   <╗ ║ ║   ║ amod
+δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
+σ         ADP   <══╗ ║   ║ case
+τη        DET   <╗ ║ ║   ║ det
+γεωμετρία NOUN  ═╝═╝<╝   ║ obl
+.         PUNCT <════════╝ punct
+```
+
 ## με [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
