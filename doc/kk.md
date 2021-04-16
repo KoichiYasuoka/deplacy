@@ -89,6 +89,28 @@
 .       PUNCT <══════╝ punct
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit) арқылы талдау
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("kazakh")
+>>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Тәннен  NOUN  <════════╗           obl
+жан     NOUN  <══════╗ ║           nsubj
+артық   ADJ   ═══════║═║═╗<══╗     advcl
+еді     AUX          ║ ║ ║<╗ ║     cop
+,       PUNCT        ║ ║ ║ ║ ║<╗   punct
+тәнді   NOUN  <════╗ ║ ║ ║ ║ ║ ║   obj
+жанға   NOUN  <══╗ ║ ║ ║ ║ ║ ║ ║   obl
+бас     NOUN  <╗ ║ ║ ║ ║ ║ ║ ║ ║   obj
+ұрғызса VERB  ═╝═╝═╝═╝═╝<╝ ║ ║ ║   parataxis
+керек   ADJ   ═╗═══════════╝═╝═╝═╗ root
+еді     AUX   <╝                 ║ cop
+.       PUNCT <══════════════════╝ punct
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) арқылы талдау
 
 ```py
