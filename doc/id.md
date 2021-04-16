@@ -17,6 +17,23 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
+## dengan [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("indonesian")
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <══╗     case
+atas   ADP   <╗ ║     case
+langit NOUN  ═╝═╝<╗   obl
+masih  ADV   <══╗ ║   advmod
+ada    VERB  ═╗═╝═╝═╗ root
+langit NOUN  <╝     ║ obj
+.      PUNCT <══════╝ punct
+```
+
 ## dengan [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
