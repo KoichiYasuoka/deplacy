@@ -1,5 +1,23 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) a szintaktikai elemzéshez
 
+## [Trankit](https://github.com/nlp-uoregon/trankit)-vel
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("hungarian")
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <══╗       obj
+ma         ADV   <╗ ║       advmod:tlocy
+megtehetsz VERB  ═╝═╝═╗<╗   advcl
+,          PUNCT <════╝ ║   punct
+ne         ADV   <══╗   ║   advmod
+halaszd    VERB  ═╗═╝═══╝═╗ root
+holnapra   ADV   <╝       ║ advmod:tlocy
+.          PUNCT <════════╝ punct
+```
+
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-vel
 
 ```py
