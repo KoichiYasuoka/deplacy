@@ -148,6 +148,22 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
+## mit [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("german")
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    PRON  <══════╗   nsubj
+sieht VERB  ═════╗═╝═╗ root
+sehr  ADV   <══╗ ║   ║ advmod
+jung  ADJ   ═╗═╝<╝   ║ xcomp
+aus   ADP   <╝       ║ compound:prt
+.     PUNCT <════════╝ punct
+```
+
 ## mit [Spacy](https://spacy.io/)
 
 ```py
