@@ -70,6 +70,28 @@ acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚══════════════════> PUNCT ।
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit) पर विश्लेषण
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("hindi")
+>>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+    nsubj   ╔════════════════> PRON  खुद
+      det   ║   ╔════════════> DET   वो
+      obj   ║ ╔>╚═╔═══════════ NOUN  बदलाव
+     root ╔═╚═╚═══════════════ VERB  बनिए
+      obj ║       ║     ╔════> PRON  जो
+    nsubj ║       ║ ╔═══║════> PRON  आप
+      obl ║       ║ ║   ║ ╔>╔═ NOUN  दुनिया
+     case ║       ║ ║   ║ ║ ╚> ADP   में
+      obj ║       ║ ║ ╔>╚═╚═══ VERB  देखना
+acl:relcl ║       ╚>╚═╚═════╔═ VERB  चाहते
+      aux ║                 ╚> AUX   हैं
+    punct ╚══════════════════> PUNCT ।
+```
+
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) पर विश्लेषण
 
 ```py
