@@ -21,6 +21,27 @@ amet    VERB  ═╝<╝         ║ ccomp
 .       PUNCT <════════════╝ punct
 ```
 
+## per [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("latin")
+>>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cras    NOUN  <══════╗     nsubj
+amet    VERB  ═════╗═╝═╗═╗ root
+qui     PRON  <══╗ ║   ║ ║ nsubj
+numquam ADV   <╗ ║ ║   ║ ║ advmod
+amavit  VERB  ═╝═╝<╝   ║ ║ csubj
+,       PUNCT <══════╗ ║ ║ punct
+quique  PRON  <════╗ ║ ║ ║ nsubj
+amavit  VERB  ═══╗═╝═╝<╝ ║ conj
+cras    ADV   <╗ ║       ║ obj
+amet    VERB  ═╝<╝       ║ ccomp
+.       PUNCT <══════════╝ punct
+```
+
 ## per [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
