@@ -18,6 +18,24 @@ duonos NOUN  ═╝<╝     ║ obj
 .      PUNCT <════════╝ punct
 ```
 
+## su [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("lithuanian")
+>>> doc=nlp("Dievas davė dantis, duos ir duonos.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Dievas NOUN  <══╗       nsubj
+davė   VERB  ═╗═╝═══╗═╗ root
+dantis NOUN  <╝     ║ ║ obj
+,      PUNCT <════╗ ║ ║ punct
+duos   VERB  ═══╗═╝<╝ ║ conj
+ir     PART  <╗ ║     ║ advmod:emph
+duonos NOUN  ═╝<╝     ║ conj
+.      PUNCT <════════╝ punct
+```
+
 ## su [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
