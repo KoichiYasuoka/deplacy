@@ -123,6 +123,26 @@ spor      NOUN  ═══╝═╝<╝   ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
+## med [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("norwegian-bokmaal")
+>>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ikke      PART  <╗           advmod
+tusen     NUM   ═╝<╗         nummod
+ord       NOUN  ═══╝═══╗<╗   nsubj
+seg       PRON  <╗     ║ ║   iobj
+prenter   VERB  ═╝═══════╝═╗ root
+som       SCONJ <════╗ ║   ║ mark
+én        NUM   <╗   ║ ║   ║ nummod
+gjernings NOUN  ═╝<╗ ║ ║   ║ nmod
+spor      NOUN  ═══╝═╝<╝   ║ acl
+.         PUNCT <══════════╝ punct
+```
+
 ## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
