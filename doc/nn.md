@@ -123,3 +123,23 @@ live   NOUN  <╝         ║ obj
 .      PUNCT <══════════╝ punct
 ```
 
+## med [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("norwegian-nynorsk")
+>>> doc=nlp("For me priser dauden, men me elskar live.")
+>>> import deplacy
+>>> deplacy.render(doc)
+For    ADP   <╗           case
+me     PRON  ═╝<╗         obl
+priser NOUN  <╗ ║         nsubj
+dauden ADJ   ═╝═╝═════╗═╗ root
+,      PUNCT <══════╗ ║ ║ punct
+men    CCONJ <════╗ ║ ║ ║ cc
+me     PRON  <══╗ ║ ║ ║ ║ nsubj
+elskar VERB  ═╗═╝═╝═╝<╝ ║ conj
+live   ADV   <╝         ║ advmod
+.      PUNCT <══════════╝ punct
+```
+
