@@ -19,6 +19,25 @@
 .      PUNCT <════════════╝ punct
 ```
 
+## с [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("russian")
+>>> doc=nlp("Москва слезам не верила, а верила любви.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Москва PROPN <══════════╗   nsubj
+слезам NOUN  <════════╗ ║   iobj
+не     PART  <╗       ║ ║   advmod
+верила VERB  ═╝═════╗═╝═╝═╗ root
+,      PUNCT <════╗ ║     ║ punct
+а      CCONJ <══╗ ║ ║     ║ cc
+верила VERB  ═╗═╝═╝<╝     ║ conj
+любви  NOUN  <╝           ║ iobj
+.      PUNCT <════════════╝ punct
+```
+
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
