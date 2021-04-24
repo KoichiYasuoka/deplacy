@@ -130,6 +130,24 @@ zori      VERB  ═╝═╝═══╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
+## z [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("slovenian")
+>>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Po        ADP   <╗         case
+koroškem  PROPN ═╝<════╗   obl
+po        ADP   <╗     ║   case
+kranjskem ADJ   ═╝<══╗ ║   obl
+že        PART  <══╗ ║ ║   advmod
+ajda      ADV   <╗ ║ ║ ║   advmod
+zori      VERB  ═╝═╝═╝═╝═╗ root
+.         PUNCT <════════╝ punct
+```
+
 ## z [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
