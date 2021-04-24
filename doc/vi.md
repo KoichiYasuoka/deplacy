@@ -1,5 +1,22 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) để phân tích ngữ pháp
 
+## với [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>> import trankit
+>> nlp=trankit.Pipeline("vietnamese")
+>> doc=nlp("Một mũi tên trúng hai con chim.")
+>> import deplacy
+>> deplacy.render(doc)
+Một     NUM   <╗         nummod
+mũi tên NOUN  ═╝<════╗   nsubj
+trúng   VERB  ═════╗═╝═╗ root
+hai     NUM   <══╗ ║   ║ nummod
+con     NOUN  <╗ ║ ║   ║ compound
+chim    NOUN  ═╝═╝<╝   ║ obj
+.       PUNCT <════════╝ punct
+```
+
 ## với [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
