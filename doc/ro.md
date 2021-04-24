@@ -43,6 +43,26 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
+## cu [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("romanian")
+>>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nu      PART  <══════════╗   advmod
+te      PRON  <════════╗ ║   expl:pv
+băga    VERB  ═══╗═══╗═╝═╝═╗ root
+in      ADP   <╗ ║   ║     ║ case
+tărâţe  NOUN  ═╝<╝   ║     ║ obl
+că      SCONJ <════╗ ║     ║ mark
+te      PRON  <══╗ ║ ║     ║ obj
+mănâncă VERB  ═╗═╝═╝<╝     ║ advcl
+porcii  NOUN  <╝           ║ nsubj
+.       PUNCT <════════════╝ punct
+```
+
 ## cu [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
