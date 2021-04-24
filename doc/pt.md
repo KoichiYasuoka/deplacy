@@ -184,3 +184,19 @@ medo NOUN  <╝           ║ obj
 .    PUNCT <════════════╝ punct
 ```
 
+## com [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("portuguese")
+>>> doc=nlp("Eu quis amar, mas tive medo.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Eu       PRON  <════╗     nsubj
+quis     VERB  ═╗═╗═╝═╗═╗ root
+amar     VERB  <╝ ║   ║ ║ xcomp
+,        PUNCT <══║═══╝ ║ punct
+mas tive CCONJ ═╗<╝     ║ cc
+medo     NOUN  <╝       ║ obj
+.        PUNCT <════════╝ punct
+```
