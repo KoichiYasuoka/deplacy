@@ -25,13 +25,13 @@ chim    NOUN  ═╝═╝<╝   ║ obj
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   NUM   <╗         nummod
-mũi   NOUN  ═╝═╗<══╗   nsubj
-tên   NOUN  <══╝   ║   compound
+Một   NUM   <══╗       nummod
+mũi   NOUN  ═╗═╝<══╗   nsubj
+tên   NOUN  <╝     ║   compound
 trúng VERB  ═════╗═╝═╗ root
-hai   NUM   <╗   ║   ║ nummod
-con   NOUN  ═╝═╗<╝   ║ obj
-chim  NOUN  <══╝     ║ compound
+hai   NUM   <══╗ ║   ║ nummod
+con   NOUN  ═╗═╝<╝   ║ obj
+chim  NOUN  <╝       ║ compound
 .     PUNCT <════════╝ punct
 ```
 
@@ -43,9 +43,9 @@ chim  NOUN  <══╝     ║ compound
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   NUM   <╗         nummod
-mũi   NOUN  ═╝═╗<══╗   nsubj
-tên   NOUN  <══╝   ║   compound
+Một   NUM   <══╗       nummod
+mũi   NOUN  ═╗═╝<══╗   nsubj
+tên   NOUN  <╝     ║   compound
 trúng VERB  ═════╗═╝═╗ root
 hai   NUM   <╗   ║   ║ nummod
 con   NOUN  ═╝<╗ ║   ║ compound
@@ -114,14 +114,14 @@ chim  NOUN  <╝     ║   amod
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   NUM   <╗         nummod
-mũi   NOUN  ═╝═╗═══╗═╗ root
-tên   NOUN  <══╝   ║ ║ compound
-trúng ADJ   <════╗ ║ ║ case
-hai   NUM   <╗   ║ ║ ║ nummod
-con   NOUN  ═╝═╗═╝<╝ ║ compound
-chim  VERB  <══╝     ║ xcomp
-.     PUNCT <════════╝ punct
+Một   NUM   <════════╗   nummod
+mũi   NOUN  ═╗═════╗═╝═╗ root
+tên   NOUN  <╝     ║   ║ compound
+trúng ADJ   <════╗ ║   ║ case
+hai   NUM   <╗   ║ ║   ║ nummod
+con   NOUN  ═╝═╗═╝<╝   ║ compound
+chim  VERB  <══╝       ║ xcomp
+.     PUNCT <══════════╝ punct
 ```
 
 ## với [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
@@ -135,11 +135,11 @@ chim  VERB  <══╝     ║ xcomp
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một       NUM   <╗         nummod
-mũi       NOUN  ═╝═╗═╗═╗═╗ root
-tên       NOUN  <══╝ ║ ║ ║ compound
-trúng hai ADJ   <════║═╝ ║ amod
-con       NOUN  ═╗<══╝   ║ compound
+Một       NUM   <════╗     nummod
+mũi       NOUN  ═╗═╗═╝═╗═╗ root
+tên       NOUN  <╝ ║   ║ ║ compound
+trúng hai ADJ   <══║═══╝ ║ amod
+con       NOUN  ═╗<╝     ║ compound
 chim      NOUN  <╝       ║ compound
 .         PUNCT <════════╝ punct
 ```
