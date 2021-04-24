@@ -41,6 +41,25 @@ spadne  VERB  ═══╝═╝═╝═╗ root
 .       PUNCT <════════╝ punct
 ```
 
+## s [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("slovak")
+>>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Kto     PRON  <════╗     nsubj
+druhému ADJ   <╗   ║     amod
+jamu    NOUN  ═╝<╗ ║     obj
+kope    VERB  ═══╝═╝<╗   ccomp
+sám     DET   <════╗ ║   xcomp
+do      ADP   <╗   ║ ║   case
+nej     PRON  ═╝<╗ ║ ║   obl
+spadne  VERB  ═══╝═╝═╝═╗ root
+.       PUNCT <════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
@@ -103,7 +122,7 @@ spadne  VERB  ═══╝═╝═╝═╗ ROOT
 
 ```py
 >>> import stanza
->>> nlp=stanza.Pipeline("sl")
+>>> nlp=stanza.Pipeline("sk")
 >>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
 >>> import deplacy
 >>> deplacy.render(doc)
