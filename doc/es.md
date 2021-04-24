@@ -94,6 +94,24 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
+## con [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("spanish")
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   <════╗ ║ ║   det
+lengua NOUN  ═══╗═╝═╝═╝═╗ root
+del    ADP   <╗ ║       ║ case
+alma   NOUN  ═╝<╝       ║ nmod
+.      PUNCT <══════════╝ punct
+```
+
 ## con [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
