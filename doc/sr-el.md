@@ -49,6 +49,29 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
+## s [Trankit](https://github.com/nlp-uoregon/trankit)-om
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("serbian")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ conj
+i        CCONJ <════════╗ ║ ║ cc
+moja     DET   <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
 ## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-om
 
 ```py
