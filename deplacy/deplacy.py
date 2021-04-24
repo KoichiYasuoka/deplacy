@@ -112,6 +112,8 @@ def catenaArray(DOC):
         return -1
     if DOC[a].dep_.startswith("compound"):
       return -1
+    if DOC[b].dep_.startswith("compound"):
+      return 1
     if DOC[a].dep_.startswith("nummod"):
       return -1
     if DOC[b].dep_.startswith("conj"):
