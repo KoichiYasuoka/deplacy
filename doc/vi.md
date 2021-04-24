@@ -25,13 +25,13 @@ chim    NOUN  ═╝═╝<╝   ║ obj
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   NUM   <══╗       nummod
-mũi   NOUN  ═╗═╝<══╗   nsubj
-tên   NOUN  <╝     ║   compound
+Một   NUM   <╗         nummod
+mũi   NOUN  ═╝═╗<══╗   nsubj
+tên   NOUN  <══╝   ║   compound
 trúng VERB  ═════╗═╝═╗ root
-hai   NUM   <══╗ ║   ║ nummod
-con   NOUN  <╗ ║ ║   ║ compound
-chim  NOUN  ═╝═╝<╝   ║ obj
+hai   NUM   <╗   ║   ║ nummod
+con   NOUN  ═╝═╗<╝   ║ obj
+chim  NOUN  <══╝     ║ compound
 .     PUNCT <════════╝ punct
 ```
 
