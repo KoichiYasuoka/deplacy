@@ -147,3 +147,20 @@ sözünün NOUN  ═╝<╗   ║   nmod:poss
 gelir   VERB  ═════╝═╝═╗ root
 .       PUNCT <════════╝ punct
 ```
+
+## [Trankit](https://github.com/nlp-uoregon/trankit) ile analiz
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("turkish")
+>>> doc=nlp("İyi insan sözünün üstüne gelir.")
+>>> import deplacy
+>>> deplacy.render(doc)
+İyi     ADJ   <╗       amod
+insan   NOUN  ═╝<╗     nsubj
+sözünün NOUN  ═╗═╝<╗   nmod:poss
+üstüne  ADJ   ═════╝═╗ root
+gelir   VERB  <╝     ║ compound
+.       PUNCT <══════╝ punct
+```
+
