@@ -75,6 +75,24 @@
 .        PUNCT <════════════╝ punct
 ```
 
+## з [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("ukrainian")
+>>> doc=nlp("Біжать алеї звуків, саджених у гами.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Біжать   VERB  ═══════════╗═╗ root
+алеї     NOUN  ═════════╗<╝ ║ nsubj
+звуків   NOUN  ═══════╗<╝   ║ nmod
+,        PUNCT <════╗ ║     ║ punct
+саджених ADJ   ═══╗═╝<╝     ║ amod
+у        ADP   <╗ ║         ║ case
+гами     NOUN  ═╝<╝         ║ obl
+.        PUNCT <════════════╝ punct
+```
+
 ## з [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
