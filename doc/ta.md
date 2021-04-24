@@ -20,6 +20,28 @@ punct ║   ╔════> PUNCT ,
 punct   ╚══════> PUNCT .
 ```
 
+## [Trankit](https://github.com/nlp-uoregon/trankit) ஆல் பகுப்பாய்வு
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("tamil")
+>>> doc=nlp("காசுக்கு ஒரு குதிரையும் வேண்டும், காற்றைப் போலப் பறக்கவும் வேண்டும்.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+      nsubj ╔════════════> NOUN  காசுக்கு
+       amod ║         ╔══> ADJ   ஒரு
+        obj ║       ╔>╚═╔═ NOUN  குதிரைய்
+advmod:emph ║       ║   ╚> PART  உம்
+       root ╚═╔═════╚═════ AUX   வேண்டும்
+      punct   ║   ╔══════> PUNCT ,
+        obl   ║   ║ ╔══>╔═ NOUN  காற்றைப்
+       case   ║   ║ ║   ╚> ADP   போலப்
+       conj   ╚>╔═╚═╚═╔═╔═ VERB  பறக்கவ்
+         cc     ║     ║ ╚> PART  உம்
+        aux     ║     ╚══> AUX   வேண்டும்
+      punct     ╚════════> PUNCT .
+```
+
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) ஆல் பகுப்பாய்வு
 
 ```py
