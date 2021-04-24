@@ -105,6 +105,27 @@ nmod:poss       ║   ╚> PRON  من
     punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> با <a href="https://github.com/nlp-uoregon/trankit">Trankit</a></h2>
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("persian")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case         ╔══> ADP   به
+     nmod   ╔════>╚═╔═ NOUN  اعتقاد
+nmod:poss   ║       ╚> PRON  من
+    nsubj   ║     ╔══> NOUN  موسيقي
+     root ╔═╚═╔═══╚═╔═ NOUN  هنر
+      cop ║   ║     ╚> AUX   نيست
+    punct ║   ║ ╔════> PUNCT ،
+       cc ║   ║ ║ ╔══> CCONJ بلكه
+     conj ║   ╚>╚═╚═╔═ NOUN  متافيزيك
+      cop ║         ╚> AUX   است
+    punct ╚══════════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
 
 ```py
