@@ -75,3 +75,19 @@ e         PRON  <╝     ║ nsubj
 .         PUNCT <══════╝ punct
 ```
 
+## le [Trankit](https://github.com/nlp-uoregon/trankit)
+
+```py
+>>> import trankit
+>>> nlp=trankit.Pipeline("scottish-gaelic")
+>>> doc=nlp("Innsidh na geòidh as t-fhoghar e.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Innsidh   VERB ═══╗═╗═╗ root
+na        DET  <╗ ║ ║ ║ det
+geòidh    NOUN ═╝<╝ ║ ║ nsubj
+as        ADP  <╗   ║ ║ case
+t-fhoghar VERB ═╝<══╝ ║ ccomp
+e.        PRON <══════╝ punct
+```
+
