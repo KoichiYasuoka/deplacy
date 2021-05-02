@@ -1,5 +1,22 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) ⲉⲛⲁⲛⲁⲗⲩ ⲙⲡⲥⲩⲛⲧⲁⲜ
 
+## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("cop")
+>>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+ root ╔═╔═════════ VERB  ⲙⲟⲟϣⲉ
+ mark ║ ║ ╔══════> SCONJ ϩⲱⲥ
+  obl ║ ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
+ case ║     ║ ╔══> ADP   ⲙ
+  det ║     ║ ║ ╔> DET   ⲡ
+ nmod ║     ╚>╚═╚═ NOUN  ⲟⲩⲟⲉⲓⲛ
+punct ╚══════════> PUNCT ·
+```
+
 ## ϩⲛ[spaCy-Coptic](https://github.com/KoichiYasuoka/spaCy-Coptic)
 
 ```py
@@ -48,22 +65,5 @@ punct ╚══════> PUNCT ·
 nsubj ║ ║ ║ ╔> NOUN  ϣⲏⲣⲉ
 ccomp ║ ╚>╚═╚═ VERB  ⲙⲡⲟⲩⲟⲉⲓⲛ
 punct ╚══════> PUNCT ·
-```
-
-## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("cop")
->>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-advmod   ╔════════> ADV   ⲙⲟⲟ
-advmod   ║ ╔══════> PART  ϣⲉ
-  root ╔═╚═╚═╔═════ VERB  ϩⲱⲥ
- nsubj ║     ╚>╔═══ NOUN  ϣⲏⲣⲉ
-  case ║       ║ ╔> ADP   ⲙ
-  nmod ║       ╚>╚═ NOUN  ⲡⲟⲩⲟⲉⲓⲛ
- punct ╚══════════> PUNCT ·
 ```
 
