@@ -9,18 +9,18 @@
 >>> import deplacy
 >>> deplacy.render(doc)
 Da       SCONJ <══════╗       mark
-ima      VERB  ═════╗═╝═════╗ root
-sira     NOUN  ═══╗<╝       ║ obj
-i        CCONJ <╗ ║         ║ cc
-masla    NOUN  ═╝<╝         ║ conj
-i        CCONJ <════════╗   ║ cc
-moja     DET   <╗       ║   ║ det
-bi       AUX    ║<════╗ ║   ║ aux
-mati     NOUN  ═╝<══╗ ║ ║   ║ nsubj
-znala    VERB  ═══╗═╝═╝═╝═╗<╝ conj
-gibati   VERB  ═╗<╝       ║   xcomp
-gibanicu NOUN  <╝         ║   obj
-.        PUNCT <══════════╝   punct
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ conj
+i        CCONJ <════════╗ ║ ║ cc
+moja     DET   <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
 ```
 
 ## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-om
