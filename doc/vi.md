@@ -179,6 +179,24 @@ chim    N  <╝       ║ nmod
 .       CH <════════╝ punct
 ```
 
+## với [underthesea](https://github.com/undertheseanlp/underthesea)
+
+```py
+>>> from underthesea import pos_tag,dependency_parse
+>>> nlp=lambda t:"\n".join("\t".join([str(i+1),p[0],"_",p[1],p[1],"_",str(d[1]),d[2],"_","_"]) for i,(p,d) in enumerate(zip(pos_tag(t),dependency_parse(t))))+"\n\n"
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một   M  <╗         nummod
+mũi   N  ═╝═╗═╗═╗═╗ root
+tên   N  <══╝ ║ ║ ║ nmod
+trúng V  <════╝ ║ ║ acl:subj
+hai   M  ═╗<╗   ║ ║ nummod
+con   Nc <╝ ║   ║ ║ clf
+chim  N  ═══╝<══╝ ║ nmod
+.     CH <════════╝ punct
+```
+
 ## với [BkParser](https://github.com/trietnm2/BkParser)
 
 ```py
