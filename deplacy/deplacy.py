@@ -288,7 +288,9 @@ def to_conllu(doc,RtoL=False):
   elif s.find("stanza")==8:
     from stanza.utils.conll import CoNLL
     return CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
-  elif s.find("classla")==8 or s.find("stanfordnlp")==8:
+  elif s.find("classla")==8:
+    return doc.to_conll()
+  elif s.find("stanfordnlp")==8:
     return doc.conll_file.conll_as_string()
   elif s.find("nltk")==8:
     return doc.to_conll(10)
