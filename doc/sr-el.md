@@ -175,19 +175,19 @@ gibanicu NOUN  <╝           ║ obj
 >>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Da       SCONJ <══════════════════╗ mark
-ima      VERB  ═════════════════╗═╝ root
-sira     VERB  ═══╗═══════════╗<╝   xcomp
-i        CCONJ <╗ ║           ║     cc
-masla    NOUN  ═╝<╝           ║     obj
-i        CCONJ <════════════╗ ║     cc
-moja     DET   <══════════╗ ║ ║     nsubj
-bi       AUX   <════════╗ ║ ║ ║     aux
-mati     ADJ   <══════╗ ║ ║ ║ ║     advmod
-znala    VERB  ═════╗═╝═╝═╝═╝<╝     conj
-gibati   VERB  ═╗═╗<╝               xcomp
-gibanicu NOUN  <╝ ║                 obj
-.        PUNCT <══╝                 punct
+Da       SCONJ <╗             mark
+ima      VERB  ═╝<══╗         advcl
+sira     VERB  ═══╗═╝═════╗═╗ root
+i        CCONJ <╗ ║       ║ ║ cc
+masla    NOUN  ═╝<╝       ║ ║ obj
+i        CCONJ <════════╗ ║ ║ cc
+moja     DET   <╗       ║ ║ ║ det
+bi       AUX    ║<════╗ ║ ║ ║ aux
+mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
 ```
 
 ## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-om
