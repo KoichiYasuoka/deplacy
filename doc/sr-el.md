@@ -144,29 +144,6 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
-## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-om
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("sr")
->>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
->>> import deplacy
->>> deplacy.render(doc)
-Da       SCONJ <══════╗       mark
-ima      VERB  ═════╗═╝═╗═╗═╗ ROOT
-sira     NOUN  ═══╗<╝   ║ ║ ║ obl
-i        CCONJ <╗ ║     ║ ║ ║ cc
-masla    NOUN  ═╝<╝     ║ ║ ║ conj
-i        CCONJ <════╗   ║ ║ ║ cc
-moja     NOUN  <══╗ ║   ║ ║ ║ nsubj
-bi       AUX   <╗ ║ ║   ║ ║ ║ aux
-mati     VERB  ═╝═╝═╝<══╝ ║ ║ conj
-znala    VERB  ═══╗<══════╝ ║ conj
-gibati   VERB  ═╗<╝         ║ xcomp
-gibanicu NOUN  <╝           ║ obj
-.        PUNCT <════════════╝ punct
-```
-
 ## s [Stanza](https://stanfordnlp.github.io/stanza)-om
 
 ```py
@@ -185,6 +162,29 @@ moja     DET   <╗       ║ ║ ║ det
 bi       AUX    ║<════╗ ║ ║ ║ aux
 mati     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
 znala    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
+## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-om
+
+```py
+>>> import spacy_udpipe
+>>> nlp=spacy_udpipe.load("sr")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝═╗═╗═╗ ROOT
+sira     NOUN  ═══╗<╝   ║ ║ ║ obl
+i        CCONJ <╗ ║     ║ ║ ║ cc
+masla    NOUN  ═╝<╝     ║ ║ ║ conj
+i        CCONJ <════╗   ║ ║ ║ cc
+moja     NOUN  <══╗ ║   ║ ║ ║ nsubj
+bi       AUX   <╗ ║ ║   ║ ║ ║ aux
+mati     VERB  ═╝═╝═╝<══╝ ║ ║ conj
+znala    VERB  ═══╗<══════╝ ║ conj
 gibati   VERB  ═╗<╝         ║ xcomp
 gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
