@@ -39,7 +39,10 @@ deprelja = {
   "parataxis":"隣接表現",
   "orphan":"親なし",
   "appos":"同格",
+  "goeswith":"泣き別れ",
+  "reparandum":"言い損じ",
   "punct":"句読点",
+  "dep":"未定義",
   "root":"親",
 # 旧版spaCy用
   "nsubjpass":"主語[受動文]",
