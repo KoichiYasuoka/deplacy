@@ -9,3 +9,4 @@
 # 古典中国語UDを用いた係り受け解析器の自作
 
 * [UDPipeを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/udpipe-lzh.ipynb)
+* [Transformersとroberta-classical-chinese-large-charを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/trans-lzh.ipynb)
