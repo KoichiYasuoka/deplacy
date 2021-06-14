@@ -10,3 +10,8 @@
 
 * [UDPipeを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/udpipe-lzh.ipynb)
 * [Transformersとroberta-classical-chinese-large-charを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/trans-lzh.ipynb)
+
+# タイ語UDを用いた係り受け解析器の自作
+
+* [UDPipeを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/udpipe-th.ipynb)
+* [SuParとbert-base-thaiとPyThaiNLPを用いる場合](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2021-06-22/supar-th.ipynb)
