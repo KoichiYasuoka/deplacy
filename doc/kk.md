@@ -22,28 +22,6 @@
 .       PUNCT <════════╝   punct
 ```
 
-## [Stanza](https://stanfordnlp.github.io/stanza) арқылы талдау
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("kk")
->>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
->>> import deplacy
->>> deplacy.render(doc)
-Тәннен  NOUN  <╗         nmod:poss
-жан     NOUN  ═╝<╗       nsubj
-артық   VERB  ═╗═╝═╗═══╗ root
-еді     AUX   <╝   ║   ║ cop
-,       PUNCT <════╝   ║ punct
-тәнді   ADJ   <╗       ║ amod
-жанға   NOUN  ═╝<╗     ║ obl
-бас     NOUN  <╗ ║     ║ nsubj
-ұрғызса VERB  ═╝═╝<╗   ║ acl:relcl
-керек   PRON  ═╗═══╝═╗<╝ parataxis
-еді     AUX   <╝     ║   cop
-.       PUNCT <══════╝   punct
-```
-
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube) арқылы талдау
 
 ```py
