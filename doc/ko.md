@@ -16,22 +16,6 @@
 .        PUNCT <══════╝ punct
 ```
 
-## [Stanza](https://stanfordnlp.github.io/stanza)로 분석
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("ko")
->>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> import deplacy
->>> deplacy.render(doc)
-홍시     NOUN  ═╗<╗     nsubj
-맛이     NOUN  <╝ ║     flat
-나서     VERB  ═══╝<╗   advcl
-홍시라   VERB  <╗   ║   ccomp
-생각한다 VERB  ═╝═══╝═╗ root
-.        PUNCT <══════╝ punct
-```
-
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)로 분석
 
 ```py
@@ -145,6 +129,22 @@
 나서     VERB  ═══╝<╗   advcl
 홍시라   NOUN  <╗   ║   nsubj
 생각한다 VERB  ═╝═══╝═╗ ROOT
+.        PUNCT <══════╝ punct
+```
+
+## [Stanza](https://stanfordnlp.github.io/stanza)로 분석
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("ko")
+>>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
+>>> import deplacy
+>>> deplacy.render(doc)
+홍시     NOUN  <╗       compound
+맛이     NOUN  ═╝<╗     nsubj
+나서     SCONJ ═══╝<╗   ccomp
+홍시라   VERB  <╗   ║   ccomp
+생각한다 VERB  ═╝═══╝═╗ root
 .        PUNCT <══════╝ punct
 ```
 
