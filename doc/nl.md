@@ -240,10 +240,10 @@ houd       VERB  ═╗═╗═╗═╗═════════════
 ik         PRON   ║<╝ ║ ║               ║   ║ nsubj
 ze         PRON   ║<══╝ ║               ║   ║ obj
 vast       ADJ   <╝     ║               ║   ║ compound:prt
-,          SYM   <══╗   ║               ║   ║ punct
+,          PUNCT <══╗   ║               ║   ║ punct
 ondanks    ADP   <╗ ║   ║               ║   ║ case
 alles      PRON  ═╝═╝<══╝               ║   ║ obl
-,          SYM   <════════════════════╗ ║   ║ punct
+,          PUNCT <════════════════════╗ ║   ║ punct
 omdat      SCONJ <══════════════════╗ ║ ║   ║ mark
 ik         PRON  <════════════════╗ ║ ║ ║   ║ nsubj
 nog        ADV   <╗               ║ ║ ║ ║   ║ advmod
@@ -253,10 +253,10 @@ de         DET   <════════╗ ║   ║ ║ ║ ║ ║   ║ de
 innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║ ║   ║ amod
 goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║ ║   ║ obl
 van        ADP   <══╗ ║       ║ ║ ║ ║ ║ ║   ║ case
-den        DET   ═╗═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
-mens       NOUN  <╝           ║ ║ ║ ║ ║ ║   ║ flat
+den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║   ║ det
+mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
 geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝   ║ advcl
-.          SYM   <══════════════════════════╝ punct
+.          PUNCT <══════════════════════════╝ punct
 ```
 
 ## met [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
