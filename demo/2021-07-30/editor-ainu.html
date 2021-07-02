@@ -27,6 +27,14 @@ function editorChangeURL(textid){
     v=tx.textContent;
   location.href=h.substring(0,i+1)+encodeURIComponent(v);
 }
+function editorInit(textid){
+  var tx=document.getElementById(textid);
+  var v=tx.value:
+  if(v!=null)
+    tx.value="1	Hotenao	hotenao	_	_	_	_	_	_	_\n"
+  else
+    tx.textContent="1	Hotenao	hotenao	_	_	_	_	_	_	_\n"
+}
 editorInsertTextline=conllusvg.insertTextline
 conllusvg.insertTextline=function(textid,i,j,t){
   editorInsertTextline(textid,i,j,t);
@@ -36,8 +44,8 @@ conllusvg.insertTextline=function(textid,i,j,t){
 </head>
 <body>
 <table noborder><tr><td nowrap>
-<input type="button" value="load CoNLL-U" onclick="conllusvg.loadLocal('conllu')" />
-<input type="button" value="save CoNLL-U" onclick="conllusvg.saveLocal('conllu')" />
+<input type="text" value="Hotenao" id="text" size=60 />
+<input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu')" />
 <text id="status" />
 </td></tr></table>
 <pre id="conllu" contentEditable="true" onfocusout="conllusvg.reparse('conllu');editorChangeURL('conllu')">
@@ -46,7 +54,6 @@ conllusvg.insertTextline=function(textid,i,j,t){
 3	a	a	DET	_	_	4	det	_	_
 4	pen	pen	NOUN	_	_	2	obj	_	SpaceAfter=No
 5	.	.	PUNCT	_	_	2	punct	_	_
-
 </pre>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu')">
 </svg>
