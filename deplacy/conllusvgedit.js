@@ -1,4 +1,4 @@
-// CoNLL-U SVG Edit by Koichi Yasuoka, July 6, 2019.
+// CoNLL-U SVG Edit by Koichi Yasuoka, July 3, 2021.
 // "conllusvgview.js" is needed.
 "use strict";
 conllusvg.edit=function(svg,textid,deprelid,uposid,xposid){
@@ -28,7 +28,7 @@ conllusvg.edit=function(svg,textid,deprelid,uposid,xposid){
   else{
     g=document.createElement("select");
     g.add(new Option("root","conllusvg.rootLink"));
-    t=["NOUN","PROPN","PRON","NUM","ADJ","VERB","ADP","ADV","AUX","SCONJ","CCONJ","PART","INTJ","SYM","PUNCT","X"];
+    t=["NOUN","PROPN","PRON","NUM","ADJ","DET","VERB","ADP","ADV","AUX","SCONJ","CCONJ","PART","INTJ","SYM","PUNCT","X"];
     for(i=0;i<t.length;i++)
       g.add(new Option(t[i],"conllusvg.setUpos"));
     g.add(new Option("delete","conllusvg.deleteNode"));
