@@ -48,7 +48,7 @@ conllusvg.insertTextline=function(textid,i,j,t){
 <input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu')" />
 <text id="status" />
 </td></tr></table>
-<pre id="conllu" contentEditable="true" onfocusout="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
 1	Shine	sine	NUM	数詞	_	3	nummod	_	SpaceAfter=No
 2	an	an	VERB	自動詞	_	3	amod	_	SpaceAfter=No
 3	to	to	NOUN	名詞	_	5	obl	_	SpaceAfter=No
@@ -92,7 +92,7 @@ conllusvg.insertTextline=function(textid,i,j,t){
 41	chi	ci=	PART	人称接辞	_	42	nsubj	_	SpaceAfter=No
 42	etushmak	etusmak	VERB	他動詞	_	38	conj	_	SpaceAfter=No
 43	.	.	PUNCT	記号	_	42	punct	_	_
-</pre>
+</textarea>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu',null,null,'xpos')">
 </svg>
 <select size=8 id="xpos" style="position:absolute; visibility:hidden">
