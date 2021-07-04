@@ -44,54 +44,22 @@ conllusvg.insertTextline=function(textid,i,j,t){
 </head>
 <body>
 <table noborder><tr><td nowrap>
-<input type="text" id="text" size=60 value="Shine-an-to-ta nishmu=ash kusu pish-ta sap=ash, shinot=ash kor okay=ash awa, shine pon-rupne-ainu ek kor-an wakusu, hepashi san ko, hepashi chi=etushmak, heperai ek ko heperai chi=etushmak." />
+<input type="text" id="text" size=60 value="itsk/ash awa pon/rupne/ainu ene itak/i : ―" />
 <input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu')" />
 <text id="status" />
 </td></tr></table>
 <textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
-1	Shine	sine	NUM	数詞	_	3	nummod	_	SpaceAfter=No
-2	an	an	VERB	自動詞	_	3	amod	_	SpaceAfter=No
-3	to	to	NOUN	名詞	_	5	obl	_	SpaceAfter=No
-4	ta	ta	ADP	格助詞	_	3	case	_	_
-5	nishmu	nismu	VERB	自動詞	_	10	advcl	_	SpaceAfter=No
-6	ash	=as	PART	人称接辞	_	5	nsubj	_	_
-7	kusu	kusu	SCONJ	接続詞	_	5	mark	_	_
-8	pish	pis	NOUN	位置名詞	_	10	obl	_	SpaceAfter=No
-9	ta	ta	ADP	格助詞	_	8	case	_	_
-10	sap	san	VERB	自動詞	_	16	advcl	_	SpaceAfter=No
-11	ash	=as	PART	人称接辞	_	10	nsubj	_	SpaceAfter=No
-12	,	,	PUNCT	記号	_	10	punct	_	_
-13	shinot	sinot	VERB	自動詞	_	16	advcl	_	SpaceAfter=No
-14	ash	=as	PART	人称接辞	_	13	nsubj	_	_
-15	kor	kor	SCONJ	接続助詞	_	13	mark	_	_
-16	okay	an	VERB	自動詞	_	30	advcl	_	SpaceAfter=No
-17	ash	=as	PART	人称接辞	_	16	nsubj	_	_
-18	awa	awa	CCONJ	接続詞	_	16	cc	_	SpaceAfter=No
-19	,	,	PUNCT	記号	_	16	punct	_	_
-20	shine	sine	NUM	数詞	_	23	nummod	_	_
-21	pon	pon	VERB	自動詞	_	23	amod	_	SpaceAfter=No
-22	rupne	rupne	VERB	自動詞	_	23	amod	_	SpaceAfter=No
-23	ainu	aynu	NOUN	名詞	_	24	nsubj	_	_
-24	ek	ek	VERB	自動詞	_	26	advcl	_	_
-25	kor	kor	SCONJ	接続助詞	_	24	mark	_	SpaceAfter=No
-26	an	an	VERB	自動詞	_	16	conj	_	_
-27	wakusu	wakusu	SCONJ	接続助詞	_	26	mark	_	SpaceAfter=No
-28	,	,	PUNCT	記号	_	27	punct	_	_
-29	hepashi	hepasi	ADV	副詞	_	30	advmod	_	_
-30	san	san	VERB	自動詞	_	0	root	_	_
-31	ko	kor	SCONJ	接続助詞	_	30	mark	_	SpaceAfter=No
-32	,	,	PUNCT	記号	_	30	punct	_	_
-33	hepashi	hepasi	ADV	副詞	_	35	advmod	_	_
-34	chi	ci=	PART	人称接辞	_	35	nsubj	_	SpaceAfter=No
-35	etushmak	etusmak	VERB	他動詞	_	30	conj	_	SpaceAfter=No
-36	,	,	PUNCT	記号	_	35	punct	_	_
-37	heperai	heperay	ADV	副詞	_	38	advmod	_	_
-38	ek	ek	VERB	自動詞	_	30	parataxis	_	_
-39	ko	kor	SCONJ	接続助詞	_	38	mark	_	_
-40	heperai	heperay	ADV	副詞	_	42	advmod	_	_
-41	chi	ci=	PART	人称接辞	_	42	nsubj	_	SpaceAfter=No
-42	etushmak	etusmak	VERB	他動詞	_	38	conj	_	SpaceAfter=No
-43	.	.	PUNCT	記号	_	42	punct	_	_
+1	itsk	itak	VERB	自動詞	_	0	root	_	SpaceAfter=No
+2	ash	=as	PART	人称接辞	_	1	nsubj	_	_
+3	awa	awa	CCONJ	接続詞	_	1	cc	_	_
+4	pon	pon	VERB	自動詞	_	6	amod	_	SpaceAfter=No
+5	rupne	rupne	VERB	自動詞	_	6	amod	_	SpaceAfter=No
+6	ainu	aynu	NOUN	名詞	_	8	nsubj	_	_
+7	ene	ene	ADV	副詞	_	8	advmod	_	_
+8	itak	itak	VERB	自動詞	_	9	acl	_	SpaceAfter=No
+9	i	i	NOUN	名詞	_	1	conj	_	_
+10	:	:	PUNCT	記号	_	9	punct	_	_
+11	―	―	PUNCT	記号	_	9	punct	_	_
 </textarea>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu',null,null,'xpos')">
 </svg>
