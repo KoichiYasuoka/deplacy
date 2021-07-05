@@ -27,13 +27,59 @@ function editorChangeURL(textid){
     v=tx.textContent;
   location.href=h.substring(0,i+1)+encodeURIComponent(v);
 }
-function editorInit(textid){
+function editorInit(textid,sentid){
   var tx=document.getElementById(textid);
-  var v=tx.value;
-  if(v!=null)
-    tx.value="1	Hotenao	hotenao	_	_	_	_	_	_	_\n"
+  var ty=document.getElementById(sentid);
+  var form=new Array();
+  var misc=new Array();
+  var punct=",.!?;:'‘’"+'"“”'
+  var i,n,s,u;
+  s=ty.value;
+  if(s==null)
+    s=ty.textContent;
+  n=1;
+  for(i=0;i<s.length;i++){
+    t=s.substring(i,i+1);
+    if(t==" "){
+      if(form[n])
+        n++;
+      misc[n-1]="_";
+    }
+    else if(t=="/"){
+      if(form[n])
+        n++;
+      misc[n-1]="SpaceAfter=No";
+    }
+    else if(punct.indexOf(t)>=0){
+      if(form[n]){
+        misc[n]="SpaceAfter=No";
+        n++;
+      }
+      form[n]=t;
+      misc[n]="SpaceAfter=No";
+      n++;
+    }
+    else{
+      if(form[n])
+        form[n]+=t;
+      else
+        form[n]=t;
+    }
+  }
+  if(form[n]==null)
+    n--;
+  misc[n]="_";
+  u="";
+  for(i=1;i<=n;i++){
+    if(misc[i]==null)
+      misc[i]="_";
+    u+=i.toString()+"\t"+form[i]+"\t"+form[i]+"\t_\t_\t_\t_\t_\t_\t"+misc[i]+"\n";
+  }
+  if(tx.value!=null)
+    tx.value=u;
   else
-    tx.textContent="1	Hotenao	hotenao	_	_	_	_	_	_	_\n"
+    tx.textContent=u;
+  conllusvg.reparse(textid);
 }
 editorInsertTextline=conllusvg.insertTextline
 conllusvg.insertTextline=function(textid,i,j,t){
@@ -44,8 +90,8 @@ conllusvg.insertTextline=function(textid,i,j,t){
 </head>
 <body>
 <table noborder><tr><td nowrap>
-<input type="text" id="text" size=60 value="itsk/ash awa pon/rupne/ainu ene itak/i : ―" />
-<input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu')" />
+<input type="text" id="sentence" size=60 value="itsk/ash awa pon/rupne/ainu ene itak/i : ―" />
+<input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu','sentence')" />
 <text id="status" />
 </td></tr></table>
 <textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
@@ -57,7 +103,7 @@ conllusvg.insertTextline=function(textid,i,j,t){
 6	ainu	aynu	NOUN	名詞	_	8	nsubj	_	_
 7	ene	ene	ADV	副詞	_	8	advmod	_	_
 8	itak	itak	VERB	自動詞	_	9	acl	_	SpaceAfter=No
-9	i	i	NOUN	名詞	_	1	conj	_	_
+9	i	-i	PART	接尾辞	_	1	conj	_	_
 10	:	:	PUNCT	記号	_	9	punct	_	_
 11	―	―	PUNCT	記号	_	9	punct	_	_
 </textarea>
