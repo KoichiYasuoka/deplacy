@@ -33,20 +33,20 @@
 >>> doc=nlp("Слобода, сакам да се радувам, а нешто не ме оставаат, разбираш.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Слобода  NOUN                       ROOT
-,        PUNCT <════════════╗       dep
+Слобода  NOUN  ═╗<══════════╗       att
+,        PUNCT <╝           ║       punct
 сакам    VERB  ═════╗═╗═╗═╗═╝═╗═╗═╗ ROOT
 да       SCONJ <══╗ ║ ║ ║ ║   ║ ║ ║ aux
 се       AUX   <╗ ║ ║ ║ ║ ║   ║ ║ ║ aux
 радувам  VERB  ═╝═╝<╝ ║ ║ ║   ║ ║ ║ relcl
 ,        PUNCT        ║ ║ ║<══╝ ║ ║ punct
 а        CONJ  <══════╝ ║ ║     ║ ║ cc
-нешто    PRON  <════════╝ ║     ║ ║ dobj
+нешто    ADV   <════════╝ ║     ║ ║ dep
 не       VERB  <══╗       ║     ║ ║ neg
 ме       PRON  <╗ ║       ║     ║ ║ dep
 оставаат VERB  ═╝═╝═╗<════║═════╝ ║ relcl
 ,        PUNCT <════╝     ║       ║ punct
-разбираш VERB  <══════════╝       ║ iobj
+разбираш VERB  <══════════╝       ║ relcl
 .        PUNCT <══════════════════╝ punct
 ```
 
