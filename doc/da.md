@@ -139,7 +139,7 @@ fiskehale NOUN  ═╝═╝<╝       ║ obl
 
 ```py
 >>> import spacy
->>> nlp=spacy.load("da_core_news_sm")
+>>> nlp=spacy.load("da_core_news_md")
 >>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -150,7 +150,7 @@ lille     ADJ   <╗ ║ ║     ║ ║ amod
 havfrue   NOUN  ═╝═╝<╝     ║ ║ nsubj
 og        CCONJ <════════╗ ║ ║ cc
 så        ADV   <══════╗ ║ ║ ║ advmod
-bedrøvet  VERB  ═════╗═╝═╝<╝ ║ conj
+bedrøvet  ADJ   ═════╗═╝═╝<╝ ║ conj
 på        ADP   <══╗ ║       ║ case
 sin       DET   <╗ ║ ║       ║ det
 fiskehale NOUN  ═╝═╝<╝       ║ obl
