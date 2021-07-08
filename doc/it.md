@@ -158,17 +158,17 @@ spia      NOUN  ═╝═╝═╝<╝     ║   conj
 >>> deplacy.render(doc)
 Chi       PRON  <══════╗       nsubj
 non       ADV   <════╗ ║       advmod
-beve      VERB  ═══╗═╝═╝═╗═╗═╗ ROOT
-in        ADP   <╗ ║     ║ ║ ║ case
-compagnia NOUN  ═╝<╝     ║ ║ ║ obl
-o         SCONJ <════╗   ║ ║ ║ cc
-è         VERB  <══╗ ║   ║ ║ ║ cop
-un        DET   <╗ ║ ║   ║ ║ ║ det
-ladro     NOUN  ═╝═╝═╝<══╝ ║ ║ conj
-o         SCONJ <════╗     ║ ║ cc
-è         VERB  <══╗ ║     ║ ║ cop
-una       DET   <╗ ║ ║     ║ ║ det
-spia      NOUN  ═╝═╝═╝<════╝ ║ conj
+beve      VERB  ═══╗═╝═╝═══╗═╗ ROOT
+in        ADP   <╗ ║       ║ ║ case
+compagnia NOUN  ═╝<╝       ║ ║ obl
+o         CCONJ <════════╗ ║ ║ cc
+è         AUX   <══╗     ║ ║ ║ cop
+un        DET   <╗ ║     ║ ║ ║ det
+ladro     NOUN  ═╝═╝═══╗═╝<╝ ║ conj
+o         CCONJ <════╗ ║     ║ cc
+è         AUX   <══╗ ║ ║     ║ cop
+una       DET   <╗ ║ ║ ║     ║ det
+spia      NOUN  ═╝═╝═╝<╝     ║ conj
 .         PUNCT <════════════╝ punct
 ```
 
