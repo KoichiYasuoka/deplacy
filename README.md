@@ -2,7 +2,7 @@
 
 # deplacy
 
-Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https://pypi.org/project/unidic2ud), [Stanza](https://stanfordnlp.github.io/stanza), [NLP-Cube](https://github.com/Adobe/NLP-Cube), etc.
+Simple dependency visualizer for [spaCy](https://spacy.io/), [UniDic2UD](https://pypi.org/project/unidic2ud), [Stanza](https://stanfordnlp.github.io/stanza), [NLP-Cube](https://github.com/Adobe/NLP-Cube), [Trankit](https://github.com/nlp-uoregon/trankit), etc.
 
 ## Usage with spaCy
 
@@ -114,7 +114,7 @@ name      NOUN  ═╝<╝             ║ dobj
 pip install deplacy
 ```
 
-You need to install spaCy, UniDic2UD, Stanza, or NLP-Cube separately. For Google Colaboratories, please follow (and edit) the templates shown below.
+You need to install spaCy, UniDic2UD, Stanza, NLP-Cube, or Trankit separately. For Google Colaboratories, please follow (and edit) the templates shown below.
 
 ## Templates for Google Colaboratory
 
