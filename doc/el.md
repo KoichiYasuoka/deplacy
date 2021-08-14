@@ -196,3 +196,27 @@
 .         PUNCT <════════╝ punct
 ```
 
+## με [gr-nlp-toolkit](https://github.com/nlpaueb/gr-nlp-toolkit)
+
+```py
+>>> from gr_nlp_toolkit import Pipeline
+>>> gdp=Pipeline("pos,dp")
+>>> def nlp(s):
+...  u=""
+...  for i,t in enumerate(gdp(s).tokens):
+...    f="|".join(k+"="+v for k,v in t.feats.items() if v!="_")
+...    u+="\t".join([str(i+1),t.text,"_","X" if t.upos=="_" else t.upos,"_","_" if f=="" else f,str(t.head),t.deprel,"_","_"])+"\n"
+...  return u+"\n"
+...
+>>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
+>>> import deplacy
+>>> deplacy.render(doc)
+δεν       PART  <══════╗   advmod
+υπαρχει   VERB  ═══╗═╗═╝═╗ root
+βασιλικος ADJ   <╗ ║ ║   ║ amod
+δρομος    NOUN  ═╝<╝ ║   ║ nsubj
+στη       X     <╗   ║   ║ case
+γεωμετρια NOUN  ═╝<══╝   ║ obl
+.         PUNCT <════════╝ punct
+```
+
