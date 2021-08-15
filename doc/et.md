@@ -193,28 +193,6 @@ pesagi NOUN  <══╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-ga
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("et")
->>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
->>> import deplacy
->>> deplacy.render(doc)
-Suuga  NOUN  <════╗         nsubj
-teeb   VERB  ═══╗═╝═════╗═╗ root
-suure  ADJ   <╗ ║       ║ ║ amod
-linna  NOUN  ═╝<╝       ║ ║ obj
-,      PUNCT <════════╗ ║ ║ punct
-käega  NOUN  <══════╗ ║ ║ ║ obl
-ei     AUX   <════╗ ║ ║ ║ ║ aux
-tee    VERB  ═╗═╗═╝═╝═╝<╝ ║ conj
-kärbse NOUN   ║<╝         ║ nsubj
-pesagi NOUN  <╝           ║ compound:prt
-.      PUNCT <════════════╝ punct
-```
-
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ga
 
 ```py
