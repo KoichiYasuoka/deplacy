@@ -211,33 +211,6 @@ hart  PRON  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
-## met [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("af")
->>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
->>> import deplacy
->>> deplacy.render(doc)
-As    SCONJ ═══════════════╗<╗   amod
-jy    PRON  <════════════╗ ║ ║   nsubj
-met   ADP   <╗           ║ ║ ║   case
-hom   PRON  ═╝<════════╗ ║ ║ ║   obl
-praat VERB  ═════════╗═╝═╝<╝ ║   dep
-in    ADP   <════╗   ║       ║   case
-sy    PRON  <══╗ ║   ║       ║   det
-eie   ADJ   <╗ ║ ║   ║       ║   amod
-taal  NOUN  ═╝═╝═╝═╗<╝       ║   obl
-,     PUNCT <══════╝         ║   punct
-gaan  AUX   ═╗═══╗═══════════╝═╗ root
-dit   PRON  <╝   ║             ║ obj
-na    ADP   <══╗ ║             ║ case
-sy    PRON  <╗ ║ ║             ║ det
-hart  NOUN  ═╝═╝<╝             ║ obl
-.     PUNCT <══════════════════╝ punct
-```
-
 ## met [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
