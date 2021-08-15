@@ -75,24 +75,6 @@ advmod ║   ║     ╔> PART  لا
  punct ╚══════════> PUNCT .
 ```
 
-<h2 dir="rtl"> مع <a href="https://github.com/Adobe/NLP-Cube">NLP-Cube</a></h2>
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ar")
->>> doc=nlp("من قال لا أدري فقد أفتى.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
- nsubj   ╔════════> DET   من
-  root ╔═╚═╔═══════ VERB  قال
-advmod ║   ║ ╔════> PART  لا
- xcomp ║   ╚>╚═╔═══ VERB  أدري
-   obj ║       ╚>╔═ NOUN  فقد
-  nmod ║         ╚> VERB  أفتى
- punct ╚══════════> PUNCT .
-```
-
 <h2 dir="rtl"> مع <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
 
 ```py
