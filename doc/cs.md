@@ -98,26 +98,6 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 .       PUNCT <════════╝ punct
 ```
 
-## s [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("cs")
->>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
->>> import deplacy
->>> deplacy.render(doc)
-Z       ADP   <════╗     case
-hrůzy   NOUN  ═══╗═╝<╗   obl:arg
-a       CCONJ <╗ ║   ║   cc
-bolesti NOUN  ═╝<╝   ║   conj
-stali   VERB  ═╗═╗═══╝═╗ ROOT
-jsme    AUX   <╝ ║     ║ aux
-se      ADP   <╗ ║     ║ case
-dušemi  NOUN  ═╝<╝     ║ obl:arg
-.       PUNCT <════════╝ punct
-```
-
 ## s [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
