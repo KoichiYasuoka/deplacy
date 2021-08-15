@@ -67,23 +67,6 @@
 .      PUNCT <══════╝ punct
 ```
 
-## с [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("bg")
->>> doc=nlp("Гладна мечка хоро не играе.")
->>> import deplacy
->>> deplacy.render(doc)
-Гладна ADJ   <══╗     amod
-мечка  NOUN  ═╗═╝<╗   nsubj
-хоро   NOUN  <╝   ║   nmod
-не     PART  <╗   ║   advmod
-играе  VERB  ═╝═══╝═╗ root
-.      PUNCT <══════╝ punct
-```
-
 ## с [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
