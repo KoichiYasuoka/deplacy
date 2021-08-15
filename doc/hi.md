@@ -1,28 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) के माध्यम से वाक्यविन्यास विश्लेषण
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube) पर विश्लेषण
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("hi")
->>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     nmod     ╔══════════════> PRON  खुद
-      det     ║ ╔════════════> DET   वो
-      obj   ╔>╚═╚═╔═══════════ NOUN  बदलाव
-     root ╔═╚═════════════════ VERB  बनिए
-      obj ║       ║ ╔════════> PRON  जो
-    nsubj ║       ║ ║ ╔══════> PRON  आप
-      obl ║       ║ ║ ║   ╔>╔═ NOUN  दुनिया
-     case ║       ║ ║ ║   ║ ╚> ADP   में
-      obj ║       ║ ║ ║ ╔>╚═══ VERB  देखना
-acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
-      aux ║                 ╚> AUX   हैं
-    punct ╚══════════════════> PUNCT ।
-```
-
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) पर विश्लेषण
 
 ```py
