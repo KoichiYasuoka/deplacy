@@ -36,25 +36,6 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
-## avec [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("fr")
->>> doc=nlp("L'essentiel est invisible pour les yeux.")
->>> import deplacy
->>> deplacy.render(doc)
-L'        DET   <╗           det
-essentiel NOUN  ═╝<══════╗   nsubj
-est       AUX   <══════╗ ║   cop
-invisible ADJ   ═════╗═╝═╝═╗ root
-pour      ADP   <══╗ ║     ║ case
-les       DET   <╗ ║ ║     ║ det
-yeux      NOUN  ═╝═╝<╝     ║ obl
-.         PUNCT <══════════╝ punct
-```
-
 ## avec [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
@@ -129,6 +110,25 @@ invisible ADJ   ═════╗═╝═╝═╗ root
 pour      ADP   <══╗ ║     ║ case
 les       DET   <╗ ║ ║     ║ det
 yeux      NOUN  ═╝═╝<╝     ║ obl
+.         PUNCT <══════════╝ punct
+```
+
+## avec [NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("fr")
+>>> doc=nlp("L'essentiel est invisible pour les yeux.")
+>>> import deplacy
+>>> deplacy.render(doc)
+L'        DET   <╗           det
+essentiel NOUN  ═╝<══════╗   nsubj
+est       AUX   <══════╗ ║   cop
+invisible ADJ   ═════╗═╝═╝═╗ root
+pour      ADP   <══╗ ║     ║ case
+les       DET   <╗ ║ ║     ║ det
+yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
