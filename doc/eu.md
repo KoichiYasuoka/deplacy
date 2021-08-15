@@ -162,25 +162,6 @@ da        AUX   <╝       ║ cop
 .         PUNCT <════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-rekin
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("eu")
->>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
->>> import deplacy
->>> deplacy.render(doc)
-Euskaldun NOUN  <════════╗   nsubj
-izatea    AUX   <══════╗ ║   nsubj
-lan       NOUN  ═╗═╗<╗ ║ ║   obj
-extra     NOUN  <╝ ║ ║ ║ ║   amod
-bat       NUM   <══╝ ║ ║ ║   nummod
-izatea    AUX   ═╗═══╝═╝═╝═╗ root
-da        AUX   <╝         ║ cop
-.         PUNCT <══════════╝ punct
-```
-
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-rekin
 
 ```py
