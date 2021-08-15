@@ -1,5 +1,25 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) para análisis sintáctico
 
+## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("es")
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗             det
+pluma  NOUN  ═╝<════════╗   nsubj
+es     AUX   <════════╗ ║   cop
+la     DET   <══════╗ ║ ║   det
+lengua NOUN  ═════╗═╝═╝═╝═╗ root
+de     ADP   <══╗ ║       ║ case
+el     DET   <╗ ║ ║       ║ det
+alma   NOUN  ═╝═╝<╝       ║ nmod
+.      PUNCT <════════════╝ punct
+```
+
 ## con [spaCy](https://spacy.io/)
 
 ```py
@@ -44,25 +64,6 @@ alma   NOUN  ═╝<╝       ║ nmod
 ...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=es&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
 ...     return json.loads(r.read())["result"]
 ...
->>> doc=nlp("La pluma es la lengua del alma.")
->>> import deplacy
->>> deplacy.render(doc)
-La     DET   <╗           det
-pluma  NOUN  ═╝<══════╗   nsubj
-es     AUX   <══════╗ ║   cop
-la     DET   <════╗ ║ ║   det
-lengua NOUN  ═══╗═╝═╝═╝═╗ root
-del    ADP   <╗ ║       ║ case
-alma   NOUN  ═╝<╝       ║ nmod
-.      PUNCT <══════════╝ punct
-```
-
-## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("es")
 >>> doc=nlp("La pluma es la lengua del alma.")
 >>> import deplacy
 >>> deplacy.render(doc)
