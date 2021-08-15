@@ -187,12 +187,14 @@
 >>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Δεν       PART  <══════╗   advmod
+σ         ADP   <╗         case
+το        DET   ═╝<════╗   expl
 υπάρχει   VERB  ═══╗═╗═╝═╗ root
 βασιλικός ADJ   <╗ ║ ║   ║ amod
-δρόμος    NOUN  ═╝<╝ ║   ║ obj
-στη       ADP   <╗   ║   ║ amod
-γεωμετρία NOUN  ═╝<══╝   ║ nsubj
+δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
+σ         ADP   <══╗ ║   ║ case
+το        DET   <╗ ║ ║   ║ det
+γεωμετρία NOUN  ═╝═╝<╝   ║ obl
 .         PUNCT <════════╝ punct
 ```
 
