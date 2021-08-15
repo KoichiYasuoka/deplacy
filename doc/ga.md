@@ -165,22 +165,3 @@ farraige  NOUN  ═╝<╝     ║ compound
 .         PUNCT <════════╝ punct
 ```
 
-## le [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ga")
->>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
->>> import deplacy
->>> deplacy.render(doc)
-Táimid    VERB  ═══╗═══╗═╗ root
-faoi      ADP   <╗ ║   ║ ║ case
-dhraíocht NOUN  ═╝<╝   ║ ║ obl
-ag        ADP   <════╗ ║ ║ case
-ceol      NOUN  ═══╗═╝<╝ ║ obl
-na        DET   <╗ ║     ║ det
-farraige  NOUN  ═╝<╝     ║ compound
-.         PUNCT <════════╝ punct
-```
-
