@@ -153,23 +153,6 @@ compound:smixut   ║   ╚> PROPN וריח
           punct ╚══════> PUNCT .
 ```
 
-<h2 dir="rtl"> עם <a href="https://github.com/Adobe/NLP-Cube">NLP-Cube</a></h2>
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("he")
->>> doc=nlp("על טעם וריח אין להתווכח.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-           case     ╔══> ADP   על
-            obl   ╔>╚═╔═ NOUN  טעם
-compound:smixut   ║   ╚> PROPN וריח
-           root ╔═╚═══╔═ AUX   אין
-          xcomp ║     ╚> VERB  להתווכח
-          punct ╚══════> PUNCT .
-```
-
 <h2 dir="rtl"> עם <a href="https://github.com/TakeLab/spacy-udpipe">spacy-udpipe</a></h2>
 
 ```py
