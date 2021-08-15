@@ -72,25 +72,6 @@ duro  ADJ   <╝       ║ amod
 .     PUNCT <════════╝ punct
 ```
 
-## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("gl")
->>> doc=nlp("Cando hai fame non hai pan duro.")
->>> import deplacy
->>> deplacy.render(doc)
-Cando PRON  <══╗       case
-hai   VERB  ═╗═╝<══╗   nsubj
-fame  NOUN  <╝     ║   obj
-non   PART  <════╗ ║   advmod
-hai   VERB  ═══╗═╝═╝═╗ root
-pan   NOUN  ═╗<╝     ║ obj
-duro  ADJ   <╝       ║ obj
-.     PUNCT <════════╝ punct
-```
-
 ## con [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
