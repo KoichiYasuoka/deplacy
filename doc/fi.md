@@ -84,34 +84,6 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube):n kanssa
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("fi")
->>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
->>> import deplacy
->>> deplacy.render(doc)
-Nyt        ADV   <════════╗             advmod
-minä       PRON  <══════╗ ║             nsubj
-olen       AUX   <════╗ ║ ║             aux
-syönyt     VERB  ═══╗═╝═╝═╝═════════╗═╗ root
-ja         CCONJ <╗ ║               ║ ║ cc
-ajatellut  VERB  ═╝<╝               ║ ║ conj
-ja         CCONJ <════════════════╗ ║ ║ cc
-nyt        ADV   <══════════════╗ ║ ║ ║ advmod
-minusta    PRON  <════════════╗ ║ ║ ║ ║ obl
-alkaa      VERB  ═══════════╗═╝═╝═╝<╝ ║ conj
-tuntua     VERB  ═════════╗<╝         ║ xcomp
-,          PUNCT <══════╗ ║           ║ punct
-että       SCONJ <════╗ ║ ║           ║ mark
-asiat      NOUN  <══╗ ║ ║ ║           ║ nsubj
-rupeavat   VERB  ═╗═╝═╝═╝<╝           ║ ccomp
-selviämään VERB  <╝                   ║ xcomp
-.          PUNCT <════════════════════╝ punct
-```
-
 ## [spacy-fi](https://github.com/aajanki/spacy-fi):n kanssa
 
 ```py
