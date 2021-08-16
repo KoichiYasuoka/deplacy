@@ -129,28 +129,6 @@ amet    VERB  ═╝<══════════╝ ║ conj
 .       PUNCT <══════════════╝ punct
 ```
 
-## per [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("la")
->>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
->>> import deplacy
->>> deplacy.render(doc)
-Cras    NOUN  ═════════════╗<╗   obj
-amet    VERB  ═══════════════╝═╗ root
-qui     PRON  <════════╗   ║   ║ nsubj
-numquam ADV   <╗       ║   ║   ║ advmod:emph
-amavit  VERB  ═╝═════╗═╝═╗<╝   ║ acl
-,       PUNCT <════╗ ║   ║     ║ punct
-quique  PRON  <══╗ ║ ║   ║     ║ nsubj
-amavit  VERB     ║ ║<╝   ║     ║ conj
-cras    NOUN  <╗ ║ ║     ║     ║ obj
-amet    VERB  ═╝═╝═╝<════╝     ║ conj
-.       PUNCT <════════════════╝ punct
-```
-
 ## per [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
