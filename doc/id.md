@@ -51,24 +51,6 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
-## dengan [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("id")
->>> doc=nlp("Di atas langit masih ada langit.")
->>> import deplacy
->>> deplacy.render(doc)
-Di     ADP   <══╗     case
-atas   NOUN  ═╗═╝<╗   obl
-langit NOUN  <╝   ║   nmod
-masih  ADV   <══╗ ║   advmod
-ada    VERB  ═╗═╝═╝═╗ root
-langit NOUN  <╝     ║ obj
-.      PUNCT <══════╝ punct
-```
-
 ## dengan [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
