@@ -180,3 +180,22 @@ aus   ADP   <══╝     ║ svp
 .     PUNCT <════════╝ punct
 ```
 
+## mit [ParZu](https://github.com/rsennrich/ParZu)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse
+...   with urllib.request.urlopen("https://pub.cl.uzh.ch/demo/parzu/parse/?format=conll&text="+urllib.parse.quote(t)) as r:
+...     return r.read().decode("utf-8")
+...
+>>> doc=nlp("Er sieht sehr jung aus.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Er    PRO   <══════╗ subj
+sieht V     ═══╗═╗═╝ root
+sehr  ADV   <╗ ║ ║   adv
+jung  ADV   ═╝<╝ ║   pred
+aus   PTKVZ <════╝   avz
+.     $.             root
+```
+
