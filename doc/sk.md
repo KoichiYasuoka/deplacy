@@ -88,14 +88,14 @@ spadne  VERB  <════╝   ║ conj
 >>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Kto     PRON  <════════╗   nsubj
-druhému ADJ   <══╗     ║   amod
-jamu    DET   ═╗═╝<══╗ ║   obj
-kope    NOUN  <╝     ║ ║   nmod
-sám     DET   <════╗ ║ ║   obl
-do      ADP   <╗   ║ ║ ║   case
-nej     PRON  ═╝<╗ ║ ║ ║   obl
-spadne  VERB  ═══╝═╝═╝═╝═╗ root
+Kto     PRON  ═══╗<══╗     nsubj
+druhému ADJ   <╗ ║   ║     amod
+jamu    NOUN  ═╝<╝   ║     nmod
+kope    VERB  ═════╗═╝<╗   csubj
+sám     DET   ═══╗<╝   ║   obl
+do      ADP   <╗ ║     ║   case
+nej     PRON  ═╝<╝     ║   obl
+spadne  VERB  ═════════╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
