@@ -75,25 +75,6 @@ holnapra   ADV   <╝       ║ advmod:mode
 .          PUNCT <════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-vel
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("hu")
->>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
->>> import deplacy
->>> deplacy.render(doc)
-Amit       PRON  <══╗       obj
-ma         ADV   <╗ ║       advmod:tlocy
-megtehetsz VERB  ═╝═╝<╗     advcl
-,          PUNCT <════║═╗   punct
-ne         VERB  <══╗ ║ ║   advmod
-halaszd    NUM   ═╗═╝═╝═╝═╗ root
-holnapra   NOUN  <╝       ║ nmod:obl
-.          PUNCT <════════╝ punct
-```
-
 ## [hu_core_ud_lg](https://github.com/oroszgy/spacy-hungarian-models)-vel
 
 ```py
@@ -200,5 +181,24 @@ ne         ADV   <══╗ ║       ║ nsubj
 halaszd    ADJ   <╗ ║ ║       ║ amod:att
 holnapra   NOUN  ═╝═╝<╝       ║ ccomp:obj
 .          PUNCT <════════════╝ punct
+```
+
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube)-vel
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("hu")
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PROPN        root
+ma         ADV          root
+megtehetsz VERB  ═╗═══╗ root
+,          PUNCT <╝   ║ punct
+ne         ADV   <══╗ ║ advmod
+halaszd    VERB  ═╗═╝<╝ ccomp:pred
+holnapra   NOUN  <╝     advmod:tlocy
+.          PUNCT        root
 ```
 
