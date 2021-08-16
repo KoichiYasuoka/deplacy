@@ -136,26 +136,6 @@
 .      PUNCT <════════════╝ punct
 ```
 
-## с [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ru")
->>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> import deplacy
->>> deplacy.render(doc)
-Москва NOUN  <════════════╗ nsubj
-слезам NOUN  <══════════╗ ║ iobj
-не     PART  <╗         ║ ║ advmod
-верила VERB  ═╝═══════╗═╝═╝ root
-,      PUNCT <════╗   ║     punct
-а      CCONJ <══╗ ║   ║     cc
-верила VERB  ═╗═╝═╝═╗<╝     conj
-любви  NOUN  <╝     ║       obj
-.      PUNCT <══════╝       punct
-```
-
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
