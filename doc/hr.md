@@ -1,25 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) za sintaktičku analizu na hrvatskom jeziku
 
-## s [NLP-Cube](https://github.com/Adobe/NLP-Cube)-om
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("hr")
->>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
->>> import deplacy
->>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ root
-mi        PRON  <╝ ║     ║ ║ obj
-se        PRON  <══╝     ║ ║ expl:pv
-:         PUNCT <══════╗ ║ ║ punct
-ništa     PRON  <════╗ ║ ║ ║ nsubj
-nije      AUX   <══╗ ║ ║ ║ ║ cop
-teže      ADV   ═╗═╝═╝═╝<╝ ║ parataxis
-podnijeti VERB  <╝         ║ xcomp
-.         PUNCT <══════════╝ punct
-```
-
 ## s [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-om
 
 ```py
