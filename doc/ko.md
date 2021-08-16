@@ -99,23 +99,6 @@
 .        PUNCT <══════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube)로 분석
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ko")
->>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> import deplacy
->>> deplacy.render(doc)
-홍시     NOUN  ═╗<╗     nsubj
-맛이     NOUN  <╝ ║     flat
-나서     VERB  ═══╝<╗   advcl
-홍시라   NOUN  <╗   ║   advmod
-생각한다 VERB  ═╝═══╝═╗ root
-.        PUNCT <══════╝ punct
-```
-
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)로 분석
 
 ```py
