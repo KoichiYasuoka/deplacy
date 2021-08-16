@@ -25,32 +25,6 @@ gadi       NOUN  ═╝═══╝═╝═╝<╝       ║ acl
 .          PUNCT <══════════════════╝ punct
 ```
 
-## ar [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("lv")
->>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
->>> import deplacy
->>> deplacy.render(doc)
-Latvija    PROPN <══════════════════╗   nsubj
-vienu      NUM   ═══╗<════════════╗ ║   acl
-pēc        ADP   <╗ ║             ║ ║   case
-otras      NUM   ═╝<╝             ║ ║   nmod
-pārdzīvoja VERB  ═══════════════╗═╝═╝═╗ root
-trīs       NUM   <╗             ║     ║ nummod
-okupācijas NOUN  ═╝═══════════╗<╝     ║ obj
-,          PUNCT <══════════╗ ║       ║ punct
-kuru       DET   <════════╗ ║ ║       ║ det
-kopējais   ADJ   <══════╗ ║ ║ ║       ║ amod
-ilgums     NOUN  ═════╗═╝═╝═╝<╝       ║ acl
-,          PUNCT <══╗ ║               ║ punct
-piecdesmit NUM   <╗ ║ ║               ║ nummod
-gadi       NOUN  ═╝═╝<╝               ║ acl
-.          PUNCT <════════════════════╝ punct
-```
-
 ## ar [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py
