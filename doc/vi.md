@@ -87,25 +87,6 @@ chim    NOUN  ═╝═╝<╝   ║ obj
 .       PUNCT <════════╝ punct
 ```
 
-## với [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("vi")
->>> doc=nlp("Một mũi tên trúng hai con chim.")
->>> import deplacy
->>> deplacy.render(doc)
-Một   NUM   <══╗       nummod
-mũi   NOUN  ═╗═╝<╗     nsubj
-tên   NOUN  <╝   ║     compound
-trúng ADJ   ═════╝═╗<╗ cop
-hai   NUM   <══╗   ║ ║ nummod
-con   NOUN  ═╗═╝═════╝ root
-chim  NOUN  <╝     ║   amod
-.     PUNCT <══════╝   punct
-```
-
 ## với [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
