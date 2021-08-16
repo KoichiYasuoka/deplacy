@@ -162,3 +162,24 @@
 冠 NOUN <╝       obj
 ```
 
+## 於[NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("lzh")
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜 NOUN  <╗     nmod
+田 NOUN  ═╝<══╗ nsubj
+不 ADV   <══╗ ║ advmod
+納 VERB  ═╗═╝═╝ root
+履 NOUN  <╝     obj
+李 PROPN <╗     nsubj
+下 VERB  ═╝     root
+不 ADV   <╗     advmod
+正 VERB  ═╝     root
+冠 VERB         root
+```
+
