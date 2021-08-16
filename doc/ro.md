@@ -63,6 +63,27 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
+## cu [NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("ro")
+>>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Nu      PART  <══════════╗   advmod
+te      PRON  <════════╗ ║   expl:pv
+băga    VERB  ═══╗═══╗═╝═╝═╗ root
+in      ADP   <╗ ║   ║     ║ case
+tărâţe  NOUN  ═╝<╝   ║     ║ obl
+că      SCONJ <════╗ ║     ║ mark
+te      PRON  <══╗ ║ ║     ║ obj
+mănâncă VERB  ═╗═╝═╝<╝     ║ advcl
+porcii  NOUN  <╝           ║ nsubj
+.       PUNCT <════════════╝ punct
+```
+
 ## cu [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
 
 ```py
@@ -118,27 +139,6 @@ te      PRON  <════════╗ ║   obj
 băga    VERB  ═╗═╗═══╗═╝═╝═╗ root
 in      ADP   <╝ ║   ║     ║ fixed
 tărâţe  NOUN  <══╝   ║     ║ obl
-că      SCONJ <════╗ ║     ║ mark
-te      PRON  <══╗ ║ ║     ║ obj
-mănâncă VERB  ═╗═╝═╝<╝     ║ advcl
-porcii  NOUN  <╝           ║ nsubj
-.       PUNCT <════════════╝ punct
-```
-
-## cu [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("ro")
->>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
->>> import deplacy
->>> deplacy.render(doc)
-Nu      PART  <══════════╗   advmod
-te      PRON  <════════╗ ║   expl:pv
-băga    VERB  ═╗═╗═══╗═╝═╝═╗ root
-in      ADV   <╝ ║   ║     ║ advmod
-tărâţe  VERB  <══╝   ║     ║ fixed
 că      SCONJ <════╗ ║     ║ mark
 te      PRON  <══╗ ║ ║     ║ obj
 mănâncă VERB  ═╗═╝═╝<╝     ║ advcl
