@@ -36,25 +36,6 @@ zori      VERB  ═╝═╝═╝═╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
-## z [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("sl")
->>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
->>> import deplacy
->>> deplacy.render(doc)
-Po        ADP   <╗         case
-koroškem  ADJ   ═╝<════╗   obl
-po        ADP   <╗     ║   case
-kranjskem ADJ   ═╝<══╗ ║   obl
-že        PART  <══╗ ║ ║   advmod
-ajda      X     <╗ ║ ║ ║   nsubj
-zori      VERB  ═╝═╝═╝═╝═╗ root
-.         PUNCT <════════╝ punct
-```
-
 ## z [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

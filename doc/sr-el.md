@@ -120,30 +120,6 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
-## s [NLP-Cube](https://github.com/Adobe/NLP-Cube)-om
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("sr")
->>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
->>> import deplacy
->>> deplacy.render(doc)
-Da       SCONJ <══════╗       mark
-ima      VERB  ═════╗═╝<══╗   advcl
-sira     NOUN  ═══╗<╝     ║   obj
-i        CCONJ <╗ ║       ║   cc
-masla    NOUN  ═╝<╝       ║   conj
-i        CCONJ <════════╗ ║   cc
-moja     PRON  <╗       ║ ║   det
-bi       AUX    ║<════╗ ║ ║   aux
-mati     NOUN  ═╝<══╗ ║ ║ ║   nsubj
-znala    VERB  ═══╗═╝═╝═╝═╝═╗ root
-gibati   VERB  ═╗<╝         ║ xcomp
-gibanicu NOUN  <╝           ║ obj
-.        PUNCT <════════════╝ punct
-```
-
 ## s [Stanza](https://stanfordnlp.github.io/stanza)-om
 
 ```py

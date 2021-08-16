@@ -63,28 +63,6 @@ mej       PRON  ═╝<══╝       ║ obl
 .         PUNCT <════════════╝ punct
 ```
 
-## med [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("sv")
->>> doc=nlp("Du har förändrat dej och är så långt från mej.")
->>> import deplacy
->>> deplacy.render(doc)
-Du        PRON  <════╗         nsubj
-har       AUX   <══╗ ║         aux
-förändrat VERB  ═╗═╝═╝═════╗═╗ root
-dej       PRON  <╝         ║ ║ obj
-och       CCONJ <════════╗ ║ ║ cc
-är        AUX   <══════╗ ║ ║ ║ cop
-så        ADV   <════╗ ║ ║ ║ ║ advmod
-långt     ADJ   ═══╗═╝═╝═╝<╝ ║ conj
-från      ADP   <╗ ║         ║ case
-mej       PRON  ═╝<╝         ║ nmod
-.         PUNCT <════════════╝ punct
-```
-
 ## med [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
