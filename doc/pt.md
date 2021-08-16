@@ -72,25 +72,6 @@ medo NOUN  <╝       ║ obj
 .    PUNCT <════════╝ punct
 ```
 
-## com [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("pt")
->>> doc=nlp("Eu quis amar, mas tive medo.")
->>> import deplacy
->>> deplacy.render(doc)
-Eu   PRON  <══╗       nsubj
-quis VERB  ═╗═╝═══╗═╗ root
-amar VERB  <╝     ║ ║ xcomp
-,    PUNCT <════╗ ║ ║ punct
-mas  CCONJ <══╗ ║ ║ ║ cc
-tive VERB  ═╗═╝═╝<╝ ║ conj
-medo NOUN  <╝       ║ obj
-.    PUNCT <════════╝ punct
-```
-
 ## com [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py

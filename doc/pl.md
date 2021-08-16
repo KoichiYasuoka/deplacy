@@ -195,31 +195,6 @@ granic     NOUN  ═╝═╝<╝       ║ obl
 .          PUNCT <════════════╝ punct
 ```
 
-## z [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("pl")
->>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> import deplacy
->>> deplacy.render(doc)
-Wcale      ADV   <══════╗       advmod
-nie        PART  <════╗ ║       advmod
-chcemy     VERB  ═══╗═╝═╝═══╗═╗ root
-zdobywać   VERB  ═╗<╝       ║ ║ xcomp
-kosmosu    NOUN  <╝         ║ ║ obj
-,          PUNCT <════════╗ ║ ║ punct
-chcemy     VERB  ═╗═════╗═╝<╝ ║ conj
-tylko      PART  <╝     ║     ║ advmod
-rozszerzyć VERB  ═╗═══╗<╝     ║ xcomp
-Ziemię     NOUN  <╝   ║       ║ obj
-do         ADP   <══╗ ║       ║ case
-jego       PRON  <╗ ║ ║       ║ nmod:poss
-granic     NOUN  ═╝═╝<╝       ║ obl
-.          PUNCT <════════════╝ punct
-```
-
 ## z [spaCy-COMBO](http://github.com/KoichiYasuoka/spaCy-COMBO)
 
 ```py
