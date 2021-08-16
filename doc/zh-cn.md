@@ -60,6 +60,27 @@
 。   PUNCT <════════╝ punct
 ```
 
+## 用[NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("zh")
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 ADP   <══╗         case
+黑猫 NOUN  <╗ ║         nmod
+白猫 NOUN  ═╝═╝<══╗     nmod
+，   PUNCT <══════║═╗   punct
+捉到 VERB  ═╗<══╗ ║ ║   csubj
+老鼠 NOUN  <╝   ║ ║ ║   obj
+就   ADV   <══╗ ║ ║ ║   mark
+是   AUX   <╗ ║ ║ ║ ║   cop
+好猫 NOUN  ═╝═╝═╝═╝═╝═╗ root
+。   PUNCT <══════════╝ punct
+```
+
 ## 用[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
