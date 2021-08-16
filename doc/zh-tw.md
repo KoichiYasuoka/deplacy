@@ -93,6 +93,38 @@
 。   PUNCT <════════════════╝ punct
 ```
 
+## 用[NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("zh")
+>>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
+>>> import deplacy
+>>> deplacy.render(doc)
+希望 NOUN  <════════════╗           nsubj
+是   VERB  ═══════╗<══╗ ║           acl
+附麗 VERB  ═╗═╗═╗<╝   ║ ║           xcomp
+於   VERB  <╝ ║ ║     ║ ║           mark
+存在 VERB  <══╝ ║     ║ ║           xcomp
+的   PART  <════╝     ║ ║           discourse
+，   PUNCT            ║ ║<══════╗   punct
+有   VERB  ═╗<══════╗ ║ ║       ║   acl
+存在 VERB  <╝       ║ ║ ║       ║   xcomp
+，   PUNCT          ║ ║ ║<════╗ ║   punct
+便   ADV   <══╗     ║ ║ ║     ║ ║   mark
+有   VERB  ═╗═╝<══╗ ║ ║ ║     ║ ║   acl
+希望 NOUN  <╝     ║ ║ ║ ║     ║ ║   obj
+，   PUNCT        ║ ║ ║ ║<══╗ ║ ║   punct
+有   VERB  ═╗<══╗ ║ ║ ║ ║   ║ ║ ║   acl
+希望 NOUN  <╝   ║ ║ ║ ║ ║   ║ ║ ║   obj
+，   PUNCT      ║ ║ ║ ║ ║<╗ ║ ║ ║   punct
+便   ADV   <══╗ ║ ║ ║ ║ ║ ║ ║ ║ ║   mark
+是   AUX   <╗ ║ ║ ║ ║ ║ ║ ║ ║ ║ ║   cop
+光明 NOUN  ═╝═╝═╝═╝═╝═╝═╝═╝═╝═╝═╝═╗ root
+。   PUNCT <══════════════════════╝ punct
+```
+
 ## 用[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
