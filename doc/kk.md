@@ -31,18 +31,17 @@
 >>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Тәннен  PRON  <══╗         nsubj
-жан     NOUN  <╗ ║         advcl
-артық   AUX   ═╝═╝═╗═╗═══╗ root
-еді     AUX   <════╝ ║   ║ punct
-,       PUNCT <══════╝   ║ punct
-тәнді   NOUN  <╗         ║ nmod:poss
-жанға   NOUN  ═╝<╗       ║ nsubj
-бас     VERB  ═══╝<╗     ║ nsubj
-ұрғызса NOUN  ═════╝<╗   ║ advcl
-керек   VERB  ═╗═════╝═╗<╝ parataxis
-еді     AUX   <╝       ║   cop
-.       PUNCT <════════╝   punct
+жөннен  NOUN  ═╗<╗       obl
+ғана    ADV   <╝ ║       advmod
+артық   ADJ   ═╗═╝═════╗ root
+еді     AUX   <╝       ║ cop
+,       PUNCT <══════╗ ║ punct
+тәнді   ADJ   <╗     ║ ║ amod
+жанға   NOUN  ═╝<╗   ║ ║ obl
+бас     NOUN  <╗ ║   ║ ║ obj
+ұрғызса VERB  ═╝═╝<╗ ║ ║ csubj
+керек   ADJ   ═╗═══╝═╝<╝ conj
+еді.    AUX   <╝         cop
 ```
 
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) арқылы талдау
