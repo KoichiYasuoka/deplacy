@@ -16,23 +16,6 @@ gelir   VERB  ═══╝═╝═╗ root
 .       PUNCT <══════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube) ile analiz
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("tr")
->>> doc=nlp("İyi insan sözünün üstüne gelir.")
->>> import deplacy
->>> deplacy.render(doc)
-İyi     ADJ   <╗       amod
-insan   NOUN  ═╝<══╗   nsubj
-sözünün NOUN  <╗   ║   nmod:poss
-üstüne  ADJ   ═╝<╗ ║   amod
-gelir   VERB  ═══╝═╝═╗ root
-.       PUNCT <══════╝ punct
-```
-
 ## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) ile analiz
 
 ```py
