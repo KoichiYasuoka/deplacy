@@ -66,28 +66,6 @@
 .       PUNCT <══════════════════╝ punct
 ```
 
-## [NLP-Cube](https://github.com/Adobe/NLP-Cube) арқылы талдау
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("kk")
->>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
->>> import deplacy
->>> deplacy.render(doc)
-жөннен  NOUN  ═╗<╗       obl
-ғана    ADV   <╝ ║       advmod
-артық   ADJ   ═╗═╝═════╗ root
-еді     AUX   <╝       ║ cop
-,       PUNCT <══════╗ ║ punct
-тәнді   ADJ   <╗     ║ ║ amod
-жанға   NOUN  ═╝<╗   ║ ║ obl
-бас     NOUN  <╗ ║   ║ ║ obj
-ұрғызса VERB  ═╝═╝<╗ ║ ║ csubj
-керек   ADJ   ═╗═══╝═╝<╝ conj
-еді.    AUX   <╝         cop
-```
-
 ## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) арқылы талдау
 
 ```py
@@ -107,6 +85,26 @@
 керек     ADJ   ═╗═╝═╝═╗═╝<╝ conj
 еді       AUX   <╝     ║     cop
 .         PUNCT <══════╝     punct
+```
+
+## [NLP-Cube](https://github.com/Adobe/NLP-Cube) арқылы талдау
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("kk")
+>>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Тәннен           NOUN  <════╗     obl
+жан              NOUN  <══╗ ║     nsubj
+артық            ADJ   ═╗═╝═╝═╗═╗ root
+еді              AUX   <╝     ║ ║ cop
+,                PUNCT <══════╝ ║ punct
+тәнді            ADJ   <════╗   ║ obj
+жанға            NOUN  <══╗ ║   ║ obl
+бас              NOUN  <╗ ║ ║   ║ obj
+ұрғызсакерекеді. VERB  ═╝═╝═╝<══╝ conj
 ```
 
 ## [kazdet](https://github.com/nlacslab/kazdet) арқылы талдау

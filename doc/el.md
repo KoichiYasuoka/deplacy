@@ -75,6 +75,25 @@
 .         PUNCT <════════╝ punct
 ```
 
+## με [NLP-Cube](https://github.com/Adobe/NLP-Cube)
+
+```py
+>>> from cube.api import Cube
+>>> nlp=Cube()
+>>> nlp.load("el")
+>>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Δεν       PART  <══════╗   advmod
+υπάρχει   VERB  ═══╗═╗═╝═╗ root
+βασιλικός ADJ   <╗ ║ ║   ║ amod
+δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
+σ         ADP   <══╗ ║   ║ case
+το        DET   <╗ ║ ║   ║ det
+γεωμετρία NOUN  ═╝═╝<╝   ║ obl
+.         PUNCT <════════╝ punct
+```
+
 ## με [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
 
 ```py
@@ -176,26 +195,6 @@
 στη       ADJ   <╗ ║       ║ amod
 γεωμετρία NOUN  ═╝<╝       ║ nmod
 .         PUNCT <══════════╝ punct
-```
-
-## με [NLP-Cube](https://github.com/Adobe/NLP-Cube)
-
-```py
->>> from cube.api import Cube
->>> nlp=Cube()
->>> nlp.load("el")
->>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
->>> import deplacy
->>> deplacy.render(doc)
-σ         ADP   <╗         case
-το        DET   ═╝<════╗   expl
-υπάρχει   VERB  ═══╗═╗═╝═╗ root
-βασιλικός ADJ   <╗ ║ ║   ║ amod
-δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
-σ         ADP   <══╗ ║   ║ case
-το        DET   <╗ ║ ║   ║ det
-γεωμετρία NOUN  ═╝═╝<╝   ║ obl
-.         PUNCT <════════╝ punct
 ```
 
 ## με [gr-nlp-toolkit](https://github.com/nlpaueb/gr-nlp-toolkit)
