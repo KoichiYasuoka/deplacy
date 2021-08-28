@@ -103,9 +103,9 @@
 を       ADP   <╝     ║     case(格表示)
 抜ける   VERB  ═╗═════╝<╗   acl(連体修飾節)
 と       SCONJ <╝       ║   mark(標識)
-雪国     NOUN  ═╗═╗═╗═══╝═╗ ROOT(親)
-で       AUX   <╝ ║ ║     ║ cop(繫辞)
-あっ     AUX   <══╝ ║     ║ aux(動詞補助成分)
+雪国     NOUN  ═══╗═╗═══╝═╗ ROOT(親)
+で       AUX   ═╗<╝ ║     ║ cop(繫辞)
+あっ     VERB  <╝   ║     ║ fixed(固着)
 た       AUX   <════╝     ║ aux(動詞補助成分)
 。       PUNCT <══════════╝ punct(句読点)
 ```
