@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) za sklandenjsko analizo
 
-## z [CLASSLA](https://github.com/clarinsi/classla-stanfordnlp)
+## z [CLASSLA](https://github.com/clarinsi/classla)
 
 ```py
 >>> import classla

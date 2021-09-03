@@ -51,7 +51,7 @@
 .      PUNCT <══════╝ punct
 ```
 
-## с [CLASSLA](https://github.com/clarinsi/classla-stanfordnlp)
+## с [CLASSLA](https://github.com/clarinsi/classla)
 
 ```py
 >>> import classla

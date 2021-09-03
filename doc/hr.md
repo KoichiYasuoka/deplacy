@@ -117,7 +117,7 @@ podnijeti VERB  <╝         ║ nsubj
 .         PUNCT <══════════╝ punct
 ```
 
-## s [CLASSLA](https://github.com/clarinsi/classla-stanfordnlp)-om
+## s [CLASSLA](https://github.com/clarinsi/classla)-om
 
 ```py
 >>> import classla
