@@ -114,19 +114,3 @@
 :     PUNCT <══════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-ի հետ
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_hy_armtdp/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Չկա չարիք առանց բարիք:")
->>> import deplacy
->>> deplacy.render(doc)
-Չկա   ADJ   <╗     nmod:poss
-չարիք NOUN  ═╝═╗<╗ obl
-առանց ADJ   <╗ ║ ║ det:poss
-բարիք NOUN  ═╝═══╝ root
-:     PUNCT <══╝   punct
-```
-
-

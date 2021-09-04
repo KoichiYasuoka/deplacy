@@ -54,24 +54,6 @@ da        AUX   <╝       ║ cop
 .         PUNCT <════════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-rekin
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_eu_bdt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
->>> import deplacy
->>> deplacy.render(doc)
-Euskaldun ADJ   ═╗<══════╗   csubj
-izatea    AUX   <╝       ║   cop
-lan       NOUN  ═══╗═╗═╗═╝═╗ root
-extra     NOUN  ═╗<╝ ║ ║   ║ nmod
-bat       NUM   <╝   ║ ║   ║ nummod
-izatea    AUX   <════╝ ║   ║ cop
-da        AUX   <══════╝   ║ cop
-.         PUNCT <══════════╝ punct
-```
-
 ## [Stanza](https://stanfordnlp.github.io/stanza)-rekin
 
 ```py

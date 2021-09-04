@@ -94,24 +94,6 @@
 .         PUNCT <════════╝ punct
 ```
 
-## με [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_el_gdt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
->>> import deplacy
->>> deplacy.render(doc)
-Δεν       PART  <══════╗   advmod
-υπάρχει   VERB  ═══╗═╗═╝═╗ root
-βασιλικός ADJ   <╗ ║ ║   ║ amod
-δρόμος    NOUN  ═╝<╝ ║   ║ nsubj
-σ         ADP   <══╗ ║   ║ case
-τη        DET   <╗ ║ ║   ║ det
-γεωμετρία NOUN  ═╝═╝<╝   ║ obl
-.         PUNCT <════════╝ punct
-```
-
 ## με [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

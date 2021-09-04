@@ -69,28 +69,6 @@ acl:relcl ║       ╚>╚═╚═════╔═ VERB  चाहते
     punct ╚══════════════════> PUNCT ।
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) पर विश्लेषण
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_hi_hdtb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-    nsubj   ╔════════════════> PRON  खुद
-      det   ║   ╔════════════> DET   वो
-    nsubj   ║ ╔>╚═╔═══════════ NOUN  बदलाव
-     root ╔═╚═╚═══════════════ VERB  बनिए
-      obj ║       ║     ╔════> PRON  जो
-    nsubj ║       ║ ╔═══║════> PRON  आप
-      obl ║       ║ ║   ║ ╔>╔═ NOUN  दुनिया
-     case ║       ║ ║   ║ ║ ╚> ADP   में
-      obj ║       ║ ║ ╔>╚═╚═══ VERB  देखना
-acl:relcl ║       ╚>╚═╚═════╔═ VERB  चाहते
-      aux ║                 ╚> AUX   हैं
-    punct ╚══════════════════> PUNCT ।
-```
-
 ## [Stanza](https://stanfordnlp.github.io/stanza) पर विश्लेषण
 
 ```py

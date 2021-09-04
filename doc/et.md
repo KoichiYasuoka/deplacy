@@ -64,27 +64,6 @@ pesagi NOUN  ═╝<╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-ga
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_et_edt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Suuga teeb suure linna, käega ei tee kärbse pesagi.")
->>> import deplacy
->>> deplacy.render(doc)
-Suuga  NOUN  <════╗         obl
-teeb   VERB  ═══╗═╝═════╗═╗ root
-suure  ADJ   <╗ ║       ║ ║ amod
-linna  NOUN  ═╝<╝       ║ ║ obj
-,      PUNCT <════════╗ ║ ║ punct
-käega  NOUN  <══════╗ ║ ║ ║ obl
-ei     AUX   <════╗ ║ ║ ║ ║ aux
-tee    VERB  ═══╗═╝═╝═╝<╝ ║ conj
-kärbse NOUN  <╗ ║         ║ nmod
-pesagi NOUN  ═╝<╝         ║ obj
-.      PUNCT <════════════╝ punct
-```
-
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-ga
 
 ```py

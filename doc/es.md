@@ -170,21 +170,3 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
-## con [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_es_ancora/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("La pluma es la lengua del alma.")
->>> import deplacy
->>> deplacy.render(doc)
-La     DET   <╗           det
-pluma  NOUN  ═╝<══════╗   nsubj
-es     AUX   <══════╗ ║   cop
-la     DET   <════╗ ║ ║   det
-lengua NOUN  ═══╗═╝═╝═╝═╗ root
-del    ADP   <╗ ║       ║ case
-alma   NOUN  ═╝<╝       ║ nmod
-.      PUNCT <══════════╝ punct
-```
-

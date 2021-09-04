@@ -123,26 +123,6 @@
 .           PUNCT <══════════╝ punct
 ```
 
-## δῐᾰ́́ [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_grc_perseus/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Γνώσεσθε τὴν ἀλήθειαν, καὶ ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς.")
->>> import deplacy
->>> deplacy.render(doc)
-Γνώσεσθε    VERB  ═══╗═╗═╗═╗═╗ root
-τὴν         DET   <╗ ║ ║ ║ ║ ║ det
-ἀλήθειαν    NOUN  ═╝<╝ ║ ║ ║ ║ obj
-,           PUNCT <════╝ ║ ║ ║ punct
-καὶ         CCONJ <══════╝ ║ ║ cc
-ἡ           DET   <╗       ║ ║ det
-ἀλήθεια     NOUN  ═╝<╗     ║ ║ nsubj
-ἐλευθερώσει VERB  ═╗═╝<════╝ ║ conj
-ὑμᾶς        PRON  <╝         ║ obj
-.           PUNCT <══════════╝ punct
-```
-
 ## δῐᾰ́́ [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

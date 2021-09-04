@@ -129,27 +129,6 @@ amet    VERB  ═╝<══════════╝ ║ conj
 .       PUNCT <══════════════╝ punct
 ```
 
-## per [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_la_ittb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
->>> import deplacy
->>> deplacy.render(doc)
-Cras    NOUN  <════════════╗   obj
-amet    VERB  ═══════════╗═╝═╗ root
-qui     PRON  <══════╗   ║   ║ nsubj
-numquam PRON  <╗     ║   ║   ║ advmod
-amavit  VERB  ═╝═══╗═╝═╗<╝   ║ ccomp
-,       PUNCT <══╗ ║   ║     ║ punct
-quique  PRON  <╗ ║ ║   ║     ║ obj
-amavit  VERB  ═╝═╝<╝   ║     ║ conj
-cras    NOUN  <╗       ║     ║ obj
-amet    VERB  ═╝<══════╝     ║ conj
-.       PUNCT <══════════════╝ punct
-```
-
 ## per [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

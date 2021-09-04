@@ -171,24 +171,3 @@ mej       NOUN  ═══════╝═╝<╝ ║ conj
 .         PUNCT <════════════╝ punct
 ```
 
-## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_sv_talbanken/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Du har förändrat dej och är så långt från mej.")
->>> import deplacy
->>> deplacy.render(doc)
-Du        PRON  <════╗       nsubj
-har       AUX   <══╗ ║       aux
-förändrat VERB  ═╗═╝═╝═══╗═╗ root
-dej       NOUN  <╝       ║ ║ obj
-och       CCONJ <════╗   ║ ║ cc
-är        AUX   <══╗ ║   ║ ║ cop
-så        ADV   <╗ ║ ║   ║ ║ advmod
-långt     ADV   ═╝═╝═╝<╗ ║ ║ advmod
-från      ADP   ═╗═════╝<╝ ║ conj
-mej       NOUN  <╝         ║ fixed
-.         PUNCT <══════════╝ punct
-```
-

@@ -137,25 +137,6 @@ spadne  VERB  ═══╝═══╝═╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
-## s [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_sk_snk/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
->>> import deplacy
->>> deplacy.render(doc)
-Kto     PRON  <════════╗   nsubj
-druhému ADJ   <══╗     ║   amod
-jamu    NOUN  ═╗═╝<══╗ ║   obl
-kope    NOUN   ║<══╗ ║ ║   obl
-sám     DET   <╝   ║ ║ ║   xcomp
-do      ADP   <╗   ║ ║ ║   case
-nej     PRON  ═╝<╗ ║ ║ ║   obl
-spadne  VERB  ═══╝═╝═╝═╝═╗ root
-.       PUNCT <══════════╝ punct
-```
-
 ## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

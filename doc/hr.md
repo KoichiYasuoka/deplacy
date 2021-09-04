@@ -22,25 +22,6 @@ podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
-## s [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)-om
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_hr_set/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
->>> import deplacy
->>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ root
-mi        PRON  <╝ ║     ║ ║ obj
-se        PRON  <══╝     ║ ║ expl:pv
-:         PUNCT <══════╗ ║ ║ punct
-ništa     PRON  <════╗ ║ ║ ║ nsubj
-nije      AUX   <══╗ ║ ║ ║ ║ cop
-teže      ADV   ═╗═╝═╝═╝<╝ ║ parataxis
-podnijeti VERB  <╝         ║ xcomp
-.         PUNCT <══════════╝ punct
-```
-
 ## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-om
 
 ```py

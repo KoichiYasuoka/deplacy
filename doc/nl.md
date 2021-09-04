@@ -195,38 +195,6 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 .          PUNCT <══════════════════════════╝ punct
 ```
 
-## met [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_nl_alpino/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
->>> import deplacy
->>> deplacy.render(doc)
-Toch       ADV   <════════════════════════╗   advmod
-houd       VERB  ═╗═╗═╗═╗═══════════════╗═╝═╗ root
-ik         PRON   ║<╝ ║ ║               ║   ║ nsubj
-ze         PRON   ║<══╝ ║               ║   ║ obj
-vast       ADJ   <╝     ║               ║   ║ compound:prt
-,          PUNCT <══╗   ║               ║   ║ punct
-ondanks    ADP   <╗ ║   ║               ║   ║ case
-alles      PRON  ═╝═╝<══╝               ║   ║ obl
-,          PUNCT <════════════════════╗ ║   ║ punct
-omdat      SCONJ <══════════════════╗ ║ ║   ║ mark
-ik         PRON  <════════════════╗ ║ ║ ║   ║ nsubj
-nog        ADV   <╗               ║ ║ ║ ║   ║ advmod
-steeds     ADV   ═╝<════════════╗ ║ ║ ║ ║   ║ advmod
-aan        ADP   <══════════╗   ║ ║ ║ ║ ║   ║ case
-de         DET   <════════╗ ║   ║ ║ ║ ║ ║   ║ det
-innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║ ║   ║ amod
-goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║ ║   ║ obl
-van        ADP   <══╗ ║       ║ ║ ║ ║ ║ ║   ║ case
-den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║   ║ det
-mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
-geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝   ║ advcl
-.          PUNCT <══════════════════════════╝ punct
-```
-
 ## met [spaCy](https://spacy.io/)
 
 ```py

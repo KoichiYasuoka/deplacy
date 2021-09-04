@@ -166,26 +166,6 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
-## cu [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ro_rrt/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
->>> import deplacy
->>> deplacy.render(doc)
-Nu      PART  <══════════╗   advmod
-te      PRON  <════════╗ ║   expl:pv
-băga    VERB  ═╗═╗═══╗═╝═╝═╗ root
-in      ADP   <╝ ║   ║     ║ fixed
-tărâţe  NOUN  <══╝   ║     ║ fixed
-că      SCONJ <════╗ ║     ║ mark
-te      PRON  <══╗ ║ ║     ║ obj
-mănâncă VERB  ═╗═╝═╝<╝     ║ ccomp:pmod
-porcii  NOUN  <╝           ║ nsubj
-.       PUNCT <════════════╝ punct
-```
-
 ## cu [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

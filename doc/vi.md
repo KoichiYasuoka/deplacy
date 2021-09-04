@@ -35,24 +35,6 @@ chim  NOUN  <╝       ║ compound
 .     PUNCT <════════╝ punct
 ```
 
-## với [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_vi_vtb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Một mũi tên trúng hai con chim.")
->>> import deplacy
->>> deplacy.render(doc)
-Một   NUM   <══╗       nummod
-mũi   NOUN  ═╗═╝<══╗   nsubj
-tên   NOUN  <╝     ║   compound
-trúng VERB  ═════╗═╝═╗ root
-hai   NUM   <╗   ║   ║ nummod
-con   NOUN  ═╝<╗ ║   ║ compound
-chim  NOUN  ═══╝<╝   ║ obj
-.     PUNCT <════════╝ punct
-```
-
 ## với [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

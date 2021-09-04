@@ -174,22 +174,3 @@ importància NOUN  ═╝<══╝   ║ obj
 .           PUNCT <════════╝ punct
 ```
 
-## amb [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ca_ancora/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("El tennis té avui a Catalunya molta importància.")
->>> import deplacy
->>> deplacy.render(doc)
-El          DET   <╗         det
-tennis      NOUN  ═╝<════╗   nsubj
-té          VERB  ═╗═╗═╗═╝═╗ root
-avui        ADV   <╝ ║ ║   ║ advmod
-a           ADP   <╗ ║ ║   ║ case
-Catalunya   PROPN ═╝<╝ ║   ║ obl
-molta       DET   <╗   ║   ║ det
-importància NOUN  ═╝<══╝   ║ obj
-.           PUNCT <════════╝ punct
-```
-

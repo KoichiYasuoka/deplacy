@@ -115,22 +115,6 @@
 .      PUNCT <══════╝ punct
 ```
 
-## с [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_bg_btb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Гладна мечка хоро не играе.")
->>> import deplacy
->>> deplacy.render(doc)
-Гладна ADJ   <══╗     amod
-мечка  NOUN  ═╗═╝<╗   nsubj
-хоро   NOUN  <╝   ║   nmod
-не     PART  <╗   ║   advmod
-играе  VERB  ═╝═══╝═╗ root
-.      PUNCT <══════╝ punct
-```
-
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

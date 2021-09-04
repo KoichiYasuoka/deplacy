@@ -128,31 +128,6 @@ gadi       NOUN  ═╝═╝<╝               ║ acl
 .          PUNCT <════════════════════╝ punct
 ```
 
-## ar [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_lv_lvtb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
->>> import deplacy
->>> deplacy.render(doc)
-Latvija    PROPN <══════════════════╗   nsubj
-vienu      NUM   ═══╗<════════════╗ ║   obj
-pēc        ADP   <╗ ║             ║ ║   case
-otras      NUM   ═╝<╝             ║ ║   nmod
-pārdzīvoja VERB  ═══════════════╗═╝═╝═╗ root
-trīs       NUM   <╗             ║     ║ nummod
-okupācijas NOUN  ═╝═══════════╗<╝     ║ nsubj
-,          PUNCT <══════════╗ ║       ║ punct
-kuru       DET   <════════╗ ║ ║       ║ det
-kopējais   ADJ   <══════╗ ║ ║ ║       ║ amod
-ilgums     NOUN  ═════╗═╝═╝═╝<╝       ║ acl
-,          PUNCT <══╗ ║               ║ punct
-piecdesmit NUM   <╗ ║ ║               ║ nummod
-gadi       NOUN  ═╝═╝<╝               ║ acl
-.          PUNCT <════════════════════╝ punct
-```
-
 ## ar [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

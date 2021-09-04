@@ -66,27 +66,6 @@
 .       PUNCT <══════════════════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/) арқылы талдау
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_kk_ktb/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Тәннен жан артық еді, тәнді жанға бас ұрғызса керек еді.")
->>> import deplacy
->>> deplacy.render(doc)
-Тәннен    NOUN  <════════╗   obl
-жан       NOUN  <╗       ║   obl
-артық еді VERB  ═╝═╗═════║═╗ root
-,         PUNCT <══╝     ║ ║ punct
-тәнді     NOUN  <╗       ║ ║ nmod:poss
-жанға     NOUN  ═╝<══╗   ║ ║ obl
-бас       ADJ   <╗   ║   ║ ║ det
-ұрғызса   NOUN  ═╝<╗ ║   ║ ║ cop
-керек     ADJ   ═╗═╝═╝═╗═╝<╝ conj
-еді       AUX   <╝     ║     cop
-.         PUNCT <══════╝     punct
-```
-
 ## [NLP-Cube](https://github.com/Adobe/NLP-Cube) арқылы талдау
 
 ```py

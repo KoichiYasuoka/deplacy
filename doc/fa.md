@@ -42,27 +42,6 @@ nmod:poss ╚>╔═╚═╔═════╔═ NOUN  هنر
     punct   ╚══════════> PUNCT .
 ```
 
-<h2 dir="rtl"> با <a href="https://turkunlp.org/Turku-neural-parser-pipeline/">Turku-neural-parser-pipeline</a></h2>
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_fa_seraji/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     case         ╔══> ADP   به
-      obl       ╔>╚═╔═ NOUN  اعتقاد
-nmod:poss       ║   ╚> PRON  من
-    nsubj       ║ ╔>╔═ NOUN  موسيقي
-nmod:poss       ║ ║ ╚> NOUN  هنر
-    advcl     ╔>╚═╚═══ VERB  نيست
-    punct   ╔═║══════> PUNCT ،
-     root ╔═╚═╚═══╔═╔═ NOUN  بلكه
-nmod:poss ║       ║ ╚> NOUN  متافيزيك
-      cop ║       ╚══> AUX   است
-    punct ╚══════════> PUNCT .
-```
-
 <h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-jPTDP">spaCy-jPTDP</a></h2>
 
 ```py

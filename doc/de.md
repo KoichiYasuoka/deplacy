@@ -83,22 +83,6 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
-## mit [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_de_gsd/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Er sieht sehr jung aus.")
->>> import deplacy
->>> deplacy.render(doc)
-Er    PRON  <══════╗   nsubj
-sieht VERB  ═══╗═╗═╝═╗ root
-sehr  ADV   <╗ ║ ║   ║ advmod
-jung  ADJ   ═╝ ║<╝   ║ xcomp
-aus   ADP   <══╝     ║ compound:prt
-.     PUNCT <════════╝ punct
-```
-
 ## mit [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py

@@ -93,24 +93,6 @@
 .        PUNCT <════════════╝ punct
 ```
 
-## з [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_uk_iu/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Біжать алеї звуків, саджених у гами.")
->>> import deplacy
->>> deplacy.render(doc)
-Біжать   VERB  ═══════════╗═╗ root
-алеї     NOUN  ═════════╗<╝ ║ nsubj
-звуків   NOUN  ═══════╗<╝   ║ nmod
-,        PUNCT <════╗ ║     ║ punct
-саджених ADJ   ═══╗═╝<╝     ║ amod
-у        ADP   <╗ ║         ║ case
-гами     NOUN  ═╝<╝         ║ obl
-.        PUNCT <════════════╝ punct
-```
-
 ## з [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

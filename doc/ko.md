@@ -67,22 +67,6 @@
 .        PUNCT <══════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)로 분석
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_ko_gsd/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> import deplacy
->>> deplacy.render(doc)
-홍시     NOUN  ═╗<╗     nsubj
-맛이     NOUN  <╝ ║     flat
-나서     VERB  ═══╝<╗   advcl
-홍시라   VERB  <╗   ║   ccomp
-생각한다 VERB  ═╝═══╝═╗ root
-.        PUNCT <══════╝ punct
-```
-
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)로 분석
 
 ```py

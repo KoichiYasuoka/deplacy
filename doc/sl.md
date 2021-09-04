@@ -18,24 +18,6 @@ zori      VERB  ═╝═╝═╝═╝═╗ root
 .         PUNCT <════════╝ punct
 ```
 
-## z [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_sl_ssj/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Po koroškem po kranjskem že ajda zori.")
->>> import deplacy
->>> deplacy.render(doc)
-Po        ADP   <╗         case
-koroškem  PROPN ═╝<════╗   obl
-po        ADP   <╗     ║   case
-kranjskem PROPN ═╝<══╗ ║   obl
-že        PART  <══╗ ║ ║   advmod
-ajda      PROPN <╗ ║ ║ ║   nsubj
-zori      VERB  ═╝═╝═╝═╝═╗ root
-.         PUNCT <════════╝ punct
-```
-
 ## z [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

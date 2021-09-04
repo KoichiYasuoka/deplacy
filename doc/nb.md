@@ -103,26 +103,6 @@ spor      NOUN  ═══╝═╝<╝     ║ xcomp
 .         PUNCT <════════════╝ punct
 ```
 
-## med [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/)
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"full_pipeline_stream.py","--gpu","-1","--conf","models_no_bokmaal/pipelines.yaml"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
->>> import deplacy
->>> deplacy.render(doc)
-Ikke      PART  <╗           advmod
-tusen     NUM   ═╝<╗         nummod
-ord       NOUN  ═══╝═╗<══╗   nsubj
-seg       PRON  <════╝   ║   nmod
-prenter   VERB  ═══════╗═╝═╗ root
-som       SCONJ <════╗ ║   ║ mark
-én        NUM   <╗   ║ ║   ║ nummod
-gjernings NOUN  ═╝<╗ ║ ║   ║ nmod
-spor      NOUN  ═══╝═╝<╝   ║ xcomp
-.         PUNCT <══════════╝ punct
-```
-
 ## med [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py
