@@ -93,24 +93,3 @@
 :     PUNCT <════╝ punct
 ```
 
-## [YerevaNN](https://github.com/Armtreebank/End-to-end-Parser)-ի հետ
-
-```py
->>> def nlp(t):
-...   import sys,subprocess,tempfile
-...   with tempfile.NamedTemporaryFile("r",encoding="utf-8") as f:
-...     with tempfile.NamedTemporaryFile("w",encoding="utf-8") as g:
-...       print(t,file=g,flush=True)
-...       subprocess.check_output([sys.executable,"End-to-end-Parser/predict.py","--model_path","End-to-end-Parser/model.pkl","--input_path",g.name,"--output_path",f.name])
-...     return f.read()
-...
->>> doc=nlp("Չկա չարիք առանց բարիք:")
->>> import deplacy
->>> deplacy.render(doc)
-Չկա   NOUN  <══╗     nmod
-չարիք NOUN  ═╗═╝<╗   obl
-առանց ADP   <╝   ║   case
-բարիք NOUN  ═════╝═╗ root
-:     PUNCT <══════╝ punct
-```
-
