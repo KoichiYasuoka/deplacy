@@ -311,7 +311,7 @@
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
-## [Camphr-KNP](https://camphr.readthedocs.io/en/latest/notes/knp.html)で解析
+## [Camphr-KNP](https://github.com/PKSHATechnology-Research/camphr/tree/master/packages/camphr_knp)で解析
 
 ```py
 >>> import camphr
