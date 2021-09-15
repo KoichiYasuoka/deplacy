@@ -204,26 +204,3 @@ name      NOUN  ═╝<╝             ║ dobj
 .         PUNCT <════════════════╝ punct
 ```
 
-## Usage with [AllenNLP](https://demo.allennlp.org/dependency-parsing/)
-
-```py
->>> from allennlp.predictors.predictor import Predictor
->>> predictor=Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/biaffine-dependency-parser-ptb-2020.04.01.tar.gz")
->>> def nlp(t):
-...   s=predictor.predict(t)
-...   return "\n".join(["\t".join([str(i+1),w,"_",p,p,"_",str(h),d,"_","_"]) for i,(w,p,h,d) in enumerate(zip(s["words"],s["pos"],s["predicted_heads"],s["predicted_dependencies"]))])+"\n\n"
->>> doc=nlp("I saw a horse yesterday which had no name.")
->>> import deplacy
->>> deplacy.render(doc)
-I         PRON  <════════╗   nsubj
-saw       VERB  ═════╗═╗═╝═╗ root
-a         DET   <╗   ║ ║   ║ det
-horse     NOUN  ═╝<╗ ║ ║   ║ nsubj
-yesterday NOUN  <══║═╝ ║   ║ tmod
-which     DET   ═══╝<╗ ║   ║ aux
-had       AUX   ═══╗═╝<╝   ║ ccomp
-no        DET   <╗ ║       ║ advmod
-name      NOUN  ═╝<╝       ║ dobj
-.         PUNCT <══════════╝ punct
-```
-
