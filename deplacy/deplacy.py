@@ -297,6 +297,11 @@ def to_conllu(doc,RtoL=False):
   elif s.find("combo")==8:
     from combo.data import sentence2conllu
     return sentence2conllu(doc,False).serialize()
+  elif s.find("supar")==8:
+    if hasattr(doc,"sentences"):
+      return "".join([str(s)+"\n" for s in doc.sentences])
+    else:
+      return str(doc)+"\n"
   elif s.find("list")==8:
     return "".join("".join(str(t)+"\n" for t in s)+"\n" for s in doc)
   elif s.find("dict")==8 and "sentences" in doc:
