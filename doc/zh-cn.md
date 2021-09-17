@@ -81,6 +81,26 @@
 。   PUNCT <══════════╝ punct
 ```
 
+## 用[esupar](https://github.com/KoichiYasuoka/esupar)
+
+```py
+>>> import esupar
+>>> nlp=esupar.load("zh")
+>>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
+>>> import deplacy
+>>> deplacy.render(doc)
+不管 ADP   <══╗         case
+黑猫 NOUN  <╗ ║         nmod
+白猫 NOUN  ═╝═╝<╗       obl
+，   PUNCT <════║═══╗   punct
+捉到 VERB  ═╗═══╝<╗ ║   csubj
+老鼠 NOUN  <╝     ║ ║   obj
+就是 AUX   <══╗   ║ ║   cop
+好   ADJ   <╗ ║   ║ ║   case
+猫   NOUN  ═╝═╝═══╝═╝═╗ root
+。   PUNCT <══════════╝ punct
+```
+
 ## 用[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
