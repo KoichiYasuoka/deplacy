@@ -164,27 +164,6 @@
 。   PUNCT <══════════╝ punct
 ```
 
-## 用[DDParser](https://github.com/baidu/DDParser)
-
-```py
->>> from ddparser import DDParser
->>> ddp=DDParser(use_pos=True)
->>> nlp=lambda t:"".join(["\n".join(["\t".join([str(i+1),w,w,p,p,"_",str(h),d,"_","SpaceAfter=No"]) for i,(w,p,h,d) in enumerate(zip(s["word"],s["postag"],s["head"],s["deprel"]))])+"\n\n" for s in ddp.parse(t)])
->>> doc=nlp("不管黑猫白猫，捉到老鼠就是好猫。")
->>> import deplacy
->>> deplacy.render(doc)
-不管 c <══════╗   ADV
-黑猫 n ═╗═╗<╗ ║   SBV
-白猫 n <╝ ║ ║ ║   ATT
-，   w <══╝ ║ ║   MT
-捉   v ═╗═╗═╝═╝<╗ SBV
-到   v <╝ ║     ║ CMP
-老鼠 n <══╝     ║ VOB
-就是 v ═╗═╗═════╝ HED
-好猫 n <╝ ║       VOB
-。   w <══╝       MT
-```
-
 ## 用[fastHan](https://github.com/fastnlp/fastHan)
 
 ```
