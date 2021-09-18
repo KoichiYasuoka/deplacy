@@ -99,6 +99,26 @@
 冠   VERB  <╝     obj
 ```
 
+## 於[esupar](https://github.com/KoichiYasuoka/esupar)
+
+```py
+>>> import esupar
+>>> nlp=esupar.load("lzh")
+>>> doc=nlp("瓜田不納履李下不正冠")
+>>> import deplacy
+>>> deplacy.render(doc)
+瓜 NOUN <╗         nmod
+田 NOUN ═╝<════╗   nsubj
+不 ADV  <════╗ ║   advmod
+納 VERB ═╗═╗═╝═╝═╗ root
+履 NOUN <╝ ║     ║ obj
+李 NOUN <╗ ║     ║ nmod
+下 NOUN ═╝<╝     ║ obj
+不 ADV  <══╗     ║ advmod
+正 VERB ═╗═╝<════╝ parataxis
+冠 NOUN <╝         obj
+```
+
 ## 於[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
