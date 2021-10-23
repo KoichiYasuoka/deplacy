@@ -97,7 +97,7 @@
 
 ```
 >>> import esupar
->>> nlp=esupar.load("zh_bert")
+>>> nlp=esupar.load("zh")
 >>> doc=nlp("希望是附麗於存在的，有存在，便有希望，有希望，便是光明。")
 >>> import deplacy
 >>> deplacy.render(doc)
