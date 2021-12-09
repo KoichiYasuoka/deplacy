@@ -4,8 +4,9 @@
 <script src="../../deplacy/conllusvgview.js"></script>
 <script src="../../deplacy/conllusvgedit.js"></script>
 <script type="text/javascript">
-function editorCheckURL(textid){
+function editorCheckURL(textid,sentid){
   var tx=document.getElementById(textid);
+  var sx=document.getElementById(sentid);
   var h=location.href;
   var i=h.indexOf("#");
   if(0>i)
@@ -13,10 +14,14 @@ function editorCheckURL(textid){
   if(1>h.length-i)
     return;
   h=decodeURIComponent(h.slice(i+1))+"\n";
-  if(tx.value==null)
+  if(tx.value==null){
     tx.textContent=h;
-  else
+    sx.textContent="";
+  }
+  else{
     tx.value=h;
+    sx.value="";
+  }
 }
 function editorChangeURL(textid){
   var tx=document.getElementById(textid);
@@ -107,7 +112,7 @@ conllusvg.insertTextline=function(textid,i,j,t){
 10	:	:	PUNCT	記号	_	9	punct	_	_
 11	―	―	PUNCT	記号	_	9	punct	_	_
 </textarea>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu',null,null,'xpos')">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu','sentence');conllusvg.edit(this,'conllu',null,null,'xpos')">
 </svg>
 <select size=8 id="xpos" style="position:absolute; visibility:hidden">
 <option value="NOUN">名詞</option>
