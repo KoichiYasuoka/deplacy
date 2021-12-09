@@ -186,5 +186,5 @@ Koichi Yasuoka (安岡孝一)
 
 ## Reference
 
-* Koichi Yasuoka, [deplacy: a CUI-based tree visualizer for Universal Dependencies](http://id.nii.ac.jp/1001/00208581/), 人文科学とコンピュータシンポジウム「じんもんこん2020」論文集 (December 2020), pp.95-100.
+* Koichi Yasuoka: [deplacy: a CUI-based tree visualizer for Universal Dependencies](http://id.nii.ac.jp/1001/00208581/), IPSJ Symposium Series, Vol.2020, No.1 (December 2020), pp.95-100.
 
