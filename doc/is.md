@@ -38,3 +38,22 @@ svíki            VERB  ═╝═╗<╝         conj
 .                PUNCT <══╝           punct
 ```
 
+## við [is_ud_is_pud](https://huggingface.co/elisno/is_ud_is_pud)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("is_ud_is_pud")
+>>> doc=nlp("Hugsjónina sakar ekkert þótt einstaklíngarnir deyi eða svíki.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Hugsjónina       NOUN  <════════════╗   nsubj
+sakar            VERB  ═══════════╗═╝═╗ ROOT
+ekkert           PRON  <════════╗ ║   ║ det
+þótt             SCONJ <══════╗ ║ ║   ║ mark
+einstaklíngarnir NOUN  <════╗ ║ ║ ║   ║ amod
+deyi             NOUN  ═══╗═╝═╝═╝<╝   ║ obj
+eða              CCONJ <╗ ║           ║ cc
+svíki            NOUN  ═╝<╝           ║ conj
+.                PUNCT <══════════════╝ punct
+```
+
