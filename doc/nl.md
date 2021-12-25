@@ -329,7 +329,7 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 >>> def nlp(t):
 ...   import subprocess
 ...   u=""
-...   for s in subprocess.check_output(["frog"],input=t.encode("utf-8")).decode("utf-8").split("\n"):
+...   for s in subprocess.check_output(["frog"],input=t,encoding="utf-8").split("\n"):
 ...     t=s.split("\t")
 ...     u+=s+"\n" if len(t)!=10 else "\t".join([t[0],t[1],t[2],t[4].split("(")[0],t[4],"_",t[8],t[9],"_","_"])+"\n"
 ...   return u
