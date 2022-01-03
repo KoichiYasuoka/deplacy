@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100%" height="100%" onload="viewerCheckURL('conllu');conllusvg.view(this,'conllu')" onresize="conllusvg.rewrite('conllu')">
+<text id="conllu" fill="none" visibility="hidden">
+# CoNLL-U SVG Viewer by 安岡孝一, June 1, 2019.
+# text = SVGによるUniversal Dependencies可視化ツール
+1 SVG SVG PROPN NNP _ 3 obl _ SpaceAfter=No
+2 に に ADP 助詞 _ 1 case _ SpaceAfter=No
+3 よる よる VERB 動詞-連体形 _ 7 acl _ SpaceAfter=No
+4 Universal universal ADJ JJ Degree=Pos 5 amod _ _
+5 Dependencies dependency NOUN NNS Number=Plur 7 nmod _ SpaceAfter=No
+6 可視 可視 NOUN 名詞 _ 7 compound _ SpaceAfter=No
+7 化 化 NOUN 接尾辞 _ 8 nmod _ SpaceAfter=No
+8 ツール ツール NOUN 名詞 _ 0 root _ SpaceAfter=No
+</text>
+<script type="text/javascript" xlink:href="conllusvgview.js" />
+<script type="text/javascript"><![CDATA[
+function viewerCheckURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  if(h.indexOf("%",i)>i)
+    h=decodeURIComponent(h.slice(i+1))+"\n";
+  else
+    h=decodeURIComponent(escape(atob(h.slice(i+1).replace(/_/g,"/").replace(/-/g,"+"))))+"\n";
+  if(tx.value==null)
+    tx.textContent=h;
+  else
+    tx.value=h;
+}
+]]></script>
+</svg>
