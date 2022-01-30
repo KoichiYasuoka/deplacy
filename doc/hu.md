@@ -75,6 +75,24 @@ holnapra   ADV   <╝       ║ advmod:mode
 .          PUNCT <════════╝ punct
 ```
 
+## [huspacy](https://github.com/huspacy/huspacy)-vel
+
+```py
+>>> import huspacy
+>>> nlp=huspacy.load()
+>>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Amit       PRON  <════════╗   obj
+ma         ADV   <╗       ║   advmod:tlocy
+megtehetsz VERB  ═╝═════╗═╝═╗ ROOT
+,          PUNCT <════╗ ║   ║ punct
+ne         ADV   <══╗ ║ ║   ║ advmod
+halaszd    VERB  ═╗═╝═╝<╝   ║ conj
+holnapra   NOUN  <╝         ║ obl
+.          PUNCT <══════════╝ punct
+```
+
 ## [hu_core_ud_lg](https://github.com/oroszgy/spacy-hungarian-models)-vel
 
 ```py
