@@ -75,7 +75,7 @@ holnapra   ADV   <╝       ║ advmod:mode
 .          PUNCT <════════╝ punct
 ```
 
-## [huspacy](https://github.com/huspacy/huspacy)-vel
+## [HuSpaCy](https://github.com/huspacy/huspacy)-vel
 
 ```py
 >>> import huspacy
