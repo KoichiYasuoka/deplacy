@@ -9,11 +9,11 @@
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
    det       ╔> DET  หลาย
-advmod ╔════>╚═ NOUN หัว
-  root ╚═╔═════ ADJ  ดี
-  case   ║ ╔══> ADP  กว่า
-   obl   ╚>╚═╔═ NOUN หัว
-  amod       ╚> ADJ  เดียว
+   obj ╔════>╚═ NOUN หัว
+  root ╚═╔═════ VERB ดี
+  case   ║ ╔══> ADV  กว่า
+   obj   ╚>╚═╔═ NOUN หัว
+nummod       ╚> NUM  เดียว
 ```
 
 ## กับ [spaCy-Thai](https://github.com/KoichiYasuoka/spaCy-Thai)
