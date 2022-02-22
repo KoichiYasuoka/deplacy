@@ -24,10 +24,10 @@ advmod ╔════>╚═ NOUN หัว
 >>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
-  det     ╔> DET   หลาย
-nsubj ╔══>╚═ NOUN  หัว
- ROOT ╚═╔═══ SCONJ ดีกว่า
-  clf   ╚>╔═ NOUN  หัว
-  det     ╚> DET   เดียว
+ det     ╔> DET   หลาย
+ obj ╔══>╚═ NOUN  หัว
+ROOT ╚═╔═══ SCONJ ดีกว่า
+ clf   ╚>╔═ NOUN  หัว
+ det     ╚> DET   เดียว
 ```
 
