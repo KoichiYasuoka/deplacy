@@ -9,10 +9,10 @@
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
    det       ╔> DET  หลาย
-   obj ╔════>╚═ NOUN หัว
+ nsubj ╔════>╚═ NOUN หัว
   root ╚═╔═════ VERB ดี
   case   ║ ╔══> ADV  กว่า
-   obj   ╚>╚═╔═ NOUN หัว
+   obl   ╚>╚═╔═ NOUN หัว
 nummod       ╚> NUM  เดียว
 ```
 
