@@ -32,7 +32,7 @@ geloof     VERB  ═════════════╝═╝═╝═╝<�
 .          PUNCT <══════════════════════════════╝ punct
 ```
 
-## met [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## met [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

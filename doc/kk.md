@@ -1,6 +1,6 @@
 # Синтаксистік талдау үшін [deplacy](https://koichiyasuoka.github.io/deplacy/)
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html) арқылы талдау
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html) арқылы талдау
 
 ```py
 >>> import spacy

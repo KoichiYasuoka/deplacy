@@ -218,7 +218,7 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html):n kanssa
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html):n kanssa
 
 ```py
 >>> import spacy

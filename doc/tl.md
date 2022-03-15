@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) para sintaktik pagtatasa
 
-## sa [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## sa [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

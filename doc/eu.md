@@ -90,7 +90,7 @@ da        AUX   <════════╝ ║ cop
 .         PUNCT <══════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-rekin
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-rekin
 
 ```py
 >>> import spacy

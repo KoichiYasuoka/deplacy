@@ -15,7 +15,7 @@
 :     PUNCT <══════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ի հետ
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-ի հետ
 
 ```py
 >>> import spacy

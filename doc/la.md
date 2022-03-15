@@ -108,7 +108,7 @@ amet    VERB  ═╝<╝       ║ ccomp
 .       PUNCT <══════════╝ punct
 ```
 
-## per [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## per [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

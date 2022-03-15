@@ -129,7 +129,7 @@ farraige  NOUN  ═╝<╝     ║ compound
 .         PUNCT <════════╝ punct
 ```
 
-## le [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## le [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

@@ -18,7 +18,7 @@ medo NOUN  <╝       ║ obj
 .    PUNCT <════════╝ punct
 ```
 
-## com [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## com [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

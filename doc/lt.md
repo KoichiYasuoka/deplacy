@@ -54,7 +54,7 @@ duonos NOUN  ═╝<╝     ║ obj
 .      PUNCT <════════╝ punct
 ```
 
-## su [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## su [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

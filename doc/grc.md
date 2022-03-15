@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) ἀναλύσεως σῠντᾰ́́ξεως
 
-## δῐᾰ́́ [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## δῐᾰ́́ [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

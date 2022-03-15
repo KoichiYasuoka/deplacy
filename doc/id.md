@@ -51,7 +51,7 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
-## dengan [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## dengan [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

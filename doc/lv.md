@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) sintakses analīzei
 
-## ar [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## ar [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

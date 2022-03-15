@@ -48,7 +48,7 @@ gelir   VERB  ═══╝═╝═╗ ROOT
 .       PUNCT <══════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html) ile analiz
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html) ile analiz
 
 ```py
 >>> import spacy

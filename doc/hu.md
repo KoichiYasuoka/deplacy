@@ -57,7 +57,7 @@ holnapra   ADV   <══╝       ║ nmod:obl
 .          PUNCT <══════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-vel
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-vel
 
 ```py
 >>> import spacy

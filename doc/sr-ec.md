@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) за синтаксну анализу на српском језику
 
-## с [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ом
+## с [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-ом
 
 ```py
 >>> import spacy

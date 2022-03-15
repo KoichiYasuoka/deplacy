@@ -73,7 +73,7 @@ hwn     PRON  <╝               ║ det
 .       PUNCT <════════════════╝ punct
 ```
 
-## gyda [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## gyda [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

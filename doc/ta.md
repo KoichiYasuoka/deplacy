@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) மூலம் தொடரியல் பகுப்பாய்வு
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html) ஆல் பகுப்பாய்வு
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html) ஆல் பகுப்பாய்வு
 
 ```py
 >>> import spacy

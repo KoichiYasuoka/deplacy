@@ -121,7 +121,7 @@ compound:smixut     ║   ╚> NOUN  וריח
 punct   ╚══════> PUNCT .
 ```
 
-<h2 dir="rtl"> עם <a href="https://camphr.readthedocs.io/en/latest/notes/udify.html">Camphr-Udify</a></h2>
+<h2 dir="rtl"> עם <a href="https://camphr.readthedocs.io/en/stable/notes/udify.html">Camphr-Udify</a></h2>
 
 ```py
 >>> import spacy

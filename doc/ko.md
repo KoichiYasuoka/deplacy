@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/)을 사용한 문법 분석
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)로 분석
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)로 분석
 
 ```py
 >>> import spacy

@@ -72,7 +72,7 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
-## s [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-om
+## s [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-om
 
 ```py
 >>> from spacy.lang.sr import Serbian

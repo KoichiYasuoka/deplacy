@@ -1,6 +1,6 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) для сінтаксічнага аналізу
 
-## з [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## з [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

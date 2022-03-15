@@ -172,7 +172,7 @@ pesagi NOUN  <══╝         ║ obj
 .      PUNCT <════════════╝ punct
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)-ga
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-ga
 
 ```py
 >>> import spacy

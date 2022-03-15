@@ -48,7 +48,7 @@ granic     NOUN  ═╝═╝<╝         ║ obl:arg
 .          PUNCT <══════════════╝ punct
 ```
 
-## z [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## z [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

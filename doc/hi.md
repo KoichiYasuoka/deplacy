@@ -135,7 +135,7 @@ acl:relcl ║     ╚>╚═╚═╚═══╔═ VERB  चाहते
     punct ╚════════════════> PUNCT ।
 ```
 
-## [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html) पर विश्लेषण
+## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html) पर विश्लेषण
 
 ```py
 >>> import spacy

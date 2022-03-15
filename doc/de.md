@@ -1,6 +1,6 @@
 # Syntaxanalyse durch [Deplacy](https://koichiyasuoka.github.io/deplacy/)
 
-## mit [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## mit [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> import spacy

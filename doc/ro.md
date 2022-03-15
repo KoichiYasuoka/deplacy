@@ -84,7 +84,7 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
-## cu [Camphr-Udify](https://camphr.readthedocs.io/en/latest/notes/udify.html)
+## cu [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
 >>> from spacy.lang.ro import Romanian
