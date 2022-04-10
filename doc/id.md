@@ -68,35 +68,6 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
-## dengan [Malaya](https://malaya.readthedocs.io/)
-
-```py
->>> import malaya
->>> tokenizer=malaya.preprocessing.Tokenizer()
->>> tagger=malaya.pos.transformer()
->>> parser=malaya.dependency.transformer()
->>> def nlp(t):
-...   s=" ".join(tokenizer.tokenize(t))
-...   e,f,g,h=None,None,[],[]
-...   while g!=e or h!=f:
-...     e,f=g,h
-...     d,g,h=parser.predict(s)
-...   for i,(w,p) in enumerate(tagger.predict(s)):
-...     d.nodes[i+1]["ctag"]=p
-...   return d.to_conll(10)
-...
->>> doc=nlp("Di atas langit masih ada langit.")
->>> import deplacy
->>> deplacy.render(doc)
-Di     ADP   <══╗     case
-atas   NOUN  ═╗═╝<══╗ obl
-langit NOUN  <╝     ║ nmod
-masih  ADV   <════╗ ║ advmod
-ada    VERB  ═══╗═╝═╝ root
-langit NOUN  ═╗<╝     obj
-.      PUNCT <╝       punct
-```
-
 ## dengan [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
