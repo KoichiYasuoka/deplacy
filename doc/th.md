@@ -11,7 +11,7 @@
    det       ╔> DET  หลาย
  nsubj ╔════>╚═ NOUN หัว
   root ╚═╔═════ VERB ดี
-  case   ║ ╔══> ADV  กว่า
+  case   ║ ╔══> ADP  กว่า
    obl   ╚>╚═╔═ NOUN หัว
 nummod       ╚> NUM  เดียว
 ```
