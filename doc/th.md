@@ -24,10 +24,10 @@ nummod       ╚> NUM  เดียว
 >>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
- det     ╔> DET   หลาย
- obj ╔══>╚═ NOUN  หัว
-ROOT ╚═╔═══ SCONJ ดีกว่า
- clf   ╚>╔═ NOUN  หัว
- det     ╚> DET   เดียว
+  det     ╔> DET   หลาย
+nsubj ╔══>╚═ NOUN  หัว
+ ROOT ╚═╔═══ SCONJ ดีกว่า
+  obj   ╚>╔═ NOUN  หัว
+  det     ╚> DET   เดียว
 ```
 
