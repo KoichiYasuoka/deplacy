@@ -97,6 +97,29 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
+## s [esupar](https://github.com/KoichiYasuoka/esupar)-om
+
+```py
+>>> import esupar
+>>> nlp=esupar.load("sr")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗       mark
+ima      VERB  ═════╗═╝═╗<╗   advcl
+sira     NOUN  ═══╗<╝   ║ ║   obj
+i        CCONJ <╗ ║     ║ ║   cc
+masla    NOUN  ═╝<╝     ║ ║   conj
+i        CCONJ <════════╝ ║   punct
+moja     DET   <╗         ║   det
+bi       AUX    ║<════╗   ║   aux
+mati     NOUN  ═╝<══╗ ║   ║   nsubj
+znala    VERB  ═══╗═╝═╝═══╝═╗ root
+gibati   VERB  ═╗<╝         ║ xcomp
+gibanicu NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
+```
+
 ## s [Stanza](https://stanfordnlp.github.io/stanza)-om
 
 ```py
