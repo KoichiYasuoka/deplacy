@@ -87,7 +87,7 @@ Amit       PRON  <════════╗   obj
 ma         ADV   <╗       ║   advmod:tlocy
 megtehetsz VERB  ═╝═════╗═╝═╗ ROOT
 ,          PUNCT <════╗ ║   ║ punct
-ne         ADV   <══╗ ║ ║   ║ advmod
+ne         ADV   <══╗ ║ ║   ║ advmod:mode
 halaszd    VERB  ═╗═╝═╝<╝   ║ conj
 holnapra   NOUN  <╝         ║ obl
 .          PUNCT <══════════╝ punct
