@@ -156,11 +156,11 @@
 黑猫 NOUN  <╗ ║         compound:nn
 白猫 NOUN  ═╝═╝<══╗     dep
 ，   PUNCT <══════║═╗   punct
-捉到 VERB  ═╗═╗<╗ ║ ║   dep
-老鼠 NOUN  <╝ ║ ║ ║ ║   dobj
-就是 ADV   <══╝ ║ ║ ║   dep
-好   ADJ   <╗   ║ ║ ║   amod
-猫   NOUN  ═╝═══╝═╝═╝═╗ ROOT
+捉到 VERB  ═╗<══╗ ║ ║   conj
+老鼠 NOUN  <╝   ║ ║ ║   dobj
+就是 ADV   <══╗ ║ ║ ║   cop
+好   ADJ   <╗ ║ ║ ║ ║   amod
+猫   NOUN  ═╝═╝═╝═╝═╝═╗ ROOT
 。   PUNCT <══════════╝ punct
 ```
 
