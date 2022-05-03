@@ -43,7 +43,7 @@ alma   NOUN  ═╝═╝<╝       ║ nmod
 
 ```py
 >>> import spacy
->>> nlp=spacy.load("es_core_news_sm")
+>>> nlp=spacy.load("es_dep_news_trf")
 >>> doc=nlp("La pluma es la lengua del alma.")
 >>> import deplacy
 >>> deplacy.render(doc)
