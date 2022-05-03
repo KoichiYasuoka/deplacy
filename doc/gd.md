@@ -32,9 +32,10 @@ e       PRON  <══════════╝ ║ obj
 Innsidh   VERB  ═══╗═╗═╗═╗ root
 na        DET   <╗ ║ ║ ║ ║ det
 geòidh    NOUN  ═╝<╝ ║ ║ ║ nsubj
-as        AUX   <╗   ║ ║ ║ cop
-t-fhoghar NOUN  ═╝<══╝ ║ ║ obl
-e         PRON  <══════╝ ║ nsubj
+anns      ADP   ═╗<╗ ║ ║ ║ case
+an        ADP   <╝ ║ ║ ║ ║ fixed
+t-fhoghar NOUN  ═══╝<╝ ║ ║ obl
+e         PRON  <══════╝ ║ obj
 .         PUNCT <════════╝ punct
 ```
 
