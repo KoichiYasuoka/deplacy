@@ -4,7 +4,7 @@
 
 ```py
 >>> import spacy
->>> nlp=spacy.load("fr_core_news_sm")
+>>> nlp=spacy.load("fr_dep_news_trf")
 >>> doc=nlp("L'essentiel est invisible pour les yeux.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -14,7 +14,7 @@ est       AUX   <══════╗ ║   cop
 invisible ADJ   ═════╗═╝═╝═╗ ROOT
 pour      ADP   <══╗ ║     ║ case
 les       DET   <╗ ║ ║     ║ det
-yeux      NOUN  ═╝═╝<╝     ║ obl
+yeux      NOUN  ═╝═╝<╝     ║ obl:mod
 .         PUNCT <══════════╝ punct
 ```
 
