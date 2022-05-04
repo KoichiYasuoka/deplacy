@@ -1,26 +1,5 @@
 # Mion-sgrùdadh gràmair tro [deplacy](https://koichiyasuoka.github.io/deplacy/)
 
-## le [GLA](https://klc.vdu.lt/sgtoolkit/)
-
-```py
->>> def nlp(t):
-...   import urllib.request
-...   with urllib.request.urlopen(urllib.request.Request("https://klc.vdu.lt/sgtoolkit/parser",t.encode(),{})) as r:
-...     return r.read().decode("utf-8")
-...
->>> doc=nlp("Innsidh na geòidh as t-fhoghar e.")
->>> import deplacy
->>> deplacy.render(doc)
-Innsidh VERB  ═════════╗═╗═╗ root
-na      DET   <══════╗ ║ ║ ║ det
-geòidh  NOUN  ═════╗═╝<╝ ║ ║ nsubj
-as      ADP   <══╗ ║     ║ ║ case
-t-      PART  <╗ ║ ║     ║ ║ case
-fhoghar NOUN  ═╝═╝<╝     ║ ║ obl
-e       PRON  <══════════╝ ║ obj
-.       PUNCT <════════════╝ punct
-```
-
 ## le [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
