@@ -146,26 +146,6 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
-## cu [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ro_rrt")
->>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
->>> import deplacy
->>> deplacy.render(doc)
-Nu      PART  <══════════╗   advmod
-te      PRON  <════════╗ ║   obj
-băga    VERB  ═╗═╗═══╗═╝═╝═╗ ROOT
-in      ADP   <╝ ║   ║     ║ fixed
-tărâţe  NOUN  <══╝   ║     ║ fixed
-că      SCONJ <════╗ ║     ║ mark
-te      PRON  <══╗ ║ ║     ║ obj
-mănâncă VERB  ═╗═╝═╝<╝     ║ ccomp:pmod
-porcii  NOUN  <╝           ║ nsubj
-.       PUNCT <════════════╝ punct
-```
-
 ## cu [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

@@ -136,22 +136,3 @@ dušemi  NOUN  ═╝<╝     ║ obl:arg
 .       PUNCT <════════╝ punct
 ```
 
-## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("cs_pdt")
->>> doc=nlp("Z hrůzy a bolesti stali jsme se dušemi.")
->>> import deplacy
->>> deplacy.render(doc)
-Z       ADP   <════╗     case
-hrůzy   NOUN  ═══╗═╝<╗   obl
-a       CCONJ <╗ ║   ║   cc
-bolesti NOUN  ═╝<╝   ║   conj
-stali   VERB  ═╗═╗═══╝═╗ ROOT
-jsme    AUX   <╝ ║     ║ aux
-se      ADP   <╗ ║     ║ case
-dušemi  NOUN  ═╝<╝     ║ obl:arg
-.       PUNCT <════════╝ punct
-```
-

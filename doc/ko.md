@@ -83,22 +83,6 @@
 .        PUNCT <══════╝ punct
 ```
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)로 분석
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ko_gsd")
->>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
->>> import deplacy
->>> deplacy.render(doc)
-홍시     NOUN  ═╗<╗     nsubj
-맛이     NOUN  <╝ ║     flat
-나서     VERB  ═══╝<╗   advcl
-홍시라   NOUN  <╗   ║   nsubj
-생각한다 VERB  ═╝═══╝═╗ ROOT
-.        PUNCT <══════╝ punct
-```
-
 ## [Stanza](https://stanfordnlp.github.io/stanza)로 분석
 
 ```py

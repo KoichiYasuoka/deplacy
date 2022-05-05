@@ -55,24 +55,6 @@
 .        PUNCT <════════════╝ punct
 ```
 
-## з [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("uk_iu")
->>> doc=nlp("Біжать алеї звуків, саджених у гами.")
->>> import deplacy
->>> deplacy.render(doc)
-Біжать   VERB  ═══════════╗═╗ ROOT
-алеї     NOUN  ═════════╗<╝ ║ nsubj
-звуків   NOUN  ═══════╗<╝   ║ nmod
-,        PUNCT <════╗ ║     ║ punct
-саджених ADJ   ═══╗═╝<╝     ║ amod
-у        ADP   <╗ ║         ║ case
-гами     NOUN  ═╝<╝         ║ obl
-.        PUNCT <════════════╝ punct
-```
-
 ## з [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

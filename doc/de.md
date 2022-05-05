@@ -116,22 +116,6 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
-## mit [SpaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("de_gsd")
->>> doc=nlp("Er sieht sehr jung aus.")
->>> import deplacy
->>> deplacy.render(doc)
-Er    PRON  <══════╗   nsubj
-sieht VERB  ═══╗═╗═╝═╗ ROOT
-sehr  ADV   <╗ ║ ║   ║ advmod
-jung  ADJ   ═╝ ║<╝   ║ advmod
-aus   ADP   <══╝     ║ compound:prt
-.     PUNCT <════════╝ punct
-```
-
 ## mit [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py

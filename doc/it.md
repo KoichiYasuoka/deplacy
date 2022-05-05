@@ -49,30 +49,6 @@ spia      NOUN  ═╝═╝═╝<══╝ ║   conj
 .         PUNCT <══════════╝   punct
 ```
 
-## con [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("it_isdt")
->>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
->>> import deplacy
->>> deplacy.render(doc)
-Chi       PRON  ═════════════╗ ROOT
-non       ADV   <════╗       ║ advmod
-beve      VERB  ═══╗═╝═╗═╗═╗<╝ acl:relcl
-in        ADP   <╗ ║   ║ ║ ║   case
-compagnia NOUN  ═╝<╝   ║ ║ ║   obl
-o         CCONJ <════╗ ║ ║ ║   cc
-è         AUX   <══╗ ║ ║ ║ ║   cop
-un        DET   <╗ ║ ║ ║ ║ ║   det
-ladro     NOUN  ═╝═╝═╝<╝ ║ ║   conj
-o         CCONJ <════╗   ║ ║   cc
-è         AUX   <══╗ ║   ║ ║   cop
-una       DET   <╗ ║ ║   ║ ║   det
-spia      NOUN  ═╝═╝═╝<══╝ ║   conj
-.         PUNCT <══════════╝   punct
-```
-
 ## con [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py

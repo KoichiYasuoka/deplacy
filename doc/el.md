@@ -162,23 +162,6 @@
 .         PUNCT <══════════╝ punct
 ```
 
-## με [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("el_gdt")
->>> doc=nlp("Δεν υπάρχει βασιλικός δρόμος στη γεωμετρία.")
->>> import deplacy
->>> deplacy.render(doc)
-Δεν       PART  <════════╗   advmod
-υπάρχει   VERB  ═══════╗═╝═╗ ROOT
-βασιλικός ADJ   <════╗ ║   ║ amod
-δρόμος    NOUN  ═══╗═╝<╝   ║ nsubj
-στη       ADJ   <╗ ║       ║ amod
-γεωμετρία NOUN  ═╝<╝       ║ nmod
-.         PUNCT <══════════╝ punct
-```
-
 ## με [gr-nlp-toolkit](https://github.com/nlpaueb/gr-nlp-toolkit)
 
 ```py

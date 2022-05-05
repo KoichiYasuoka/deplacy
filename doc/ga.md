@@ -93,24 +93,6 @@ farraige  NOUN  ═╝<╝     ║ nmod
 .         PUNCT <════════╝ punct
 ```
 
-## le [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ga_idt")
->>> doc=nlp("Táimid faoi dhraíocht ag ceol na farraige.")
->>> import deplacy
->>> deplacy.render(doc)
-Táimid    VERB  ═══╗═══╗═╗ ROOT
-faoi      ADP   <╗ ║   ║ ║ case
-dhraíocht NOUN  ═╝<╝   ║ ║ xcomp:pred
-ag        ADP   <════╗ ║ ║ case
-ceol      NOUN  ═══╗═╝<╝ ║ obl
-na        DET   <╗ ║     ║ det
-farraige  NOUN  ═╝<╝     ║ compound
-.         PUNCT <════════╝ punct
-```
-
 ## le [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

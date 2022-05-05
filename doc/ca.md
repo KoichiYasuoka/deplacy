@@ -136,25 +136,6 @@ importància NOUN  ═╝<══╝   ║ obj
 .           PUNCT <════════╝ punct
 ```
 
-## amb [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ca_ancora")
->>> doc=nlp("El tennis té avui a Catalunya molta importància.")
->>> import deplacy
->>> deplacy.render(doc)
-El          DET   <╗         det
-tennis      NOUN  ═╝<════╗   nsubj
-té          VERB  ═╗═╗═╗═╝═╗ ROOT
-avui        ADV   <╝ ║ ║   ║ advmod
-a           ADP   <╗ ║ ║   ║ case
-Catalunya   PROPN ═╝<╝ ║   ║ obl
-molta       DET   <╗   ║   ║ det
-importància NOUN  ═╝<══╝   ║ obj
-.           PUNCT <════════╝ punct
-```
-
 ## amb [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

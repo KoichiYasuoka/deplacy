@@ -99,25 +99,6 @@ spadne  VERB  ═════════╝═╗ root
 .       PUNCT <══════════╝ punct
 ```
 
-## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("sk_snk")
->>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
->>> import deplacy
->>> deplacy.render(doc)
-Kto     PRON  <══════╗   nsubj
-druhému ADJ   <╗     ║   amod
-jamu    NOUN  ═╝<╗   ║   nmod
-kope    NOUN  ═╗═╝<╗ ║   obj
-sám     DET   <╝   ║ ║   xcomp
-do      ADP   <╗   ║ ║   case
-nej     PRON  ═╝<╗ ║ ║   obl
-spadne  VERB  ═══╝═╝═╝═╗ ROOT
-.       PUNCT <════════╝ punct
-```
-
 ## s [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py

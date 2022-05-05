@@ -1,27 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) के माध्यम से वाक्यविन्यास विश्लेषण
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) पर विश्लेषण
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("hi_hdtb")
->>> doc=nlp("खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     nmod     ╔══════════════> PRON  खुद
-      det     ║ ╔════════════> DET   वो
-      obj   ╔>╚═╚═╔═══════════ NOUN  बदलाव
-     ROOT ╔═╚═════════════════ VERB  बनिए
-      obj ║       ║ ╔════════> PRON  जो
-    nsubj ║       ║ ║ ╔══════> PRON  आप
-      obl ║       ║ ║ ║   ╔>╔═ NOUN  दुनिया
-     case ║       ║ ║ ║   ║ ╚> ADP   में
-      obj ║       ║ ║ ║ ╔>╚═══ VERB  देखना
-acl:relcl ║       ╚>╚═╚═╚═══╔═ VERB  चाहते
-      aux ║                 ╚> AUX   हैं
-    punct ╚══════════════════> PUNCT ।
-```
-
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2) पर विश्लेषण
 
 ```py

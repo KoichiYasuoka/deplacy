@@ -21,27 +21,6 @@ punct ╚═════║══════> PUNCT ،
 punct         ╚════> PUNCT .
 ```
 
-<h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("fa_seraji")
->>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
-     case           ╔══> ADP   به
-     nmod     ╔════>╚═╔═ NOUN  اعتقاد
-nmod:poss     ║       ╚> PRON  من
-     ROOT ╔═══║═════════ NOUN  موسيقي
-nmod:poss ╚>╔═╚═╔═════╔═ NOUN  هنر
-      cop   ║   ║     ╚> AUX   نيست
-    punct   ║   ║ ╔════> PUNCT ،
-    nsubj   ║   ║ ║ ╔══> NOUN  بلكه
-     conj   ║   ╚>╚═╚═╔═ NOUN  متافيزيك
-      cop   ║         ╚> AUX   است
-    punct   ╚══════════> PUNCT .
-```
-
 <h2 dir="rtl"> با <a href="https://github.com/KoichiYasuoka/spaCy-jPTDP">spaCy-jPTDP</a></h2>
 
 ```py

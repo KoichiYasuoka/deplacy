@@ -195,30 +195,6 @@ granic     NOUN  ═╝═╝<╝       ║ obl
 .          PUNCT <════════════╝ punct
 ```
 
-## z [spaCy-COMBO](http://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("pl_lfg")
->>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> import deplacy
->>> deplacy.render(doc)
-Wcale      ADV   <══════╗       advmod
-nie        PART  <════╗ ║       advmod
-chcemy     VERB  ═══╗═╝═╝═══╗═╗ ROOT
-zdobywać   VERB  ═╗<╝       ║ ║ xcomp
-kosmosu    NOUN  <╝         ║ ║ obj
-,          PUNCT <════════╗ ║ ║ punct
-chcemy     VERB  ═╗═════╗═╝<╝ ║ conj
-tylko      PART  <╝     ║     ║ advmod
-rozszerzyć VERB  ═╗═══╗<╝     ║ xcomp
-Ziemię     NOUN  <╝   ║       ║ obj
-do         ADP   <══╗ ║       ║ case
-jego       PRON  <╗ ║ ║       ║ nmod:poss
-granic     NOUN  ═╝═╝<╝       ║ obl
-.          PUNCT <════════════╝ punct
-```
-
 ## z [spaCy-jPTDP](http://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

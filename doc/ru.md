@@ -156,25 +156,6 @@
 .      PUNCT <══════╝       punct
 ```
 
-## с [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ru_syntagrus")
->>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> import deplacy
->>> deplacy.render(doc)
-Москва NOUN  <════════════╗ nsubj
-слезам NOUN  <══════════╗ ║ iobj
-не     PART  <╗         ║ ║ advmod
-верила VERB  ═╝═══════╗═╝═╝ ROOT
-,      PUNCT <════╗   ║     punct
-а      CCONJ <══╗ ║   ║     cc
-верила VERB  ═╗═╝═╝═╗<╝     conj
-любви  NOUN  <╝     ║       obj
-.      PUNCT <══════╝       punct
-```
-
 ## с [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

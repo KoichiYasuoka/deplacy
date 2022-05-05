@@ -117,25 +117,6 @@ podnijeti VERB  <╝         ║ nsubj
 .         PUNCT <══════════╝ punct
 ```
 
-## s [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-om
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("hr_set")
->>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
->>> import deplacy
->>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ ROOT
-mi        PRON  <╝ ║     ║ ║ obj
-se        PRON  <══╝     ║ ║ expl:pv
-:         PUNCT <══════╗ ║ ║ punct
-ništa     PRON  <════╗ ║ ║ ║ obj
-nije      AUX   <══╗ ║ ║ ║ ║ cop
-teže      ADJ   ═╗═╝═╝═╝<╝ ║ parataxis
-podnijeti VERB  <╝         ║ nsubj
-.         PUNCT <══════════╝ punct
-```
-
 ## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-om
 
 ```py

@@ -103,31 +103,6 @@ gadi       NOUN  ═╝═╝<╝             ║ conj
 .          PUNCT <══════════════════╝ punct
 ```
 
-## ar [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("lv_lvtb")
->>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
->>> import deplacy
->>> deplacy.render(doc)
-Latvija    PROPN <══════════════════╗   nsubj
-vienu      NUM   ═══╗<════════════╗ ║   obj
-pēc        ADP   <╗ ║             ║ ║   case
-otras      NUM   ═╝<╝             ║ ║   nmod
-pārdzīvoja VERB  ═══════════════╗═╝═╝═╗ ROOT
-trīs       NUM   <╗             ║     ║ nummod
-okupācijas NOUN  ═╝═══════════╗<╝     ║ obj
-,          PUNCT <══════════╗ ║       ║ punct
-kuru       DET   <════════╗ ║ ║       ║ det
-kopējais   ADJ   <══════╗ ║ ║ ║       ║ amod
-ilgums     NOUN  ═════╗═╝═╝═╝<╝       ║ acl
-,          PUNCT <══╗ ║               ║ punct
-piecdesmit NUM   <╗ ║ ║               ║ nummod
-gadi       NOUN  ═╝═╝<╝               ║ acl
-.          PUNCT <════════════════════╝ punct
-```
-
 ## ar [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

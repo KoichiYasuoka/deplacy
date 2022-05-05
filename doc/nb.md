@@ -40,26 +40,6 @@ spor      NOUN  ═══╝═╝<╝     ║ xcomp
 .         PUNCT <════════════╝ punct
 ```
 
-## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("no_bokmaal")
->>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
->>> import deplacy
->>> deplacy.render(doc)
-Ikke      PART  <╗             advmod
-tusen     NUM   ═╝<╗           nummod
-ord       NOUN  ═══╝<══════╗   nsubj
-seg       PRON  <════════╗ ║   nsubj
-prenter   VERB  ═══════╗═╝═╝═╗ ROOT
-som       SCONJ <════╗ ║     ║ mark
-én        NUM   <╗   ║ ║     ║ nummod
-gjernings NOUN  ═╝<╗ ║ ║     ║ nmod
-spor      NOUN  ═══╝═╝<╝     ║ xcomp
-.         PUNCT <════════════╝ punct
-```
-
 ## med [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py

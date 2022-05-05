@@ -57,23 +57,6 @@ advmod ║   ║     ╔> PART  لا
  punct ╚══════════> PUNCT .
 ```
 
-<h2 dir="rtl"> مع <a href="https://github.com/KoichiYasuoka/spaCy-COMBO">spaCy-COMBO</a></h2>
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("ar_padt")
->>> doc=nlp("من قال لا أدري فقد أفتى.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
- nsubj   ╔════════> DET   من
-  ROOT ╔═╚═╔═══════ VERB  قال
-advmod ║   ║ ╔════> PART  لا
- xcomp ║   ╚>╚═╔═══ X     أدري
-   obj ║       ╚>╔═ NOUN  فقد
-   acl ║         ╚> VERB  أفتى
- punct ╚══════════> PUNCT .
-```
-
 <h2 dir="rtl"> مع <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
 
 ```py

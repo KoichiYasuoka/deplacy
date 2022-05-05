@@ -1,26 +1,5 @@
 # Analysis syntaxis super [deplacy](https://koichiyasuoka.github.io/deplacy/)
 
-## per [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("la_ittb")
->>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
->>> import deplacy
->>> deplacy.render(doc)
-Cras    NOUN  <══════════╗   obj
-amet    VERB  ═══════╗═╗═╝═╗ ROOT
-qui     PRON  <══╗   ║ ║   ║ nsubj
-numquam ADV   <╗ ║   ║ ║   ║ advmod:emph
-amavit  VERB  ═╝═╝═╗<╝ ║   ║ csubj
-,       PUNCT <════╝   ║   ║ punct
-quique  PRON  <════╗   ║   ║ nsubj
-amavit  VERB  ═══╗═╝<══╝   ║ csubj
-cras    NOUN  <╗ ║         ║ obj
-amet    VERB  ═╝<╝         ║ ccomp
-.       PUNCT <════════════╝ punct
-```
-
 ## per [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py

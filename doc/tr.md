@@ -16,22 +16,6 @@ gelir   VERB  ═══╝═╝═╗ root
 .       PUNCT <══════╝ punct
 ```
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO) ile analiz
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("tr_imst")
->>> doc=nlp("İyi insan sözünün üstüne gelir.")
->>> import deplacy
->>> deplacy.render(doc)
-İyi     ADJ   <╗       amod
-insan   NOUN  ═╝<══╗   nsubj
-sözünün NOUN  <╗   ║   nmod:poss
-üstüne  ADJ   ═╝<╗ ║   amod
-gelir   VERB  ═══╝═╝═╗ ROOT
-.       PUNCT <══════╝ punct
-```
-
 ## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP) ile analiz
 
 ```py

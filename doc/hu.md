@@ -93,24 +93,6 @@ holnapra   NOUN  <╝         ║ obl
 .          PUNCT <══════════╝ punct
 ```
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-val
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("hu_szeged")
->>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
->>> import deplacy
->>> deplacy.render(doc)
-Amit       PRON  <════════╗   obj
-ma         ADV   <╗       ║   advmod:tlocy
-megtehetsz VERB  ═╝═════╗═╝═╗ ROOT
-,          PUNCT <════╗ ║   ║ punct
-ne         PRON  <══╗ ║ ║   ║ aux
-halaszd    VERB  ═╗═╝═╝<╝   ║ conj
-holnapra   NOUN  <╝         ║ nmod:obl
-.          PUNCT <══════════╝ punct
-```
-
 ## [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)-vel
 
 ```py

@@ -108,24 +108,6 @@ da        AUX   <════╝     ║ cop
 .         PUNCT <══════════╝ punct
 ```
 
-## [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)-rekin
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("eu_bdt")
->>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
->>> import deplacy
->>> deplacy.render(doc)
-Euskaldun ADJ   <╗         xcomp
-izatea    AUX   ═╝<════╗   cop
-lan       NOUN  ═╗═╗<╗ ║   nsubj
-extra     NOUN  <╝ ║ ║ ║   nmod
-bat       NUM   <══╝ ║ ║   nummod
-izatea    VERB  ═╗═══╝═╝═╗ ROOT
-da        AUX   <╝       ║ cop
-.         PUNCT <════════╝ punct
-```
-
 ## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-rekin
 
 ```py

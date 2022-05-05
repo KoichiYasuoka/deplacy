@@ -40,26 +40,6 @@ live   ADV   <╝         ║ advmod
 .      PUNCT <══════════╝ punct
 ```
 
-## med [spaCy-COMBO](https://github.com/KoichiYasuoka/spaCy-COMBO)
-
-```py
->>> import spacy_combo
->>> nlp=spacy_combo.load("no_nynorsk")
->>> doc=nlp("For me priser dauden, men me elskar live.")
->>> import deplacy
->>> deplacy.render(doc)
-For    CCONJ <════╗       cc
-me     PRON  <══╗ ║       nsubj
-priser VERB  ═╗═╝═╝═╗═╗═╗ ROOT
-dauden NOUN  <╝     ║ ║ ║ obj
-,      PUNCT <══════╝ ║ ║ punct
-men    CCONJ <════╗   ║ ║ cc
-me     PRON  <══╗ ║   ║ ║ nsubj
-elskar VERB  ═╗═╝═╝<══╝ ║ conj
-live   ADJ   <╝         ║ advmod
-.      PUNCT <══════════╝ punct
-```
-
 ## med [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
