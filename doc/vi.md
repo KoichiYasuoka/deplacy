@@ -133,13 +133,13 @@ chim    N  <╝       ║ nmod
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   M  <╗         nummod
-mũi   N  ═╝═╗═╗═╗═╗ root
-tên   N  <══╝ ║ ║ ║ nmod
-trúng V  <════╝ ║ ║ acl:subj
-hai   M  ═╗<╗   ║ ║ nummod
-con   Nc <╝ ║   ║ ║ clf
-chim  N  ═══╝<══╝ ║ nmod
+Một   M  <══╗       nummod
+mũi   N  ═╗═╝<══╗   nsubj
+tên   N  <╝     ║   compound
+trúng V  ═════╗═╝═╗ root
+hai   M  ═╗<╗ ║   ║ nummod
+con   Nc <╝ ║ ║   ║ clf
+chim  N  ═══╝<╝   ║ obj
 .     CH <════════╝ punct
 ```
 
