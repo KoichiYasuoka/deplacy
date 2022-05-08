@@ -1,16 +1,16 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/) ⲉⲛⲁⲛⲁⲗⲩ ⲙⲡⲥⲩⲛⲧⲁⲜ
 
-## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
+## ϩⲛ[esupar](https://github.com/KoichiYasuoka/esupar)
 
 ```py
->>> import stanza
->>> nlp=stanza.Pipeline("cop")
+>>> import esupar
+>>> nlp=esupar.load("cop")
 >>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
  root ╔═╔═════════ VERB  ⲙⲟⲟϣⲉ
  mark ║ ║ ╔══════> SCONJ ϩⲱⲥ
-  obl ║ ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
+advcl ║ ╚>╚═╔═════ NOUN  ϣⲏⲣⲉ
  case ║     ║ ╔══> ADP   ⲙ
   det ║     ║ ║ ╔> DET   ⲡ
  nmod ║     ╚>╚═╚═ NOUN  ⲟⲩⲟⲉⲓⲛ
