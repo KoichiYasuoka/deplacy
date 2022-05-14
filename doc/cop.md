@@ -67,3 +67,22 @@ ccomp ║ ╚>╚═╚═ VERB  ⲙⲡⲟⲩⲟⲉⲓⲛ
 punct ╚══════> PUNCT ·
 ```
 
+## ϩⲛ[Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("cop")
+>>> doc=nlp("ⲙⲟⲟϣⲉ ϩⲱⲥ ϣⲏⲣⲉ ⲙⲡⲟⲩⲟⲉⲓⲛ ·")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     root ╔═╔═══════╔═ VERB  ⲙⲟⲟ
+parataxis ║ ║       ╚> VERB  ϣⲉ
+     mark ║ ║ ╔══════> SCONJ ϩⲱⲥ
+    advcl ║ ╚>╚═╔═══╔═ NOUN  ϣⲏⲣ
+     iobj ║     ║   ╚> PRON  ⲉ
+     case ║     ║ ╔══> ADP   ⲙ
+      det ║     ║ ║ ╔> DET   ⲡ
+      obl ║     ╚>╚═╚═ NOUN  ⲟⲩⲟⲉⲓⲛ
+    punct ╚══════════> PUNCT ·
+```
+
