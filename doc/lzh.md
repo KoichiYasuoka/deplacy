@@ -119,26 +119,6 @@
 冠 NOUN <╝         obj
 ```
 
-## 於[spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("lzh")
->>> doc=nlp("瓜田不納履李下不正冠")
->>> import deplacy
->>> deplacy.render(doc)
-瓜 NOUN <╗         nmod
-田 NOUN ═╝<════╗   nsubj
-不 ADV  <════╗ ║   advmod
-納 VERB ═╗═╗═╝═╝═╗ ROOT
-履 NOUN <╝ ║     ║ obj
-李 NOUN <╗ ║     ║ compound
-下 NOUN ═╝<╝     ║ obj
-不 ADV  <══╗     ║ advmod
-正 VERB ═╗═╝<════╝ parataxis
-冠 NOUN <╝         obj
-```
-
 ## 於[Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
