@@ -34,7 +34,7 @@
 8	、	、	PUNCT	補助記号-読点	_	6	punct	_	SpaceAfter=No
 9	まったく	全く	ADV	副詞	_	10	advmod	_	SpaceAfter=No
 10	抵抗でき	抵抗出来る	VERB	動詞-一般	_	12	acl	_	SpaceAfter=No
-11	ぬ	ず	AUX	助動詞	_	10	aux	_	SpaceAfter=No
+11	ぬ	ず	AUX	助動詞	Polarity=Neg	10	aux	_	SpaceAfter=No
 12	まま	侭	NOUN	名詞-普通名詞-副詞可能	_	16	obl	_	SpaceAfter=No
 13	に	に	ADP	助詞-格助詞	_	12	case	_	SpaceAfter=No
 14	口	口	NOUN	名詞-普通名詞-一般	_	16	obl	_	SpaceAfter=No
@@ -226,7 +226,7 @@
 5	は	は	ADP	助詞-係助詞	_	4	case	_	SpaceAfter=No
 6	あり	有る	VERB	動詞-非自立可能	_	0	root	_	SpaceAfter=No
 7	ませ	ます	AUX	助動詞	_	6	aux	_	SpaceAfter=No
-8	ん	ず	AUX	助動詞	_	6	aux	_	SpaceAfter=No
+8	ん	ず	AUX	助動詞	Polarity=Neg	6	aux	_	SpaceAfter=No
 9	。	。	PUNCT	補助記号-句点	_	6	punct	_	SpaceAfter=No
 
 # text = そのかわりに無数の微生物が棲んでいるのです。
@@ -395,7 +395,7 @@
 43	から	から	ADP	助詞-格助詞	_	42	case	_	SpaceAfter=No
 44	が	が	ADP	助詞-格助詞	_	42	case	_	SpaceAfter=No
 45	食べもの	食べ物	NOUN	名詞-普通名詞-一般	_	50	ccomp	_	SpaceAfter=No
-46	でない	でない	AUX	助動詞	_	45	aux	_	SpaceAfter=No
+46	でない	でない	AUX	助動詞	Polarity=Neg	45	aux	_	SpaceAfter=No
 47	の	の	ADP	助詞-準体助詞	_	45	mark	_	SpaceAfter=No
 48	か	か	ADP	助詞-副助詞	_	45	case	_	SpaceAfter=No
 49	について	について	ADP	助詞-格助詞	_	45	case	_	SpaceAfter=No
@@ -447,7 +447,7 @@
 9	」	」	PUNCT	補助記号-括弧閉	_	7	punct	_	SpaceAfter=No
 10	など	など	ADP	助詞-副助詞	_	7	case	_	SpaceAfter=No
 11	い	居る	VERB	動詞-非自立可能	_	14	acl	_	SpaceAfter=No
-12	ない	ない	AUX	助動詞	_	11	aux	_	SpaceAfter=No
+12	ない	ない	AUX	助動詞	Polarity=Neg	11	aux	_	SpaceAfter=No
 13	という	と言う	ADP	助詞-格助詞	_	11	case	_	SpaceAfter=No
 14	見方	見方	NOUN	名詞-普通名詞-一般	_	0	root	_	SpaceAfter=No
 15	です	です	AUX	助動詞	_	14	cop	_	SpaceAfter=No
@@ -488,7 +488,7 @@
 32	を	を	ADP	助詞-格助詞	_	31	case	_	SpaceAfter=No
 33	通過し	通過する	VERB	動詞-一般	_	38	ccomp	_	SpaceAfter=No
 34	ている	て居る	AUX	助動詞	_	33	aux	_	SpaceAfter=No
-35	にすぎない	に過ぎない	AUX	助動詞	_	33	aux	_	SpaceAfter=No
+35	にすぎない	に過ぎない	AUX	助動詞	Polarity=Neg	33	aux	_	SpaceAfter=No
 36	、	、	PUNCT	補助記号-読点	_	33	punct	_	SpaceAfter=No
 37	と	と	ADP	助詞-格助詞	_	33	case	_	SpaceAfter=No
 38	考える	考える	VERB	動詞-一般	_	39	acl	_	SpaceAfter=No
@@ -508,7 +508,7 @@
 6	循環	循環	NOUN	名詞-普通名詞-サ変可能	_	8	nmod	_	SpaceAfter=No
 7	の	の	ADP	助詞-格助詞	_	6	case	_	SpaceAfter=No
 8	通過点	通過点	NOUN	名詞-普通名詞-一般	_	21	advcl	_	SpaceAfter=No
-9	にすぎない	に過ぎない	AUX	助動詞	_	8	aux	_	SpaceAfter=No
+9	にすぎない	に過ぎない	AUX	助動詞	Polarity=Neg	8	aux	_	SpaceAfter=No
 10	のであっ	ので有る	AUX	助動詞	_	8	aux	_	SpaceAfter=No
 11	て	て	SCONJ	助詞-接続助詞	_	8	mark	_	SpaceAfter=No
 12	、	、	PUNCT	補助記号-読点	_	8	punct	_	SpaceAfter=No
@@ -684,7 +684,7 @@
 12	を	を	ADP	助詞-格助詞	_	11	case	_	SpaceAfter=No
 13	通過し	通過する	VERB	動詞-一般	_	0	root	_	SpaceAfter=No
 14	ている	て居る	AUX	助動詞	_	13	aux	_	SpaceAfter=No
-15	にすぎない	に過ぎない	AUX	助動詞	_	13	aux	_	SpaceAfter=No
+15	にすぎない	に過ぎない	AUX	助動詞	Polarity=Neg	13	aux	_	SpaceAfter=No
 16	のです	のです	AUX	助動詞	_	13	aux	_	SpaceAfter=No
 17	。	。	PUNCT	補助記号-句点	_	13	punct	_	SpaceAfter=No
 

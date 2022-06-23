@@ -88,7 +88,7 @@
 3	人間	人間	NOUN	名詞-普通名詞-一般	_	5	obl	_	SpaceAfter=No
 4	に	に	ADP	助詞-格助詞	_	3	case	_	SpaceAfter=No
 5	なる	成る	VERB	動詞-非自立可能	_	0	root	_	SpaceAfter=No
-6	のではない	のでは無い	AUX	助動詞	_	5	aux	_	SpaceAfter=No
+6	のではない	のでは無い	AUX	助動詞	Polarity=Neg	5	aux	_	SpaceAfter=No
 7	。	。	PUNCT	補助記号-句点	_	5	punct	_	SpaceAfter=No
 
 # text = 宮沢の記述からかいまみられるのは、そもそも逆で、人間とはもとより動物である(そうでしかありえない)ということである。
@@ -116,7 +116,7 @@
 22	で	で	ADP	助詞-格助詞	_	21	case	_	SpaceAfter=No
 23	しか	しか	ADP	助詞-副助詞	_	21	case	_	SpaceAfter=No
 24	ありえ	ありえる	VERB	動詞-非自立可能	_	18	conj	_	SpaceAfter=No
-25	ない	ない	AUX	助動詞	_	24	aux	_	SpaceAfter=No
+25	ない	ない	AUX	助動詞	Polarity=Neg	24	aux	_	SpaceAfter=No
 26	)	）	PUNCT	補助記号-括弧閉	_	24	punct	_	SpaceAfter=No
 27	という	と言う	ADP	助詞-格助詞	_	18	case	_	SpaceAfter=No
 28	こと	事	NOUN	名詞-普通名詞-一般	_	0	root	_	SpaceAfter=No
@@ -297,7 +297,7 @@
 4	お前	御前	PRON	代名詞	_	6	nsubj	_	SpaceAfter=No
 5	は	は	ADP	助詞-係助詞	_	4	case	_	SpaceAfter=No
 6	鷹	鷹	NOUN	名詞-普通名詞-一般	_	15	advcl	_	SpaceAfter=No
-7	ではない	では無い	AUX	助動詞	_	6	aux	_	SpaceAfter=No
+7	ではない	では無い	AUX	助動詞	Polarity=Neg	6	aux	_	SpaceAfter=No
 8	の	の	SCONJ	助詞-準体助詞	_	6	mark	_	SpaceAfter=No
 9	に	に	SCONJ	助詞-接続助詞	_	6	mark	_	SpaceAfter=No
 10	なぜ	何故	ADV	副詞	_	15	advmod	_	SpaceAfter=No
@@ -474,7 +474,7 @@
 32	か	か	ADP	助詞-副助詞	_	31	case	_	SpaceAfter=No
 33	が	が	ADP	助詞-格助詞	_	31	case	_	SpaceAfter=No
 34	わから	分かる	VERB	動詞-一般	_	0	root	_	SpaceAfter=No
-35	ない	ない	AUX	助動詞	_	34	aux	_	SpaceAfter=No
+35	ない	ない	AUX	助動詞	Polarity=Neg	34	aux	_	SpaceAfter=No
 36	。	。	PUNCT	補助記号-句点	_	34	punct	_	SpaceAfter=No
 
 # text = 夜だかが思ひ切って飛ぶときは、そらがまるで二つに切れたやうに思はれます。
@@ -639,7 +639,7 @@
 4	虫	虫	NOUN	名詞-普通名詞-一般	_	6	obj	_	SpaceAfter=No
 5	を	を	ADP	助詞-格助詞	_	4	case	_	SpaceAfter=No
 6	たべ	食べる	VERB	動詞-一般	_	11	advcl	_	SpaceAfter=No
-7	ない	ない	AUX	助動詞	_	6	aux	_	SpaceAfter=No
+7	ない	ない	AUX	助動詞	Polarity=Neg	6	aux	_	SpaceAfter=No
 8	で	て	SCONJ	助詞-接続助詞	_	6	mark	_	SpaceAfter=No
 9	餓ゑ	飢える	VERB	動詞-一般	_	11	advcl	_	SpaceAfter=No
 10	て	て	SCONJ	助詞-接続助詞	_	9	mark	_	SpaceAfter=No
@@ -714,7 +714,7 @@
 22	いのち	命	NOUN	名詞-普通名詞-一般	_	24	obj	_	SpaceAfter=No
 23	を	を	ADP	助詞-格助詞	_	22	case	_	SpaceAfter=No
 24	送ら	送る	VERB	動詞-一般	_	26	acl	_	SpaceAfter=No
-25	ない	ない	AUX	助動詞	_	24	aux	_	SpaceAfter=No
+25	ない	ない	AUX	助動詞	Polarity=Neg	24	aux	_	SpaceAfter=No
 26	甲虫	甲虫	NOUN	名詞-普通名詞-一般	_	28	obj	_	SpaceAfter=No
 27	を	を	ADP	助詞-格助詞	_	26	case	_	SpaceAfter=No
 28	食べる	食べる	VERB	動詞-一般	_	29	acl	_	SpaceAfter=No
@@ -729,7 +729,7 @@
 37	やむ	止む	VERB	動詞-一般	_	39	obj	_	SpaceAfter=No
 38	を	を	ADP	助詞-格助詞	_	37	case	_	SpaceAfter=No
 39	え	得る	VERB	動詞-非自立可能	_	41	acl	_	SpaceAfter=No
-40	ない	ない	AUX	助動詞	_	39	aux	_	SpaceAfter=No
+40	ない	ない	AUX	助動詞	Polarity=Neg	39	aux	_	SpaceAfter=No
 41	こと	事	NOUN	名詞-普通名詞-一般	_	0	root	_	SpaceAfter=No
 42	である	で有る	AUX	助動詞	_	41	aux	_	SpaceAfter=No
 43	。	。	PUNCT	補助記号-句点	_	41	punct	_	SpaceAfter=No
@@ -809,7 +809,7 @@
 72	何	何	PRON	代名詞	_	74	obl	_	SpaceAfter=No
 73	も	も	ADP	助詞-係助詞	_	72	case	_	SpaceAfter=No
 74	食べ	食べる	VERB	動詞-一般	_	76	advcl	_	SpaceAfter=No
-75	ず	ず	AUX	助動詞	_	74	aux	_	SpaceAfter=No
+75	ず	ず	AUX	助動詞	Polarity=Neg	74	aux	_	SpaceAfter=No
 76	絶食し	絶食する	VERB	動詞-一般	_	82	advcl	_	SpaceAfter=No
 77	、	、	PUNCT	補助記号-読点	_	76	punct	_	SpaceAfter=No
 78	空	空	NOUN	名詞-普通名詞-一般	_	80	nmod	_	SpaceAfter=No
@@ -867,7 +867,7 @@
 36	こと	事	NOUN	名詞-普通名詞-一般	_	38	nsubj	_	SpaceAfter=No
 37	は	は	ADP	助詞-係助詞	_	36	case	_	SpaceAfter=No
 38	し	為る	VERB	動詞-非自立可能	_	0	root	_	SpaceAfter=No
-39	ない	ない	AUX	助動詞	_	38	aux	_	SpaceAfter=No
+39	ない	ない	AUX	助動詞	Polarity=Neg	38	aux	_	SpaceAfter=No
 40	。	。	PUNCT	補助記号-句点	_	38	punct	_	SpaceAfter=No
 
 # text = 結局よだかは最後の力を振り絞り、自らが燃え尽きることにより、自己の行為を昇華するのである。
@@ -906,7 +906,7 @@
 9	で	出る	VERB	動詞-一般	_	11	acl	_	SpaceAfter=No
 10	ている	て居る	AUX	助動詞	_	9	aux	_	SpaceAfter=No
 11	わけ	訳	NOUN	名詞-普通名詞-一般	_	0	root	_	SpaceAfter=No
-12	ではない	ではない	AUX	助動詞	_	11	aux	_	SpaceAfter=No
+12	ではない	ではない	AUX	助動詞	Polarity=Neg	11	aux	_	SpaceAfter=No
 13	。	。	PUNCT	補助記号-句点	_	11	punct	_	SpaceAfter=No
 
 # text = むしろまずよだかにとって問題なのは、どうして自分のような惨めな存在が生きつづけなければならないのかということであった。
@@ -929,7 +929,7 @@
 17	存在	存在	NOUN	名詞-普通名詞-サ変可能	_	19	nsubj	_	SpaceAfter=No
 18	が	が	ADP	助詞-格助詞	_	17	case	_	SpaceAfter=No
 19	生きつづけ	生き続ける	VERB	動詞-一般	_	24	acl	_	SpaceAfter=No
-20	なければならない	なければならない	AUX	助動詞	_	19	aux	_	SpaceAfter=No
+20	なければならない	なければならない	AUX	助動詞	Polarity=Neg	19	aux	_	SpaceAfter=No
 21	の	の	ADP	助詞-準体助詞	_	19	mark	_	SpaceAfter=No
 22	か	か	PART	助詞-終助詞	_	19	mark	_	SpaceAfter=No
 23	という	と言う	ADP	助詞-格助詞	_	19	case	_	SpaceAfter=No
@@ -1083,7 +1083,7 @@
 49	理解し	理解する	VERB	動詞-一般	_	51	acl	_	SpaceAfter=No
 50	ている	ている	AUX	助動詞	_	49	aux	_	SpaceAfter=No
 51	わけ	訳	NOUN	名詞-普通名詞-一般	_	0	root	_	SpaceAfter=No
-52	ではない	ではない	AUX	助動詞	_	51	aux	_	SpaceAfter=No
+52	ではない	ではない	AUX	助動詞	Polarity=Neg	51	aux	_	SpaceAfter=No
 53	。	。	PUNCT	補助記号-句点	_	51	punct	_	SpaceAfter=No
 
 # text = これはむしろ、主題としていえば、まずは食べないことの選択、つまりは断食につながるテーマである。
@@ -1099,7 +1099,7 @@
 10	まず	先ず	ADV	副詞	_	16	advmod	_	SpaceAfter=No
 11	は	は	ADP	助詞-係助詞	_	10	case	_	SpaceAfter=No
 12	食べ	食べる	VERB	動詞-一般	_	14	acl	_	SpaceAfter=No
-13	ない	ない	AUX	助動詞	_	12	aux	_	SpaceAfter=No
+13	ない	ない	AUX	助動詞	Polarity=Neg	12	aux	_	SpaceAfter=No
 14	こと	事	NOUN	名詞-普通名詞-一般	_	16	nmod	_	SpaceAfter=No
 15	の	の	ADP	助詞-格助詞	_	14	case	_	SpaceAfter=No
 16	選択	選択	NOUN	名詞-普通名詞-サ変可能	_	20	nmod	_	SpaceAfter=No
@@ -1168,7 +1168,7 @@
 20	だけ	だけ	ADP	助詞-副助詞	_	19	case	_	SpaceAfter=No
 21	を	を	ADP	助詞-格助詞	_	19	case	_	SpaceAfter=No
 22	とりだす	取り出す	VERB	動詞-一般	_	0	root	_	SpaceAfter=No
-23	のではない	のでは無い	AUX	助動詞	_	22	aux	_	SpaceAfter=No
+23	のではない	のでは無い	AUX	助動詞	Polarity=Neg	22	aux	_	SpaceAfter=No
 24	。	。	PUNCT	補助記号-句点	_	22	punct	_	SpaceAfter=No
 
 # text = むしろここでみいだされるのは、心がキズついたよだかが、それでもなお羽虫を食べるという行為を無意識のうちになしていることに気がつき「せなかがぞっとした」「思ひ」をもつという一点だけにあるようにおもわれる。
@@ -1249,7 +1249,7 @@
 17	が	が	ADP	助詞-格助詞	_	16	case	_	SpaceAfter=No
 18	共有する	共有する	VERB	動詞-一般	_	19	acl	_	SpaceAfter=No
 19	もの	物	NOUN	名詞-普通名詞-サ変可能	_	0	root	_	SpaceAfter=No
-20	ではない	では無い	AUX	助動詞	_	19	aux	_	SpaceAfter=No
+20	ではない	では無い	AUX	助動詞	Polarity=Neg	19	aux	_	SpaceAfter=No
 21	か	か	PART	助詞-終助詞	_	19	mark	_	SpaceAfter=No
 22	。	。	PUNCT	補助記号-句点	_	19	punct	_	SpaceAfter=No
 
@@ -1277,7 +1277,7 @@
 21	しか	しか	ADP	助詞-副助詞	_	20	case	_	SpaceAfter=No
 22	解決策	解決策	NOUN	名詞-普通名詞-一般	_	24	nsubj	_	SpaceAfter=No
 23	は	は	ADP	助詞-係助詞	_	22	case	_	SpaceAfter=No
-24	ない	無い	ADJ	形容詞-非自立可能	_	0	root	_	SpaceAfter=No
+24	ない	無い	ADJ	形容詞-非自立可能	Polarity=Neg	0	root	_	SpaceAfter=No
 25	のである	ので有る	AUX	助動詞	_	24	aux	_	SpaceAfter=No
 26	。	。	PUNCT	補助記号-句点	_	24	punct	_	SpaceAfter=No
 
