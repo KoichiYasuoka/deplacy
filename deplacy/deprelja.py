@@ -1,6 +1,7 @@
 deprelja = {
   "nsubj":"主語",
   "nsubj:pass":"主語[受動文]",
+  "nsubj:outer":"主語[外側]",
   "obj":"目的語",
   "iobj":"間接目的語",
   "obl":"斜格補語",
@@ -13,6 +14,7 @@ deprelja = {
   "nummod":"数量による修飾語",
   "csubj":"節主語",
   "csubj:pass":"節主語[受動文]",
+  "csubj:outer":"節主語[外側]",
   "ccomp":"節目的語",
   "xcomp":"節補語",
   "advcl":"連用修飾節",
