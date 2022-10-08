@@ -22,25 +22,6 @@ alma   NOUN  ═╝═╝<╝       ║ nmod
 .      PUNCT <════════════╝ punct
 ```
 
-## con [Stanza](https://stanfordnlp.github.io/stanza)
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("es")
->>> doc=nlp("La pluma es la lengua del alma.")
->>> import deplacy
->>> deplacy.render(doc)
-La     DET   <╗             det
-pluma  NOUN  ═╝<════════╗   nsubj
-es     AUX   <════════╗ ║   cop
-la     DET   <══════╗ ║ ║   det
-lengua NOUN  ═════╗═╝═╝═╝═╗ root
-de     ADP   <══╗ ║       ║ case
-el     DET   <╗ ║ ║       ║ det
-alma   NOUN  ═╝═╝<╝       ║ nmod
-.      PUNCT <════════════╝ punct
-```
-
 ## con [NLP-Cube](https://github.com/Adobe/NLP-Cube)
 
 ```py
@@ -150,6 +131,25 @@ la     DET   <════╗ ║ ║   det
 lengua NOUN  ═══╗═╝═╝═╝═╗ ROOT
 del    ADP   <╗ ║       ║ case
 alma   NOUN  ═╝<╝       ║ nmod
+.      PUNCT <══════════╝ punct
+```
+
+## con [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("es")
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   ═╗═╗═╗═╝═╝═╗ root
+lengua NOUN  <╝ ║ ║     ║ conj
+de     ADP   <══╝ ║     ║ nsubj:pass
+el     DET   <╗   ║     ║ det
+alma   NOUN  ═╝<══╝     ║ obl
 .      PUNCT <══════════╝ punct
 ```
 
