@@ -205,9 +205,9 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 >>> deplacy.render(doc)
 Toch       ADV   <════════════════════════╗   advmod
 houd       VERB  ═╗═╗═╗═╗═══════════════╗═╝═╗ ROOT
-ik         PRON   ║<╝ ║ ║               ║   ║ nsubj
-ze         PRON   ║<══╝ ║               ║   ║ obj
-vast       ADJ   <╝     ║               ║   ║ compound:prt
+ik         PRON  <╝ ║ ║ ║               ║   ║ nsubj
+ze         PRON  <══╝ ║ ║               ║   ║ obj
+vast       ADJ   <════╝ ║               ║   ║ xcomp
 ,          PUNCT <══╗   ║               ║   ║ punct
 ondanks    ADP   <╗ ║   ║               ║   ║ case
 alles      PRON  ═╝═╝<══╝               ║   ║ obl
@@ -222,7 +222,7 @@ innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║ ║   ║ amod
 goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║ ║   ║ obl
 van        ADP   <══╗ ║       ║ ║ ║ ║ ║ ║   ║ case
 den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║   ║ det
-mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
+mens       PROPN ═╝═╝<╝       ║ ║ ║ ║ ║ ║   ║ nmod
 geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝   ║ advcl
 .          PUNCT <══════════════════════════╝ punct
 ```
