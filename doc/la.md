@@ -53,14 +53,14 @@ amet    VERB  <══╝             ║ ccomp
 >>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Cras    NOUN  ═════╗<══╗     nsubj
-amet    VERB  ═══════╗═╝═╗═╗ root
-qui     PRON  <══╗ ║ ║   ║ ║ nsubj
-numquam ADV   <╗ ║ ║ ║   ║ ║ advmod:emph
-amavit  VERB  ═╝═╝<╝ ║   ║ ║ acl:relcl
-,       PUNCT <══╗   ║   ║ ║ punct
-quique  PRON  <╗ ║   ║   ║ ║ obj
-amavit  VERB  ═╝═╝<══╝   ║ ║ ccomp
+Cras    NOUN  <══════╗       nsubj
+amet    VERB  ═════╗═╝═╗═╗═╗ root
+qui     PRON  <══╗ ║   ║ ║ ║ nsubj
+numquam ADV   <╗ ║ ║   ║ ║ ║ advmod:emph
+amavit  VERB  ═╝═╝<╝   ║ ║ ║ ccomp
+,       PUNCT <══╗     ║ ║ ║ punct
+quique  ADV   <╗ ║     ║ ║ ║ advmod
+amavit  VERB  ═╝═╝<════╝ ║ ║ conj
 cras    NOUN  <╗         ║ ║ obj
 amet    VERB  ═╝<════════╝ ║ conj
 .       PUNCT <════════════╝ punct
