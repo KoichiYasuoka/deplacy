@@ -3,8 +3,8 @@
 ## við [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("icelandic-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("icelandic-ud27")
 >>> doc=nlp("Hugsjónina sakar ekkert þótt einstaklíngarnir deyi eða svíki.")
 >>> import deplacy
 >>> deplacy.render(doc)
