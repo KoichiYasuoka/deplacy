@@ -86,8 +86,8 @@ gelir   VERB  ═══════╝═╗ ROOT
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo) ile analiz
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("turkish-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("turkish-ud27")
 >>> doc=nlp("İyi insan sözünün üstüne gelir.")
 >>> import deplacy
 >>> deplacy.render(doc)
