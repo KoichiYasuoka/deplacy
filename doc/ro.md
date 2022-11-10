@@ -26,8 +26,8 @@ porcii  NOUN  <╝           ║ nsubj
 ## cu [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("romanian-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("romanian-ud27")
 >>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
 >>> import deplacy
 >>> deplacy.render(doc)
