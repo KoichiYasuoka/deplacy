@@ -45,7 +45,7 @@
 :     PUNCT <════╝ punct
 ```
 
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-ի հետ\n"
+## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-ի հետ
 
 ```py
 >>> from combo.predict import COMBO
