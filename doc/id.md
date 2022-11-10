@@ -34,6 +34,23 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
+## dengan [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("indonesian-ud29")
+>>> doc=nlp("Di atas langit masih ada langit.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Di     ADP   <══╗     case
+atas   NOUN  <╗ ║     case
+langit NOUN  ═╝═╝<╗   obl
+masih  ADV   <══╗ ║   advmod
+ada    VERB  ═╗═╝═╝═╗ root
+langit NOUN  <╝     ║ obj
+.      PUNCT <══════╝ punct
+```
+
 ## dengan [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
@@ -76,23 +93,6 @@ langit NOUN  <╝     ║ obj
 ...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=id&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
 ...     return json.loads(r.read())["result"]
 ...
->>> doc=nlp("Di atas langit masih ada langit.")
->>> import deplacy
->>> deplacy.render(doc)
-Di     ADP   <╗         case
-atas   ADP   ═╝<════╗   obl
-langit NOUN  <════╗ ║   obl
-masih  ADV   <══╗ ║ ║   advmod
-ada    VERB  ═╗═╝═╝═╝═╗ root
-langit NOUN  <╝       ║ obj
-.      PUNCT <════════╝ punct
-```
-
-## dengan [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("indonesian-ud27")
 >>> doc=nlp("Di atas langit masih ada langit.")
 >>> import deplacy
 >>> deplacy.render(doc)
