@@ -230,8 +230,8 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 ## met [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("dutch-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("dutch-ud27")
 >>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
 >>> import deplacy
 >>> deplacy.render(doc)
