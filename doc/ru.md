@@ -121,12 +121,12 @@
 ## с [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("russian-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("russian-taiga-ud29")
 >>> doc=nlp("Москва слезам не верила, а верила любви.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Москва NOUN  <══════════╗   nsubj
+Москва PROPN <══════════╗   nsubj
 слезам NOUN  <════════╗ ║   iobj
 не     PART  <╗       ║ ║   advmod
 верила VERB  ═╝═════╗═╝═╝═╗ root
