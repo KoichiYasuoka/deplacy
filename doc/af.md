@@ -136,26 +136,26 @@ hart  NOUN  ═╝═╝<╝             ║ obl
 ## met [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("afrikaans-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("afrikaans-ud29")
 >>> doc=nlp("As jy met hom praat in sy eie taal, gaan dit na sy hart.")
 >>> import deplacy
 >>> deplacy.render(doc)
-As    SCONJ ═══════════════╗<╗   amod
-jy    PRON  <════════════╗ ║ ║   nsubj
-met   ADP   <╗           ║ ║ ║   case
-hom   PRON  ═╝<════════╗ ║ ║ ║   obl
-praat VERB  ═════════╗═╝═╝<╝ ║   dep
-in    ADP   <════╗   ║       ║   case
-sy    PRON  <══╗ ║   ║       ║   det
-eie   ADJ   <╗ ║ ║   ║       ║   amod
-taal  NOUN  ═╝═╝═╝═╗<╝       ║   obl
-,     PUNCT <══════╝         ║   punct
-gaan  AUX   ═╗═══╗═══════════╝═╗ root
+As    SCONJ <════════════════╗   amod
+jy    PRON  <════════════╗   ║   nsubj
+met   ADP   <╗           ║   ║   case
+hom   PRON  ═╝<════════╗ ║   ║   obl
+praat VERB  ═════════╗═╝═╝<╗ ║   dep
+in    ADP   <════╗   ║     ║ ║   case
+sy    PRON  <══╗ ║   ║     ║ ║   det
+eie   ADJ   <╗ ║ ║   ║     ║ ║   amod
+taal  NOUN  ═╝═╝═╝═╗<╝     ║ ║   obl
+,     PUNCT <══════╝       ║ ║   punct
+gaan  VERB  ═╗═══╗═════════╝═╝═╗ root
 dit   PRON  <╝   ║             ║ nsubj
 na    ADP   <══╗ ║             ║ case
 sy    PRON  <╗ ║ ║             ║ det
-hart  PRON  ═╝═╝<╝             ║ obl
+hart  NOUN  ═╝═╝<╝             ║ obl
 .     PUNCT <══════════════════╝ punct
 ```
 
