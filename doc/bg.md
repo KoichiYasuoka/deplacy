@@ -99,6 +99,22 @@
 .      PUNCT <══════╝ punct
 ```
 
+## с [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("bulgarian-ud29")
+>>> doc=nlp("Гладна мечка хоро не играе.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Гладна ADJ   <══╗     amod
+мечка  NOUN  ═╗═╝<╗   nsubj
+хоро   NOUN  <╝   ║   nmod
+не     PART  <╗   ║   advmod
+играе  VERB  ═╝═══╝═╗ root
+.      PUNCT <══════╝ punct
+```
+
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
