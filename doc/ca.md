@@ -60,8 +60,8 @@ importància NOUN  ═╝<══╝   ║ obj
 ## amb [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("catalan-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("catalan-ud29")
 >>> doc=nlp("El tennis té avui a Catalunya molta importància.")
 >>> import deplacy
 >>> deplacy.render(doc)
