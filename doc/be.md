@@ -22,6 +22,28 @@
 .           PUNCT <══════════════════╝ punct
 ```
 
+## з [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("belarusian-ud29")
+>>> doc=nlp("Тэлебачанне стварае міфы, міфы тых, у чыіх руках тэлебачанне.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Тэлебачанне NOUN  <════════════════╗   nsubj
+стварае     VERB  ═══════════════╗═╝═╗ root
+міфы        NOUN  ═════════════╗<╝   ║ obj
+,           PUNCT <══════════╗ ║     ║ punct
+міфы        NOUN  ═╗═══════╗═╝<╝     ║ conj
+тых         DET   <╝       ║         ║ nmod
+,           PUNCT <══════╗ ║         ║ punct
+у           ADP   <════╗ ║ ║         ║ case
+чыіх        DET   <══╗ ║ ║ ║         ║ det
+руках       NOUN  ═╗═╝═╝═╝<╝         ║ nmod
+тэлебачанне NOUN  <╝                 ║ nsubj
+.           PUNCT <══════════════════╝ punct
+```
+
 ## з [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
