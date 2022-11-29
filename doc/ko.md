@@ -38,7 +38,7 @@
 ## [esupar](https://github.com/KoichiYasuoka/esupar)로 분석
 
 ```py
->>> import espar
+>>> import esupar
 >>> nlp=esupar.load("ko")
 >>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
 >>> import deplacy
