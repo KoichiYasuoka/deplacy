@@ -35,6 +35,22 @@
 .        PUNCT <══════╝ punct
 ```
 
+## [esupar](https://github.com/KoichiYasuoka/esupar)로 분석
+
+```py
+>>> import espar
+>>> nlp=esupar.load("ko")
+>>> doc=nlp("홍시 맛이 나서 홍시라 생각한다.")
+>>> import deplacy
+>>> deplacy.render(doc)
+홍시     NOUN  ═╗<╗     nsubj
+맛이     NOUN  <╝ ║     flat
+나서     VERB  ═══╝<╗   advcl
+홍시라   VERB  <╗   ║   ccomp
+생각한다 VERB  ═╝═══╝═╗ root
+.        PUNCT <══════╝ punct
+```
+
 ## [Trankit](https://github.com/nlp-uoregon/trankit)로 분석
 
 ```py
