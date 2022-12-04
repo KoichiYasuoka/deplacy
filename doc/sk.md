@@ -60,6 +60,25 @@ spadne  VERB  ═══╝═╝═╝═╗ root
 .       PUNCT <════════╝ punct
 ```
 
+## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("slovak-ud29")
+>>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Kto     PRON  <══════╗   nsubj
+druhému ADJ   <╗     ║   amod
+jamu    NOUN  ═╝<╗   ║   obj
+kope    VERB  ═╗═╝<╗ ║   advmod
+sám     DET   <╝   ║ ║   xcomp
+do      ADP   <╗   ║ ║   case
+nej     PRON  ═╝<╗ ║ ║   obl
+spadne  VERB  ═══╝═╝═╝═╗ root
+.       PUNCT <════════╝ punct
+```
+
 ## s [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
@@ -134,25 +153,6 @@ sám     DET   <════╗ ║ ║ ║   obl
 do      ADP   <╗   ║ ║ ║ ║   case
 nej     PRON  ═╝<╗ ║ ║ ║ ║   obl
 spadne  VERB  ═══╝═╝═╝═╝═╝═╗ ROOT
-.       PUNCT <════════════╝ punct
-```
-
-## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("slovak-ud27")
->>> doc=nlp("Kto druhému jamu kope sám do nej spadne.")
->>> import deplacy
->>> deplacy.render(doc)
-Kto     PRON  <══════════╗   nsubj
-druhému ADJ   <╗         ║   amod
-jamu    NOUN  ═╝<══════╗ ║   obj
-kope    NOUN  <══════╗ ║ ║   advmod
-sám     DET   <════╗ ║ ║ ║   xcomp
-do      ADP   <╗   ║ ║ ║ ║   case
-nej     PRON  ═╝<╗ ║ ║ ║ ║   obl
-spadne  VERB  ═══╝═╝═╝═╝═╝═╗ root
 .       PUNCT <════════════╝ punct
 ```
 
