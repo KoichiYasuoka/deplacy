@@ -66,6 +66,27 @@ amet    VERB  ═╝<════════╝ ║ conj
 .       PUNCT <════════════╝ punct
 ```
 
+## per [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("latin-ittb-ud29")
+>>> doc=nlp("Cras amet qui numquam amavit, quique amavit cras amet.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cras    ADJ   <══════════╗   obj
+amet    VERB  ═════╗═══╗═╝═╗ root
+qui     PRON  <══╗ ║   ║   ║ nsubj
+numquam ADV   <╗ ║ ║   ║   ║ advmod:emph
+amavit  VERB  ═╝═╝<╝   ║   ║ csubj
+,       PUNCT <══════╗ ║   ║ punct
+quique  DET   <══╗   ║ ║   ║ obl:arg
+amavit  VERB  ═╗═╝<╗ ║ ║   ║ csubj
+cras    NOUN  <╝   ║ ║ ║   ║ obj
+amet    VERB  ═════╝═╝<╝   ║ ccomp
+.       PUNCT <════════════╝ punct
+```
+
 ## per [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
