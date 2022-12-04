@@ -103,6 +103,26 @@
 .           PUNCT <══════════╝ punct
 ```
 
+## δῐᾰ́́ [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("ancient-greek-perseus-ud29")
+>>> doc=nlp("Γνώσεσθε τὴν ἀλήθειαν, καὶ ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Γνώσεσθε    VERB  ═══╗═╗═╗═╗ root
+τὴν         DET   <╗ ║ ║ ║ ║ det
+ἀλήθειαν    NOUN  ═╝<╝ ║ ║ ║ obj
+,           PUNCT <╗   ║ ║ ║ punct
+καὶ         CCONJ ═╝<══╝ ║ ║ cc
+ἡ           DET   <╗     ║ ║ det
+ἀλήθεια     NOUN  ═╝<╗   ║ ║ nsubj
+ἐλευθερώσει VERB  ═╗═╝<══╝ ║ conj
+ὑμᾶς        PRON  <╝       ║ obj
+.           PUNCT <════════╝ punct
+```
+
 ## δῐᾰ́́ [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
