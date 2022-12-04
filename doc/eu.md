@@ -21,12 +21,12 @@ da        VERB  ═══════╝═╝═╗ ROOT
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-rekin
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("basque-ud27")
+>>> fromt combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("basque-ud29")
 >>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Euskaldun ADJ   ═╗<════╗   csubj
+Euskaldun NOUN  ═╗<════╗   nsubj
 izatea    AUX   <╝     ║   cop
 lan       NOUN  ═╗═╗<╗ ║   nsubj
 extra     ADJ   <╝ ║ ║ ║   amod
