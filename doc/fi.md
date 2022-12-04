@@ -140,8 +140,8 @@ selviämään VERB  <╝                   ║ xcomp
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo):n kanssa
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("finnish-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("finnish-tdt-ud29")
 >>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
 >>> import deplacy
 >>> deplacy.render(doc)
