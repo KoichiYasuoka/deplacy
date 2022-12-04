@@ -54,6 +54,24 @@ duro  ADJ   <╝     ║     amod
 .     PUNCT <══════╝     punct
 ```
 
+## con [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("galician-ud29")
+>>> doc=nlp("Cando hai fame non hai pan duro.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Cando PRON  <══╗       nsubj
+hai   VERB  ═╗═╝═══╗<╗ nsubj
+fame  NOUN  <╝     ║ ║ obj
+non   PART  <════╗ ║ ║ advmod
+hai   VERB  ═══╗═╝═══╝ root
+pan   NOUN  ═╗<╝   ║   obj
+duro  ADJ   <╝     ║   amod
+.     PUNCT <══════╝   punct
+```
+
 ## con [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py
@@ -70,24 +88,6 @@ hai   VERB  ═══╗═╝<╝     ║ obj
 pan   NOUN  ═╗<╝         ║ obj
 duro  ADJ   <╝           ║ amod
 .     PUNCT <════════════╝ punct
-```
-
-## con [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("galician-ud27")
->>> doc=nlp("Cando hai fame non hai pan duro.")
->>> import deplacy
->>> deplacy.render(doc)
-Cando PRON  <════╗     nsubj
-hai   VERB  ═╗═╗═╝<╗   ccomp
-fame  NOUN  <╝ ║   ║   obj
-non   PART  <══╝   ║   advmod
-hai   VERB  ═══╗═══╝═╗ root
-pan   NOUN  ═╗<╝     ║ obj
-duro  ADJ   <╝       ║ amod
-.     PUNCT <════════╝ punct
 ```
 
 ## con [Trankit](https://github.com/nlp-uoregon/trankit)
