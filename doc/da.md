@@ -116,8 +116,8 @@ fiskehale NOUN  ═╝═╝<╝     ║ obl
 ## med [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("danish-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("danish-ud29")
 >>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -126,9 +126,9 @@ sukkede   VERB  ═════╗═╝═══╗═╗ root
 den       DET   <══╗ ║     ║ ║ det
 lille     ADJ   <╗ ║ ║     ║ ║ amod
 havfrue   NOUN  ═╝═╝<╝     ║ ║ nsubj
-og        CCONJ <══════╗   ║ ║ cc
-så        ADV   ═════╗═╝<╗ ║ ║ advmod
-bedrøvet  VERB  ═════════╝<╝ ║ conj
+og        CCONJ <════════╗ ║ ║ cc
+så        ADV   <══════╗ ║ ║ ║ advmod
+bedrøvet  VERB  ═════╗═╝═╝<╝ ║ conj
 på        ADP   <══╗ ║       ║ case
 sin       DET   <╗ ║ ║       ║ det
 fiskehale NOUN  ═╝═╝<╝       ║ obl
