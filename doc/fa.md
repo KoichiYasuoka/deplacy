@@ -129,6 +129,27 @@ nmod:poss ║       ║ ╚> NOUN  متافيزيك
     punct ╚══════════> PUNCT .
 ```
 
+<h2 dir="rtl"> با <a href="https://gitlab.clarin-pl.eu/syntactic-tools/combo">COMBO-pytorch</a></h2>
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("persian-seraji-ud29")
+>>> doc=nlp("به اعتقاد من موسيقي هنر نيست، بلكه متافيزيك است.")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+     case         ╔══> ADP   به
+     nmod   ╔════>╚═╔═ NOUN  اعتقاد
+nmod:poss   ║       ╚> PRON  من
+     root ╔═╚═╔═══╔═╔═ NOUN  موسيقي
+nmod:poss ║   ║   ║ ╚> NOUN  هنر
+      cop ║   ║   ╚══> AUX   نيست
+    punct ║   ║ ╔════> PUNCT ،
+   advmod ║   ║ ║ ╔══> ADV   بلكه
+    ccomp ║   ╚>╚═╚═╔═ NOUN  متافيزيك
+      cop ║         ╚> AUX   است
+    punct ╚══════════> PUNCT .
+```
+
 <h2 dir="rtl"> با <a href="https://github.com/sobhe/hazm">Hazm</a></h2>
 
 ```py
