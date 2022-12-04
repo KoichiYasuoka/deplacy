@@ -49,6 +49,29 @@ hwn     PRON  <╝               ║ det
 .       PUNCT <════════════════╝ punct
 ```
 
+## gyda [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("welsh-ud29")
+>>> doc=nlp("Benthyg dros amser byr yw popeth a geir yn y byd hwn.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Benthyg NOUN  ═════╗<════════╗   nsubj
+dros    ADP   <══╗ ║         ║   case
+amser   NOUN  ═╗═╝<╝         ║   nmod
+byr     ADJ   <╝             ║   nmod
+yw      AUX   <════════════╗ ║   cop
+popeth  NOUN  ═══════════╗═╝═╝═╗ root
+a       CCONJ <════════╗ ║     ║ cc
+geir    PROPN ═══════╗═╝<╝     ║ conj
+yn      ADP   <════╗ ║         ║ case
+y       DET   <══╗ ║ ║         ║ det
+byd     NOUN  ═╗═╝═╝<╝         ║ obl
+hwn     PRON  <╝               ║ det
+.       PUNCT <════════════════╝ punct
+```
+
 ## gyda [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py
