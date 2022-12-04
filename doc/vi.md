@@ -55,14 +55,14 @@ chim    VERB  <══╝     ║ xcomp
 ## với [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("vietnamese-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("vietnamese-ud29")
 >>> doc=nlp("Một mũi tên trúng hai con chim.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Một   NUM   <════════╗   nummod
-mũi   NOUN  ═╗═════╗═╝═╗ root
-tên   NOUN  <╝     ║   ║ compound
+Một   NUM   <╗           nummod
+mũi   NOUN  ═╝<══════╗   nsubj
+tên   NOUN  ═══════╗═╝═╗ root
 trúng ADJ   <════╗ ║   ║ case
 hai   NUM   <╗   ║ ║   ║ nummod
 con   NOUN  ═╝═╗═╝<╝   ║ compound
