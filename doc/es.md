@@ -153,3 +153,21 @@ alma   NOUN  ═╝<╝       ║ nmod
 .      PUNCT <══════════╝ punct
 ```
 
+## con [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("spanish-ancora-ud29")
+>>> doc=nlp("La pluma es la lengua del alma.")
+>>> import deplacy
+>>> deplacy.render(doc)
+La     DET   <╗           det
+pluma  NOUN  ═╝<══════╗   nsubj
+es     AUX   <══════╗ ║   cop
+la     DET   <════╗ ║ ║   det
+lengua NOUN  ═══╗═╝═╝═╝═╗ root
+del    ADJ   <╗ ║       ║ amod
+alma   NOUN  ═╝<╝       ║ appos
+.      PUNCT <══════════╝ punct
+```
+
