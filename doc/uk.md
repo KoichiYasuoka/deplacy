@@ -133,8 +133,8 @@
 ## з [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("ukrainian-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("ukrainian-ud29")
 >>> doc=nlp("Біжать алеї звуків, саджених у гами.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -142,7 +142,7 @@
 алеї     NOUN  ═════════╗<╝ ║ obj
 звуків   NOUN  ═══════╗<╝   ║ nmod
 ,        PUNCT <════╗ ║     ║ punct
-саджених NOUN  ═══╗═╝<╝     ║ amod
+саджених ADJ   ═══╗═╝<╝     ║ amod
 у        ADP   <╗ ║         ║ case
 гами     NOUN  ═╝<╝         ║ obl
 .        PUNCT <════════════╝ punct
