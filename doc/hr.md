@@ -25,17 +25,17 @@ podnijeti VERB  <╝         ║ xcomp
 ## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-om
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("croatian-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("croatian-ud29")
 >>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
 >>> import deplacy
 >>> deplacy.render(doc)
 Činilo    VERB  ═╗═╗═════╗═╗ root
-mi        PRON  <╝ ║     ║ ║ iobj
+mi        PRON  <╝ ║     ║ ║ obj
 se        PRON  <══╝     ║ ║ obj
 :         PUNCT <══════╗ ║ ║ punct
 ništa     PRON  <════╗ ║ ║ ║ nsubj
-nije      AUX   <══╗ ║ ║ ║ ║ cop
+nije      AUX   <══╗ ║ ║ ║ ║ aux
 teže      ADV   ═╗═╝═╝═╝<╝ ║ parataxis
 podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
