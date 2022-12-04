@@ -128,6 +128,31 @@ gadi       NOUN  ═╝═╝<╝               ║ conj
 .          PUNCT <════════════════════╝ punct
 ```
 
+## ar [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
+
+```py
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("latvian-ud29")
+>>> doc=nlp("Latvija vienu pēc otras pārdzīvoja trīs okupācijas, kuru kopējais ilgums, piecdesmit gadi.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Latvija    PROPN <════════════════╗   nsubj
+vienu      NUM   <══════════════╗ ║   obj
+pēc        ADP   <╗             ║ ║   case
+otras      NUM   ═╝<╗           ║ ║   nummod
+pārdzīvoja VERB  ═══╝═════════╗═╝═╝═╗ root
+trīs       NUM   <╗           ║     ║ nummod
+okupācijas NOUN  ═╝═════════╗<╝     ║ obj
+,          PUNCT <════════╗ ║       ║ punct
+kuru       DET   <══════╗ ║ ║       ║ det
+kopējais   ADJ   <╗     ║ ║ ║       ║ amod
+ilgums     NOUN  ═╝═══╗═╝═╝<╝       ║ acl
+,          PUNCT <══╗ ║             ║ punct
+piecdesmit NUM   <╗ ║ ║             ║ nummod
+gadi       NOUN  ═╝═╝<╝             ║ conj
+.          PUNCT <══════════════════╝ punct
+```
+
 ## ar [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

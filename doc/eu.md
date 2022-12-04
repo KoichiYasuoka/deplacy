@@ -21,7 +21,7 @@ da        VERB  ═══════╝═╝═╗ ROOT
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-rekin
 
 ```py
->>> fromt combo.predict import COMBO
+>>> from combo.predict import COMBO
 >>> nlp=COMBO.from_pretrained("basque-ud29")
 >>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
 >>> import deplacy
