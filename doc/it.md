@@ -28,8 +28,8 @@ spia      NOUN  ═╝═╝═╝<╝     ║ conj
 ## con [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
 
 ```py
->>> import combo.predict
->>> nlp=combo.predict.COMBO.from_pretrained("italian-ud27")
+>>> from combo.predict import COMBO
+>>> nlp=COMBO.from_pretrained("italian-ud27")
 >>> doc=nlp("Chi non beve in compagnia o è un ladro o è una spia.")
 >>> import deplacy
 >>> deplacy.render(doc)
