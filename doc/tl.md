@@ -17,3 +17,20 @@ paraan NOUN  ═╝<╝     ║ nmod
 .      PUNCT <════════╝ punct
 ```
 
+## sa [ud-tagalog-spacy](https://github.com/ljvmiranda921/ud-tagalog-spacy)
+
+```py
+>>> import spacy
+>>> nlp=spacy.load("tl_ud_tl_ugnayan")
+>>> doc=nlp("Ang lakas ay daig ng paraan.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ang    ADP   <══╗     case
+lakas  NOUN  ═╗═╝<╗   dep
+ay     PART  <╝   ║   dep
+daig   VERB  ═══╗═╝═╗ ROOT
+ng     ADP   <╗ ║   ║ case
+paraan NOUN  ═╝<╝   ║ obl
+.      PUNCT <══════╝ punct
+```
+
