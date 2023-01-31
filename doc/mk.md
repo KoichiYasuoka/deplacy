@@ -33,20 +33,20 @@
 >>> doc=nlp("Слобода, сакам да се радувам, а нешто не ме оставаат, разбираш.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Слобода  NOUN  ═╗<══════════╗       att
-,        PUNCT <╝           ║       punct
-сакам    VERB  ═════╗═╗═╗═╗═╝═╗═╗═╗ ROOT
-да       SCONJ <══╗ ║ ║ ║ ║   ║ ║ ║ aux
-се       AUX   <╗ ║ ║ ║ ║ ║   ║ ║ ║ aux
-радувам  VERB  ═╝═╝<╝ ║ ║ ║   ║ ║ ║ relcl
-,        PUNCT        ║ ║ ║<══╝ ║ ║ punct
-а        CONJ  <══════╝ ║ ║     ║ ║ cc
-нешто    ADV   <════════╝ ║     ║ ║ dep
-не       VERB  <══╗       ║     ║ ║ neg
-ме       PRON  <╗ ║       ║     ║ ║ dep
-оставаат VERB  ═╝═╝═╗<════║═════╝ ║ relcl
-,        PUNCT <════╝     ║       ║ punct
-разбираш VERB  <══════════╝       ║ relcl
-.        PUNCT <══════════════════╝ punct
+Слобода  NOUN                     ROOT
+,        PUNCT                    ROOT
+сакам    VERB  ═════╗═╗═╗═╗═╗═╗═╗ ROOT
+да       SCONJ <══╗ ║ ║ ║ ║ ║ ║ ║ aux
+се       AUX   <╗ ║ ║ ║ ║ ║ ║ ║ ║ aux
+радувам  VERB  ═╝═╝<╝ ║ ║ ║ ║ ║ ║ relcl
+,        PUNCT <══════╝ ║ ║ ║ ║ ║ punct
+а        CONJ  <════════╝ ║ ║ ║ ║ cc
+нешто    PRON  <══════════╝ ║ ║ ║ aux
+не       VERB  <══╗         ║ ║ ║ neg
+ме       PRON  <╗ ║         ║ ║ ║ dep
+оставаат VERB  ═╝═╝<════════╝ ║ ║ relcl
+,        PUNCT <╗             ║ ║ dep
+разбираш PART  ═╝<════════════╝ ║ dobj
+.        PUNCT <════════════════╝ punct
 ```
 
