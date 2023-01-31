@@ -33,6 +33,7 @@ name      NOUN  ═╝<╝             ║ dobj
 ## Other usages
 
 * [Afrikaans](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/af.md)
+* [アイヌイタㇰ](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ain.md)
 * [العربية](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/ar.md)
 * [Беларуская](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/be.md)
 * [Български](https://github.com/KoichiYasuoka/deplacy/blob/master/doc/bg.md)
@@ -119,6 +120,7 @@ You need to install spaCy, UniDic2UD, Stanza, NLP-Cube, or Trankit separately. F
 ## Templates for Google Colaboratory
 
 * [Afrikaans](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/af.ipynb)
+* [アイヌイタㇰ](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ain.ipynb)
 * [العربية](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/ar.ipynb)
 * [Беларуская](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/be.ipynb)
 * [Български](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/doc/bg.ipynb)
