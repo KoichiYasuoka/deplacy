@@ -1,0 +1,144 @@
+<!DOCTYPE html><head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>アイヌ語UDエディター by 安岡孝一</title>
+<script src="../../deplacy/conllusvgview.js"></script>
+<script src="../../deplacy/conllusvgedit.js"></script>
+<script type="text/javascript">
+function editorCheckURL(textid,sentid){
+  var tx=document.getElementById(textid);
+  var sx=document.getElementById(sentid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1))+"\n";
+  if(tx.value==null){
+    tx.textContent=h;
+    sx.textContent="";
+  }
+  else{
+    tx.value=h;
+    sx.value="";
+  }
+}
+function editorChangeURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href+"#";
+  var i=h.indexOf("#");
+  var v=tx.value;
+  if(v==null)
+    v=tx.textContent;
+  location.href=h.substring(0,i+1)+encodeURIComponent(v);
+}
+function editorInit(textid,sentid){
+  var tx=document.getElementById(textid);
+  var ty=document.getElementById(sentid);
+  var form=new Array();
+  var misc=new Array();
+  var punct=",.!?;:'‘’"+'"“”'
+  var i,n,s,u;
+  s=ty.value;
+  if(s==null)
+    s=ty.textContent;
+  n=1;
+  for(i=0;i<s.length;i++){
+    t=s.substring(i,i+1);
+    if(t==" "){
+      if(form[n])
+        n++;
+      misc[n-1]="_";
+    }
+    else if(t=="/"){
+      if(form[n])
+        n++;
+      misc[n-1]="SpaceAfter=No";
+    }
+    else if(punct.indexOf(t)>=0){
+      if(form[n]){
+        misc[n]="SpaceAfter=No";
+        n++;
+      }
+      form[n]=t;
+      misc[n]="SpaceAfter=No";
+      n++;
+    }
+    else{
+      if(form[n])
+        form[n]+=t;
+      else
+        form[n]=t;
+    }
+  }
+  if(form[n]==null)
+    n--;
+  misc[n]="_";
+  u="";
+  for(i=1;i<=n;i++){
+    if(misc[i]==null)
+      misc[i]="_";
+    u+=i.toString()+"\t"+form[i]+"\t"+form[i]+"\t_\t_\t_\t_\t_\t_\t"+misc[i]+"\n";
+  }
+  if(tx.value!=null)
+    tx.value=u;
+  else
+    tx.textContent=u;
+  conllusvg.reparse(textid);
+}
+editorInsertTextline=conllusvg.insertTextline
+conllusvg.insertTextline=function(textid,i,j,t){
+  editorInsertTextline(textid,i,j,t);
+  editorChangeURL(textid);
+}
+</script>
+</head>
+<body>
+<table noborder><tr><td nowrap>
+<input type="text" id="sentence" size=60 value="itsk/ash awa pon/rupne/ainu ene itak/i : ―" />
+<input type="button" value="CoNLL-U初期化" onclick="editorInit('conllu','sentence')" />
+<text id="status" />
+</td></tr></table>
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+1	itsk	itak	VERB	自動詞	_	0	root	_	SpaceAfter=No
+2	ash	=as	PART	人称接辞	_	1	nsubj	_	_
+3	awa	awa	CCONJ	接続詞	_	1	cc	_	_
+4	pon	pon	VERB	自動詞	_	6	amod	_	SpaceAfter=No
+5	rupne	rupne	VERB	自動詞	_	6	amod	_	SpaceAfter=No
+6	ainu	aynu	NOUN	名詞	_	8	nsubj	_	_
+7	ene	ene	ADV	副詞	_	8	advmod	_	_
+8	itak	itak	VERB	自動詞	_	9	acl	_	SpaceAfter=No
+9	i	-i	PART	接尾辞	_	1	conj	_	_
+10	:	:	PUNCT	記号	_	9	punct	_	_
+11	―	―	PUNCT	記号	_	9	punct	_	_
+</textarea>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu','sentence');conllusvg.edit(this,'conllu',null,null,'xpos')">
+</svg>
+<select size=8 id="xpos" style="position:absolute; visibility:hidden">
+<option value="NOUN">名詞</option>
+<option value="NOUN">位置名詞</option>
+<option value="NOUN">形式名詞</option>
+<option value="PROPN">固有名詞</option>
+<option value="PRON">代名詞</option>
+<option value="VERB">完全動詞</option>
+<option value="VERB">自動詞</option>
+<option value="VERB">他動詞</option>
+<option value="SCONJ">後置副詞</option>
+<option value="SCONJ">接続助詞</option>
+<option value="SCONJ">接続詞</option>
+<option value="CCONJ">接続詞</option>
+<option value="ADP">格助詞</option>
+<option value="ADP">副助詞</option>
+<option value="PART">終助詞</option>
+<option value="PART">人称接辞</option>
+<option value="PART">接頭辞</option>
+<option value="PART">接尾辞</option>
+<option value="ADV">副詞</option>
+<option value="NUM">数詞</option>
+<option value="DET">連体詞</option>
+<option value="AUX">助動詞</option>
+<option value="AUX">デアル動詞</option>
+<option value="INTJ">間投詞</option>
+<option value="PUNCT">記号</option>
+</select>
+</body>
