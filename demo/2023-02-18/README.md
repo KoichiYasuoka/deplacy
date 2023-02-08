@@ -2,4 +2,5 @@
 
 ## アイヌ語UDエディター
 * [DeBERTa esupar](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/deberta-esupar.ipynb)
+* [RoBERTa esupar](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/roberta-esupar.ipynb)
 
