@@ -1,0 +1,152 @@
+# text = イランカラㇷ゚テ。
+1	イランカラㇷ゚テ	irankarapte	INTJ	間投詞	_	0	root	_	SpaceAfter=No|Translit=irankarapte
+2	。	.	PUNCT	記号	_	1	punct	_	_
+
+# text = ウアイヌコㇿ コタン オルン シネウパ ウタㇻ、 エチコプンテㇰ ナ。
+1	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	2	amod	_	Translit=uwaynukor
+2	コタン	kotan	NOUN	名詞	_	3	nmod	_	Translit=kotan
+3-4	オルン	_	_	_	_	_	_	_	_
+3	オㇿ	or	NOUN	位置名詞	_	5	obl	_	Translit=or
+4	ウン	un	ADP	格助詞	_	3	case	_	Translit=un
+5	シネウパ	sinewe	VERB	自動詞	_	6	acl	_	Translit=sinewpa
+6	ウタㇻ	utar	NOUN	名詞	_	9	obj	_	SpaceAfter=No|Translit=utar
+7	、	,	PUNCT	記号	_	6	punct	_	_
+8	エチ	eci=	PART	人称接辞	_	9	nsubj	_	SpaceAfter=No|Translit=eci=
+9	コプンテㇰ	kopuntek	VERB	他動詞	_	0	root	_	Translit=kopuntek
+10	ナ	na	PART	終助詞	_	9	discourse	_	SpaceAfter=No|Translit=na
+11	。	.	PUNCT	記号	_	9	punct	_	_
+
+# text = 『ウアイヌコㇿ コタン アカㇻ』 セコㇿ チレコ ワ オロ タ エチエカノㇰ。
+1	『	"	PUNCT	記号	_	5	punct	_	SpaceAfter=No
+2	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	3	amod	_	Translit=uwaynukor
+3	コタン	kotan	NOUN	名詞	_	5	obj	_	Translit=kotan
+4	ア	a=	PART	人称接辞	_	5	nsubj	_	SpaceAfter=No|Translit=a=
+5	カㇻ	kar	VERB	他動詞	_	9	ccomp	_	SpaceAfter=No|Translit=kar
+6	』	"	PUNCT	記号	_	5	punct	_	_
+7	セコㇿ	sekor	SCONJ	接続詞	_	5	mark	_	Translit=sekor
+8	チ	ci=	PART	人称接辞	_	9	nsubj	_	SpaceAfter=No|Translit=ci=
+9	レコ	réko	VERB	他動詞	_	11	acl	_	Translit=réko
+10	ワ	wa	SCONJ	接続助詞	_	9	mark	_	Translit=wa
+11	オロ	oro	NOUN	位置名詞	_	14	obl	_	Translit=oro
+12	タ	ta	ADP	格助詞	_	11	case	_	Translit=ta
+13	エチ	eci=	PART	人称接辞	_	14	nsubj	_	SpaceAfter=No|Translit=eci=
+14	エカノㇰ	ekanok	VERB	他動詞	_	0	root	_	SpaceAfter=No|Translit=ekanok
+15	。	.	PUNCT	記号	_	14	punct	_	_
+
+# text = 2020パ 7チュㇷ゚ 12ト ワノ アイヌ プリ カンナ アシトゥリレ クニネ ウアイヌコㇿ コタン アン。
+1	2020	2020	NUM	数詞	_	2	nummod	_	SpaceAfter=No
+2	パ	pa	NOUN	名詞	_	6	compound	_	Translit=pa
+3	7	7	NUM	数詞	_	4	nummod	_	SpaceAfter=No
+4	チュㇷ゚	cup	NOUN	名詞	_	6	compound	_	Translit=cup
+5	12	12	NUM	数詞	_	6	nummod	_	SpaceAfter=No
+6	ト	to	NOUN	名詞	_	16	obl	_	Translit=to
+7	ワノ	wano	ADP	格助詞	_	6	case	_	Translit=wano
+8	アイヌ	aynu	NOUN	名詞	_	9	compound	_	Translit=aynu
+9	プリ	puri	NOUN	名詞	_	12	obj	_	Translit=puri
+10	カンナ	kanna	ADV	副詞	_	12	advmod	_	Translit=kanna
+11	ア	a=	PART	人称接辞	_	12	nsubj	_	SpaceAfter=No|Translit=a=
+12	シトゥリレ	situri-re	VERB	他動詞	_	16	advcl	_	Translit=situri-re
+13	クニネ	kunine	SCONJ	接続助詞	_	12	mark	_	Translit=kunine
+14	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	15	amod	_	Translit=uwaynukor
+15	コタン	kotan	NOUN	名詞	_	16	nsubj	_	Translit=kotan
+16	アン	an	VERB	自動詞	_	0	root	_	SpaceAfter=No|Translit=an
+17	。	.	PUNCT	記号	_	16	punct	_	_
+
+# text = タン コタン オルン アイヌ ウタㇻ カ シサㇺ ウタㇻ カ レプンクㇽ ウタㇻ カ シネウパ。
+1	タン	tan	DET	連体詞	_	2	det	_	Translit=tan
+2	コタン	kotan	NOUN	名詞	_	3	nmod	_	Translit=kotan
+3-4	オルン	_	_	_	_	_	_	_	_
+3	オㇿ	or	NOUN	位置名詞	_	14	obl	_	Translit=or
+4	ウン	un	ADP	格助詞	_	3	case	_	Translit=un
+5	アイヌ	aynu	NOUN	名詞	_	6	nmod	_	Translit=aynu
+6	ウタㇻ	utar	NOUN	名詞	_	14	nsubj	_	Translit=utar
+7	カ	ka	ADP	副助詞	_	6	case	_	Translit=ka
+8	シサㇺ	sisam	NOUN	名詞	_	9	nmod	_	Translit=sisam
+9	ウタㇻ	utar	NOUN	名詞	_	6	conj	_	Translit=utar
+10	カ	ka	ADP	副助詞	_	9	case	_	Translit=ka
+11	レプンクㇽ	repunkur	NOUN	名詞	_	12	nmod	_	Translit=repunkur
+12	ウタㇻ	utar	NOUN	名詞	_	6	conj	_	Translit=utar
+13	カ	ka	ADP	副助詞	_	12	case	_	Translit=ka
+14	シネウパ	sinewe	VERB	自動詞	_	0	root	_	SpaceAfter=No|Translit=sinewpa
+15	。	.	PUNCT	記号	_	14	punct	_	_
+
+# text = アイヌ プリ エヤイパカㇱヌ。
+1	アイヌ	aynu	NOUN	名詞	_	2	compound	_	Translit=aynu
+2	プリ	puri	NOUN	名詞	_	3	obj	_	Translit=puri
+3	エヤイパカㇱヌ	eyaypakasnu	VERB	他動詞	_	0	root	_	SpaceAfter=No|Translit=eyaypakasnu
+4	。	.	PUNCT	記号	_	3	punct	_	_
+
+# text = “ウポポイ” アナㇰネ ウアイヌコㇿ コタン ポンレ ネ。
+1	“	"	PUNCT	記号	_	2	punct	_	SpaceAfter=No
+2	ウポポイ	Upopoy	PROPN	固有名詞	_	7	nsubj	_	SpaceAfter=No|Translit=Upopoy
+3	”	"	PUNCT	記号	_	2	punct	_	_
+4	アナㇰネ	anakne	ADP	副助詞	_	2	case	_	Translit=anakne
+5	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	6	amod	_	Translit=uwaynukor
+6	コタン	kotan	NOUN	名詞	_	7	nmod	_	Translit=kotan
+7	ポンレ	ponre	NOUN	名詞	_	0	root	_	Translit=ponre
+8	ネ	ne	AUX	デアル動詞	_	7	cop	_	SpaceAfter=No|Translit=ne
+9	。	.	PUNCT	記号	_	7	punct	_	_
+
+# text = タン トゥンプ オッタ “ウアイヌコㇿ コタン ヘマンタ クス アカㇻ ルウェ アン? マカナㇰ アカㇻ ルウェ アン?” セコㇿ アン ペ エチヌカレ ルウェ ネ。
+1	タン	tan	DET	連体詞	_	2	det	_	Translit=tan
+2	トゥンプ	tunpu	NOUN	名詞	_	3	nmod	_	Translit=tunpu
+3	オッ	or	NOUN	位置名詞	_	26	obl	_	SpaceAfter=No|Translit=or
+4	タ	ta	ADP	格助詞	_	3	case	_	Translit=ta
+5	“	"	PUNCT	記号	_	13	punct	_	SpaceAfter=No
+6	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	7	amod	_	Translit=uwaynukor
+7	コタン	kotan	NOUN	名詞	_	11	obj	_	Translit=kotan
+8	ヘマンタ	hemanta	NOUN	名詞	_	11	obl	_	Translit=hemanta
+9	クス	kusu	SCONJ	後置副詞	_	8	case	_	Translit=kusu
+10	ア	a=	PART	人称接辞	_	11	nsubj	_	SpaceAfter=No|Translit=a=
+11	カㇻ	kar	VERB	他動詞	_	12	acl	_	Translit=kar
+12	ルウェ	ruwe	NOUN	形式名詞	_	13	nsubj	_	Translit=ruwe
+13	アン	an	VERB	自動詞	_	23	advcl	_	SpaceAfter=No|Translit=an
+14	?	?	PUNCT	記号	_	13	punct	_	_
+15	マカナㇰ	makanak	ADV	副詞	_	17	advmod	_	Translit=makanak
+16	ア	a=	PART	人称接辞	_	17	nsubj	_	SpaceAfter=No|Translit=a=
+17	カㇻ	kar	VERB	他動詞	_	18	acl	_	Translit=kar
+18	ルウェ	ruwe	NOUN	形式名詞	_	19	nsubj	_	Translit=ruwe
+19	アン	an	VERB	自動詞	_	13	parataxis	_	SpaceAfter=No|Translit=an
+20	?	?	PUNCT	記号	_	19	punct	_	SpaceAfter=No
+21	”	"	PUNCT	記号	_	13	punct	_	_
+22	セコㇿ	sekor	SCONJ	接続詞	_	13	mark	_	Translit=sekor
+23	アン	an	VERB	自動詞	_	24	acl	_	Translit=an
+24	ペ	pe	NOUN	形式名詞	_	26	obj	_	Translit=pe
+25	エチ	eci=	PART	人称接辞	_	26	nsubj	_	SpaceAfter=No|Translit=eci=
+26	ヌカレ	nukare	VERB	他動詞	_	27	acl	_	Translit=nukare
+27	ルウェ	ruwe	NOUN	形式名詞	_	0	root	_	Translit=ruwe
+28	ネ	ne	AUX	デアル動詞	_	27	cop	_	SpaceAfter=No|Translit=ne
+29	。	.	PUNCT	記号	_	27	punct	_	_
+
+# text = ホㇱキノ 1965パ ワノ ポロト オルㇱペ ネヤ アヌココㇿ アイヌ イコロマケンル オルㇱペ ネヤ エチエコイソイタㇰ ワ ウアイヌコㇿ コタン アカㇻ カトゥ エチヌカレ。
+1	ホㇱキノ	hoskino	ADV	副詞	_	6	advmod	_	Translit=hoskino
+2	1965	1965	NUM	数詞	_	3	nummod	_	SpaceAfter=No
+3	パ	pa	NOUN	名詞	_	6	obl	_	Translit=pa
+4	ワノ	wano	ADP	格助詞	_	3	case	_	Translit=wano
+5	ポロト	Poroto	PROPN	固有名詞	_	6	nsubj	_	Translit=Poroto
+6	オルㇱペ	oruspe	NOUN	名詞	_	19	obj	_	Translit=oruspe
+7	ネ	ne	AUX	デアル動詞	_	6	cop	_	SpaceAfter=No|Translit=ne
+8	ヤ	ya	SCONJ	接続助詞	_	6	mark	_	Translit=ya
+9-10	アヌココㇿ	_	_	_	_	_	_	_	_
+9	アン	an=	PART	人称接辞	_	10	nsubj	_	Translit=an=
+10	ウココㇿ	ukokor	VERB	他動詞	_	14	acl	_	Translit=ukokor
+11	アイヌ	aynu	NOUN	名詞	_	12	nmod	_	Translit=aynu
+12-13	イコロマ	_	_	_	_	_	_	_	SpaceAfter=No
+12	イコㇿ	ikor	NOUN	名詞	_	13	obj	_	Translit=ikor
+13	オマ	oma	VERB	他動詞	_	14	acl	_	Translit=oma
+14	ケンル	kenru	NOUN	名詞	_	15	nsubj	_	Translit=kenru
+15	オルㇱペ	oruspe	NOUN	名詞	_	6	conj	_	Translit=oruspe
+16	ネ	ne	AUX	デアル動詞	_	15	cop	_	SpaceAfter=No|Translit=ne
+17	ヤ	ya	SCONJ	接続助詞	_	15	mark	_	Translit=ya
+18	エチ	eci=	PART	人称接辞	_	19	nsubj	_	SpaceAfter=No|Translit=eci=
+19	エコイソイタㇰ	ekoysoytak	VERB	他動詞	_	27	advcl	_	Translit=ekoysoytak
+20	ワ	wa	SCONJ	接続助詞	_	19	mark	_	Translit=wa
+21	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	22	amod	_	Translit=uwaynukor
+22	コタン	kotan	NOUN	名詞	_	24	obj	_	Translit=kotan
+23	ア	a=	PART	人称接辞	_	24	nsubj	_	SpaceAfter=No|Translit=a=
+24	カㇻ	kar	VERB	他動詞	_	25	acl	_	Translit=kar
+25	カトゥ	katu	NOUN	形式名詞	_	27	obj	_	Translit=katu
+26	エチ	eci=	PART	人称接辞	_	27	nsubj	_	SpaceAfter=No|Translit=eci=
+27	ヌカレ	nukare	VERB	他動詞	_	0	root	_	SpaceAfter=No|Translit=nukare
+28	。	.	PUNCT	記号	_	27	punct	_	_
+
