@@ -4,4 +4,5 @@
 * [DeBERTa esupar](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/deberta-esupar.ipynb)
 * [DeBERTa ud-goeswith](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/deberta-ud-goeswith.ipynb)
 * [RoBERTa esupar](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/roberta-esupar.ipynb)
+* [RoBERTa ud-goeswith](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/roberta-ud-goeswith.ipynb)
 
