@@ -91,6 +91,35 @@ conllusvg.insertTextline=function(textid,i,j,t){
   editorInsertTextline(textid,i,j,t);
   editorChangeURL(textid);
 }
+function editorConnectForm(textid,z){
+  var c=conllusvg.main[textid];
+  var ix=c.event.index;
+  var t,i,j;
+  i=ix;
+  j=ix-1;
+  if(ix==0){
+    if(c.nodes[1]==null)
+      return;
+    i=j=1;
+  }
+  if(c.nodes[i-1].form=="_")
+    t=c.nodes[i].form;
+  else if(c.nodes[i].form=="_")
+    t=c.nodes[i-1].form;
+  else if(c.nodes[i-1].misc.indexOf("SpaceAfter=No")<0)
+    t=c.nodes[i-1].form+" "+c.nodes[i].form;
+  else
+    t=c.nodes[i-1].form+c.nodes[i].form;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,2,t);
+  if(c.nodes[i-1].lemma=="_")
+    t=c.nodes[i].lemma;
+  else if(c.nodes[i].lemma=="_")
+    t=c.nodes[i-1].lemma;
+  else
+    t=c.nodes[i-1].lemma+c.nodes[i].lemma;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,3,t);
+  conllusvg.deleteNode(textid,z);
+}
 </script>
 </head>
 <body>
@@ -114,6 +143,27 @@ conllusvg.insertTextline=function(textid,i,j,t){
 </textarea>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu','sentence');conllusvg.edit(this,'conllu',null,null,'xpos')">
 </svg>
+<select size=8 id="upos" style="position:absolute; visibility:hidden">
+<option value="conllusvg.rootLink">root</option>
+<option>NOUN</option>
+<option>PART</option>
+<option>VERB</option>
+<option>AUX</option>
+<option>ADV</option>
+<option>ADP</option>
+<option>SCONJ</option>
+<option>CCONJ</option>
+<option>DET</option>
+<option>NUM</option>
+<option>PRON</option>
+<option>PROPN</option>
+<option>INTJ</option>
+<option>SYM</option>
+<option>PUNCT</option>
+<option value="conllusvg.deleteNode">削除</option>
+<option value="conllusvg.duplicateNode">複製</option>
+<option value="editorConnectForm">連接</option>
+</select>
 <select size=8 id="xpos" style="position:absolute; visibility:hidden">
 <option value="NOUN">名詞</option>
 <option value="NOUN">位置名詞</option>
