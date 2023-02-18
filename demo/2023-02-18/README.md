@@ -7,6 +7,7 @@
 * [DeBERTa ud-goeswith](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-02-18/deberta-ud-goeswith.ipynb)
 
 ## アイヌ語CoNLL-U
+* [Аинско-русский словарь](https://github.com/KoichiYasuoka/UD-Ainu/blob/master/ain_cyrillic-ud-test.conllu)
 * [アイヌ語會話字典](https://github.com/KoichiYasuoka/UD-Ainu/blob/master/ain_kanazawa-ud-test.conllu)
 * [アイヌ神謠集](https://github.com/KoichiYasuoka/UD-Ainu/blob/master/ain_syos-ud-test.conllu)
 * [国立アイヌ民族博物館ガイドブック](https://github.com/KoichiYasuoka/UD-Ainu/blob/master/ain_nam-ud-test.conllu)
