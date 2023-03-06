@@ -8,7 +8,7 @@
 >>> doc=nlp("アイヌイタㇰ アニ エネ アカㇻ ヒ エチヌカレ")
 >>> import deplacy
 >>> deplacy.render(doc)
-アイヌ NOUN  <╗         compound
+アイヌ NOUN  <╗         nmod
 イタㇰ NOUN  ═╝═╗<╗     obl
 アニ   SCONJ <══╝ ║     case
 エネ   ADV   <══╗ ║     advmod
