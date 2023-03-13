@@ -354,8 +354,8 @@
 6	ウン	un=	PART	人称接辞	_	7	nsubj	_	SpaceAfter=No
 7	コレ	kore	VERB	他動詞	_	0	root	_	_
 8-9	ヤナニ	_	_	_	_	_	_	_	SpaceAfter=No
-8	ヤン	yan	PART	終助詞	_	7	discourse	_	SpaceAfter=No
-9	ハニ	hani	PART	終助詞	_	7	discourse	_	SpaceAfter=No
+8	ヤン	yan	PART	終助詞	_	7	discourse	_	_
+9	ハニ	hani	PART	終助詞	_	7	discourse	_	_
 10	。	.	PUNCT	記号	_	7	punct	_	_
 
 # text = 2022パ 12チュㇷ゚ 13ト アヌココㇿ アイヌ イコロマケンル サパネクㇽ エトゥナンカㇻ
