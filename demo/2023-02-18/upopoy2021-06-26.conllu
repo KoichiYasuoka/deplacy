@@ -1,5 +1,7 @@
+# doc = ゴールデンカムイ トゥラノ アㇷ゚カㇱアン ―杉元佐一とアシㇼパが旅する世界― (2021年6月26日～8月22日), 白老: 国立アイヌ民族博物館, 2021
+# page = 1
 # text = ゴールデンカムイ トゥラノ アㇷ゚カㇱアン
-1	ゴールデン	Golden	ADJ	形容詞	_	2	amod	_	_
+1	ゴールデン	Golden	ADJ	形容詞	_	2	amod	_	SpaceAfter=No
 2	カムイ	kamuy	NOUN	名詞	_	4	obl	_	_
 3	トゥラノ	turano	SCONJ	後置副詞	_	2	case	_	_
 4	アㇷ゚カㇱ	apkas	VERB	自動詞	_	0	root	_	SpaceAfter=No
