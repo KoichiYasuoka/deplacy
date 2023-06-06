@@ -35,6 +35,24 @@ chim  NOUN  <╝       ║ compound
 .     PUNCT <════════╝ punct
 ```
 
+## với [esupar](https://github.com/KoichiYasuoka/esupar)
+
+```py
+>>> import esupar
+>>> nlp=esupar.load("vi")
+>>> doc=nlp("Một mũi tên trúng hai con chim.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Một   NUM   <══╗       nummod
+mũi   NOUN  ═╗═╝<══╗   obl:tmod
+tên   NOUN  <╝     ║   compound
+trúng VERB  ═════╗═╝═╗ root
+hai   NUM   <╗   ║   ║ nummod
+con   NOUN  ═╝═╗<╝   ║ obj
+chim  NOUN  <══╝     ║ nmod
+.     PUNCT <════════╝ punct
+```
+
 ## với [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
