@@ -58,6 +58,10 @@ function editorConnectForm(textid,z){
     t=c.nodes[i-1].lemma;
   else
     t=c.nodes[i-1].lemma+c.nodes[i].lemma;
+  if(c.nodes[i].misc.indexOf("SpaceAfter=No")<0)
+    c.nodes[i-1].misc="_";
+  else
+    c.nodes[i-1].misc="SpaceAfter=No";
   conllusvg.insertTextline(textid,c.nodes[j].textlineid,3,t);
   conllusvg.deleteNode(textid,z);
 }
