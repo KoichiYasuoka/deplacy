@@ -1,0 +1,171 @@
+<!DOCTYPE html><head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>近代日本語UDエディター by 安岡孝一</title>
+<script src="../../deplacy/conllusvgview.js"></script>
+<script src="../../deplacy/conllusvgedit.js"></script>
+<script type="text/javascript">
+function editorCheckURL(textid,sentid){
+  var tx=document.getElementById(textid);
+  var sx=document.getElementById(sentid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1))+"\n";
+  if(tx.value==null){
+    tx.textContent=h;
+    sx.textContent="";
+  }
+  else{
+    tx.value=h;
+    sx.value="";
+  }
+}
+function editorChangeURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href+"#";
+  var i=h.indexOf("#");
+  var v=tx.value;
+  if(v==null)
+    v=tx.textContent;
+  location.href=h.substring(0,i+1)+encodeURIComponent(v);
+}
+editorInsertTextline=conllusvg.insertTextline
+conllusvg.insertTextline=function(textid,i,j,t){
+  editorInsertTextline(textid,i,j,t);
+  editorChangeURL(textid);
+}
+function editorConnectForm(textid,z){
+  var c=conllusvg.main[textid];
+  var ix=c.event.index;
+  var t,i,j;
+  i=ix;
+  j=ix-1;
+  if(ix==0){
+    if(c.nodes[1]==null)
+      return;
+    i=j=1;
+  }
+  if(c.nodes[i-1].form=="_")
+    t=c.nodes[i].form;
+  else if(c.nodes[i].form=="_")
+    t=c.nodes[i-1].form;
+  else if(c.nodes[i-1].misc.indexOf("SpaceAfter=No")<0)
+    t=c.nodes[i-1].form+" "+c.nodes[i].form;
+  else
+    t=c.nodes[i-1].form+c.nodes[i].form;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,2,t);
+  if(c.nodes[i-1].lemma=="_")
+    t=c.nodes[i].lemma;
+  else if(c.nodes[i].lemma=="_")
+    t=c.nodes[i-1].lemma;
+  else
+    t=c.nodes[i-1].lemma+c.nodes[i].lemma;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,3,t);
+  conllusvg.deleteNode(textid,z);
+}
+</script>
+</head>
+<body>
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+1	石炭	石炭	NOUN	名詞-普通名詞-一般	_	4	obj	_	SpaceAfter=No|Translit=セキタン
+2	をば	をば	ADP	助詞-格助詞	_	1	case	_	SpaceAfter=No|Translit=ヲバ
+3	早や	早	ADV	副詞	_	4	advmod	_	SpaceAfter=No|Translit=ハヤ
+4	積み	積む	VERB	動詞-一般	_	0	root	_	SpaceAfter=No|Translit=ツミ
+5	果て	果てる	AUX	動詞-非自立可能	_	4	aux	_	SpaceAfter=No|Translit=ハテ
+6	つ	つ	AUX	助動詞	_	4	aux	_	SpaceAfter=No|Translit=ツ
+</textarea>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu','sentence');conllusvg.edit(this,'conllu',null,'upos','xpos')">
+</svg>
+<select size=8 id="upos" style="position:absolute; visibility:hidden">
+<option value="conllusvg.rootLink">root</option>
+<option>NOUN</option>
+<option>PROPN</option>
+<option>PRON</option>
+<option>NUM</option>
+<option>ADJ</option>
+<option>DET</option>
+<option>VERB</option>
+<option>ADP</option>
+<option>AUX</option>
+<option>ADV</option>
+<option>SCONJ</option>
+<option>CCONJ</option>
+<option>PART</option>
+<option>INTJ</option>
+<option>SYM</option>
+<option>PUNCT</option>
+<option>X</option>
+<option value="conllusvg.deleteNode">削除</option>
+<option value="conllusvg.duplicateNode">複製</option>
+<option value="editorConnectForm">連接</option>
+</select>
+<select size=8 id="xpos" style="position:absolute; visibility:hidden">
+<option value="NOUN">名詞-普通名詞-一般</option>
+<option value="NOUN">名詞-普通名詞-サ変可能</option>
+<option value="NOUN">名詞-普通名詞-形状詞可能</option>
+<option value="NOUN">名詞-普通名詞-サ変形状詞可能</option>
+<option value="NOUN">名詞-普通名詞-副詞可能</option>
+<option value="NOUN">名詞-普通名詞-助数詞可能</option>
+<option value="NOUN">形状詞-助動詞語幹</option>
+<option value="NOUN">接頭辞</option>
+<option value="NOUN">接尾辞-名詞的-一般</option>
+<option value="NOUN">接尾辞-名詞的-サ変可能</option>
+<option value="NOUN">接尾辞-名詞的-副詞可能</option>
+<option value="NOUN">接尾辞-名詞的-助数詞</option>
+<option value="PROPN">名詞-固有名詞-一般</option>
+<option value="PROPN">名詞-固有名詞-人名-一般</option>
+<option value="PROPN">名詞-固有名詞-人名-姓</option>
+<option value="PROPN">名詞-固有名詞-人名-名</option>
+<option value="PROPN">名詞-固有名詞-地名-一般</option>
+<option value="PROPN">名詞-固有名詞-地名-国</option>
+<option value="PRON">代名詞</option>
+<option value="NUM">名詞-数詞</option>
+<option value="ADJ">形容詞-一般</option>
+<option value="ADJ">形容詞-非自立可能</option>
+<option value="ADJ">形状詞-一般</option>
+<option value="ADJ">形状詞-タリ</option>
+<option value="ADJ">名詞-普通名詞-形状詞可能</option>
+<option value="ADJ">名詞-普通名詞-サ変形状詞可能</option>
+<option value="ADJ">接尾辞-形容詞的</option>
+<option value="DET">連体詞</option>
+<option value="VERB">動詞-一般</option>
+<option value="VERB">動詞-非自立可能</option>
+<option value="VERB">名詞-普通名詞-サ変可能</option>
+<option value="VERB">名詞-普通名詞-サ変形状詞可能</option>
+<option value="ADP">助詞-格助詞</option>
+<option value="ADP">助詞-副助詞</option>
+<option value="ADP">助詞-係助詞</option>
+<option value="ADP">助詞-準体助詞</option>
+<option value="AUX">助動詞</option>
+<option value="AUX">動詞-非自立可能</option>
+<option value="AUX">形容詞-非自立可能</option>
+<option value="AUX">形状詞-助動詞語幹</option>
+<option value="AUX">名詞-助動詞語幹</option>
+<option value="AUX">接尾辞-形容詞的</option>
+<option value="ADV">副詞</option>
+<option value="ADV">名詞-普通名詞-副詞可能</option>
+<option value="SCONJ">助詞-接続助詞</option>
+<option value="CCONJ">接続詞</option>
+<option value="CCONJ">助詞-接続助詞</option>
+<option value="PART">接頭辞</option>
+<option value="PART">接尾辞-名詞的-一般</option>
+<option value="PART">接尾辞-名詞的-副詞可能</option>
+<option value="PART">接尾辞-名詞的-助数詞</option>
+<option value="PART">接尾辞-形容詞的</option>
+<option value="PART">接尾辞-形状詞的</option>
+<option value="INTJ">感動詞-一般</option>
+<option value="INTJ">感動詞-フィラー</option>
+<option value="SYM">記号-一般</option>
+<option value="SYM">補助記号-一般</option>
+<option value="PUNCT">補助記号-句点</option>
+<option value="PUNCT">補助記号-読点</option>
+<option value="PUNCT">補助記号-括弧開</option>
+<option value="PUNCT">補助記号-括弧閉</option>
+<option value="PUNCT">補助記号-一般</option>
+<option value="X">外国語</option>
+<option value="X">絵文字・記号等</option>
+</select>
+</body>
