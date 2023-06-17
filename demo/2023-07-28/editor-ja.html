@@ -4,9 +4,8 @@
 <script src="../../deplacy/conllusvgview.js"></script>
 <script src="../../deplacy/conllusvgedit.js"></script>
 <script type="text/javascript">
-function editorCheckURL(textid,sentid){
+function editorCheckURL(textid){
   var tx=document.getElementById(textid);
-  var sx=document.getElementById(sentid);
   var h=location.href;
   var i=h.indexOf("#");
   if(0>i)
@@ -14,14 +13,10 @@ function editorCheckURL(textid,sentid){
   if(1>h.length-i)
     return;
   h=decodeURIComponent(h.slice(i+1))+"\n";
-  if(tx.value==null){
+  if(tx.value==null)
     tx.textContent=h;
-    sx.textContent="";
-  }
-  else{
+  else
     tx.value=h;
-    sx.value="";
-  }
 }
 function editorChangeURL(textid){
   var tx=document.getElementById(textid);
@@ -78,7 +73,7 @@ function editorConnectForm(textid,z){
 5	果て	果てる	AUX	動詞-非自立可能	_	4	aux	_	SpaceAfter=No|Translit=ハテ
 6	つ	つ	AUX	助動詞	_	4	aux	_	SpaceAfter=No|Translit=ツ
 </textarea>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu','sentence');conllusvg.edit(this,'conllu',null,'upos','xpos')">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorCheckURL('conllu');conllusvg.edit(this,'conllu',null,'upos','xpos')">
 </svg>
 <select size=8 id="upos" style="position:absolute; visibility:hidden">
 <option value="conllusvg.rootLink">root</option>
