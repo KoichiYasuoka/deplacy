@@ -66,6 +66,39 @@ function editorConnectForm(textid,z){
   conllusvg.insertTextline(textid,c.nodes[j].textlineid,10,t);
   conllusvg.deleteNode(textid,z);
 }
+function editorDivideForm(textid,z){
+  var c=conllusvg.main[textid];
+  var ix=parseInt(c.event.index);
+  var s=c.nodes[ix].form;
+  var t=c.nodes[ix].lemma;
+  var i;
+  conllusvg.duplicateNode(textid,z);
+  if(c.nodes[ix]==null)
+    return;
+  if(c.nodes[ix].form!=s||c.nodes[ix].lemma!=t)
+    return;
+  if(c.nodes[ix+1]==null)
+    return;
+  if(c.nodes[ix+1].form!=s||c.nodes[ix+1].lemma!=t)
+    return;
+  i=s.indexOf(" ");
+  if(i>1&&s.length-i>1){
+    c.nodes[ix].form=s.substring(0,i);
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,2,s.substring(0,i));
+    c.nodes[ix+1].form=s.slice(i+1);
+    conllusvg.insertTextline(textid,c.nodes[ix+1].textlineid,2,s.slice(i+1));
+    c.nodes[ix].misc="_"
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,10,"_");
+    conllusvg.writeNodesSVG(textid);
+  }
+  i=t.indexOf(" ");
+  if(i>1&&s.length-i>1){
+    c.nodes[ix].lemma=t.substring(0,i);
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,3,t.substring(0,i));
+    c.nodes[ix+1].lemma=t.slice(i+1);
+    conllusvg.insertTextline(textid,c.nodes[ix+1].textlineid,3,t.slice(i+1));
+  }
+}
 </script>
 </head>
 <body>
@@ -105,6 +138,7 @@ function editorConnectForm(textid,z){
 <option value="conllusvg.deleteNode">削除</option>
 <option value="conllusvg.duplicateNode">複製</option>
 <option value="editorConnectForm">連接</option>
+<option value="editorDivideForm">分割</option>
 </select>
 <select size=8 id="xpos" style="position:absolute; visibility:hidden">
 <option value="NOUN">名詞</option>
