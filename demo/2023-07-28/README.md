@@ -7,4 +7,5 @@
 * [DeBERTa esupar](https://colab.research.google.com/github/KoichiYasuoka/deplacy/blob/master/demo/2023-07-28/editor-ain.ipynb)
 
 # [アイヌ語訳『五倫名義解』並行コーパス](https://github.com/KoichiYasuoka/UD-Ainu/tree/master/doc/Gorin)
+* [SVG Visualizer](https://koichiyasuoka.github.io/UD-Ainu/doc/Gorin/viewer.html)
 
