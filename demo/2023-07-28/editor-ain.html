@@ -82,7 +82,7 @@ function editorDivideForm(textid,z){
   if(c.nodes[ix+1].form!=s||c.nodes[ix+1].lemma!=t)
     return;
   i=s.indexOf(" ");
-  if(i>1&&s.length-i>1){
+  if(i>0&&s.length-i>1){
     c.nodes[ix].form=s.substring(0,i);
     conllusvg.insertTextline(textid,c.nodes[ix].textlineid,2,s.substring(0,i));
     c.nodes[ix+1].form=s.slice(i+1);
@@ -92,7 +92,7 @@ function editorDivideForm(textid,z){
     conllusvg.writeNodesSVG(textid);
   }
   i=t.indexOf(" ");
-  if(i>1&&s.length-i>1){
+  if(i>0&&s.length-i>1){
     c.nodes[ix].lemma=t.substring(0,i);
     conllusvg.insertTextline(textid,c.nodes[ix].textlineid,3,t.substring(0,i));
     c.nodes[ix+1].lemma=t.slice(i+1);
