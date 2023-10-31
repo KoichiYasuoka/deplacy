@@ -29,13 +29,13 @@ punct       ╚> PUNCT .
 >>> doc=nlp("על טעם וריח אין להתווכח.")
 >>> import deplacy
 >>> deplacy.render(doc,WordRight=True)
- case     ╔════> ADP   על
-  obl   ╔>╚═╔═══ NOUN  טעם
-   cc   ║   ║ ╔> CCONJ ו
- conj   ║   ╚>╚═ NOUN  ריח
- root ╔═╚═════╔═ AUX   אין
-xcomp ║       ╚> VERB  להתווכח
-punct ╚════════> PUNCT .
+ case       ╔════> ADP   על
+  obl     ╔>╚═╔═══ NOUN  טעם
+   cc     ║   ║ ╔> CCONJ ו
+ conj     ║   ╚>╚═ NOUN  ריח
+ root ╔═══║═══════ VERB  אין
+csubj ╚>╔═╚═══════ VERB  להתווכח
+punct   ╚════════> PUNCT .
 ```
 
 <h2 dir="rtl"> עם <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
