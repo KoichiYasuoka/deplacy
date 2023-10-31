@@ -33,17 +33,17 @@ sax  VERB  ═╝═════╝═╝═╝═╗ root
 >>> doc=nlp("Sébb bu dee tàkk, loo ci ji du sax.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Sébb NOUN  ═══════════════════╗ root
-bu   SCONJ <══════════════╗   ║ mark
-dee  AUX   <════════════╗ ║   ║ aux
-tàkk NOUN  ═════════╗═╗═╝═╝═╗<╝ acl
-,    PUNCT <══════╗ ║ ║     ║   punct
-lu   PRON  ═╗<══╗ ║ ║ ║     ║   nsubj
-nga  PRON   ║<╗ ║ ║ ║ ║     ║   nsubj
-ci   ADP    ║ ║ ║ ║<╝ ║     ║   obl
-ji   DET   <╝ ║ ║ ║   ║     ║   det
-du   AUX   ═══╝═╝═╝<╗ ║     ║   cop
-sax  ADV   ═════════╝<╝     ║   advmod
-.    PUNCT <════════════════╝   punct
+Sébb NOUN  <══════════╗     dislocated
+bu   SCONJ <══╗       ║     mark
+dee  AUX   <╗ ║       ║     aux
+tàkk VERB  ═╝═╝<════╗ ║     advcl
+,    PUNCT          ║ ║<╗   punct
+lu   PRON  ═╗<════╗ ║ ║ ║   obj
+nga  PRON   ║<══╗ ║ ║ ║ ║   nsubj
+ci   ADP    ║<╗ ║ ║ ║ ║ ║   obl
+ji   DET   <╝ ║ ║ ║ ║ ║ ║   det
+du   AUX   <╗ ║ ║ ║ ║ ║ ║   cop
+sax  VERB  ═╝═╝═╝═╝═╝═╝═╝═╗ root
+.    PUNCT <══════════════╝ punct
 ```
 
