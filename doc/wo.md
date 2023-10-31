@@ -12,16 +12,16 @@
 >>> import deplacy
 >>> deplacy.render(doc)
 Sébb NOUN  ═════╗<══╗     dislocated
-bu   SCONJ <══╗ ║   ║     mark
+bu   PRON  <══╗ ║   ║     mark
 dee  AUX   <╗ ║ ║   ║     cop
-tàkk VERB  ═╝═╝<╝   ║     acl:relcl
+tàkk NOUN  ═╝═╝<╝   ║     acl:relcl
 ,    PUNCT <════════║═╗   punct
 lu   PRON  ═════╗<╗ ║ ║   dislocated
 nga  PRON  <══╗ ║ ║ ║ ║   nsubj
 ci   ADP   <╗ ║ ║ ║ ║ ║   obl
-ji   DET   ═╝═╝<╝ ║ ║ ║   det
-du   AUX   <╗     ║ ║ ║   aux
-sax  VERB  ═╝═════╝═╝═╝═╗ root
+ji   DET   ═╝═╝<╝ ║ ║ ║   acl:relcl
+du   AUX   <╗     ║ ║ ║   cop
+sax  ADV   ═╝═════╝═╝═╝═╗ root
 .    PUNCT <════════════╝ punct
 ```
 
