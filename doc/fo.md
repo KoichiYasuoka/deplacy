@@ -1,22 +1,5 @@
 # Mállærugreining við [deplacy](https://koichiyasuoka.github.io/deplacy/)
 
-## av [Stanza](https://stanfordnlp.github.io/stanza)
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("fo")
->>> doc=nlp("Ofta taka trøll góða manna børn.")
->>> import deplacy
->>> deplacy.render(doc)
-Ofta  ADV   <════════╗ advmod
-taka  VERB  ═╗═════╗═╝ root
-trøll PRON  <╝     ║   nsubj
-góða  ADJ   <══╗   ║   amod
-manna NOUN  <╗ ║   ║   nmod:poss
-børn  NOUN  ═╝═╝═╗<╝   obj
-.     PUNCT <════╝     punct
-```
-
 ## av [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py
@@ -35,5 +18,22 @@ góða  ADJ   <══╗   ║   amod
 manna NOUN  <╗ ║   ║   nmod:poss
 børn  NOUN  ═╝═╝═╗<╝   obj
 .     PUNCT <════╝     punct
+```
+
+## av [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("fo")
+>>> doc=nlp("Ofta taka trøll góða manna børn.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Ofta  ADV   <══════╗ advmod
+taka  VERB  ═╗═╗═╗═╝ root
+trøll PRON  <╝ ║ ║   nsubj
+góða  ADJ   <╗ ║ ║   amod
+manna NOUN  ═╝<╝ ║   obj
+børn  NOUN  ═╗<══╝   obj
+.     PUNCT <╝       punct
 ```
 
