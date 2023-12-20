@@ -110,33 +110,6 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [Turku-neural-parser-pipeline](https://turkunlp.org/Turku-neural-parser-pipeline/):n kanssa
-
-```py
->>> import sys,subprocess
->>> nlp=lambda t:subprocess.run([sys.executable,"tnpp_parse.py","--conf","models_fi_tdt_dia/pipelines.yaml","parse_plaintext"],cwd="Turku-neural-parser-pipeline",input=t,encoding="utf-8",stdout=subprocess.PIPE).stdout
->>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
->>> import deplacy
->>> deplacy.render(doc)
-Nyt        ADV   <════════╗             advmod
-minä       PRON  <══════╗ ║             nsubj
-olen       AUX   <════╗ ║ ║             aux
-syönyt     VERB  ═══╗═╝═╝═╝═════════╗═╗ root
-ja         CCONJ <╗ ║               ║ ║ cc
-ajatellut  VERB  ═╝<╝               ║ ║ conj
-ja         CCONJ <════════════════╗ ║ ║ cc
-nyt        ADV   <══════════════╗ ║ ║ ║ advmod
-minusta    PRON  <════════════╗ ║ ║ ║ ║ obl
-alkaa      VERB  ═══════════╗═╝═╝═╝<╝ ║ conj
-tuntua     VERB  ═════════╗<╝         ║ xcomp
-,          PUNCT <══════╗ ║           ║ punct
-että       SCONJ <════╗ ║ ║           ║ mark
-asiat      NOUN  <══╗ ║ ║ ║           ║ nsubj
-rupeavat   VERB  ═╗═╝═╝═╝<╝           ║ ccomp
-selviämään VERB  <╝                   ║ xcomp
-.          PUNCT <════════════════════╝ punct
-```
-
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo):n kanssa
 
 ```py
