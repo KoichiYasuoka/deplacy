@@ -286,6 +286,10 @@ def to_conllu(doc,RtoL=False):
       c+="\n"
     return c
   elif s.find("stanza")==8:
+    try:
+      return "{:C}".format(doc)
+    except:
+      pass
     from stanza.utils.conll import CoNLL
     return CoNLL.conll_as_string(CoNLL.convert_dict(doc.to_dict()))
   elif s.find("classla")==8:
