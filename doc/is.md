@@ -27,15 +27,15 @@ svíki            VERB  ═╝═╗<╝         conj
 >>> doc=nlp("Hugsjónina sakar ekkert þótt einstaklíngarnir deyi eða svíki.")
 >>> import deplacy
 >>> deplacy.render(doc)
-Hugsjónina       NOUN  <════════════╗ nsubj
-sakar            VERB  ═╗═════════╗═╝ root
-ekkert           DET   <╝         ║   nsubj
-þótt             ADP   <════════╗ ║   case
-einstaklíngarnir NOUN  <══════╗ ║ ║   nsubj
-deyi             VERB  ═════╗═╝═╝<╝   obl
-eða              CCONJ <╗   ║         cc
-svíki            VERB  ═╝═╗<╝         conj
-.                PUNCT <══╝           punct
+Hugsjónina       NOUN  <══════════╗ nsubj
+sakar            VERB  ═╗═══════╗═╝ root
+ekkert           DET   <╝       ║   obl
+þótt             SCONJ <══════╗ ║   mark
+einstaklíngarnir NOUN  <════╗ ║ ║   nsubj
+deyi             VERB  ═╗═╗═╝═╝<╝   advcl
+eða              CCONJ <╝ ║         cc
+svíki            VERB  ═╗<╝         conj
+.                PUNCT <╝           punct
 ```
 
 ## við [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
