@@ -1,23 +1,5 @@
 # Analisi sintaktikoa [deplacy](https://koichiyasuoka.github.io/deplacy/)-ren bidez
 
-## [spaCy-ixaKat](https://github.com/KoichiYasuoka/spaCy-ixaKat)-rekin
-
-```py
->>> import spacy_ixakat
->>> nlp=spacy_ixakat.load("eu")
->>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
->>> import deplacy
->>> deplacy.render(doc)
-Euskaldun PROPN <╗           obl
-izatea    VERB  ═╝<══════╗   csubj
-lan       NOUN  ═╗═╗<╗   ║   obl
-extra     NOUN  <╝ ║ ║   ║   nmod
-bat       NUM   <══╝ ║   ║   nummod
-izatea    VERB  ═════╝<╗ ║   ccomp
-da        VERB  ═══════╝═╝═╗ ROOT
-.         PUNCT <══════════╝ punct
-```
-
 ## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-rekin
 
 ```py
