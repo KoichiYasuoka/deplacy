@@ -287,7 +287,7 @@ def to_conllu(doc,RtoL=False):
     return c
   elif s.find("stanza")==8:
     try:
-      return "{:C}".format(doc)
+      return "{:C}\n".format(doc)
     except:
       pass
     from stanza.utils.conll import CoNLL
