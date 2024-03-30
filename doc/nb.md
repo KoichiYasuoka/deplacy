@@ -20,26 +20,6 @@ spor      NOUN  ═══╝═╝<╝     ║ xcomp
 .         PUNCT <════════════╝ punct
 ```
 
-## med [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("norwegian-bokmaal-ud29")
->>> doc=nlp("Ikke tusen ord seg prenter som én gjernings spor.")
->>> import deplacy
->>> deplacy.render(doc)
-Ikke      PART  <══╗           advmod
-tusen     NUM   <╗ ║           nummod
-ord       NOUN  ═╝═╝<══════╗   nsubj
-seg       PRON  <════════╗ ║   iobj
-prenter   VERB  ═══════╗═╝═╝═╗ root
-som       SCONJ <════╗ ║     ║ mark
-én        NUM   <╗   ║ ║     ║ nummod
-gjernings NOUN  ═╝<╗ ║ ║     ║ nmod
-spor      NOUN  ═══╝═╝<╝     ║ xcomp
-.         PUNCT <════════════╝ punct
-```
-
 ## med [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py

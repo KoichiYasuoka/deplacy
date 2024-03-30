@@ -32,22 +32,6 @@ aus   ADP   <══╝     ║ compound:prt
 .     PUNCT <════════╝ punct
 ```
 
-## mit [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("german-gsd-ud29")
->>> doc=nlp("Er sieht sehr jung aus.")
->>> import deplacy
->>> deplacy.render(doc)
-Er    PRON  <══════╗   nsubj
-sieht VERB  ═══╗═╗═╝═╗ root
-sehr  ADV   <╗ ║ ║   ║ advmod
-jung  ADJ   ═╝ ║<╝   ║ xcomp
-aus   ADP   <══╝     ║ compound:prt
-.     PUNCT <════════╝ punct
-```
-
 ## mit [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

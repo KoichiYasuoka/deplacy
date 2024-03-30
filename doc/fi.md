@@ -110,33 +110,6 @@ selviämään VERB  <╝                   ║ xcomp
 .          PUNCT <════════════════════╝ punct
 ```
 
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo):n kanssa
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("finnish-tdt-ud29")
->>> doc=nlp("Nyt minä olen syönyt ja ajatellut ja nyt minusta alkaa tuntua, että asiat rupeavat selviämään.")
->>> import deplacy
->>> deplacy.render(doc)
-Nyt        ADV   <════════╗             advmod
-minä       PRON  <══════╗ ║             nsubj
-olen       AUX   <════╗ ║ ║             aux
-syönyt     VERB  ═══╗═╝═╝═╝═════════╗═╗ root
-ja         CCONJ <╗ ║               ║ ║ cc
-ajatellut  VERB  ═╝<╝               ║ ║ conj
-ja         CCONJ <════════════════╗ ║ ║ cc
-nyt        ADV   <══════════════╗ ║ ║ ║ advmod
-minusta    PRON  <══════════╗   ║ ║ ║ ║ obl
-alkaa      VERB  ═════════════╗═╝═╝<╝ ║ conj
-tuntua     VERB  ═════════╗═╝<╝       ║ xcomp
-,          PUNCT <══════╗ ║           ║ punct
-että       SCONJ <════╗ ║ ║           ║ mark
-asiat      NOUN  <══╗ ║ ║ ║           ║ nsubj
-rupeavat   VERB  ═╗═╝═╝═╝<╝           ║ ccomp
-selviämään VERB  <╝                   ║ xcomp
-.          PUNCT <════════════════════╝ punct
-```
-
 ## [Trankit](https://github.com/nlp-uoregon/trankit):n kanssa
 
 ```py

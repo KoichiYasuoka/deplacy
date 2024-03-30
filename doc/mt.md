@@ -65,28 +65,6 @@ dija    NOUN  ═╝<╝           ║ nmod:poss
 .       PUNCT <══════════════╝ punct
 ```
 
-## minn [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("maltese-ud29")
->>> doc=nlp("Alla ħares ma kienx Majsi illi jagħmel ftit tad-dija.")
->>> import deplacy
->>> deplacy.render(doc)
-Alla    PRON  <════════════════╗   nsubj
-ħares   VERB  ═══════════════╗═╝═╗ root
-ma      PART  <════════════╗ ║   ║ advmod:neg
-kienx   AUX   <══════════╗ ║ ║   ║ cop
-Majsi   NOUN  ═════════╗═╝═╝<╝   ║ xcomp
-illi    ADV   <══════╗ ║         ║ advmod
-jagħmel VERB  ═╗═╗═╗═╝<╝         ║ xcomp
-ftit    ADV   <╝ ║ ║             ║ obj
-tad     ADP   <══╝ ║             ║ advmod
--       PUNCT <╗   ║             ║ punct
-dija    ADJ   ═╝<══╝             ║ obj
-.       PUNCT <══════════════════╝ punct
-```
-
 ## minn [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py

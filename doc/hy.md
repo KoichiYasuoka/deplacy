@@ -45,21 +45,6 @@
 :     PUNCT <════╝ punct
 ```
 
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-ի հետ
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("armenian-ud29")
->>> doc=nlp("Չկա չարիք առանց բարիք:")
->>> import deplacy
->>> deplacy.render(doc)
-Չկա   VERB  ═╗═╗═╗ root
-չարիք NOUN  <╝ ║ ║ nsubj
-առանց ADP   <╗ ║ ║ case
-բարիք NOUN  ═╝<╝ ║ obl
-:     PUNCT <════╝ punct
-```
-
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)-ի հետ
 
 ```py

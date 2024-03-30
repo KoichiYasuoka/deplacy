@@ -168,20 +168,3 @@ yeux      NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
-## avec [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("french-sequoia-ud29")
->>> doc=nlp("L'essentiel est invisible pour les yeux.")
->>> import deplacy
->>> deplacy.render(doc)
-L'essentiel PRON  <════════╗   nsubj
-est         AUX   <══════╗ ║   cop
-invisible   ADJ   ═════╗═╝═╝═╗ root
-pour        ADP   <══╗ ║     ║ case
-les         DET   <╗ ║ ║     ║ det
-yeux        NOUN  ═╝═╝<╝     ║ obl:mod
-.           PUNCT <══════════╝ punct
-```
-

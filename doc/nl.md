@@ -227,38 +227,6 @@ geloof     VERB  ═════════════╝═╝═╝═╝═
 .          PUNCT <══════════════════════════╝ punct
 ```
 
-## met [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("dutch-ud27")
->>> doc=nlp("Toch houd ik ze vast, ondanks alles, omdat ik nog steeds aan de innerlijke goedheid van den mens geloof.")
->>> import deplacy
->>> deplacy.render(doc)
-Toch       ADV   <══════╗                         advmod
-houd       VERB  ═╗═╗═╗═╝═════════════════════╗═╗ root
-ik         PRON   ║<╝ ║                       ║ ║ nsubj
-ze         PRON   ║<══╝                       ║ ║ obj
-vast       ADJ   <╝                           ║ ║ compound:prt
-,          PUNCT <══════════════════════════╗ ║ ║ punct
-ondanks    ADP   <════════════════════════╗ ║ ║ ║ case
-alles      PRON  ═══════════════════════╗═╝═╝<╝ ║ parataxis
-,          PUNCT <════════════════════╗ ║       ║ punct
-omdat      SCONJ <══════════════════╗ ║ ║       ║ mark
-ik         PRON  <════════════════╗ ║ ║ ║       ║ nsubj
-nog        ADV   <╗               ║ ║ ║ ║       ║ advmod
-steeds     ADV   ═╝<════════════╗ ║ ║ ║ ║       ║ advmod
-aan        ADP   <══════════╗   ║ ║ ║ ║ ║       ║ case
-de         DET   <════════╗ ║   ║ ║ ║ ║ ║       ║ det
-innerlijke ADJ   <══════╗ ║ ║   ║ ║ ║ ║ ║       ║ amod
-goedheid   NOUN  ═════╗═╝═╝═╝<╗ ║ ║ ║ ║ ║       ║ obl
-van        ADP   <══╗ ║       ║ ║ ║ ║ ║ ║       ║ case
-den        DET   <╗ ║ ║       ║ ║ ║ ║ ║ ║       ║ det
-mens       NOUN  ═╝═╝<╝       ║ ║ ║ ║ ║ ║       ║ nmod
-geloof     VERB  ═════════════╝═╝═╝═╝═╝<╝       ║ advcl
-.          PUNCT <══════════════════════════════╝ punct
-```
-
 ## met [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py

@@ -23,26 +23,6 @@ porcii  NOUN  <╝           ║ nsubj
 .       PUNCT <════════════╝ punct
 ```
 
-## cu [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("romanian-ud27")
->>> doc=nlp("Nu te băga in tărâţe că te mănâncă porcii.")
->>> import deplacy
->>> deplacy.render(doc)
-Nu      PART  <══════════╗   advmod
-te      PRON  <════════╗ ║   obj
-băga    VERB  ═══╗═══╗═╝═╝═╗ root
-in      ADP   <╗ ║   ║     ║ case
-tărâţe  NOUN  ═╝<╝   ║     ║ obl
-că      SCONJ <════╗ ║     ║ mark
-te      PRON  <══╗ ║ ║     ║ obj
-mănâncă VERB  ═╗═╝═╝<╝     ║ ccomp:pmod
-porcii  NOUN  <╝           ║ nsubj
-.       PUNCT <════════════╝ punct
-```
-
 ## cu [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py

@@ -113,28 +113,6 @@ fiskehale NOUN  ═╝═╝<╝     ║ obl
 .         PUNCT <══════════╝ punct
 ```
 
-## med [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("danish-ud29")
->>> doc=nlp("Da sukkede den lille havfrue og så bedrøvet på sin fiskehale.")
->>> import deplacy
->>> deplacy.render(doc)
-Da        ADV   <══════╗       advmod
-sukkede   VERB  ═════╗═╝═══╗═╗ root
-den       DET   <══╗ ║     ║ ║ det
-lille     ADJ   <╗ ║ ║     ║ ║ amod
-havfrue   NOUN  ═╝═╝<╝     ║ ║ nsubj
-og        CCONJ <════════╗ ║ ║ cc
-så        ADV   <══════╗ ║ ║ ║ advmod
-bedrøvet  VERB  ═════╗═╝═╝<╝ ║ conj
-på        ADP   <══╗ ║       ║ case
-sin       DET   <╗ ║ ║       ║ det
-fiskehale NOUN  ═╝═╝<╝       ║ obl
-.         PUNCT <════════════╝ punct
-```
-
 ## med [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

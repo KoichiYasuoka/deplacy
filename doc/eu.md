@@ -1,23 +1,5 @@
 # Analisi sintaktikoa [deplacy](https://koichiyasuoka.github.io/deplacy/)-ren bidez
 
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-rekin
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("basque-ud29")
->>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
->>> import deplacy
->>> deplacy.render(doc)
-Euskaldun NOUN  ═╗<════╗   nsubj
-izatea    AUX   <╝     ║   cop
-lan       NOUN  ═╗═╗<╗ ║   nsubj
-extra     ADJ   <╝ ║ ║ ║   amod
-bat       NUM   <══╝ ║ ║   nummod
-izatea    VERB  ═╗═══╝═╝═╗ root
-da        AUX   <╝       ║ cop
-.         PUNCT <════════╝ punct
-```
-
 ## [Trankit](https://github.com/nlp-uoregon/trankit)-rekin
 
 ```py

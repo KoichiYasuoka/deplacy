@@ -22,25 +22,6 @@ podnijeti VERB  <╝         ║ xcomp
 .         PUNCT <══════════╝ punct
 ```
 
-## s [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-om
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("croatian-ud29")
->>> doc=nlp("Činilo mi se: ništa nije teže podnijeti.")
->>> import deplacy
->>> deplacy.render(doc)
-Činilo    VERB  ═╗═╗═════╗═╗ root
-mi        PRON  <╝ ║     ║ ║ obj
-se        PRON  <══╝     ║ ║ obj
-:         PUNCT <══════╗ ║ ║ punct
-ništa     PRON  <════╗ ║ ║ ║ nsubj
-nije      AUX   <══╗ ║ ║ ║ ║ aux
-teže      ADV   ═╗═╝═╝═╝<╝ ║ parataxis
-podnijeti VERB  <╝         ║ xcomp
-.         PUNCT <══════════╝ punct
-```
-
 ## s [Trankit](https://github.com/nlp-uoregon/trankit)-om
 
 ```py

@@ -40,26 +40,6 @@ name      NOUN  ═╝<╝             ║ obj
 .         PUNCT <════════════════╝ punct
 ```
 
-## Usage with [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("english-bert-base-ud29")
->>> doc=nlp("I saw a horse yesterday which had no name.")
->>> import deplacy
->>> deplacy.render(doc)
-I         PRON  <══════════════╗   nsubj
-saw       VERB  ═══════════╗═╗═╝═╗ root
-a         DET   <════════╗ ║ ║   ║ det
-horse     NOUN  ═══════╗═╝<╝ ║   ║ obj
-yesterday NOUN  <══════║═════╝   ║ obl:tmod
-which     PRON  <════╗ ║         ║ nsubj
-had       VERB  ═══╗═╝<╝         ║ acl:relcl
-no        DET   <╗ ║             ║ det
-name      NOUN  ═╝<╝             ║ obj
-.         PUNCT <════════════════╝ punct
-```
-
 ## Usage with [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

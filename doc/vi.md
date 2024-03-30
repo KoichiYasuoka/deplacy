@@ -70,24 +70,6 @@ chim    VERB  <══╝     ║ xcomp
 .       PUNCT <════════╝ punct
 ```
 
-## với [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("vietnamese-ud29")
->>> doc=nlp("Một mũi tên trúng hai con chim.")
->>> import deplacy
->>> deplacy.render(doc)
-Một   NUM   <╗           nummod
-mũi   NOUN  ═╝<══════╗   nsubj
-tên   NOUN  ═══════╗═╝═╗ root
-trúng ADJ   <════╗ ║   ║ case
-hai   NUM   <╗   ║ ║   ║ nummod
-con   NOUN  ═╝═╗═╝<╝   ║ compound
-chim  VERB  <══╝       ║ xcomp
-.     PUNCT <══════════╝ punct
-```
-
 ## với [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

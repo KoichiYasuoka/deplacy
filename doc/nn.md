@@ -103,23 +103,3 @@ live   ADV   <╝         ║ advmod
 .      PUNCT <══════════╝ punct
 ```
 
-## med [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("norwegian-nynorsklia-ud29")
->>> doc=nlp("For me priser dauden, men me elskar live.")
->>> import deplacy
->>> deplacy.render(doc)
-For    CCONJ <════╗     advmod
-me     PRON  <══╗ ║     nsubj
-priser NOUN  ═╗═╝═╝═╗═╗ root
-dauden NOUN  <╝     ║ ║ nmod
-,      CCONJ <╗     ║ ║ reparandum
-men    CCONJ ═╝<══╗ ║ ║ cc
-me     PRON  <══╗ ║ ║ ║ nsubj
-elskar AUX   <╗ ║ ║ ║ ║ aux
-live   VERB  ═╝═╝═╝<╝ ║ conj
-.      PUNCT <════════╝ punct
-```
-

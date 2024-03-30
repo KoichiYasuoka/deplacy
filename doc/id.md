@@ -34,23 +34,6 @@ langit NOUN  <╝     ║ obj
 .      PUNCT <══════╝ punct
 ```
 
-## dengan [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("indonesian-ud29")
->>> doc=nlp("Di atas langit masih ada langit.")
->>> import deplacy
->>> deplacy.render(doc)
-Di     ADP   <══╗     case
-atas   NOUN  <╗ ║     case
-langit NOUN  ═╝═╝<╗   obl
-masih  ADV   <══╗ ║   advmod
-ada    VERB  ═╗═╝═╝═╗ root
-langit NOUN  <╝     ║ obj
-.      PUNCT <══════╝ punct
-```
-
 ## dengan [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

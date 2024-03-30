@@ -130,21 +130,3 @@
 .        PUNCT <════════════╝ punct
 ```
 
-## з [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("ukrainian-ud29")
->>> doc=nlp("Біжать алеї звуків, саджених у гами.")
->>> import deplacy
->>> deplacy.render(doc)
-Біжать   VERB  ═══════════╗═╗ root
-алеї     NOUN  ═════════╗<╝ ║ obj
-звуків   NOUN  ═══════╗<╝   ║ nmod
-,        PUNCT <════╗ ║     ║ punct
-саджених ADJ   ═══╗═╝<╝     ║ amod
-у        ADP   <╗ ║         ║ case
-гами     NOUN  ═╝<╝         ║ obl
-.        PUNCT <════════════╝ punct
-```
-

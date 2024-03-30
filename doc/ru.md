@@ -118,25 +118,6 @@
 .      PUNCT <════════════╝ punct
 ```
 
-## с [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("russian-taiga-ud29")
->>> doc=nlp("Москва слезам не верила, а верила любви.")
->>> import deplacy
->>> deplacy.render(doc)
-Москва PROPN <══════════╗   nsubj
-слезам NOUN  <════════╗ ║   iobj
-не     PART  <╗       ║ ║   advmod
-верила VERB  ═╝═════╗═╝═╝═╗ root
-,      PUNCT <════╗ ║     ║ punct
-а      CCONJ <══╗ ║ ║     ║ cc
-верила VERB  ═╗═╝═╝<╝     ║ conj
-любви  NOUN  <╝           ║ obj
-.      PUNCT <════════════╝ punct
-```
-
 ## с [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
 
 ```py

@@ -72,24 +72,6 @@ duonos NOUN  ═╝<══╝     ║ conj
 .      PUNCT <══════════╝ punct
 ```
 
-## su [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("lithuanian-alksnis-ud29")
->>> doc=nlp("Dievas davė dantis, duos ir duonos.")
->>> import deplacy
->>> deplacy.render(doc)
-Dievas NOUN  <══╗       nsubj
-davė   VERB  ═╗═╝═══╗═╗ root
-dantis NOUN  <╝     ║ ║ nsubj
-,      PUNCT <════╗ ║ ║ punct
-duos   VERB  ═══╗═╝<╝ ║ conj
-ir     PART  <╗ ║     ║ advmod:emph
-duonos NOUN  ═╝<╝     ║ nsubj
-.      PUNCT <════════╝ punct
-```
-
 ## su [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
 
 ```py

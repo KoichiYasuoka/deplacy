@@ -39,24 +39,6 @@ holnapra   NOUN  <╝       ║ nmod:obl
 .          PUNCT <════════╝ punct
 ```
 
-## [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo)-vel
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("hungarian-ud27")
->>> doc=nlp("Amit ma megtehetsz, ne halaszd holnapra.")
->>> import deplacy
->>> deplacy.render(doc)
-Amit       PRON  <════════╗   obj
-ma         ADV   <╗       ║   advmod:tlocy
-megtehetsz VERB  ═╝═════╗═╝═╗ root
-,          PUNCT <════╗ ║   ║ punct
-ne         ADV   <╗   ║ ║   ║ compound:preverb
-halaszd    VERB  ═╝═╗═╝<╝   ║ conj
-holnapra   ADV   <══╝       ║ nmod:obl
-.          PUNCT <══════════╝ punct
-```
-
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-vel
 
 ```py
