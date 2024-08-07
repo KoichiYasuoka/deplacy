@@ -44,27 +44,6 @@ dija    NOUN  ═╝<╝               ║ nmod:poss
 .       PUNCT <══════════════════╝ punct
 ```
 
-## minn [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("mt")
->>> doc=nlp("Alla ħares ma kienx Majsi illi jagħmel ftit tad-dija.")
->>> import deplacy
->>> deplacy.render(doc)
-Alla    PROPN <════════════╗   nsubj
-ħares   VERB  ═══════════╗═╝═╗ ROOT
-ma      PART  <══╗       ║   ║ advmod:neg
-kienx   AUX   <╗ ║       ║   ║ cop
-Majsi   ADJ   ═╝═╝═════╗<╝   ║ xcomp
-illi    VERB  ═══════╗<╝     ║ parataxis
-jagħmel VERB  ═════╗<╝       ║ xcomp
-ftit    DET   ═══╗<╝         ║ obj
-tad-    ADP   <╗ ║           ║ case:det
-dija    NOUN  ═╝<╝           ║ nmod:poss
-.       PUNCT <══════════════╝ punct
-```
-
 ## minn [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)
 
 ```py

@@ -38,23 +38,6 @@ e         PRON  <╝     ║ nsubj
 .         PUNCT <══════╝ punct
 ```
 
-## le [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("gd")
->>> doc=nlp("Innsidh na geòidh as t-fhoghar e.")
->>> import deplacy
->>> deplacy.render(doc)
-Innsidh   VERB  ═══╗═╗═╗ ROOT
-na        DET   <╗ ║ ║ ║ det
-geòidh    NOUN  ═╝<╝ ║ ║ nsubj
-as        ADP   <══╗ ║ ║ case
-t-fhoghar VERB  ═╗═╝<╝ ║ ccomp
-e         PRON  <╝     ║ nsubj
-.         PUNCT <══════╝ punct
-```
-
 ## le [Trankit](https://github.com/nlp-uoregon/trankit)
 
 ```py

@@ -91,25 +91,3 @@
 .           PUNCT <════════════════════╝ punct
 ```
 
-## з [spacy-udpipe](https://github.com/TakeLab/spacy-udpipe)
-
-```py
->>> import spacy_udpipe
->>> nlp=spacy_udpipe.load("be")
->>> doc=nlp("Тэлебачанне стварае міфы, міфы тых, у чыіх руках тэлебачанне.")
->>> import deplacy
->>> deplacy.render(doc)
-Тэлебачанне NOUN  <══╗               nsubj
-стварае     VERB  ═╗═╝═══════════╗═╗ ROOT
-міфы        NOUN  <╝             ║ ║ obj
-,           PUNCT <════════════╗ ║ ║ punct
-міфы        NOUN  ═══════════╗═╝<╝ ║ conj
-тых         DET   <══════╗   ║     ║ det
-,           PUNCT <══════║═╗ ║     ║ punct
-у           ADP   <════╗ ║ ║ ║     ║ case
-чыіх        NUM   <╗   ║ ║ ║ ║     ║ nummod:gov
-руках       NOUN  ═╝═╗═╝═╝═╝<╝     ║ nmod
-тэлебачанне NOUN  <══╝             ║ nmod
-.           PUNCT <════════════════╝ punct
-```
-
