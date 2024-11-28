@@ -9,18 +9,18 @@
 >>> import deplacy
 >>> deplacy.render(doc)
 Да       SCONJ <══════╗       mark
-има      VERB  ═════╗═╝═════╗ root
-сира     NOUN  ═══╗<╝       ║ obj
-и        CCONJ <╗ ║         ║ cc
-масла    NOUN  ═╝<╝         ║ conj
-и        CCONJ <════════╗   ║ cc
-моја     DET   <╗       ║   ║ det
-би       AUX    ║<════╗ ║   ║ aux
-мати     NOUN  ═╝<══╗ ║ ║   ║ nsubj
-знала    VERB  ═══╗═╝═╝═╝═╗<╝ conj
-гибати   VERB  ═╗<╝       ║   xcomp
-гибаницу NOUN  <╝         ║   obj
-.        PUNCT <══════════╝   punct
+има      VERB  ═════╗═╝═══╗═╗ root
+сира     NOUN  ═══╗<╝     ║ ║ obj
+и        CCONJ <╗ ║       ║ ║ cc
+масла    NOUN  ═╝<╝       ║ ║ conj
+и        CCONJ <════════╗ ║ ║ cc
+моја     DET   <╗       ║ ║ ║ det
+би       AUX    ║<════╗ ║ ║ ║ aux
+мати     NOUN  ═╝<══╗ ║ ║ ║ ║ nsubj
+знала    VERB  ═══╗═╝═╝═╝<╝ ║ conj
+гибати   VERB  ═╗<╝         ║ xcomp
+гибаницу NOUN  <╝           ║ obj
+.        PUNCT <════════════╝ punct
 ```
 
 ## с [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-ом

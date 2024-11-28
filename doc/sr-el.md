@@ -72,13 +72,11 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
-## s [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-om
+## s [esupar](https://github.com/KoichiYasuoka/esupar)-om
 
 ```py
->>> from spacy.lang.sr import Serbian
->>> nlp=Serbian()
->>> import spacy
->>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
+>>> import esupar
+>>> nlp=esupar.load("sr")
 >>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
 >>> import deplacy
 >>> deplacy.render(doc)
@@ -97,42 +95,21 @@ gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
 ```
 
-## s [esupar](https://github.com/KoichiYasuoka/esupar)-om
+## s [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html)-om
 
 ```py
->>> import esupar
->>> nlp=esupar.load("sr")
+>>> from spacy.lang.sr import Serbian
+>>> nlp=Serbian()
+>>> import spacy
+>>> nlp.pipeline.extend(spacy.load("en_udify").pipeline)
 >>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
 >>> import deplacy
 >>> deplacy.render(doc)
 Da       SCONJ <══════╗       mark
-ima      VERB  ═════╗═╝═╗<╗   advcl
-sira     NOUN  ═══╗<╝   ║ ║   obj
-i        CCONJ <╗ ║     ║ ║   cc
-masla    NOUN  ═╝<╝     ║ ║   conj
-i        CCONJ <════════╝ ║   punct
-moja     DET   <╗         ║   det
-bi       AUX    ║<════╗   ║   aux
-mati     NOUN  ═╝<══╗ ║   ║   nsubj
-znala    VERB  ═══╗═╝═╝═══╝═╗ root
-gibati   VERB  ═╗<╝         ║ xcomp
-gibanicu NOUN  <╝           ║ obj
-.        PUNCT <════════════╝ punct
-```
-
-## s [Stanza](https://stanfordnlp.github.io/stanza)-om
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("sr")
->>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
->>> import deplacy
->>> deplacy.render(doc)
-Da       SCONJ <╗             mark
-ima      VERB  ═╝<══╗         advcl
-sira     VERB  ═══╗═╝═════╗═╗ root
+ima      VERB  ═════╗═╝═══╗═╗ root
+sira     NOUN  ═══╗<╝     ║ ║ obj
 i        CCONJ <╗ ║       ║ ║ cc
-masla    NOUN  ═╝<╝       ║ ║ obj
+masla    NOUN  ═╝<╝       ║ ║ conj
 i        CCONJ <════════╗ ║ ║ cc
 moja     DET   <╗       ║ ║ ║ det
 bi       AUX    ║<════╗ ║ ║ ║ aux
@@ -164,6 +141,29 @@ znala    VERB  ═══╗<══════╝ ║ conj
 gibati   VERB  ═╗<╝         ║ xcomp
 gibanicu NOUN  <╝           ║ obj
 .        PUNCT <════════════╝ punct
+```
+
+## s [Stanza](https://stanfordnlp.github.io/stanza)-om
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("sr")
+>>> doc=nlp("Da ima sira i masla i moja bi mati znala gibati gibanicu.")
+>>> import deplacy
+>>> deplacy.render(doc)
+Da       SCONJ <══════╗         mark
+ima      VERB  ═════╗═╝═══════╗ root
+sira     NOUN  ═══╗<╝         ║ obj
+i        CCONJ <╗ ║           ║ cc
+masla    NOUN  ═╝<╝           ║ conj
+i        CCONJ <════════════╗ ║ cc
+moja     DET   <══════════╗ ║ ║ nsubj
+bi       AUX   <════════╗ ║ ║ ║ aux
+mati     VERB  ═══════╗═╝═╝═╝<╝ conj
+znala    VERB  ═══╗═╗<╝         xcomp
+gibati   ADJ   <╗ ║ ║           amod
+gibanicu NOUN  ═╝<╝ ║           obj
+.        PUNCT <════╝           punct
 ```
 
 ## s [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP)-om
