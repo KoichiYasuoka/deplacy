@@ -75,10 +75,10 @@ gelir   VERB  ═══╝═╝═╝═╗ root
 >>> doc=nlp("İyi insan sözünün üstüne gelir.")
 >>> import deplacy
 >>> deplacy.render(doc)
-İyi     ADJ   <╗         amod
-insan   NOUN  ═╝<╗       nmod:poss
-sözünün NOUN  ═══╝<╗     nmod:poss
-üstüne  ADJ   ═════╝<╗   amod
+İyi     ADJ   <══╗       amod
+insan   NOUN  <╗ ║       nmod:poss
+sözünün NOUN  ═╝═╝<╗     nmod:poss
+üstüne  NOUN  ═════╝<╗   obl
 gelir   VERB  ═══════╝═╗ root
 .       PUNCT <════════╝ punct
 ```
