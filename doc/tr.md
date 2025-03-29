@@ -1,21 +1,5 @@
 # [deplacy](https://koichiyasuoka.github.io/deplacy/)'de sözdizimsel analiz
 
-## [Stanza](https://stanfordnlp.github.io/stanza) ile analiz
-
-```py
->>> import stanza
->>> nlp=stanza.Pipeline("tr")
->>> doc=nlp("İyi insan sözünün üstüne gelir.")
->>> import deplacy
->>> deplacy.render(doc)
-İyi     ADJ   <╗       amod
-insan   NOUN  ═╝<══╗   nsubj
-sözünün NOUN  <╗   ║   nmod:poss
-üstüne  ADJ   ═╝<╗ ║   nmod
-gelir   VERB  ═══╝═╝═╗ root
-.       PUNCT <══════╝ punct
-```
-
 ## [spaCy-jPTDP](https://github.com/KoichiYasuoka/spaCy-jPTDP) ile analiz
 
 ```py
@@ -46,6 +30,22 @@ sözünün NOUN  <══╗ ║   nmod:poss
 üstüne  ADJ   ═╗═╝═╝═╗ ROOT
 gelir   VERB  <╝     ║ compound
 .       PUNCT <══════╝ punct
+```
+
+## [Stanza](https://stanfordnlp.github.io/stanza) ile analiz
+
+```py
+>>> import stanza
+>>> nlp=stanza.Pipeline("tr")
+>>> doc=nlp("İyi insan sözünün üstüne gelir.")
+>>> import deplacy
+>>> deplacy.render(doc)
+İyi     ADJ   <══════╗   amod
+insan   NOUN  <════╗ ║   nsubj
+sözünün NOUN  <╗   ║ ║   nmod:poss
+üstüne  ADJ   ═╝<╗ ║ ║   obl
+gelir   VERB  ═══╝═╝═╝═╗ root
+.       PUNCT <════════╝ punct
 ```
 
 ## [Camphr-Udify](https://camphr.readthedocs.io/en/stable/notes/udify.html) ile analiz
