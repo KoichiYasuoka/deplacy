@@ -1,0 +1,8 @@
+# text = 国立阿伊努民族博物馆
+1	国	国	NOUN	_	_	2	nsubj	_	SpaceAfter=No
+2	立	立	VERB	_	_	6	acl	_	SpaceAfter=No
+3	阿伊努	阿伊努	PROPN	_	_	6	nmod	_	SpaceAfter=No
+4	民族	民族	NOUN	_	_	6	nmod	_	SpaceAfter=No
+5	博物	博物	NOUN	_	_	6	compound	_	SpaceAfter=No
+6	馆	馆	PART	_	_	0	root	_	SpaceAfter=No
+

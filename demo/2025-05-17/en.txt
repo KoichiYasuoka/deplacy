@@ -1,0 +1,5 @@
+# text = National Ainu Museum
+1	National	_	ADJ	_	_	3	amod	_	_
+2	Ainu	_	PROPN	_	_	3	compound	_	_
+3	Museum	_	PROPN	_	_	0	root	_	SpaceAfter=No
+

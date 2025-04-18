@@ -1,0 +1,10 @@
+# text = アヌココㇿ アイヌ イコロマケンル
+1-2	アヌココㇿ	_	_	_	_	_	_	_	_
+1	アン	an=	PART	人称接辞	_	2	nsubj	_	_
+2	ウココㇿ	ukokor	VERB	他動詞	_	6	acl	_	_
+3	アイヌ	aynu	NOUN	名詞	_	4	nmod	_	_
+4-5	イコロマ	_	_	_	_	_	_	_	SpaceAfter=No
+4	イコㇿ	ikor	NOUN	名詞	_	5	nsubj	_	_
+5	オマ	oma	VERB	他動詞	_	6	acl	_	_
+6	ケンル	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+

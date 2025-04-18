@@ -1,0 +1,6 @@
+# text = พิพิธภัณฑ์ไอนุแห่งชาติ
+1	พิพิธภัณฑ์	พิพิธภัณฑ์	NOUN	_	_	0	root	_	SpaceAfter=No
+2	ไอนุ	ไอนุ	PROPN	_	_	1	compound	_	SpaceAfter=No
+3	แห่ง	แห่ง	NOUN	_	_	1	nmod	_	SpaceAfter=No
+4	ชาติ	ชาติ	NOUN	_	_	3	compound	_	SpaceAfter=No
+

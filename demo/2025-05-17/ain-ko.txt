@@ -1,0 +1,9 @@
+# text = 아누코콜 아이누 이콜 오마 켄루
+1-2	아누코콜	_	_	_	_	_	_	_	_
+1	안	an=	PART	人称接辞	_	2	nsubj	_	_
+2	우코콜	ukokor	VERB	他動詞	_	6	acl	_	_
+3	아이누	aynu	NOUN	名詞	_	4	nmod	_	_
+4	이콜	ikor	NOUN	名詞	_	5	nsubj	_	_
+5	오마	oma	VERB	他動詞	_	6	acl	_	_
+6	켄루	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+

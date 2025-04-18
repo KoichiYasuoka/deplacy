@@ -1,0 +1,8 @@
+# text = Анукокор айну икор ома кэнру
+1	Ан	an=	PART	人称接辞	_	2	nsubj	_	SpaceAfter=No
+2	укокор	ukokor	VERB	他動詞	_	6	acl	_	_
+3	айну	aynu	NOUN	名詞	_	4	nmod	_	_
+4	икор	ikor	NOUN	名詞	_	5	nsubj	_	_
+5	ома	oma	VERB	他動詞	_	6	acl	_	_
+6	кэнру	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+

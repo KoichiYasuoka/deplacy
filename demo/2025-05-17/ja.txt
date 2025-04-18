@@ -1,0 +1,7 @@
+# text = 国立アイヌ民族博物館
+1	国立	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+2	アイヌ	_	PROPN	_	_	5	compound	_	SpaceAfter=No
+3	民族	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+4	博物	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+5	館	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
