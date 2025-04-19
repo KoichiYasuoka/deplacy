@@ -1,3 +1,11 @@
+# text = ไยฮาโนคคาร์ จิเสะ
+1	ไยฮาโนคคาร์	yayhanokkar	VERB	自動詞	_	2	amod	_	_
+2	จิเสะ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = อุเอคาริ จิเสะ
+1	อุเอคาริ	uwekari	VERB	自動詞	_	2	amod	_	_
+2	จิเสะ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
 # text = อานุโคโคโระ ไอนุ อิโคโระมาเค็งรุ
 1-2	อานุโคโคโระ	_	_	_	_	_	_	_	_
 1	อัน	an=	PART	人称接辞	_	2	nsubj	_	_
@@ -7,4 +15,59 @@
 4	อิโคร์	ikor	NOUN	名詞	_	5	nsubj	_	_
 5	โอมา	oma	VERB	他動詞	_	6	acl	_	_
 6	เค็งรุ	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = อิคาระ อุชิ
+1	อิคาระ	i-kar	VERB	自動詞	_	2	amod	_	_
+2	อุชิ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = เอตะ คาเนะ อัน โคะตัน
+1	เอตะ	teeta	ADV	副詞	_	3	advmod	_	_
+2	คาเนะ	kane	ADP	副助詞	_	1	case	_	_
+3	อัน	an	VERB	自動詞	_	4	acl	_	_
+4	โคะตัน	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ชินนุรัปปะ อุชิ
+1	ชินนุรัปปะ	sinnurappa	VERB	自動詞	_	2	amod	_	_
+2	อุชิ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = สิมิมตาร์
+1	สิมิมตาร์	si-mimtar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = อินคาร์ มินตาร์
+1	อินคาร์	inkar	VERB	自動詞	_	2	amod	_	_
+2	มินตาร์	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = คันคัน
+1	คันคัน	kankan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = อุเวรันคารัป มินทาร์
+1	อุเวรันคารัป	uwerankarap	VERB	自動詞	_	2	amod	_	_
+2	มินทาร์	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ฮคคิอัน จิเสะ
+1	ฮคคิ	hoski	ADV	副詞	_	2	advmod	_	SpaceAfter=No
+2	อัน	an	VERB	自動詞	_	3	acl	_	_
+3	จิเสะ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = จิคิซานิ มินทาร์
+1	จิคิซานิ	cikisani	NOUN	名詞	_	2	nmod	_	_
+2	มินทาร์	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = โคะตัน เซอร์มัก
+1	โคะตัน	kotan	NOUN	名詞	_	2	nmod	_	_
+2	เซอร์มัก	sermak	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = จินุมเกะ สิร์กาอุสเปะ นูการ์ อูสิ
+1	จินุมเกะ	cinumke	VERB	他動詞	_	3	acl	_	_
+2	สิร์กาอุส	sirka-us	VERB	自動詞	_	3	amod	_	SpaceAfter=No
+3	เปะ	pe	NOUN	形式名詞	_	4	obj	_	_
+4	นูการ์	nukar	VERB	他動詞	_	5	acl	_	_
+5	อูสิ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = โปโรโตะ
+1	โปโรโตะ	poroto	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = อุไอนุโคร์ โคะตัน
+1	อุไอนุโคร์	uwaynukor	VERB	他動詞	_	2	acl	_	_
+2	โคะตัน	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
