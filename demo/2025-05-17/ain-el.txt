@@ -40,7 +40,7 @@
 
 # text = hoski an cise
 1	hoski	hoski	ADV	副詞	_	2	advmod	_	_
-2	an	an	VERB	自動詞	_	3	amod	_	_
+2	an	an	VERB	自動詞	_	3	acl	_	_
 3	cise	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
 # text = cikisani mintar
