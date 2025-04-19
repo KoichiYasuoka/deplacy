@@ -1,3 +1,11 @@
+# text = ヤイハノッカㇻ チセ
+1	ヤイハノッカㇻ	yayhanokkar	VERB	自動詞	_	2	amod	_	_
+2	チセ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ウエカリ チセ
+1	ウエカリ	uwekari	VERB	自動詞	_	2	amod	_	_
+2	チセ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
 # text = アヌココㇿ アイヌ イコロマケンル
 1-2	アヌココㇿ	_	_	_	_	_	_	_	_
 1	アン	an=	PART	人称接辞	_	2	nsubj	_	_
@@ -7,4 +15,59 @@
 4	イコㇿ	ikor	NOUN	名詞	_	5	nsubj	_	_
 5	オマ	oma	VERB	他動詞	_	6	acl	_	_
 6	ケンル	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = イカㇻ ウシ
+1	イカㇻ	i-kar	VERB	自動詞	_	2	amod	_	_
+2	ウシ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = テエタ カネ アン コタン
+1	テエタ	teeta	ADV	副詞	_	3	advmod	_	_
+2	カネ	kane	ADP	副助詞	_	1	case	_	_
+3	アン	an	VERB	自動詞	_	4	acl	_	_
+4	コタン	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = シンヌラッパ ウシ
+1	シンヌラッパ	sinnurappa	VERB	自動詞	_	2	amod	_	_
+2	ウシ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = シミㇺタㇻ
+1	シミㇺタㇻ	si-mimtar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = インカㇻ ミンタㇻ
+1	インカㇻ	inkar	VERB	自動詞	_	2	amod	_	_
+2	ミンタㇻ	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = カンカン
+1	カンカン	kankan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ウウェランカラㇷ゚ ミンタㇻ
+1	ウウェランカラㇷ゚	uwerankarap	VERB	自動詞	_	2	amod	_	_
+2	ミンタㇻ	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ホㇱキアン チセ
+1	ホㇱキ	hoski	ADV	副詞	_	2	advmod	_	SpaceAfter=No
+2	アン	an	VERB	自動詞	_	3	acl	_	_
+3	チセ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = チキサニ ミンタㇻ
+1	チキサニ	cikisani	NOUN	名詞	_	2	nmod	_	_
+2	ミンタㇻ	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = コタン セㇾマㇰ
+1	コタン	kotan	NOUN	名詞	_	2	nmod	_	_
+2	セㇾマㇰ	sermak	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = チヌㇺケ シㇼカウㇱペ ヌカㇻ ウシ
+1	チヌㇺケ	cinumke	VERB	他動詞	_	3	acl	_	_
+2	シㇼカウㇱ	sirka-us	VERB	自動詞	_	3	amod	_	SpaceAfter=No
+3	ペ	pe	NOUN	形式名詞	_	4	obj	_	_
+4	ヌカㇻ	nukar	VERB	他動詞	_	5	acl	_	_
+5	ウシ	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = ポロト
+1	ポロト	poroto	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ウアイヌコㇿ コタン
+1	ウアイヌコㇿ	uwaynukor	VERB	他動詞	_	2	acl	_	_
+2	コタン	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
