@@ -1,0 +1,155 @@
+<!DOCTYPE html><head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>UDエディター by 安岡孝一</title>
+<script src="../../deplacy/conllusvgview.js"></script>
+<script src="../../deplacy/conllusvgedit.js"></script>
+<script src="../../deplacy/conllusvgload.js"></script>
+<script type="text/javascript">
+function editorLocalURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1));
+  if(h.indexOf("url=")==0)
+    return;
+  if(tx.value==null)
+    tx.textContent=h+"\n";
+  else
+    tx.value=h+"\n";
+}
+function editorRemoteURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href;
+  var i=h.indexOf("#");
+  if(0>i)
+    return;
+  if(1>h.length-i)
+    return;
+  h=decodeURIComponent(h.slice(i+1));
+  if(h.indexOf("url=")!=0)
+    return;
+  conllusvg.loadRemote(textid,h.slice(4))
+}
+function editorChangeURL(textid){
+  var tx=document.getElementById(textid);
+  var h=location.href+"#";
+  var i=h.indexOf("#");
+  var v=tx.value;
+  if(v==null)
+    v=tx.textContent;
+  location.href=h.substring(0,i+1)+encodeURIComponent(v);
+}
+editorInsertTextline=conllusvg.insertTextline
+conllusvg.insertTextline=function(textid,i,j,t){
+  editorInsertTextline(textid,i,j,t);
+  editorChangeURL(textid);
+}
+function editorConnectForm(textid,z){
+  var c=conllusvg.main[textid];
+  var ix=c.event.index;
+  var t,i,j;
+  i=ix;
+  j=ix-1;
+  if(ix==0){
+    if(c.nodes[1]==null)
+      return;
+    i=j=1;
+  }
+  if(c.nodes[i-1].form=="_")
+    t=c.nodes[i].form;
+  else if(c.nodes[i].form=="_")
+    t=c.nodes[i-1].form;
+  else if(c.nodes[i-1].misc.indexOf("SpaceAfter=No")<0)
+    t=c.nodes[i-1].form+" "+c.nodes[i].form;
+  else
+    t=c.nodes[i-1].form+c.nodes[i].form;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,2,t);
+  if(c.nodes[i-1].lemma=="_")
+    t=c.nodes[i].lemma;
+  else if(c.nodes[i].lemma=="_")
+    t=c.nodes[i-1].lemma;
+  else
+    t=c.nodes[i-1].lemma+c.nodes[i].lemma;
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,3,t);
+  if(c.nodes[i].misc.indexOf("SpaceAfter=No")<0)
+    t="_";
+  else
+    t="SpaceAfter=No";
+  conllusvg.insertTextline(textid,c.nodes[j].textlineid,10,t);
+  conllusvg.deleteNode(textid,z);
+}
+function editorDivideForm(textid,z){
+  var c=conllusvg.main[textid];
+  var ix=parseInt(c.event.index);
+  var s=c.nodes[ix].form;
+  var t=c.nodes[ix].lemma;
+  var i;
+  conllusvg.duplicateNode(textid,z);
+  if(c.nodes[ix]==null)
+    return;
+  if(c.nodes[ix].form!=s||c.nodes[ix].lemma!=t)
+    return;
+  if(c.nodes[ix+1]==null)
+    return;
+  if(c.nodes[ix+1].form!=s||c.nodes[ix+1].lemma!=t)
+    return;
+  i=s.indexOf(" ");
+  if(i>0&&s.length-i>1){
+    c.nodes[ix].form=s.substring(0,i);
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,2,s.substring(0,i));
+    c.nodes[ix+1].form=s.slice(i+1);
+    conllusvg.insertTextline(textid,c.nodes[ix+1].textlineid,2,s.slice(i+1));
+    c.nodes[ix].misc="_"
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,10,"_");
+    conllusvg.writeNodesSVG(textid);
+  }
+  i=t.indexOf(" ");
+  if(i>0&&s.length-i>1){
+    c.nodes[ix].lemma=t.substring(0,i);
+    conllusvg.insertTextline(textid,c.nodes[ix].textlineid,3,t.substring(0,i));
+    c.nodes[ix+1].lemma=t.slice(i+1);
+    conllusvg.insertTextline(textid,c.nodes[ix+1].textlineid,3,t.slice(i+1));
+  }
+}
+</script>
+</head>
+<body>
+<text id="status" /><br />
+<textarea cols="120" rows="10" id="conllu" onchange="conllusvg.reparse('conllu');editorChangeURL('conllu')">
+# text = 国立アイヌ民族博物館
+1	国立	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+2	アイヌ	_	PROPN	_	_	5	compound	_	SpaceAfter=No
+3	民族	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+4	博物	_	NOUN	_	_	5	compound	_	SpaceAfter=No
+5	館	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+</textarea>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onload="editorLocalURL('conllu');conllusvg.edit(this,'conllu',null,'upos');editorRemoteURL('conllu')">
+</svg>
+<select size=8 id="upos" style="position:absolute; visibility:hidden">
+<option value="conllusvg.rootLink">root</option>
+<option>NOUN</option>
+<option>PART</option>
+<option>VERB</option>
+<option>AUX</option>
+<option>ADV</option>
+<option>ADP</option>
+<option>SCONJ</option>
+<option>CCONJ</option>
+<option>DET</option>
+<option>NUM</option>
+<option>PRON</option>
+<option>PROPN</option>
+<option>INTJ</option>
+<option>SYM</option>
+<option>PUNCT</option>
+<option value="conllusvg.deleteNode">削除</option>
+<option value="conllusvg.duplicateNode">複製</option>
+<option value="editorConnectForm">連接</option>
+<option value="editorDivideForm">分割</option>
+</select>
+</body>
