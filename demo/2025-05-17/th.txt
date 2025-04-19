@@ -1,6 +1,75 @@
+# text = อาคารเรียนรู้สัมผัสประสบการณ์
+1	อาคาร	อาคาร	NOUN	_	_	0	root	_	SpaceAfter=No
+2	เรียนรู้	เรียนรู้	VERB	_	_	1	acl	_	SpaceAfter=No
+3	สัมผัส	สัมผัส	VERB	_	_	2	xcomp	_	SpaceAfter=No
+4	ประสบ	ประสบ	VERB	_	_	3	ccomp	_	SpaceAfter=No
+5	การณ์	การณ์	NOUN	_	_	4	obj	_	SpaceAfter=No
+
+# text = อาคารแลกเปลี่ยนการสัมผัสประสบการณ์
+1	อาคาร	อาคาร	NOUN	_	_	2	nsubj	_	SpaceAfter=No
+2	แลกเปลี่ยน	แลกเปลี่ยน	VERB	_	_	0	root	_	SpaceAfter=No
+3	การ	การ	PART	_	_	2	obj	_	SpaceAfter=No
+4	สัมผัส	สัมผัส	VERB	_	_	3	acl	_	SpaceAfter=No
+5	ประสบการณ์	ประสบการณ์	NOUN	_	_	4	obj	_	SpaceAfter=No
+
 # text = พิพิธภัณฑ์ไอนุแห่งชาติ
 1	พิพิธภัณฑ์	พิพิธภัณฑ์	NOUN	_	_	0	root	_	SpaceAfter=No
 2	ไอนุ	ไอนุ	PROPN	_	_	1	compound	_	SpaceAfter=No
 3	แห่ง	แห่ง	NOUN	_	_	1	nmod	_	SpaceAfter=No
 4	ชาติ	ชาติ	NOUN	_	_	3	compound	_	SpaceAfter=No
+
+# text = เวิร์คช็อป
+1	เวิร์ค	เวิร์ค	PROPN	_	_	0	root	_	SpaceAfter=No
+2	ช็อป	ช็อป	PROPN	_	_	1	flat	_	SpaceAfter=No
+
+# text = โคะตัน
+1	โคะตัน	โคะตัน	PROPN	_	_	0	root	_	SpaceAfter=No
+
+# text = สถานรำลึก
+1	สถาน	สถาน	NOUN	_	_	0	root	_	SpaceAfter=No
+2	รำลึก	รำลึก	VERB	_	_	1	acl	_	SpaceAfter=No
+
+# text = สนามหญ้า
+1	สนาม	สนาม	NOUN	_	_	0	root	_	SpaceAfter=No
+2	หญ้า	หญ้า	NOUN	_	_	1	compound	_	SpaceAfter=No
+
+# text = ลานชมวิว
+1	ลาน	ลาน	NOUN	_	_	0	root	_	SpaceAfter=No
+2	ชมวิว	ชมวิว	VERB	_	_	1	acl	_	SpaceAfter=No
+
+# text = ทางเดินล่อใจ
+1	ทาง	ทาง	NOUN	_	_	2	nsubj	_	SpaceAfter=No
+2	เดิน	เดิน	VERB	_	_	0	root	_	SpaceAfter=No
+3	ล่อใจ	ล่อใจ	VERB	_	_	2	obj	_	SpaceAfter=No
+
+# text = ลานต้อนรับ
+1	ลาน	ลาน	NOUN	_	_	0	root	_	SpaceAfter=No
+2	ต้อนรับ	ต้อนรับ	VERB	_	_	1	acl	_	SpaceAfter=No
+
+# text = อาคารเอ็นทรานซ์
+1	อาคาร	อาคาร	PROPN	_	_	0	root	_	SpaceAfter=No
+2	เอ็นทรานซ์	เอ็นทรานซ์	PROPN	_	_	1	compound	_	SpaceAfter=No
+
+# text = ลานจิคิซานิ
+1	ลานจิ	ลานจิ	PROPN	_	_	0	root	_	SpaceAfter=No
+2	คิซานิ	คิซานิ	PROPN	_	_	1	flat	_	SpaceAfter=No
+
+# text = สำนักงานบริหาร
+1	สำนักงาน	สำนักงาน	PROPN	_	_	0	root	_	SpaceAfter=No
+2	บริหาร	บริหาร	VERB	_	_	1	acl	_	SpaceAfter=No
+
+# text = สวนตัวอย่าง
+1	สวน	สวน	NOUN	_	_	0	root	_	SpaceAfter=No
+2	ตัวอย่าง	ตัวอย่าง	NOUN	_	_	1	compound	_	SpaceAfter=No
+
+# text = ทะเลสาบโปโรโต
+1	ทะเล	ทะเล	NOUN	_	_	0	root	_	SpaceAfter=No
+2	สาบ	สาบ	NOUN	_	_	1	compound	_	SpaceAfter=No
+3	โปโรโต	โปโรโต	PROPN	_	_	1	compound	_	SpaceAfter=No
+
+# text = พิพิธภัณฑ์และสวนไอนุแห่งชาติ
+1	พิพิธภัณฑ์	พิพิธภัณฑ์	PROPN	_	_	0	root	_	SpaceAfter=No
+2	และ	และ	CCONJ	_	_	3	cc	_	SpaceAfter=No
+3	สวน	สวน	PROPN	_	_	1	conj	_	SpaceAfter=No
+4	ไอนุแห่งชาติ	ไอนุแห่งชาติ	PROPN	_	_	3	compound	_	SpaceAfter=No
 
