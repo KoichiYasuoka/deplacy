@@ -21,15 +21,14 @@
 4	ชาติ	ชาติ	NOUN	_	_	3	compound	_	SpaceAfter=No
 
 # text = เวิร์คช็อป
-1	เวิร์ค	เวิร์ค	PROPN	_	_	0	root	_	SpaceAfter=No
-2	ช็อป	ช็อป	PROPN	_	_	1	flat	_	SpaceAfter=No
+1	เวิร์คช็อป	เวิร์คช็อป	NOUN	_	_	0	root	_	SpaceAfter=No
 
 # text = โคะตัน
 1	โคะตัน	โคะตัน	PROPN	_	_	0	root	_	SpaceAfter=No
 
 # text = สถานรำลึก
 1	สถาน	สถาน	NOUN	_	_	0	root	_	SpaceAfter=No
-2	รำลึก	รำลึก	VERB	_	_	1	acl	_	SpaceAfter=No
+2	รำลึก	รำลึก	VERB	_	_	1	amod	_	SpaceAfter=No
 
 # text = สนามหญ้า
 1	สนาม	สนาม	NOUN	_	_	0	root	_	SpaceAfter=No
