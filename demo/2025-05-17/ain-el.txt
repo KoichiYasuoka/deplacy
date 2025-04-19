@@ -1,3 +1,11 @@
+# text = yayhanokkar cise
+1	yayhanokkar	yayhanokkar	VERB	自動詞	_	2	amod	_	_
+2	cise	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = uekari cise
+1	uekari	uwekari	VERB	自動詞	_	2	amod	_	_
+2	cise	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
 # text = an=ukokor aynu ikor oma kenru
 1	an=	an=	PART	人称接辞	_	2	nsubj	_	SpaceAfter=No
 2	ukokor	ukokor	VERB	他動詞	_	6	acl	_	_
@@ -5,4 +13,55 @@
 4	ikor	ikor	NOUN	名詞	_	5	nsubj	_	_
 5	oma	oma	VERB	他動詞	_	6	acl	_	_
 6	kenru	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = ikar usi
+1	ikar	i-kar	VERB	自動詞	_	2	amod	_	_
+2	usi	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = teeta kane an kotan
+1	teeta	teeta	ADV	副詞	_	3	advmod	_	_
+2	kane	kane	ADP	副助詞	_	1	case	_	_
+3	an	an	VERB	自動詞	_	4	acl	_	_
+4	kotan	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = sinnurappa usi
+1	sinnurappa	sinnurappa	VERB	自動詞	_	2	amod	_	_
+2	usi	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = simimtar
+1	simimtar	si-mimtar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = inkar mintar
+1	inkar	inkar	VERB	自動詞	_	2	amod	_	_
+2	mintar	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = kankan
+1	kankan	kankan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = hoski an cise
+1	hoski	hoski	ADV	副詞	_	2	advmod	_	_
+2	an	an	VERB	自動詞	_	3	amod	_	_
+3	cise	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = cikisani mintar
+1	cikisani	cikisani	NOUN	名詞	_	2	nmod	_	_
+2	mintar	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = kotan sermak
+1	kotan	kotan	NOUN	名詞	_	2	nmod	_	_
+2	sermak	sermak	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = cinumke sirkauspe nukar usi
+1	cinumke	cinumke	VERB	他動詞	_	3	acl	_	_
+2	sirkaus	sirka-us	VERB	自動詞	_	3	amod	_	SpaceAfter=No
+3	pe	pe	NOUN	形式名詞	_	4	obj	_	_
+4	nukar	nukar	VERB	他動詞	_	5	acl	_	_
+5	usi	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = poroto
+1	poroto	poroto	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = uaynukor kotan
+1	uaynukor	uwaynukor	VERB	他動詞	_	2	acl	_	_
+2	kotan	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
