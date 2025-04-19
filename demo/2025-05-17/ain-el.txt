@@ -38,6 +38,10 @@
 # text = kankan
 1	kankan	kankan	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
+# text = uwerankarap mintar
+1	uwerankarap	uwerankarap	VERB	自動詞	_	2	amod	_	_
+2	mintar	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
 # text = hoski an cise
 1	hoski	hoski	ADV	副詞	_	2	advmod	_	_
 2	an	an	VERB	自動詞	_	3	acl	_	_
