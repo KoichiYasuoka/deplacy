@@ -1,3 +1,11 @@
+# text = Яйханоккар тисэ
+1	Яйханоккар	yayhanokkar	VERB	自動詞	_	2	amod	_	_
+2	тисэ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Уэкари тисе
+1	Уэкари	uwekari	VERB	自動詞	_	2	amod	_	_
+2	тисе	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
 # text = Анукокор айну икор ома кэнру
 1	Ан	an=	PART	人称接辞	_	2	nsubj	_	SpaceAfter=No
 2	укокор	ukokor	VERB	他動詞	_	6	acl	_	_
@@ -5,4 +13,59 @@
 4	икор	ikor	NOUN	名詞	_	5	nsubj	_	_
 5	ома	oma	VERB	他動詞	_	6	acl	_	_
 6	кэнру	kenru	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Икар уси
+1	Икар	i-kar	VERB	自動詞	_	2	amod	_	_
+2	уси	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = Тээта канэ ан котан
+1	Тээта	teeta	ADV	副詞	_	3	advmod	_	_
+2	канэ	kane	ADP	副助詞	_	1	case	_	_
+3	ан	an	VERB	自動詞	_	4	acl	_	_
+4	котан	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Синнураппа уси
+1	Синнураппа	sinnurappa	VERB	自動詞	_	2	amod	_	_
+2	уси	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = Симинтар
+1	Симинтар	si-mimtar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Инкара минтар
+1	Инкара	inkar	VERB	自動詞	_	2	amod	_	_
+2	минтар	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Канкан
+1	Канкан	kankan	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Увэранкарап минтар
+1	Увэранкарап	uwerankarap	VERB	自動詞	_	2	amod	_	_
+2	минтар	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Хоккиан тисэ
+1	Хокки	hoski	ADV	副詞	_	2	advmod	_	SpaceAfter=No
+2	ан	an	VERB	自動詞	_	3	acl	_	_
+3	тисэ	cise	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Тикисани минтар
+1	Тикисани	cikisani	NOUN	名詞	_	2	nmod	_	_
+2	минтар	mintar	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Котан серемак
+1	Котан	kotan	NOUN	名詞	_	2	nmod	_	_
+2	серемак	sermak	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Чинумке сиркауспе нукар уси
+1	Чинумке	cinumke	VERB	他動詞	_	3	acl	_	_
+2	сиркаус	sirka-us	VERB	自動詞	_	3	amod	_	SpaceAfter=No
+3	пе	pe	NOUN	形式名詞	_	4	obj	_	_
+4	нукар	nukar	VERB	他動詞	_	5	acl	_	_
+5	уси	usi	NOUN	形式名詞	_	0	root	_	SpaceAfter=No
+
+# text = Порото
+1	Порото	poroto	NOUN	名詞	_	0	root	_	SpaceAfter=No
+
+# text = Уайнукоро котан
+1	Уайнукоро	uwaynukor	VERB	他動詞	_	2	acl	_	_
+2	котан	kotan	NOUN	名詞	_	0	root	_	SpaceAfter=No
 
