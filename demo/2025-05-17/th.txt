@@ -6,11 +6,13 @@
 5	การณ์	การณ์	NOUN	_	_	4	obj	_	SpaceAfter=No
 
 # text = อาคารแลกเปลี่ยนการสัมผัสประสบการณ์
-1	อาคาร	อาคาร	NOUN	_	_	2	nsubj	_	SpaceAfter=No
-2	แลกเปลี่ยน	แลกเปลี่ยน	VERB	_	_	0	root	_	SpaceAfter=No
-3	การ	การ	PART	_	_	2	obj	_	SpaceAfter=No
-4	สัมผัส	สัมผัส	VERB	_	_	3	acl	_	SpaceAfter=No
-5	ประสบการณ์	ประสบการณ์	NOUN	_	_	4	obj	_	SpaceAfter=No
+1	อาคาร	อาคาร	NOUN	_	_	0	root	_	SpaceAfter=No
+2	แลก	แลก	VERB	_	_	1	acl	_	SpaceAfter=No
+3	เปลี่ยน	เปลี่ยน	VERB	_	_	2	xcomp	_	SpaceAfter=No
+4	การ	การ	PART	_	_	3	obj	_	SpaceAfter=No
+5	สัมผัส	สัมผัส	VERB	_	_	4	acl	_	SpaceAfter=No
+6	ประสบ	ประสบ	VERB	_	_	5	ccomp	_	SpaceAfter=No
+7	การณ์	การณ์	NOUN	_	_	6	obj	_	SpaceAfter=No
 
 # text = พิพิธภัณฑ์ไอนุแห่งชาติ
 1	พิพิธภัณฑ์	พิพิธภัณฑ์	NOUN	_	_	0	root	_	SpaceAfter=No
