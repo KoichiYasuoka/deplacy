@@ -1,7 +1,76 @@
+# text = 体験学習館
+1	体験	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+2	学習	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	館	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 体験交流ホール
+1	体験	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+2	交流	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	ホール	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
 # text = 国立アイヌ民族博物館
 1	国立	_	NOUN	_	_	5	compound	_	SpaceAfter=No
 2	アイヌ	_	PROPN	_	_	5	compound	_	SpaceAfter=No
 3	民族	_	NOUN	_	_	5	compound	_	SpaceAfter=No
 4	博物	_	NOUN	_	_	5	compound	_	SpaceAfter=No
 5	館	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 工房
+1	工房	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 伝統的コタン
+1	伝統	_	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	的	_	PART	_	_	1	mark	_	SpaceAfter=No
+3	コタン	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 慰霊施設
+1	慰霊	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	施設	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 芝生広場
+1	芝生	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	広場	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 展望広場
+1	展望	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	広場	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = いざないの回廊
+1	いざない	_	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	の	_	ADP	_	_	1	case	_	SpaceAfter=No
+3	回廊	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 歓迎の広場
+1	歓迎	_	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	の	_	ADP	_	_	1	case	_	SpaceAfter=No
+3	広場	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = エントランス棟
+1	エントランス	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	棟	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = チキサニ広場
+1	チキサニ	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	広場	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 管理運営施設
+1	管理	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+2	運営	_	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	施設	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 草木の見本園
+1	草木	_	NOUN	_	_	4	nmod	_	SpaceAfter=No
+2	の	_	ADP	_	_	1	case	_	SpaceAfter=No
+3	見本	_	NOUN	_	_	4	compound	_	SpaceAfter=No
+4	園	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = ポロト湖
+1	ポロト	_	PROPN	_	_	2	compound	_	SpaceAfter=No
+2	湖	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 民族共生象徴空間
+1	民族	_	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	共生	_	NOUN	_	_	4	nmod	_	SpaceAfter=No
+3	象徴	_	NOUN	_	_	4	compound	_	SpaceAfter=No
+4	空間	_	NOUN	_	_	0	root	_	SpaceAfter=No
 
