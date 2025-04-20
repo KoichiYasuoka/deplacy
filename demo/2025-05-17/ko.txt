@@ -1,10 +1,10 @@
 # text = 체험 학습관
-1	체험	_	NOUN	_	_	2	compound	_	_
+1	체험	_	NOUN	_	_	2	nmod	_	_
 2	학습관	_	NOUN	_	_	0	root	_	SpaceAfter=No
 
 # text = 체험 교류 홀
-1	체험	_	NOUN	_	_	3	compound	_	_
-2	교류	_	NOUN	_	_	3	compound	_	_
+1	체험	_	NOUN	_	_	3	nmod	_	_
+2	교류	_	NOUN	_	_	3	nmod	_	_
 3	홀	_	NOUN	_	_	0	root	_	SpaceAfter=No
 
 # text = 국립아이누민족박물관
