@@ -50,8 +50,8 @@
 2	ต้อนรับ	ต้อนรับ	VERB	_	_	1	acl	_	SpaceAfter=No
 
 # text = อาคารเอ็นทรานซ์
-1	อาคาร	อาคาร	PROPN	_	_	0	root	_	SpaceAfter=No
-2	เอ็นทรานซ์	เอ็นทรานซ์	PROPN	_	_	1	compound	_	SpaceAfter=No
+1	อาคาร	อาคาร	NOUN	_	_	0	root	_	SpaceAfter=No
+2	เอ็นทรานซ์	เอ็นทรานซ์	NOUN	_	_	1	compound	_	SpaceAfter=No
 
 # text = ลานจิคิซานิ
 1	ลานจิ	ลานจิ	PROPN	_	_	0	root	_	SpaceAfter=No
