@@ -9,7 +9,7 @@
 # text = อานุโคโคโระ ไอนุ อิโคโระมาเค็งรุ
 1-2	อานุโคโคโระ	_	_	_	_	_	_	_	_
 1	อัน	an=	PART	人称接辞	_	2	nsubj	_	_
-2	อูโคโคร์	ukokor	VERB	他動詞	_	6	acl	_	_
+2	อุโคโคร์	ukokor	VERB	他動詞	_	6	acl	_	_
 3	ไอนุ	aynu	NOUN	名詞	_	4	nmod	_	_
 4-5	อิโคโระมา	_	_	_	_	_	_	_	SpaceAfter=No
 4	อิโคร์	ikor	NOUN	名詞	_	5	nsubj	_	_
