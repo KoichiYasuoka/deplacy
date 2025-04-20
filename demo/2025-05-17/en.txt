@@ -1,5 +1,74 @@
+# text = Workshop
+1	Workshop	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Cultural Exchange Hall
+1	Cultural	_	ADJ	_	_	3	amod	_	_
+2	Exchange	_	NOUN	_	_	3	nmod	_	_
+3	Hall	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
 # text = National Ainu Museum
 1	National	_	ADJ	_	_	3	amod	_	_
 2	Ainu	_	PROPN	_	_	3	compound	_	_
-3	Museum	_	PROPN	_	_	0	root	_	SpaceAfter=No
+3	Museum	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Crafts Studio
+1	Crafts	_	NOUN	_	_	2	nmod	_	_
+2	Studio	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Kotan (Tranditional Ainu Village)
+1	Kotan	_	PROPN	_	_	0	root	_	_
+2	(	_	PUNCT	_	_	5	punct	_	SpaceAfter=No
+3	Tranditional	_	ADJ	_	_	5	amod	_	_
+4	Ainu	_	PROPN	_	_	5	compound	_	_
+5	Village	_	NOUN	_	_	1	appos	_	SpaceAfter=No
+6	)	_	PUNCT	_	_	5	punct	_	SpaceAfter=No
+
+# text = Memorial Site
+1	Memorial	_	ADJ	_	_	2	amod	_	_
+2	Site	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Lawn Square
+1	Lawn	_	NOUN	_	_	2	nmod	_	_
+2	Square	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Lakeview Plaza
+1	Lakeview	_	NOUN	_	_	2	nmod	_	_
+2	Plaza	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Path to Ainu Spirit
+1	Path	_	NOUN	_	_	0	root	_	_
+2	to	_	ADP	_	_	4	case	_	_
+3	Ainu	_	PROPN	_	_	4	compound	_	_
+4	Spirit	_	NOUN	_	_	1	nmod	_	SpaceAfter=No
+
+# text = Gateway Square
+1	Gateway	_	NOUN	_	_	2	nmod	_	_
+2	Square	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Entrance Center
+1	Entrance	_	NOUN	_	_	2	nmod	_	_
+2	Center	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Cikisani Square
+1	Cikisani	_	PROPN	_	_	2	compound	_	_
+2	Square	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Administration Office
+1	Administration	_	NOUN	_	_	2	nmod	_	_
+2	Office	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Specimen Garden
+1	Specimen	_	NOUN	_	_	2	nmod	_	_
+2	Garden	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Lake Poroto
+1	Lake	_	NOUN	_	_	0	root	_	_
+2	Poroto	_	PROPN	_	_	1	flat	_	SpaceAfter=No
+
+# text = National Ainu Museum and Park
+1	National	_	ADJ	_	_	3	amod	_	_
+2	Ainu	_	PROPN	_	_	3	compound	_	_
+3	Museum	_	NOUN	_	_	0	root	_	_
+4	and	_	CCONJ	_	_	5	cc	_	_
+5	Park	_	NOUN	_	_	3	conj	_	SpaceAfter=No
 
