@@ -40,9 +40,10 @@
 3	วิว	วิว	NOUN	_	_	2	obj	_	SpaceAfter=No
 
 # text = ทางเดินล่อใจ
-1	ทาง	ทาง	NOUN	_	_	2	nsubj	_	SpaceAfter=No
-2	เดิน	เดิน	VERB	_	_	0	root	_	SpaceAfter=No
-3	ล่อใจ	ล่อใจ	VERB	_	_	2	obj	_	SpaceAfter=No
+1	ทาง	ทาง	NOUN	_	_	0	root	_	SpaceAfter=No
+2	เดิน	เดิน	VERB	_	_	1	amod	_	SpaceAfter=No
+3	ล่อ	ล่อ	VERB	_	_	1	acl	_	SpaceAfter=No
+4	ใจ	ใจ	NOUN	_	_	3	obj	_	SpaceAfter=No
 
 # text = ลานต้อนรับ
 1	ลาน	ลาน	NOUN	_	_	0	root	_	SpaceAfter=No
