@@ -1,6 +1,62 @@
+# text = 체험 학습관
+1	체험	_	NOUN	_	_	0	root	_	_
+2	학습관	_	NOUN	_	_	1	flat	_	SpaceAfter=No
+
+# text = 체험 교류 홀
+1	체험	_	NOUN	_	_	0	root	_	_
+2	교류	_	NOUN	_	_	1	flat	_	_
+3	홀	_	NOUN	_	_	1	flat	_	SpaceAfter=No
+
 # text = 국립아이누민족박물관
 1	국립	_	NOUN	_	_	4	compound	_	SpaceAfter=No
 2	아이누	_	PROPN	_	_	4	compound	_	SpaceAfter=No
 3	민족	_	NOUN	_	_	4	compound	_	SpaceAfter=No
 4	박물관	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 공방
+1	공방	_	SYM	_	_	0	root	_	SpaceAfter=No
+
+# text = 전통 코탄(마을)
+1	전통	_	NOUN	_	_	2	compound	_	_
+2	코탄	_	NOUN	_	_	0	root	_	SpaceAfter=No
+3	(	_	PUNCT	_	_	4	punct	_	SpaceAfter=No
+4	마을	_	NOUN	_	_	2	appos	_	SpaceAfter=No
+5	)	_	PUNCT	_	_	4	punct	_	SpaceAfter=No
+
+# text = 위령 시설
+1	위령	_	NOUN	_	_	0	root	_	_
+2	시설	_	NOUN	_	_	1	flat	_	SpaceAfter=No
+
+# text = 잔디광장
+1	잔디광장	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 전망광장
+1	전망광장	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 초대의 회랑
+1	초대의	_	NOUN	_	_	2	nmod:poss	_	_
+2	회랑	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 환영 광장
+1	환영	_	NOUN	_	_	0	root	_	_
+2	광장	_	NOUN	_	_	1	flat	_	SpaceAfter=No
+
+# text = 엔트런스동
+1	엔트런스동	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 치키사니광장
+1	치키사니광장	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 관리운영시설
+1	관리운영시설	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 견본 정원
+1	견본	_	NOUN	_	_	0	root	_	_
+2	정원	_	NOUN	_	_	1	flat	_	SpaceAfter=No
+
+# text = 포로토호
+1	포로토호	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 민족공생상징공간
+1	민족공생상징공간	_	NOUN	_	_	0	root	_	SpaceAfter=No
 
