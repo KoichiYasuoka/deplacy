@@ -1,5 +1,73 @@
+# text = Павильон практического обучения
+1	Павильон	_	NOUN	_	_	0	root	_	_
+2	практического	_	ADJ	_	_	3	amod	_	_
+3	обучения	_	NOUN	_	_	1	nmod	_	SpaceAfter=No
+
+# text = Зал культурного обмена
+1	Зал	_	NOUN	_	_	0	root	_	_
+2	культурного	_	ADJ	_	_	3	amod	_	_
+3	обмена	_	NOUN	_	_	1	nmod	_	SpaceAfter=No
+
 # text = Национальный айнский музей
 1	Национальный	_	ADJ	_	_	3	amod	_	_
 2	айнский	_	ADJ	_	_	3	amod	_	_
 3	музей	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Мастерские
+1	Мастерские	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Традиционная айнская деревня КОТАН
+1	Традиционная	_	ADJ	_	_	3	amod	_	_
+2	айнская	_	ADJ	_	_	3	amod	_	_
+3	деревня	_	NOUN	_	_	0	root	_	_
+4	КОТАН	_	PROPN	_	_	3	appos	_	SpaceAfter=No
+
+# text = Обзор Мемориала
+1	Обзор	_	NOUN	_	_	0	root	_	_
+2	Мемориала	_	NOUN	_	_	1	nmod	_	SpaceAfter=No
+
+# text = Открытая поляна
+1	Открытая	_	ADJ	_	_	2	amod	_	_
+2	поляна	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Смотровая площадь
+1	Смотровая	_	ADJ	_	_	2	amod	_	_
+2	площадь	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Извилистый коридор
+1	Извилистый	_	ADJ	_	_	2	amod	_	_
+2	коридор	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Площадь Приветствия
+1	Площадь	_	NOUN	_	_	0	root	_	_
+2	Приветствия	_	NOUN	_	_	1	nmod	_	SpaceAfter=No
+
+# text = Входная группа
+1	Входная	_	ADJ	_	_	2	amod	_	_
+2	группа	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Площадь Тикисани
+1	Площадь	_	NOUN	_	_	0	root	_	_
+2	Тикисани	_	PROPN	_	_	1	appos	_	SpaceAfter=No
+
+# text = Админанистрация
+1	Админанистрация	_	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = Сад с образцами растений и деревьев
+1	Сад	_	NOUN	_	_	0	root	_	_
+2	с	_	ADP	_	_	3	case	_	_
+3	образцами	_	NOUN	_	_	1	nmod	_	_
+4	растений	_	NOUN	_	_	3	nmod	_	_
+5	и	_	CCONJ	_	_	6	cc	_	_
+6	деревьев	_	NOUN	_	_	4	conj	_	SpaceAfter=No
+
+# text = Озеро Порото
+1	Озеро	_	NOUN	_	_	0	root	_	_
+2	Порото	_	PROPN	_	_	1	appos	_	SpaceAfter=No
+
+# text = Айнский музей и парк
+1	Айнский	_	ADJ	_	_	2	amod	_	_
+2	музей	_	NOUN	_	_	0	root	_	_
+3	и	_	CCONJ	_	_	4	cc	_	_
+4	парк	_	NOUN	_	_	2	conj	_	SpaceAfter=No
 
