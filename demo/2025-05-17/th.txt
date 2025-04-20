@@ -54,11 +54,11 @@
 2	เอ็นทรานซ์	เอ็นทรานซ์	NOUN	_	_	1	compound	_	SpaceAfter=No
 
 # text = ลานจิคิซานิ
-1	ลานจิ	ลานจิ	PROPN	_	_	0	root	_	SpaceAfter=No
-2	คิซานิ	คิซานิ	PROPN	_	_	1	flat	_	SpaceAfter=No
+1	ลาน	ลาน	NOUN	_	_	0	root	_	SpaceAfter=No
+2	จิคิซานิ	จิคิซานิ	NOUN	_	_	1	compound	_	SpaceAfter=No
 
 # text = สำนักงานบริหาร
-1	สำนักงาน	สำนักงาน	PROPN	_	_	0	root	_	SpaceAfter=No
+1	สำนักงาน	สำนักงาน	NOUN	_	_	0	root	_	SpaceAfter=No
 2	บริหาร	บริหาร	VERB	_	_	1	acl	_	SpaceAfter=No
 
 # text = สวนตัวอย่าง
@@ -71,8 +71,10 @@
 3	โปโรโต	โปโรโต	PROPN	_	_	1	compound	_	SpaceAfter=No
 
 # text = พิพิธภัณฑ์และสวนไอนุแห่งชาติ
-1	พิพิธภัณฑ์	พิพิธภัณฑ์	PROPN	_	_	0	root	_	SpaceAfter=No
+1	พิพิธภัณฑ์	พิพิธภัณฑ์	NOUN	_	_	0	root	_	SpaceAfter=No
 2	และ	และ	CCONJ	_	_	3	cc	_	SpaceAfter=No
-3	สวน	สวน	PROPN	_	_	1	conj	_	SpaceAfter=No
-4	ไอนุแห่งชาติ	ไอนุแห่งชาติ	PROPN	_	_	3	compound	_	SpaceAfter=No
+3	สวน	สวน	NOUN	_	_	1	conj	_	SpaceAfter=No
+4	ไอนุ	ไอนุ	PROPN	_	_	1	compound	_	SpaceAfter=No
+5	แห่ง	แห่ง	NOUN	_	_	1	nmod	_	SpaceAfter=No
+6	ชาติ	ชาติ	NOUN	_	_	5	compound	_	SpaceAfter=No
 
