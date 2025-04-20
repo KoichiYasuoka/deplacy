@@ -48,7 +48,7 @@
 
 # text = Площадь Тикисани
 1	Площадь	_	NOUN	_	_	0	root	_	_
-2	Тикисани	_	PROPN	_	_	1	appos	_	SpaceAfter=No
+2	Тикисани	_	PROPN	_	_	1	nmod	_	SpaceAfter=No
 
 # text = Админанистрация
 1	Админанистрация	_	NOUN	_	_	0	root	_	SpaceAfter=No
