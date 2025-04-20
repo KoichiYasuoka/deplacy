@@ -1,3 +1,13 @@
+# text = 体验学习馆
+1	体验	体验	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	学习	学习	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	馆	馆	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = 体验交流大厅
+1	体验	体验	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	交流	交流	NOUN	_	_	3	nmod	_	SpaceAfter=No
+3	大厅	大厅	NOUN	_	_	0	root	_	SpaceAfter=No
+
 # text = 国立阿伊努民族博物馆
 1	国	国	NOUN	_	_	2	nsubj	_	SpaceAfter=No
 2	立	立	VERB	_	_	6	acl	_	SpaceAfter=No
@@ -5,4 +15,64 @@
 4	民族	民族	NOUN	_	_	6	nmod	_	SpaceAfter=No
 5	博物	博物	NOUN	_	_	6	compound	_	SpaceAfter=No
 6	馆	馆	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = 工房
+1	工房	工房	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 传统的kotan(村落)
+1	传统	传统	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	的	的	PART	_	_	1	case	_	SpaceAfter=No
+3	kotan	kotan	X	_	_	0	root	_	SpaceAfter=No
+4	(	(	PUNCT	_	_	5	punct	_	SpaceAfter=No
+5	村落	村落	NOUN	_	_	3	appos	_	SpaceAfter=No
+6	)	)	PUNCT	_	_	5	punct	_	SpaceAfter=No
+
+# text = 慰灵设施
+1	慰灵	慰灵	NOUN	_	_	2	nmod	_	SpaceAfter=No
+2	设施	设施	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 草坪广场
+1	草坪	草坪	NOUN	_	_	2	nmod	_	SpaceAfter=No
+2	广场	广场	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 展望广场
+1	展望	展望	PROPN	_	_	2	nmod	_	SpaceAfter=No
+2	广场	广场	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 曲径通幽处
+1	曲径	曲径	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	通幽	通幽	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	处	处	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = 欢迎广场
+1	欢迎	欢迎	NOUN	_	_	2	nmod	_	SpaceAfter=No
+2	广场	广场	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 入口栋
+1	入口	入口	NOUN	_	_	2	compound	_	SpaceAfter=No
+2	栋	栋	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = cikisani 广场
+1	cikisani	cikisani	X	_	_	2	nmod	_	_
+2	广场	广场	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 管理运营设施
+1	管理	管理	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	运营	运营	NOUN	_	_	3	nmod	_	SpaceAfter=No
+3	设施	设施	NOUN	_	_	0	root	_	SpaceAfter=No
+
+# text = 植物标本园
+1	植物	植物	NOUN	_	_	3	nmod	_	SpaceAfter=No
+2	标本	标本	NOUN	_	_	3	compound	_	SpaceAfter=No
+3	园	园	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = Poroto湖
+1	Poroto	Poroto	X	_	_	2	compound	_	SpaceAfter=No
+2	湖	湖	PART	_	_	0	root	_	SpaceAfter=No
+
+# text = 民族共生象征空间
+1	民族	民族	NOUN	_	_	2	nsubj	_	SpaceAfter=No
+2	共生	共生	VERB	_	_	4	acl	_	SpaceAfter=No
+3	象征	象征	NOUN	_	_	4	nmod	_	SpaceAfter=No
+4	空间	空间	NOUN	_	_	0	root	_	SpaceAfter=No
 
