@@ -311,23 +311,3 @@
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
-## [Camphr-KNP](https://github.com/PKSHATechnology-Research/camphr/tree/master/packages/camphr_knp)で解析
-
-```py
->>> import camphr
->>> nlp=camphr.load("knp")
->>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-国境     NOUN  ═╗<╗         nsubj(主語)
-の       ADP   <╝ ║         case(格表示)
-長い     ADJ   ═══╝<╗       acl(連体修飾節)
-トンネル NOUN  ═╗═══╝<╗     obj(目的語)
-を       ADP   <╝     ║     case(格表示)
-抜ける   VERB  ═╗═════╝<╗   advcl(連用修飾節)
-と       ADP   <╝       ║   mark(標識)
-雪国     NOUN  ═╗═══════╝═╗ ROOT(親)
-であった AUX   <╝         ║ cop(繫辞)
-。       PUNCT <══════════╝ punct(句読点)
-```
-
