@@ -17,27 +17,6 @@
 punct       ╚> PUNCT .
 ```
 
-<h2 dir="rtl"> עם <a href="https://github.com/amir-zeldes/HebPipe">HebPipe</a></h2>
-
-```py
->>> def nlp(t):
-...   import sys,subprocess,tempfile
-...   with tempfile.NamedTemporaryFile("w",encoding="utf-8") as f:
-...     print(t,file=f,flush=True)
-...     return subprocess.check_output([sys.executable,"-c","import hebpipe","-q",f.name]).decode("utf-8")+"\n"
-...
->>> doc=nlp("על טעם וריח אין להתווכח.")
->>> import deplacy
->>> deplacy.render(doc,WordRight=True)
- case       ╔════> ADP   על
-  obl     ╔>╚═╔═══ NOUN  טעם
-   cc     ║   ║ ╔> CCONJ ו
- conj     ║   ╚>╚═ NOUN  ריח
- root ╔═══║═══════ VERB  אין
-csubj ╚>╔═╚═══════ VERB  להתווכח
-punct   ╚════════> PUNCT .
-```
-
 <h2 dir="rtl"> עם <a href="https://stanfordnlp.github.io/stanza">Stanza</a></h2>
 
 ```py
