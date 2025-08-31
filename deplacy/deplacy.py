@@ -1,12 +1,11 @@
 # coding=utf-8
 
 import os,tempfile
-from pkg_resources import get_distribution
 from http.server import BaseHTTPRequestHandler
 from http import HTTPStatus
 
 PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
-VERSION="HTTP deplacy/"+get_distribution("deplacy").version
+VERSION="HTTP deplacy/2.1"
 EDITOR_URL="https://koichiyasuoka.github.io/deplacy/deplacy/editor.html"
 EDITOR_RTOL="https://koichiyasuoka.github.io/deplacy/deplacy/editorRtoL.html"
 TEMPFILE=tempfile.TemporaryFile()
