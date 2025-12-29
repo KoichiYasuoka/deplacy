@@ -16,6 +16,25 @@
 nummod       ╚> NUM  เดียว
 ```
 
+## กับ [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)
+
+```py
+>>> def nlp(t):
+...   import urllib.request,urllib.parse,json
+...   with urllib.request.urlopen("https://lindat.mff.cuni.cz/services/udpipe/api/process?model=th&tokenizer&tagger&parser&data="+urllib.parse.quote(t)) as r:
+...     return json.loads(r.read())["result"]
+...
+>>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
+advmod       ╔> ADV  หลาย
+ nsubj ╔════>╚═ NOUN หัว
+  root ╚═╔═════ VERB ดี
+  case   ║ ╔══> ADV  กว่า
+   obl   ╚>╚═╔═ NOUN หัว
+  amod       ╚> ADJ  เดียว
+```
+
 ## กับ [spaCy-Thai](https://github.com/KoichiYasuoka/spaCy-Thai)
 
 ```py
