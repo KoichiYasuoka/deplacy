@@ -147,30 +147,6 @@ granic     NOUN  ═╝═╝<╝         ║ obl
 .          PUNCT <══════════════╝ punct
 ```
 
-## z [COMBO-NLP](https://gitlab.clarin-pl.eu/syntactic-tools/combo)
-
-```py
->>> from combo.predict import COMBO
->>> nlp=COMBO.from_pretrained("polish-herbert-base-ud213")
->>> doc=nlp("Wcale nie chcemy zdobywać kosmosu, chcemy tylko rozszerzyć Ziemię do jego granic.")
->>> import deplacy
->>> deplacy.render(doc)
-Wcale      ADV   <══════╗         advmod
-nie        PART  <════╗ ║         advmod:neg
-chcemy     VERB  ═══╗═╝═╝═════╗═╗ root
-zdobywać   VERB  ═╗<╝         ║ ║ xcomp
-kosmosu    NOUN  <╝           ║ ║ obj
-,          PUNCT <══════════╗ ║ ║ punct
-chcemy     VERB  ═════════╗═╝<╝ ║ conj
-tylko      PART  <══════╗ ║     ║ advmod:emph
-rozszerzyć VERB  ═╗═══╗═╝<╝     ║ xcomp
-Ziemię     PROPN <╝   ║         ║ obj
-do         ADP   <══╗ ║         ║ case
-jego       PRON  <╗ ║ ║         ║ nmod
-granic     NOUN  ═╝═╝<╝         ║ obl
-.          PUNCT <══════════════╝ punct
-```
-
 ## z [spaCy-jPTDP](http://github.com/KoichiYasuoka/spaCy-jPTDP)
 
 ```py
