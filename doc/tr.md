@@ -16,22 +16,6 @@ gelir   VERB  ═══╝═╝═╗ ROOT
 .       PUNCT <══════╝ punct
 ```
 
-## [tr_core_news_trf](https://huggingface.co/turkish-nlp-suite/tr_core_news_trf) ile analiz
-
-```py
->>> import spacy
->>> nlp=spacy.load("tr_core_news_trf")
->>> doc=nlp("Hugsjónina sakar ekkert þótt einstaklíngarnir deyi eða svíki.")
->>> import deplacy
->>> deplacy.render(doc)
-İyi     ADJ   <╗       amod
-insan   NOUN  ═╝<══╗   nsubj
-sözünün NOUN  <══╗ ║   nmod:poss
-üstüne  ADJ   ═╗═╝═╝═╗ ROOT
-gelir   VERB  <╝     ║ compound
-.       PUNCT <══════╝ punct
-```
-
 ## [Stanza](https://stanfordnlp.github.io/stanza) ile analiz
 
 ```py
