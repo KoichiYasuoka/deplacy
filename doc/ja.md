@@ -88,28 +88,6 @@
 。       PUNCT <══════════╝ punct(句読点)
 ```
 
-## [GiNZA](https://megagonlabs.github.io/ginza/)で解析
-
-```py
->>> import spacy
->>> nlp=spacy.load("ja_ginza")
->>> doc=nlp("国境の長いトンネルを抜けると雪国であった。")
->>> import deplacy
->>> deplacy.render(doc,Japanese=True)
-国境     NOUN  ═╗<══╗       nmod(体言による連体修飾語)
-の       ADP   <╝   ║       case(格表示)
-長い     ADJ   <══╗ ║       acl(連体修飾節)
-トンネル NOUN  ═╗═╝═╝<╗     obj(目的語)
-を       ADP   <╝     ║     case(格表示)
-抜ける   VERB  ═╗═════╝<╗   acl(連体修飾節)
-と       SCONJ <╝       ║   mark(標識)
-雪国     NOUN  ═══╗═╗═══╝═╗ ROOT(親)
-で       AUX   ═╗<╝ ║     ║ cop(繫辞)
-あっ     VERB  <╝   ║     ║ fixed(固着)
-た       AUX   <════╝     ║ aux(動詞補助成分)
-。       PUNCT <══════════╝ punct(句読点)
-```
-
 ## [UDPipe 2](http://ufal.mff.cuni.cz/udpipe/2)で解析
 
 ```py
