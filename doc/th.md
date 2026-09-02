@@ -38,11 +38,11 @@ advmod       ╔> ADV  หลาย
 ## กับ [Stanza](https://stanfordnlp.github.io/stanza)
 
 ```py
->> import stanza
->> nlp=stanza.Pipeline("th")
->> doc=nlp("หลายหัวดีกว่าหัวเดียว")
->> import deplacy
->> deplacy.render(doc,WordRight=True)
+>>> import stanza
+>>> nlp=stanza.Pipeline("th")
+>>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
+>>> import deplacy
+>>> deplacy.render(doc,WordRight=True)
 advmod     ╔> ADV  หลาย
  nsubj ╔══>╚═ NOUN หัว
   root ╚═╔═╔═ VERB ดี
