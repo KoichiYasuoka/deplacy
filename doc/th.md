@@ -35,6 +35,22 @@ advmod       ╔> ADV  หลาย
   amod       ╚> ADJ  เดียว
 ```
 
+## กับ [Stanza](https://stanfordnlp.github.io/stanza)
+
+```py
+>> import stanza
+>> nlp=stanza.Pipeline("th")
+>> doc=nlp("หลายหัวดีกว่าหัวเดียว")
+>> import deplacy
+>> deplacy.render(doc,WordRight=True)
+advmod     ╔> ADV  หลาย
+ nsubj ╔══>╚═ NOUN หัว
+  root ╚═╔═╔═ VERB ดี
+advmod   ║ ╚> ADV  กว่า
+   obj   ╚>╔═ NOUN หัว
+  amod     ╚> ADJ  เดียว
+```
+
 ## กับ [spaCy-Thai](https://github.com/KoichiYasuoka/spaCy-Thai)
 
 ```py
